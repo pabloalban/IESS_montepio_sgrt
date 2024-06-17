@@ -1,19 +1,16 @@
-message( paste( rep( '-', 100 ), collapse = '' ) )
+message( paste( rep('-', 100 ), collapse = '' ) )
 
 # Plantilla gráfica --------------------------------------------------------------------------------
 source( 'R/401_graf_plantilla.R', encoding = 'UTF-8', echo = FALSE )
 
 # Carga de datos -----------------------------------------------------------------------------------
-load( file = paste0( parametros$RData_seg, 'BIESS_RTR_inversiones.RData' ) )
+load( file = paste0( parametros$RData_seg, 'IESS_RTR_inversiones.RData' ) )
 
-# Parámetros----------------------------------------------------------------------------------------
-fecha_min <- as.Date( "2011-12-01" )
-fecha_max <- as.Date( "2020-12-01" )
-
-# Portafolio de inversiones ------------------------------------------------------------------------
+#Portafolio de inversiones -------------------------------------------------------------------------
 message( '\tGraficando evolución histórica de las inversiones en valor nominal' )
 
 aux <- rendimiento_neto_hist %>%
+  filter( periodo <= as.Date("01/12/2022", "%d/%m/%Y" ) ) %>%
   mutate( rendimiento_neto = rendimiento_neto * 100,
           instrumento = 'Fondos administrados del SGRT') %>%
   dplyr::select( fecha := periodo,
@@ -23,11 +20,11 @@ aux <- rendimiento_neto_hist %>%
   na.omit( . )
 
 df_bar <- aux %>% dplyr::select(-rendimiento)
-df_line <- aux %>% dplyr::select(fecha, rendimiento)
+df_line = aux %>% dplyr::select(fecha, rendimiento)
 
 
 scl = 1000000  # escala de millones
-hmts = 30 # homotecia
+hmts = 30 #homotecia
 
 y_lim <- c( 0, 1600000000 )
 y_brk <- seq( y_lim[1], y_lim[2], 200000000 )
@@ -44,12 +41,12 @@ ydual_lbl <- paste0(formatC( ydual_brk,
 
 
 iess_inversiones_rnd_neto <- ggplot( data = df_bar, 
-                                     aes( x = fecha,
-                                          y = f_adm,
-                                          fill = instrumento ) ) +
+                             aes( x = fecha,
+                                  y = f_adm,
+                                  fill = instrumento ) ) +
   geom_area( alpha = 0.7,
              size = 0.5, 
-             colour = "#1a5c0c" ) + 
+             colour = "black" ) + 
   geom_line( data = df_line,
              aes( x = fecha,
                   y = rendimiento*hmts*scl*3,
@@ -58,15 +55,15 @@ iess_inversiones_rnd_neto <- ggplot( data = df_bar,
              inherit.aes = FALSE,
              size = graf_line_size ) +
   scale_linetype_manual( NULL, values = 1) +
-  scale_x_date( breaks = seq(fecha_min, fecha_max, by="12 months"),
+  scale_x_date( breaks = seq(as.Date("2011-12-01"), as.Date("2022-12-01"), by="12 months"),
                 date_labels = '%b %Y',
-                limits = as.Date( c(fecha_min, fecha_max ), "%Y-%m-%d")  ) +
+                limits = as.Date( c("2011-12-01", "2022-12-01" ), "%Y-%m-%d")  ) +
   scale_y_continuous( name = 'Saldo Nominal (millones USD)',
                       labels = y_lbl, breaks = y_brk, limits = y_lim,
                       sec.axis = sec_axis(~./(scl*hmts*3),
-                                          name = 'Rendimiento Neto',
-                                          labels = ydual_lbl,
-                                          breaks = ydual_brk ) ) + 
+                                           name = 'Rendimiento Neto',
+                                           labels = ydual_lbl,
+                                           breaks = ydual_brk ) ) + 
   scale_fill_manual( values = c( parametros$iess_green,
                                  parametros$iess_blue ) )+
   theme_bw( ) +
@@ -88,7 +85,9 @@ ggsave( plot = iess_inversiones_rnd_neto,
         filename = paste0( parametros$resultado_graficos, 'iess_inversiones_rnd_neto', parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-# Evolución histórica de las inversiones en préstamos quirografarios--------------------------------
+
+
+#Evolución histórica de las inversiones en préstamos quirografarios---------------------------------
 message( '\tGraficando evolución histórica de las inversiones en préstamos quirografarios ' )
 aux <- inv_instrumento %>%
   filter( instrumento == 'Créditos Quirografarios' ) %>% 
@@ -99,10 +98,10 @@ aux <- inv_instrumento %>%
   mutate( periodo = ymd( paste0(ano, '/01/01') ) )
 
 df_bar <- aux %>% dplyr::select(-rdto_prom_pond)
-df_line <- aux %>% dplyr::select(periodo, rdto_prom_pond)
+df_line = aux %>% dplyr::select(periodo, rdto_prom_pond)
 
 scl = 10000000  # escala de millones
-hmts = 130 # homotecia
+hmts = 130 #homotecia
 
 y_lim <- c( 0, 750000000 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 11 )
@@ -116,47 +115,47 @@ ydual_lbl <- paste0(formatC( ydual_brk*100,
 
 
 iess_prestamos_quirografarios <- ggplot(data = df_bar, 
-                                        aes(x = periodo,
-                                            y = valor_nominal,
-                                            fill = instrumento)) +
-  geom_bar(stat='identity',
-           colour='black') +
-  geom_line(data = df_line,
-            aes(x = periodo,
-                y = rdto_prom_pond*hmts*scl*10 - 1100000000,
-                group = 1,
-                linetype = 'Rendimiento Neto'),
-            inherit.aes = FALSE,
-            size=1 )  +
-  scale_linetype_manual(NULL, values = 1) +
-  scale_x_date(date_breaks = '1 year', date_labels = '%Y')+
-  scale_y_continuous(name = 'Saldo (millones USD)',
-                     labels = y_lbl, breaks = y_brk, limits = y_lim,
-                     sec.axis = sec_axis(~./(scl*hmts*10) + 0.08461538,
-                                         name = 'Rendimiento Promedio Ponderado',
-                                         labels = ydual_lbl,
-                                         breaks = ydual_brk)) + 
-  scale_fill_manual(values = c(parametros$iess_green,
-                               parametros$iess_blue))+
-  theme_bw() +
-  plt_theme+
-  guides(fill = guide_legend(title = NULL,
-                             label.position = "right", 
-                             label.hjust = 0))+
-  theme(legend.position='bottom') +
-  labs( x = '', y = '' )+
-  theme(legend.background = element_rect(fill = 'transparent'),
-        legend.box.background = element_rect(fill = 'transparent', 
-                                             colour = NA),
-        legend.key = element_rect(fill = 'transparent'), 
-        legend.spacing = unit(-1, 'lines') )
-
+                                       aes(x = periodo,
+                                           y = valor_nominal,
+                                           fill = instrumento)) +
+                                  geom_bar(stat='identity',
+                                           colour='black') +
+                                  geom_line(data = df_line,
+                                            aes(x = periodo,
+                                                y = rdto_prom_pond*hmts*scl*10 - 1100000000,
+                                                group = 1,
+                                                linetype = 'Rendimiento Neto'),
+                                            inherit.aes = FALSE,
+                                            size=1 )  +
+                                  scale_linetype_manual(NULL, values = 1) +
+                                  scale_x_date(date_breaks = '1 year', date_labels = '%Y')+
+                                  scale_y_continuous(name = 'Saldo (millones USD)',
+                                                     labels = y_lbl, breaks = y_brk, limits = y_lim,
+                                                     sec.axis = sec_axis(~./(scl*hmts*10) + 0.08461538,
+                                                                         name = 'Rendimiento Promedio Ponderado',
+                                                                         labels = ydual_lbl,
+                                                                         breaks = ydual_brk)) + 
+                                  scale_fill_manual(values = c(parametros$iess_green,
+                                                               parametros$iess_blue))+
+                                  theme_bw() +
+                                  plt_theme+
+                                  guides(fill = guide_legend(title = NULL,
+                                                             label.position = "right", 
+                                                             label.hjust = 0))+
+                                  theme(legend.position='bottom') +
+                                  labs( x = '', y = '' )+
+                                  theme(legend.background = element_rect(fill = 'transparent'),
+                                        legend.box.background = element_rect(fill = 'transparent', 
+                                                                             colour = NA),
+                                        legend.key = element_rect(fill = 'transparent'), 
+                                        legend.spacing = unit(-1, 'lines') )
+                                
 ggsave( plot = iess_prestamos_quirografarios, 
         filename = paste0( parametros$resultado_graficos, 'iess_prestamos_quirografarios_rtr', 
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-# Evolución histórica de las inversiones en titularizaciones----------------------------------------
+#Evolución histórica de las inversiones en titularizaciones-----------------------------------------
 message( '\tGraficando evolución histórica de las inversiones en titularizaciones' )
 
 aux <- inv_instrumento %>% 
@@ -168,10 +167,10 @@ aux <- inv_instrumento %>%
   mutate( periodo = ymd( paste0(ano, '/01/01') ) )
 
 df_bar <- aux %>% dplyr::select(-rdto_prom_pond)
-df_line <- aux %>% dplyr::select(periodo, rdto_prom_pond)
+df_line = aux %>% dplyr::select(periodo, rdto_prom_pond)
 
 scl = 1000000  # escala de millones
-hmts = 20 # homotecia
+hmts = 20 #homotecia
 
 y_lim <- c( 0, 60000000 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 6 )
@@ -185,45 +184,45 @@ ydual_lbl <- paste0(formatC( ydual_brk*100,
 
 
 iess_titularizaciones <- ggplot(data = df_bar, aes(x = periodo,
-                                                   y = valor_nominal, 
-                                                   fill = instrumento)) +
-  geom_bar(stat='identity',
-           colour='black') +
-  geom_line(data = df_line,
-            aes(x = periodo,
-                y = rdto_prom_pond*hmts*scl*100 - 135000000,
-                group = 1,
-                linetype = 'Rendimiento Neto'),
-            inherit.aes = FALSE,
-            size=1 )  +
-  scale_linetype_manual(NULL, values = 1) +
-  scale_x_date(date_breaks = '1 year', date_labels = '%Y')+
-  scale_y_continuous(name = 'Saldo (millones USD)',
-                     labels = y_lbl, breaks = y_brk, limits = y_lim,
-                     sec.axis = sec_axis(~./(scl*hmts*100) + 0.0675,
-                                         name = 'Rendimiento Promedio Ponderado',
-                                         labels = ydual_lbl,
-                                         breaks = ydual_brk)) + 
-  scale_fill_manual(values = c(parametros$iess_green, 
-                               parametros$iess_blue))+
-  theme_bw() +
-  plt_theme+
-  guides( color = guide_colorbar(order = 0),
-          fill = guide_legend(order = 1) ) + 
-  theme(legend.position='bottom') +
-  labs( x = '', y = '' )+
-  theme(legend.background = element_rect(fill = 'transparent'),
-        legend.box.background = element_rect(fill = 'transparent', 
-                                             colour = NA),
-        legend.key = element_rect(fill = 'transparent'), 
-        legend.spacing = unit(-1, 'lines') )
+                                                            y = valor_nominal, 
+                                                            fill = instrumento)) +
+                                  geom_bar(stat='identity',
+                                           colour='black') +
+                                  geom_line(data = df_line,
+                                            aes(x = periodo,
+                                                y = rdto_prom_pond*hmts*scl*100 - 135000000,
+                                                group = 1,
+                                                linetype = 'Rendimiento Neto'),
+                                            inherit.aes = FALSE,
+                                            size=1 )  +
+                                  scale_linetype_manual(NULL, values = 1) +
+                                  scale_x_date(date_breaks = '1 year', date_labels = '%Y')+
+                                  scale_y_continuous(name = 'Saldo (millones USD)',
+                                                     labels = y_lbl, breaks = y_brk, limits = y_lim,
+                                                     sec.axis = sec_axis(~./(scl*hmts*100) + 0.0675,
+                                                                         name = 'Rendimiento Promedio Ponderado',
+                                                                         labels = ydual_lbl,
+                                                                         breaks = ydual_brk)) + 
+                                  scale_fill_manual(values = c(parametros$iess_green, 
+                                                               parametros$iess_blue))+
+                                  theme_bw() +
+                                  plt_theme+
+                                  guides( color = guide_colorbar(order = 0),
+                                          fill = guide_legend(order = 1) ) + 
+                                  theme(legend.position='bottom') +
+                                  labs( x = '', y = '' )+
+                                  theme(legend.background = element_rect(fill = 'transparent'),
+                                        legend.box.background = element_rect(fill = 'transparent', 
+                                                                             colour = NA),
+                                        legend.key = element_rect(fill = 'transparent'), 
+                                        legend.spacing = unit(-1, 'lines') )
 
 ggsave( plot = iess_titularizaciones, 
         filename = paste0( parametros$resultado_graficos, 'iess_inversiones_titularizaciones_rtr', 
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-# Evolución histórica de las inversiones en obligaciones--------------------------------------------
+#Evolución histórica de las inversiones en obligaciones---------------------------------------------
 message( '\tGraficando evolución histórica de las inversiones en obligaciones' )
 
 aux <- inv_instrumento %>% 
@@ -235,10 +234,10 @@ aux <- inv_instrumento %>%
   mutate( periodo = ymd( paste0(ano, '/01/01') ) )
 
 df_bar <- aux %>% dplyr::select(-rdto_prom_pond)
-df_line <- aux %>% dplyr::select(periodo, rdto_prom_pond)
+df_line = aux %>% dplyr::select(periodo, rdto_prom_pond)
 
 scl = 1000000  # escala de millones
-hmts = 30 # homotecia
+hmts = 30 #homotecia
 
 y_lim <- c( 0, 40000000 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 6 )
@@ -250,46 +249,45 @@ ydual_lbl <- paste0(formatC( ydual_brk*100,
                              big.mark = '.', 
                              decimal.mark = ',' ),"%")
 
-iess_inversiones_obligaciones <- 
-  ggplot(data = df_bar, aes(x = periodo,
-                            y = valor_nominal, 
-                            fill = instrumento)) +
-  geom_bar(stat='identity',colour='black') +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  geom_line(data = df_line,
-            aes(x = periodo,
-                y = rdto_prom_pond*hmts*scl*100 - 230000000, 
-                group = 1, linetype = 'Rendimiento Promedio Ponderado'),
-            inherit.aes = FALSE,
-            size=1) +
-  scale_linetype_manual(NULL, values = 1) +
-  scale_x_date(date_breaks = '1 year', date_labels = '%Y')+
-  scale_y_continuous(name = 'Saldo (millones USD)',
-                     labels = y_lbl, breaks = y_brk, limits = y_lim,
-                     sec.axis = sec_axis(~./(scl*hmts*100) + 0.07666667,
-                                         name = 'Rendimiento Promedio Ponderado',
-                                         labels = ydual_lbl,
-                                         breaks = ydual_brk)) + 
-  scale_fill_manual(values = c(parametros$iess_green, 
-                               parametros$iess_blue))+
-  theme_bw() +
-  plt_theme+
-  guides( color = guide_colorbar(order = 0),
-          fill = guide_legend(order = 1) ) + 
-  theme(legend.position='bottom') +
-  labs( x = '', y = '' )+
-  theme(legend.background = element_rect(fill = 'transparent'),
-        legend.box.background = element_rect(fill = 'transparent', 
-                                             colour = NA),
-        legend.key = element_rect(fill = 'transparent'), 
-        legend.spacing = unit(-1, 'lines') )
+iess_inversiones_obligaciones <- ggplot(data = df_bar, aes(x = periodo,
+                                                            y = valor_nominal, 
+                                                            fill = instrumento)) +
+                                geom_bar(stat='identity',colour='black') +
+                                theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+                                geom_line(data = df_line,
+                                          aes(x = periodo,
+                                              y = rdto_prom_pond*hmts*scl*100 - 230000000, 
+                                              group = 1, linetype = 'Rendimiento Promedio Ponderado'),
+                                          inherit.aes = FALSE,
+                                          size=1) +
+                                scale_linetype_manual(NULL, values = 1) +
+                                scale_x_date(date_breaks = '1 year', date_labels = '%Y')+
+                                scale_y_continuous(name = 'Saldo (millones USD)',
+                                                   labels = y_lbl, breaks = y_brk, limits = y_lim,
+                                                   sec.axis = sec_axis(~./(scl*hmts*100) + 0.07666667,
+                                                                       name = 'Rendimiento Promedio Ponderado',
+                                                                       labels = ydual_lbl,
+                                                                       breaks = ydual_brk)) + 
+                                scale_fill_manual(values = c(parametros$iess_green, 
+                                                             parametros$iess_blue))+
+                                theme_bw() +
+                                plt_theme+
+                                guides( color = guide_colorbar(order = 0),
+                                        fill = guide_legend(order = 1) ) + 
+                                theme(legend.position='bottom') +
+                                labs( x = '', y = '' )+
+                                theme(legend.background = element_rect(fill = 'transparent'),
+                                      legend.box.background = element_rect(fill = 'transparent', 
+                                                                           colour = NA),
+                                      legend.key = element_rect(fill = 'transparent'), 
+                                      legend.spacing = unit(-1, 'lines') )
 
 ggsave( plot = iess_inversiones_obligaciones, 
         filename = paste0( parametros$resultado_graficos, 'iess_inversiones_obligaciones_rtr', 
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-# Evolución histórica de las inversiones en bonos del estado----------------------------------------
+#Evolución histórica de las inversiones en bonos del estado-----------------------------------------
 message( '\tGraficando evolución histórica de las inversiones en bonos del estado' )
 
 aux <- inv_instrumento %>% 
@@ -301,10 +299,10 @@ aux <- inv_instrumento %>%
   mutate( periodo = ymd( paste0(ano, '/01/01') ) )
 
 df_bar <- aux %>% dplyr::select(-rdto_prom_pond)
-df_line <- aux %>% dplyr::select(periodo, rdto_prom_pond)
+df_line = aux %>% dplyr::select(periodo, rdto_prom_pond)
 
 scl = 10000000  # escala de millones
-hmts = 120 # homotecia
+hmts = 120 #homotecia
 
 y_lim <- c( 0, 600000000 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 6 )
@@ -317,49 +315,50 @@ ydual_lbl <- paste0(formatC( ydual_brk*100,
                              decimal.mark = ',' ),"%")
 
 iess_inversiones_bonos <- ggplot(data = df_bar, aes(x = periodo,
-                                                    y = valor_nominal, 
-                                                    fill = instrumento)) +
-  geom_bar(stat='identity',colour='black') +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  geom_line(data = df_line,
-            aes(x = periodo,
-                y = rdto_prom_pond*hmts*scl*10 - 600000000, 
-                group = 1, linetype = 'Rendimiento Promedio Ponderado'),
-            inherit.aes = FALSE,
-            size=1) +
-  scale_linetype_manual(NULL, values = 1) +
-  scale_x_date(date_breaks = '1 year', date_labels = '%Y')+
-  scale_y_continuous(name = 'Saldo (millones USD)',
-                     labels = y_lbl, breaks = y_brk, limits = y_lim,
-                     sec.axis = sec_axis(~./(scl*hmts*10) + 0.05,
-                                         name = 'Rendimiento Promedio Ponderado',
-                                         labels = ydual_lbl,
-                                         breaks = ydual_brk)) + 
-  scale_fill_manual(values = c(parametros$iess_green, 
-                               parametros$iess_blue))+
-  theme_bw() +
-  plt_theme+
-  guides( color = guide_colorbar(order = 0),
-          fill = guide_legend(order = 1) ) + 
-  theme(legend.position='bottom') +
-  labs( x = '', y = '' )+
-  theme(legend.background = element_rect(fill = 'transparent'),
-        legend.box.background = element_rect(fill = 'transparent', 
-                                             colour = NA),
-        legend.key = element_rect(fill = 'transparent'), 
-        legend.spacing = unit(-1, 'lines') )
+                                                           y = valor_nominal, 
+                                                           fill = instrumento)) +
+                          geom_bar(stat='identity',colour='black') +
+                          theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+                          geom_line(data = df_line,
+                                    aes(x = periodo,
+                                        y = rdto_prom_pond*hmts*scl*10 - 600000000, 
+                                        group = 1, linetype = 'Rendimiento Promedio Ponderado'),
+                                    inherit.aes = FALSE,
+                                    size=1) +
+                          scale_linetype_manual(NULL, values = 1) +
+                          scale_x_date(date_breaks = '1 year', date_labels = '%Y')+
+                          scale_y_continuous(name = 'Saldo (millones USD)',
+                                             labels = y_lbl, breaks = y_brk, limits = y_lim,
+                                             sec.axis = sec_axis(~./(scl*hmts*10) + 0.05,
+                                                                 name = 'Rendimiento Promedio Ponderado',
+                                                                 labels = ydual_lbl,
+                                                                 breaks = ydual_brk)) + 
+                          scale_fill_manual(values = c(parametros$iess_green, 
+                                                       parametros$iess_blue))+
+                          theme_bw() +
+                          plt_theme+
+                          guides( color = guide_colorbar(order = 0),
+                                  fill = guide_legend(order = 1) ) + 
+                          theme(legend.position='bottom') +
+                          labs( x = '', y = '' )+
+                          theme(legend.background = element_rect(fill = 'transparent'),
+                                legend.box.background = element_rect(fill = 'transparent', 
+                                                                     colour = NA),
+                                legend.key = element_rect(fill = 'transparent'), 
+                                legend.spacing = unit(-1, 'lines') )
+
 
 ggsave( plot = iess_inversiones_bonos, 
         filename = paste0( parametros$resultado_graficos, 'iess_inversiones_bonos_rtr', 
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-# Evolución histórica de las inversiones en papel comercial-----------------------------------------
+#Evolución histórica de las inversiones en papel comercial------------------------------------------
 message( '\tGraficando evolución histórica de las inversiones en papel comercial' )
 
 aux <- inv_instrumento %>% 
   filter(instrumento=='Papel Comercial') %>% 
-  left_join( data.frame( ano = seq(2011, 2020, 1) ), ., by = 'ano' ) %>%
+  left_join( data.frame( ano = seq(2011, 2022, 1) ), ., by = 'ano' ) %>%
   mutate( instrumento ='Papel Comercial' ) %>%
   replace(is.na(.), 0) %>%
   dplyr::select(ano,
@@ -369,10 +368,10 @@ aux <- inv_instrumento %>%
   mutate( periodo = ymd( paste0(ano, '/01/01') ) )
 
 df_bar <- aux %>% dplyr::select(-rdto_prom_pond)
-df_line <- aux %>% dplyr::select(periodo, rdto_prom_pond)
+df_line = aux %>% dplyr::select(periodo, rdto_prom_pond)
 
 scl = 1000000  # escala de millones
-hmts = 30 # homotecia
+hmts = 30 #homotecia
 
 y_lim <- c( 0, 18000000 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 11 )
@@ -385,8 +384,8 @@ ydual_lbl <- paste0(formatC( ydual_brk*100,
                              decimal.mark = ',' ),"%")
 
 iess_inversiones_papel_comercial <- ggplot(data = df_bar, aes(x = periodo,
-                                                              y = valor_nominal, 
-                                                              fill = instrumento)) +
+                                                           y = valor_nominal, 
+                                                           fill = instrumento)) +
   geom_bar(stat='identity',colour='black') +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   geom_line(data = df_line,
@@ -422,12 +421,13 @@ ggsave( plot = iess_inversiones_papel_comercial,
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-# Evolución histórica de las cetes------------------------------------------------------------------
+
+#Evolución histórica de las cetes--------------------------------------------------------------------
 message( '\tGraficando evolución histórica de los cetes' )
 
 aux <- inv_instrumento %>% 
   filter(instrumento=='Certificados de Tesorería - CETES') %>% 
-  left_join( data.frame( ano = seq(2011, 2020, 1) ), ., by = 'ano' ) %>%
+  left_join( data.frame( ano = seq(2011, 2022, 1) ), ., by = 'ano' ) %>%
   mutate( instrumento ='CETES' ) %>%
   replace(is.na(.), 0) %>%
   dplyr::select(ano,
@@ -437,10 +437,10 @@ aux <- inv_instrumento %>%
   mutate( periodo = ymd( paste0(ano, '/01/01') ) )
 
 df_bar <- aux %>% dplyr::select(-rdto_prom_pond)
-df_line <- aux %>% dplyr::select(periodo, rdto_prom_pond)
+df_line = aux %>% dplyr::select(periodo, rdto_prom_pond)
 
 scl = 1000000  # escala de millones
-hmts = 30 # homotecia
+hmts = 30 #homotecia
 
 y_lim <- c( 0, 120000000 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 11 )
@@ -453,8 +453,8 @@ ydual_lbl <- paste0(formatC( ydual_brk*100,
                              decimal.mark = ',' ),"%")
 
 iess_inversiones_cetes <- ggplot(data = df_bar, aes(x = periodo,
-                                                    y = valor_nominal, 
-                                                    fill = instrumento)) +
+                                                              y = valor_nominal, 
+                                                              fill = instrumento)) +
   geom_bar(stat='identity',colour='black') +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   geom_line(data = df_line,
@@ -490,7 +490,8 @@ ggsave( plot = iess_inversiones_cetes,
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-# Limpiando Ram-------------------------------------------------------------------------------------
+#Limpiando Ram--------------------------------------------------------------------------------------
 message( paste( rep('-', 100 ), collapse = '' ) )
 rm( list = ls()[ !( ls() %in% c( 'parametros' ) ) ] )
 gc()
+

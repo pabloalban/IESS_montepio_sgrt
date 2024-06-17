@@ -2,14 +2,14 @@
 source( 'R/400_preparar_reporte.R', encoding = 'UTF-8', echo = FALSE )
 
 # Gráficos genéricos--------------------------------------------------------------------------------
-source( 'R/macro/400_graf_contexto_economico.R', encoding = 'UTF-8', echo = FALSE )
+source( 'R/402_graf_contexto_economico.R', encoding = 'UTF-8', echo = FALSE )
 #source( 'R/demografia/401_graf_tasa_familia_tipo.R', encoding = 'UTF-8', echo = FALSE )
 source( 'R/demografia/402_graficos_tasas.R', encoding = 'UTF-8', echo = FALSE )
 source( 'R/demografia/407_graf_proyeccion_poblacion.R', encoding = 'UTF-8', echo = FALSE )
 source( 'R/ivm/400_graf_analisis_demografico_ivm.R', encoding = 'UTF-8', echo = FALSE )
 
 # Tablas genéricas ---------------------------------------------------------------------------------
-source( 'R/macro/500_tab_contexto_economico.R', encoding = 'UTF-8', echo = FALSE )
+source( 'R/505_tab_contexto_economico.R', encoding = 'UTF-8', echo = FALSE )
 source( 'R/demografia/503_tab_proyeccion_poblacion.R', encoding = 'UTF-8', echo = FALSE )
 source( 'R/ivm/500_tab_analisis_demografico_ivm.R', encoding = 'UTF-8', echo = FALSE )
 

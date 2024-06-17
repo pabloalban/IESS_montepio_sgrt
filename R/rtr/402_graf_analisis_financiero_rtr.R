@@ -1,4 +1,4 @@
-message( paste( rep( '-', 100 ), collapse = '' ) )
+message( paste( rep('-', 100 ), collapse = '' ) )
 
 # Plantilla gráfica --------------------------------------------------------------------------------
 source( 'R/401_graf_plantilla.R', encoding = 'UTF-8', echo = FALSE )
@@ -6,20 +6,13 @@ source( 'R/401_graf_plantilla.R', encoding = 'UTF-8', echo = FALSE )
 # Carga de datos -----------------------------------------------------------------------------------
 load( file = paste0( parametros$RData_seg, 'IESS_RTR_analisis_financiero.RData' ) )
 
-# Parámetros----------------------------------------------------------------------------------------
-anio_max <- 2020
-anio_min <- 2012
-unidad <- 1e6
-x_lim <- c( anio_min, anio_max )
-x_brk <- anio_min:anio_max
-
-#1. Activo------------------------------------------------------------------------------------------
-##Activo Fondo--------------------------------------------------------------------------------------
+# Activo Fondo--------------------------------------------------------------------------------------
 message( '\tGraficando activo del fondo' )
-
-aux <- activo_del_fondo %>%
-  mutate( activo = activo/unidad )
-
+unidad<-1e6
+aux <- as.data.table(activo_del_fondo)
+aux[,Activo:=Activo/unidad]
+x_lim <- c( 2013, 2022 )
+x_brk <- 2013:2022
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
 y_lim <- c( 0, 2000 )
@@ -27,8 +20,8 @@ y_brk <- seq( y_lim[1], y_lim[2], 200 )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
 
 iess_activo_fondo <- ggplot( data = aux ) + 
-  geom_line( aes( x = ano, 
-                  y = activo, 
+  geom_line( aes( x = Año, 
+                  y = Activo, 
                   color = parametros$iess_blue ), 
              size = graf_line_size,
              lineend = "round" ) + 
@@ -46,12 +39,13 @@ ggsave( plot = iess_activo_fondo,
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-##Cuentas por cobrar del Fondo de SGRT -------------------------------------------------------------
-message( '\tGraficando Cuentas por cobrar del Fondo de SGRT ' )
-
-aux <- cuentas_cobrar_fondo %>%
-  mutate( cuentas_por_cobrar  = cuentas_por_cobrar /unidad )
-
+#Cuentas por cobrar del Fondo de RT ----------------------------------------------------------------
+message( '\tGraficando Cuentas por cobrar del Fondo de RT ' )
+unidad<-1e6
+aux <- as.data.table( cuentas_cobrar_fondo )
+aux <- aux[,`Cuentas por Cobrar`:=`Cuentas por Cobrar`/unidad]
+x_lim <- c( 2013, 2022 )
+x_brk <- 2013:2022
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
 y_lim <- c( 0, 90)
@@ -59,8 +53,8 @@ y_brk <- seq( y_lim[1], y_lim[2], 10 )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
 
 iess_cuentas_cobrar_fondo <-  ggplot( data = aux ) + 
-  geom_line( aes( x = ano, 
-                  y = cuentas_por_cobrar , 
+  geom_line( aes( x = Año, 
+                  y = `Cuentas por Cobrar`, 
                   color = parametros$iess_blue ), 
              size = graf_line_size,
              lineend = "round" ) + 
@@ -79,13 +73,13 @@ ggsave( plot = iess_cuentas_cobrar_fondo,
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-#2. Pasivos-----------------------------------------------------------------------------------------
-##Pasivo del Fondo de SGRT--------------------------------------------------------------------------
-message( '\tGraficando Pasivo del Fondo de SGRT' )
-
-aux <- pasivos_fondo %>%
-  mutate( pasivo = pasivo  /unidad )
-
+#Pasivo del Fondo de RT-----------------------------------------------------------------------------
+message( '\tGraficando Pasivo del Fondo de RT.' )
+unidad<-1e6
+aux <- as.data.table( pasivos_fondo )
+aux <- aux[,Pasivo:=Pasivo/unidad]
+x_lim <- c( 2013, 2022 )
+x_brk <- 2013:2022
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
 y_lim <- c( 0, 50)
@@ -93,8 +87,8 @@ y_brk <- seq( y_lim[1], y_lim[2], 10 )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
 
 iess_pasivo_fondo <-ggplot( data = aux ) + 
-  geom_line( aes( x = ano, 
-                  y = pasivo, 
+  geom_line( aes( x = Año, 
+                  y = Pasivo, 
                   color = parametros$iess_blue ), 
              size = graf_line_size,
              lineend = "round" ) + 
@@ -113,13 +107,13 @@ ggsave( plot = iess_pasivo_fondo,
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-##Cuentas por pagar del  Fondo de SGRT--------------------------------------------------------------
-message( '\tGraficando cuentas por pagar del Fondo de SGRT' )
-
-aux <- cuentas_pagar_fondo %>%
-  clean_names( ) %>%
-  mutate( cuentas_por_pagar = cuentas_por_pagar / unidad )
-
+#Cuentas por pagar del  Fondo de RT-----------------------------------------------------------------
+message( '\tGraficando cuentas por pagar del Fondo de RT' )
+unidad<-1e6
+aux <- as.data.table( cuentas_pagar_fondo )
+aux <- aux[,`Cuentas por Pagar`:=`Cuentas por Pagar`/unidad]
+x_lim <- c( 2013, 2022 )
+x_brk <- 2013:2022
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
 y_lim <- c( 0, 50)
@@ -127,8 +121,8 @@ y_brk <- seq( y_lim[1], y_lim[2], 10 )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
 
 iess_cuentas_pagar_fondo <- ggplot( data = aux ) + 
-  geom_line( aes( x = ano, 
-                  y = cuentas_por_pagar, 
+  geom_line( aes( x = Año, 
+                  y = `Cuentas por Pagar`, 
                   color = parametros$iess_blue ), 
              size = graf_line_size,
              lineend = "round" ) + 
@@ -147,13 +141,13 @@ ggsave( plot = iess_cuentas_pagar_fondo,
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-#3. Patrimonio--------------------------------------------------------------------------------------
-##Patrimonio del  Fondo de SFRT---------------------------------------------------------------------
-message( '\tGraficando patrimonio del Fondo de.' )
-
-aux <- patrimonio_fondo %>%
-  mutate( patrimonio = patrimonio / unidad )
-
+#Patrimonio del  Fondo de RT------------------------------------------------------------------------
+message( '\tGraficando patrimonio del Fondo de RT.' )
+unidad<-1e6
+aux <- as.data.table( patrimonio_fondo )
+aux <- aux[,Patrimonio:=Patrimonio/unidad]
+x_lim <- c( 2013, 2022 )
+x_brk <- 2013:2022
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
 y_lim <- c( 0, 1500)
@@ -161,8 +155,8 @@ y_brk <- seq( y_lim[1], y_lim[2], length.out = 6  )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
 
 iess_patrimonio_fondo <-  ggplot( data = aux ) + 
-  geom_line( aes( x = ano, 
-                  y = patrimonio, 
+  geom_line( aes( x = Año, 
+                  y = Patrimonio, 
                   color = parametros$iess_blue ), 
              size = graf_line_size,
              lineend = "round" ) + 
@@ -181,13 +175,13 @@ ggsave( plot = iess_patrimonio_fondo,
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-#4. Resultados del ejercicio------------------------------------------------------------------------
-##Ingresos del  Fondo de SGRT-----------------------------------------------------------------------
-message( '\tGraficando ingrensos del Fondo de SGRT' )
-
-aux <- ingresos_fondo %>%
-  mutate( ingresos = ingresos / unidad)
-
+#Ingresos del  Fondo de RT--------------------------------------------------------------------------
+message( '\tGraficando ingrensos del Fondo de RT.' )
+unidad<-1e6
+aux <- as.data.table( ingresos_fondo )
+aux <- aux[, Ingresos:=Ingresos/unidad]
+x_lim <- c( 2013, 2022 )
+x_brk <- 2013:2022
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
 y_lim <- c( 0, 300 )
@@ -195,8 +189,8 @@ y_brk <- seq( y_lim[1], y_lim[2], 50 )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
 
 iess_ingresos_fondo <-  ggplot( data = aux ) + 
-  geom_line( aes( x = ano, 
-                  y = ingresos, 
+  geom_line( aes( x = Año, 
+                  y = Ingresos, 
                   color = parametros$iess_blue ), 
              size = graf_line_size,
              lineend = "round" ) + 
@@ -215,12 +209,14 @@ ggsave( plot = iess_ingresos_fondo,
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-##Evolución del gasto del Fondo---------------------------------------------------------------------
-message( '\tGraficando evolución del gasto del Fondo de SGRT' )
+#Evolución del gasto del   Fondo de RT--------------------------------------------------------------
+message( '\tGraficando evolución del gasto del Fondo de RT.' )
+unidad<-1e6
+aux <- as.data.table( gastos )
+aux <- aux[, `Gastos`:=`Gastos`/unidad]
 
-aux <- gastos %>%
-  mutate( gastos = gastos / unidad )
-
+x_lim <- c( 2013, 2022 )
+x_brk <- 2013:2022
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
 y_lim <- c( 0, 100)
@@ -228,8 +224,8 @@ y_brk <- seq( y_lim[1], y_lim[2], length.out = 6 )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
 
 iess_gastos_fondo <-  ggplot( data = aux ) + 
-  geom_line( aes( x = ano, 
-                  y = gastos, 
+  geom_line( aes( x = Año, 
+                  y = Gastos, 
                   color = parametros$iess_blue ), 
              size = graf_line_size,
              lineend = "round" ) + 
@@ -248,12 +244,14 @@ ggsave( plot = iess_gastos_fondo,
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-##Evolución del resultado del ejercicio Fondo de RT-------------------------------------------------
+#Evolución del resultado del ejercicio Fondo de RT--------------------------------------------------
 message( '\tGraficando resultado del ejercicio del Fondo de RT.' )
-
+unidad<-1e6
 aux <- ingresos_vs_gastos %>%
   clean_names( )
 
+x_lim <- c( 2013, 2022 )
+x_brk <- 2013:2022
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
 y_lim <- c( 0, 220000000 )
@@ -281,7 +279,8 @@ ggsave( plot = iess_resultado_del_ejercicio,
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-# Limpiando Ram-------------------------------------------------------------------------------------
-message( paste( rep( '-', 100 ), collapse = '' ) )
+
+#Limpiando Ram--------------------------------------------------------------------------------------
+message( paste( rep('-', 100 ), collapse = '' ) )
 rm( list = ls()[ !( ls() %in% c( 'parametros' ) ) ] )
 gc()
