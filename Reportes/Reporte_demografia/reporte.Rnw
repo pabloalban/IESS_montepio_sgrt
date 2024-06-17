@@ -1,0 +1,94 @@
+%---------------------------------------------------------------------------------------------------
+% Demografia
+%---------------------------------------------------------------------------------------------------
+% template document
+\documentclass[12pt, a4paper, twoside, openright, openany]{book}
+\input{\Sexpr{REP$style}}
+\input{\Sexpr{REP$style_math}}
+
+%---------------------------------------------------------------------------------------------------
+\SetWatermarkText{\Sexpr{REP$watermark}}
+%\SetWatermarkText{}
+\SetWatermarkScale{0.40}
+\SetWatermarkColor[gray]{0.7}
+
+
+
+% \newcommand\BGfrom[1]{%
+% \AddEverypageHook{%
+%   \ifnum\value{page}>\numexpr#1-1\relax
+%     \backgroundsetup{
+% angle=-20,
+% %position={0.68\textwidth,-.68\textheight},%
+% position={10.8cm,-16.9cm},%
+% contents={\includegraphics[scale=0.07]{graficos/sumilla_actuario.png}}
+%     }%
+%   \fi
+%   \BgMaterial%
+%   }%
+% }
+% \BGfrom{3}
+
+
+% Bibliografía -------------------------------------------------------------------------------------
+\addbibresource{\Sexpr{REP$bib_lib}}
+\addbibresource{\Sexpr{REP$bib_art}}
+\addbibresource{\Sexpr{REP$bib_ley}}
+
+%---------------------------------------------------------------------------------------------------
+% Inicio del documento
+\begin{document}
+
+%---------------------------------------------------------------------------------------------------
+\frontmatter
+% Contenidos
+<<cap01, child='01_cobertura.Rnw'>>=
+@
+
+<<cap02, child='02_contenido.Rnw'>>=
+@
+
+%---------------------------------------------------------------------------------------------------
+% Cuerpo del estudio
+\mainmatter
+
+<<cap03, child='03_resumen_ejecutivo.Rnw'>>=
+@
+
+<<cap04, child='04_introduccion.Rnw'>>=
+@
+
+<<cap05, child='05_reglamentacion.Rnw'>>=
+@
+
+<<cap06, child='06_conceptos_basicos.Rnw'>>=
+@
+
+% <<cap07, child='07_metodologia.Rnw'>>=
+% @
+% 
+% <<cap08, child='08_analisis_informacion.Rnw'>>=
+% @
+% 
+% <<cap09, child='09_tablas_estaticas.Rnw'>>=
+% @
+% 
+% <<cap11, child='11_conclusiones.Rnw'>>=
+% @
+
+% %---------------------------------------------------------------------------------------------------
+% Apéndices
+\appendix
+
+%---------------------------------------------------------------------------------------------------
+%Acrónimos
+
+
+%---------------------------------------------------------------------------------------------------
+\backmatter
+\pagestyle{repheadstyle}
+% Bibliografía
+\chapter{Bibliografía}
+\printbibliography[heading = none]
+
+\end{document}

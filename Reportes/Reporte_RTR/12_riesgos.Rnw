@@ -1,0 +1,320 @@
+\chapter{Tablas demográficas y factores de riesgo}
+\label{chp_riesgos}
+
+En este capítulo presentamos las tablas biométricas que fueron usadas en el desarrollo del presente estudio. 
+
+Antes de continuar con la presentación de cada una de las tablas biométricas, es importante recalcar que el número de personas $l_x$ no tiene porqué tomar un valor entero, es así como en las tablas a continuación $l_x$ está redondeado a dos cifras decimales, esto fue realizado con la finalidad de proveer de tablas biométricas que ofrezcan una mayor precisión al momento de realizar cálculos numéricos con los valores presentados.
+
+%--------------------------------------------------------------------------------------
+\section{Tablas de transiciones para pensionistas de incapacidad permanente parcial, absoluta y total}
+
+\subsection{Tabla de transición de activos a pensionistas de incapacidad permanente absoluta y total}
+
+La probabilidad de entrada de un nuevo pensionista de incapacidad permanente parcial, absoluta y total entre la edad $x$ y $x+1$, se representa por $p_{x,g}^{2,12}$, donde $g$ es el sexo, se  utilizando datos históricos registrados desde 2012 a 2020. Se estima la tasa observada $\hat{p}_{x,g}^{2,12}$ para cada edad ( $x=15,16,\ldots,105$) y cada genero $g$, como se sigue a continuación:
+
+	\[\hat{p}_{x,g}^{2,12} = \frac{\sum_{t=2012}^{2020} l_{t,g,x}^{2,12}}{\sum_{t=2012}^{2020} l_{t,g,x}^{2}},
+\]
+
+donde: $l_{t,g,x}^{2,12}$ es el número afiliados que obtuvieron el derecho a una pensión de incapacidad permanente absoluta o total en el año $t$, de edad $x$ y genero $g$; y $l_{t,g,x}^{2}$ es el número de afiliados activos registrados en el año $t$, de edad $x$ y genero $g$.
+
+A partir de las $\hat{p}_{g,x}^{2,12}$ observadas, se obtienen las $p_{g,x}^{2,12}$ alisadas, utilizando la metodología de spline cúbicas. Las splines suavizadas abordan el ajuste desde un ángulo diferente, más explícito. Una spline de suavizado cúbico ajustada a nuestros datos es una función $f$ que minimiza la función de residuos mínimos cuadrados penalizados:
+
+\begin{equation}
+PRSS= \sum_{x=15}^{\omega=115} \left(\hat{q}_{x,g}^{2,12}-f(x)\right)^2+\lambda\,\int_{15}^{115} \left(f''(x)\right)^2 \, dx,
+\label{eq:PRSS_12}
+\end{equation}
+
+sobre todas las funciones con primera derivada continua y segunda derivada integrable. Donde $\lambda $ es un parámetro de suavizado que controla la compensación entre la fidelidad a los datos y la rugosidad de la estimación de la función. La solución es una función, una spline cúbica con nudos interiores y de frontera en los valores únicos de $x_i $. Se utilizó para su estimación la función $\text{smooth.spline()}$ del software estadístico R. Para documentación más detallada de este método de suavizamiento revisar \cite{Green1994}.
+
+De igual manera para las tasas de entrada de pensionistas de orfandad, $p_{t,x,g}^{0,15}$, y viudedad, $p_{t,x,g}^{0,16}$. Y, se estima todas las probabilidades de transiciones presentadas en este capítulo, utilizando la metodología de spline cúbica mencionada en la ecuación \ref{eq:PRSS_12}.
+
+Cabe señalar que el número de ingresos de pensionistas de incapacidad parcial, total y absoluta durante el período 2012 a 2020 es 512 registros, de los cuales solo 79 son mujeres. Por lo tanto, por el bajo número de observaciones, es imposible elaborar una tabla dinámica y se decidió elaborar una tabla estática para ambos sexos. De igual manera sucede, con la entrada de orfandad y viudedad que durante el mismo período se registraron ingresos de 2.539 huérfanos y 1.526 beneficiarios de viudedad.
+
+
+{\setlength{\tabcolsep}{8pt}
+{\fontsize{10}{12}\selectfont
+\begin{longtable}[H]{crrr|crrr}
+  \caption{Probabilidad transición a pensionista de incapacidad permanente parcial, absoluta y total; orfandad y viudedad entre la edad $x$ y $x+1$ }\\
+  \label{tab:iess_pen_incap_ent_rtr}\\
+
+  \toprule
+  \multicolumn{4}{c|}{Mujeres} & \multicolumn{4}{c}{Hombres} \\
+  \midrule
+  \multicolumn{1}{c}{$x$} &
+  \multicolumn{1}{c}{$q_{1,x}^{2,12}$ } &
+  \multicolumn{1}{c}{$q_{1,x}^{0,15}$ } &
+  \multicolumn{1}{c}{$q_{1,x}^{0,16}$ } &
+  \multicolumn{1}{c}{$x$} &
+  \multicolumn{1}{c}{$q_{2,x}^{2,12}$ } &
+  \multicolumn{1}{c}{$q_{2,x}^{0,15}$ } &
+  \multicolumn{1}{c}{$q_{2,x}^{0,16}$ }
+  \\ 
+  \midrule
+  \endfirsthead
+
+  \toprule
+  \multicolumn{4}{c|}{Mujeres} & \multicolumn{4}{c}{Hombres} \\
+  \midrule
+  \multicolumn{1}{c}{$x$} &
+  \multicolumn{1}{c}{$q_{1,x}^{2,12}$ } &
+  \multicolumn{1}{c}{$q_{1,x}^{0,15}$ } &
+  \multicolumn{1}{c}{$q_{1,x}^{0,16}$ } &
+  \multicolumn{1}{c}{$x$} &
+  \multicolumn{1}{c}{$q_{2,x}^{2,12}$ } &
+  \multicolumn{1}{c}{$q_{2,x}^{0,15}$ } &
+  \multicolumn{1}{c}{$q_{2,x}^{0,16}$ }
+  \\ 
+  \midrule
+  \endhead
+
+  \bottomrule
+  \multicolumn{8}{r}{continúa...} \\ 
+  \endfoot
+
+  %\bottomrule
+  \caption*{\scriptsize Elaborado: DAIE}
+  \endlastfoot
+  
+    \input{tablas/iess_pen_incap_ent_rtr.tex}
+      
+  \end{longtable}
+}
+}
+
+
+%--------------------------------------------------------------------------------------
+\subsection{Tabla de probabilidad de dejar de percibir una pensión del \Sexpr{REP_seg}}
+
+La probabilidad de morir de un pensionista de incapacidad permanente parcial, absoluta y total entre la edad $x$ y $x+1$, se representa por $q_{x,g}^{12,6}$, donde $g$ es el sexo. En cambio, la probabilidad de sobrevivir entre las edades $x$ y $x+1$ es $p_x^{12,6} = 1 - q_x^{12,6}$. Utilizando datos históricos registrados desde 2012 a 2020 se estima la tasa de mortalidad observada $\hat{q}_{x,g}^{12,6}$ para cada edad ( $x=15,16,\ldots,105$) y cada genero $g$, como se sigue a continuación:
+
+	\[\hat{q}_{x,g}^{12,6} = \frac{\sum_{t=2012}^{2020} l_{t,g,x}^{12,6}}{\sum_{t=2012}^{2020} l_{t,g,x}^{12}},
+\]
+
+donde: $l_{t,g,x}^{12,6}$ es el número de pensionistas de incapacidad permanente parcial, absoluta y total fallecidos en el año $t$, de edad $x$ y genero $g$; y $l_{t,g,x}^{12}$ es el número de pensionistas de incapacidad permanente parcial, absoluta y total registrados en el año $t$, de edad $x$ y genero $g$.
+
+A partir de las $\hat{q}_{g,x}^{12,6}$ observadas, se obtienen las $q_{g,x}^{12,6}$ alisadas, utilizando la metodología de spline suavizado. Las splines suavizadas abordan el ajuste desde un ángulo diferente, más explícito. Una spline de suavizado cúbico ajustada a nuestros datos es una función $f$ que minimiza la función de residuos mínimos cuadrados penalizados:
+
+\begin{equation}
+PRSS= \sum_{x=15}^{\omega=115} \left(\hat{q}_{x,g}^{12,6}-f(x)\right)^2+\lambda\,\int_{15}^{115} \left(f''(x)\right)^2 \, dx,
+\label{eq:PRSS_12}
+\end{equation}
+
+sobre todas las funciones con primera derivada continua y segunda derivada integrable. Donde $\lambda $ es un parámetro de suavizado que controla la compensación entre la fidelidad a los datos y la rugosidad de la estimación de la función. La solución es una función, una spline cúbica con nudos interiores y de frontera en los valores únicos de $x_i $. Se utilizó para su estimación la función $\text{smooth.spline()}$ del software estadístico R. Para documentación más detallada de este método de suavizamiento revisar \cite{Green1994}.
+
+De igual manera, se estima la probabilidad de muerte de un pensionista de viudez del \Sexpr{REP_seg}, $\hat{q}_{x,g}^{16,6}$; y la probabilidad de dejar de percibir una pensión de orfandad, $\hat{q}_{x,g}^{15,0}$. 
+
+Cabe señalar que el número de pensionistas fallecidos de incapacidad parcial, total y absoluta durante el período 2012 a 2020 es 920 registros, de los cuales solo 80 son mujeres. Por lo tanto, por el bajo número de observaciones, se decidió elaborar una tabla estática para ambos sexos.
+
+Además, existe dos grupos de huérfanos del \Sexpr{REP_seg}, el primero de huérfanos menores de 21 años, lo cuales obtuvieron su derecho a partir de la expedición de la \legalcite{ResIESS_CD100} en el año 2006; y el segundo grupo se compone de beneficiarios de hasta 92 años que obtuvieron su derecho antes de la Resolución citada. Durante el período 2012 a 2020, existen 1.004 registros de salidas de huérfanos hombres y 956 salidas de huérfanos mujeres. Por lo tanto, se calculó la tasa de dejar de percibir una pensión de orfandad del SGRT para menores de 21 años; y para los mayores de 21 años se utilizó la tabla de mortalidad dinámica de los afiliados activos al IESS.
+
+Por otro lado, durante el período 2012 a 2020, se registran la muerte de 592 pensionistas viudas y solo 42 viudos, por lo cual, se decide elaborar una solo tabla de mortalidad estática para ambos sexos, debido al bajo número de muestras.
+
+{\setlength{\tabcolsep}{8pt}
+{\fontsize{10}{12}\selectfont
+\begin{longtable}[H]{crrr|crrr}
+  \caption{ Probabilidad de dejar de percibir una pensión del \Sexpr{REP_seg} entre la edad $x$ y $x+1$ }\\
+  \label{tab:iess_pen_incap_mort_rtr}\\
+
+  \toprule
+  \multicolumn{4}{c|}{Mujeres} & \multicolumn{4}{c}{Hombres} \\
+  \midrule
+  \multicolumn{1}{c}{$x$} &
+  \multicolumn{1}{c}{$q_{1,x}^{12,6}$ } &
+  \multicolumn{1}{c}{$q_{1,x}^{15,0}$ } &
+  \multicolumn{1}{c}{$q_{1,x}^{16,6}$ } &
+  \multicolumn{1}{c}{$x$} &
+  \multicolumn{1}{c}{$q_{2,x}^{12,6}$ } &
+  \multicolumn{1}{c}{$q_{2,x}^{15,0}$ } &
+  \multicolumn{1}{c}{$q_{2,x}^{16,6}$ }
+  \\ 
+  \midrule
+  \endfirsthead
+
+  \toprule
+  \multicolumn{4}{c|}{Mujeres} & \multicolumn{4}{c}{Hombres} \\
+  \midrule
+  \multicolumn{1}{c}{$x$} &
+  \multicolumn{1}{c}{$q_{1,x}^{12,6}$ } &
+  \multicolumn{1}{c}{$q_{1,x}^{15,0}$ } &
+  \multicolumn{1}{c}{$q_{1,x}^{16,6}$ } &
+  \multicolumn{1}{c}{$x$} &
+  \multicolumn{1}{c}{$q_{2,x}^{12,6}$ } &
+  \multicolumn{1}{c}{$q_{2,x}^{15,0}$ } &
+  \multicolumn{1}{c}{$q_{2,x}^{16,6}$ }
+  \\ 
+  \midrule
+  \endhead
+
+  \bottomrule
+  \multicolumn{8}{r}{continúa...} \\ 
+  \endfoot
+
+  %\bottomrule
+  \caption*{\scriptsize Elaborado: DAIE}
+  \endlastfoot
+  
+    \input{tablas/iess_pen_incap_mort_rtr.tex}
+      
+  \end{longtable}
+}
+}
+
+\begin{landscape}
+\begin{figure}[H]
+\caption{ Probabilidades de transiciones de pensionistas de incapacidad del \Sexpr{REP_seg} }
+\label{fig:iess_factores_riesgos_incap}
+\centering
+\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_1.pdf}
+\caption*{\scriptsize Elaborado: DAIE}
+\end{figure}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{figure}[H]
+\caption{ Probabilidades de transiciones de pensionistas de orfandad del \Sexpr{REP_seg} }
+\label{fig:iess_factores_riesgos_orf}
+\centering
+\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_4.pdf}
+\caption*{\scriptsize Elaborado: DAIE}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[H]
+\caption{ Probabilidades de transiciones de pensionistas de viudedad del \Sexpr{REP_seg} }
+\label{fig:iess_factores_riesgos_viu}
+\centering
+\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_5.pdf}
+\caption*{\scriptsize Elaborado: DAIE}
+\end{figure}
+\end{landscape}
+
+%---------------------------------------------------------------------------------------------------
+\section{Tabla de factores de riesgo en las prestaciones por indemnizaciones por incapacidad permanente parcial}
+
+En la tabla \ref{tab:iess_factores_riesgos_indm} y la figura \ref{fig:iess_factores_riesgos_indm}, 
+se presentan los factores de riesgo en las prestaciones por incapacidad permanente parcial de 
+siniestralidad, tales como: la tasa de siniestralidad, $p^{2,13}_{g,x}$, y el porcentaje de incapacidad, $\beta^{Indem}_{g,x}$, por incapacidad permanente parcial.
+
+{\setlength{\tabcolsep}{8pt}
+{\fontsize{10}{12}\selectfont
+\begin{longtable}[H]{crr|crr}
+\captionsetup{justification=centering}
+  \caption{Tabla de siniestralidad y porcentaje de incapacidad para las indemnizaciones por 
+  incapacidad permanente parcial}
+  \label{tab:iess_factores_riesgos_indm}\\
+  \toprule
+  \multicolumn{3}{c|}{Mujeres} & \multicolumn{3}{c}{Hombres} \\
+  \midrule
+    \multicolumn{1}{c}{$x$} &
+      \multicolumn{1}{c}{$p^{2,13}_{1,x}$} &
+        \multicolumn{1}{c}{$\beta^{Indem}_{1,x}$} &
+          \multicolumn{1}{c}{$x$} &
+            \multicolumn{1}{c}{$p^{2,13}_{2,x}$} &
+              \multicolumn{1}{c}{$\beta^{Indem}_{2,x}$} \\ 
+  \midrule
+  \endfirsthead
+
+  \toprule
+  \multicolumn{3}{c|}{Mujeres} & \multicolumn{3}{c}{Hombres} \\
+  \midrule
+    \multicolumn{1}{c}{$x$} &
+      \multicolumn{1}{c}{$p^{2,13}_{1,x}$} &
+        \multicolumn{1}{c}{$\beta^{Indem}_{1,x}$} &
+          \multicolumn{1}{c}{$x$} &
+            \multicolumn{1}{c}{$p^{2,13}_{2,x}$} &
+              \multicolumn{1}{c}{$\beta^{Indem}_{2,x}$} \\ 
+  \midrule
+  \endhead
+
+  \bottomrule
+  \multicolumn{6}{r}{continúa...} \\ 
+  \endfoot
+
+  %\bottomrule
+  \caption*{\scriptsize Elaborado: DAIE}
+  \endlastfoot
+  
+    \input{tablas/iess_indem_sinies_rtr.tex}
+      
+  \end{longtable}
+}
+}
+
+\clearpage
+
+\begin{landscape}
+\begin{figure}[H]
+\caption{Siniestralidad y porcentaje de incapacidad para las indemnizaciones por incapacidad permanente parcial}
+\label{fig:iess_factores_riesgos_indm}
+\centering
+\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_2.pdf}
+\caption*{\scriptsize Elaborado: DAIE}
+\end{figure}
+\end{landscape}
+
+%---------------------------------------------------------------------------------------------------
+\section{Tabla de factores de riesgo en los subsidios por incapacidad temporal}
+
+En la tabla \ref{tab:iess_factores_riesgos_subs} y la figura \ref{fig:iess_factores_riesgos_subs}, se presentan los factores de riesgo en las prestaciones por incapacidad temporal, tales como: la tasa de siniestralidad, $p^{2,14}_{g,x}$, el porcentaje de incapacidad temporal, $\beta^{Indem}_{1,x}$ y duración (en días) de los subsidios por incapacidad temporal, $d_{g,x}$.
+
+{\setlength{\tabcolsep}{8pt}
+{\fontsize{10}{12}\selectfont
+\begin{longtable}[H]{crrr|crrr}
+\captionsetup{justification=centering}
+  \caption{Tabla de siniestralidad, porcentajes de incapacidad temporal y duración de los 
+  subsidios por incapacidad temporal}
+  \label{tab:iess_factores_riesgos_subs}\\
+  \toprule
+  \multicolumn{4}{c|}{Mujeres} & \multicolumn{4}{c}{Hombres} \\
+  \midrule
+      \multicolumn{1}{c}{$x$} &
+          \multicolumn{1}{c}{$p^{2,14}_{1,x}$} &
+              \multicolumn{1}{c}{$\beta^{Subs}_{1,x}$} &
+                  \multicolumn{1}{c}{$d_{1,x}$} &
+                      \multicolumn{1}{c}{$x$} &
+                          \multicolumn{1}{c}{$p^{2,14}_{2,x}$} &
+                              \multicolumn{1}{c}{$\beta^{Subs}_{2,x}$} & 
+                                  \multicolumn{1}{c}{$d_{2,x}$} \\ 
+  \midrule
+  \endfirsthead
+
+  \toprule
+  \multicolumn{4}{c|}{Mujeres} & \multicolumn{4}{c}{Hombres} \\
+  \midrule
+      \multicolumn{1}{c}{$x$} &
+          \multicolumn{1}{c}{$p^{2,14}_{1,x}$} &
+              \multicolumn{1}{c}{$\beta^{Subs}_{1,x}$} &
+                  \multicolumn{1}{c}{$d_{1,x}$} &
+                      \multicolumn{1}{c}{$x$} &
+                          \multicolumn{1}{c}{$p^{2,14}_{2,x}$} &
+                              \multicolumn{1}{c}{$\beta^{Subs}_{2,x}$} & 
+                                  \multicolumn{1}{c}{$d_{2,x}$} \\   
+  \midrule
+  \endhead
+
+  \bottomrule
+  \multicolumn{8}{r}{continúa...} \\ 
+  \endfoot
+
+  %\bottomrule
+  \caption*{\scriptsize Elaborado: DAIE}
+  \endlastfoot
+  
+    \input{tablas/iess_subs_sinies_rtr.tex}
+      
+  \end{longtable}
+}
+}
+
+\begin{landscape}
+\begin{figure}[H]
+\caption{Siniestralidad, porcentajes de incapacidad temporal y duración de los subsidios por 
+incapacidad temporal}
+\label{fig:iess_factores_riesgos_subs}
+\centering
+\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_3.pdf}
+\caption*{\scriptsize Elaborado: DAIE}
+\end{figure}
+\end{landscape}

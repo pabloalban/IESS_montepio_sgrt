@@ -1,0 +1,124 @@
+%---------------------------------------------------------------------------------------------------
+\chapter{Conceptos básicos}
+\label{chp_conceptos_basicos}
+
+%---------------------------------------------------------------------------------------------------
+\section{Análisis de supervivencia}
+%---------------------------------------------------------------------------------------------------
+\subsection{La función de supervivencia}
+Considerando a un recién nacido, sea $\xi$ su tiempo futuro de vida, una variable aleatoria que toma valores en $[0, +\infty)$. Sí $f$ es la función de densidad de $\xi$, su función de distribución acumulada $F$ se define por:
+\begin{align*}
+    F(x) = P(\xi \leq x), && \text{para cada }x \geq 0,
+\end{align*}
+que se interpreta como la probabilidad de morir antes de $x$ años. A partir de $F$ se define a la función de supervivencia $S$ por:
+\begin{align*}
+    S(x) = P(\xi > x) = 1 - F(x), && \text{para cada }x \geq 0,
+\end{align*}
+que se interpreta como la probabilidad de que un recién nacido sobreviva a la edad $x$. Nótese que $S(0)=1$ y $S(\omega) = 0$, dónde $\omega$ representa a la máxima edad a la que una persona sobrevive.
+
+Se define a la fuerza de mortalidad, o densidad condicional de fallar en $x$ dado que se sobrevive a la edad $x$, por:
+\begin{align*}
+    \mu(x) = \dfrac{f(x)}{S(x)} = - \dfrac{1}{S(x)}\dfrac{d}{dx}S(x) = - \dfrac{d}{dx}\ln\l(S(x)\r), && \text{para cada }x \geq 0.
+\end{align*}
+Que se interpreta como la probabilidad de morir entre las edades $x$ y $x + \Delta t$ dado que se tiene edad $x$, esto es, de morir en un tiempo infinitesimal, razón por la cual se la denomina por probabilidad instantánea de muerte.
+
+Dadas las funciones de supervivencia y la fuerza de mortalidad se verifica que:
+\begin{align*}
+    S(x) = \exp{\l(- \int_{0}^{x}{\mu_ydy}\r)}, && \text{para cada }x \geq 0.
+\end{align*}
+%---------------------------------------------------------------------------------------------------
+\subsection{Probabilidades condicionales}
+Dado un individuo de edad $x$, se define a su tiempo de vida futura $T(x)$ por:
+\begin{align*}
+    T(x) = \xi - x && \text{para cada }x \geq 0.
+\end{align*}
+Nótese que $T(x)$ representa el tiempo que sobrevive un individuo que alcanza la edad $x$ o equivalentemente, el tiempo que le resta para alcanzar la muerte.
+
+La probabilidad de sobrevivir $t$ años más dado que ha sobrevivido a la edad $x$ se denota por $\px[t]{x}$ y se define por:
+\begin{align*}
+    \px[t]{x} = P(T(x) > t), && \text{para cada }t\geq0.
+\end{align*}
+Para su deducción se tiene que:
+\begin{equation*}
+    \px[t]{x} = P(\xi > x + t| \xi > x) = S(x+t|\xi > x) = \dfrac{S(x + t)}{S(x)}.
+\end{equation*}
+La probabilidad de muerte antes de $t$ años, dado que ha sobrevivido a la edad $x$ se denota por $\qx[t]{x}$ y se define por:
+\begin{align*}
+    \qx[t]{x} = P(T(x) \leq t), && \text{para cada }t\geq0.
+\end{align*}
+Para su deducción se tiene que:
+\begin{equation*}
+    \qx[t]{x} = P(\xi \leq x| \xi > x) = \dfrac{P(x < \xi \leq x + t)}{P(\xi > x)} = \dfrac{S(x) - S(x + t)}{S(x)}
+\end{equation*}
+de lo cual se sigue que $\qx[t]{x} = 1 - \px[t]{x}$.
+%---------------------------------------------------------------------------------------------------
+\section{Sobre las tablas de mortalidad}
+%---------------------------------------------------------------------------------------------------
+\subsection{Un poco de historia}
+Según lo expresa Debón (2003): \textit{``Una tabla de mortalidad es una abstracción matemática que representa un modelo de comportamiento de la evolución y constante decrecimiento de un colectivo, construido a partir de las observaciones de un colectivo real.''}
+
+En el marco histórico de la construcción de tablas de mortalidad, John Graunt en 1662, publica una tabla de mortalidad basándose en registros de defunciones de las parroquias de Londres, en donde estimó la población sobreviviente por edad.
+
+Edmund Halley en 1693, construye tablas de mortalidad para la ciudad de Breslau basado en el registro de nacimientos y muertes para el periodo de 1687 a 1691, para la construcción de la tabla de mortalidad Halley asumió que la población de Breslau permaneció estable.
+
+La primera tabla de mortalidad elaborada científicamente y considerada correcta se basó tanto en la información de la población como en la muerte clasificada por edad siendo elaborada por Milne y publicada en 1815. Esta tabla de mortalidad se sustentaba en la experiencia de mortalidad de dos parcelas en la ciudad de Carlisle, Inglaterra, durante el periodo de 1779 a 1787.
+%---------------------------------------------------------------------------------------------------
+\subsection{Hipótesis para la construcción de tablas de mortalidad}
+Para la construcción de una tabla de mortalidad se han de hacer supuestos, en realidad tres, los dos primeros cuando se construyen tablas de mortalidad dinámicas y los tres cuando se construyen tablas de mortalidad estáticas.
+\begin{enumerate}
+\item \textbf{Principio de Homogeneidad.} Todos los individuos del grupo son equivalentes, es decir, la función de distribución  de la variable aleatoria edad de defunción $\xi$, es la misma para todos los individuos que pertenecen a una misma cohorte la cual difiere por sexo.
+\item \textbf{Principio de Independencia.} Los individuos que integran un grupo determinado se definen como variables estocásticamente independientes, es decir que el evento de que un individuo sobreviva o no a una determinada edad, tiene una probabilidad que no depende de la supervivencia de cualquier otro individuo de la cohorte.
+\item \textbf{Principio de estacionalidad.} Las funciones biométricas no se ven afectadas por el tiempo cronológico.
+\end{enumerate}
+%---------------------------------------------------------------------------------------------------
+\subsection{Tipos y clasificación de tablas de mortalidad}
+Una tabla de mortalidad reporta información referente a diversas edades o grupos de edad correspondiente a determinados periodos de tiempo. A continuación, se presentan algunos tipos de tablas y su respectiva clasificación. Adicionalmente, es importante notar que una tabla de mortalidad es comúnmente construida para hombres y para mujeres por separado.
+\begin{enumerate}
+\item \textbf{Por el periodo de tiempo o de referencia}
+\begin{enumerate}
+\item De generación: Se corresponden al concepto original de tabla de mortalidad. Para su construcción se sigue a una generación o cohorte de personas a lo largo del tiempo, este seguimiento debe ser realizado hasta la extinción de esta, lo que provoca que su construcción no sea factible en primera instancia debido a no siempre se cuenta con toda la información disponible.
+\item De periodo o de momento: Este tipo de tabla se basa en la experiencia de mortalidad que ha sido observada durante un periodo de tiempo, por distintas generaciones o cohortes de una población determinada. En este caso la población se conforma por diferentes cohortes, y se la denomina cohorte hipotética de personas.
+\end{enumerate}
+\item \textbf{Por la extensión de los intervalos de edad}
+\begin{enumerate}
+\item Tablas completas: Este tipo de tabla presenta información para cada edad.
+\item Tablas abreviadas: En estas tablas los cálculos se realizan para grupos de edad, siendo los más comunes los quinquenales.
+\end{enumerate}
+\item \textbf{Por el tiempo de utilidad}
+\begin{enumerate}
+\item Tablas estáticas: Estas tablas consideran que las funciones biométricas calculadas solamente dependen de la edad y del tiempo de referencia más no del tiempo cronológico, es decir se asume un principio de estacionariedad.
+\item Tablas dinámicas: Estas tablas consideran que las funciones biométricas se verán afectas por el paso del tiempo cronológico.
+\end{enumerate}
+\end{enumerate}
+
+%Una tabla de mortalidad permite conocer la función de distribución de probabilidad de $K_x$ junto con funciones biométricas que pueden depender de la edad $x$, con $x = x_1, \ldots, x_m$, y a la vez del tiempo cronológico $t$, con $t = t_1, \ldots, t_n$. 
+En la Tabla \ref{cap1_tmd} se presenta la estructura de una tabla de mortalidad dinámica la cual ha sido construida a partir de diferentes tablas estáticas.
+
+\begin{table}[H]
+    \centering
+    \caption{Tabla de mortalidad dinámica}
+    \begin{tabular}{r|r|r|r|r|r|r|}
+    \hline
+    Cohorte  & $x_1$         & $x_2$         & $x_3$         & $\cdots$ & $x_m$        \\ \hline
+                        $t_1$    & $q_{t_1,x_1}$ & $q_{t_1,x_2}$ & $q_{t_1,x_3}$ & $\cdots$ & $q_{t_1,x_m}$\\ \hline
+                        $t_2$    & $q_{t_2,x_1}$ & $q_{t_2,x_2}$ & $q_{t_2,x_3}$ & $\cdots$ & $q_{t_2,x_m}$\\ \hline
+                        $t_3$    & $q_{t_3,x_1}$ & $q_{t_3,x_2}$ & $q_{t_3,x_3}$ & $\cdots$ & $q_{t_3,x_m}$\\ \hline
+                        $\vdots$ & $\vdots$      & $\vdots$      & $\vdots$      & $\ddots$ & $\vdots$     \\ \hline
+                        $t_n$    & $q_{t_n,x_1}$ & $q_{t_n,x_2}$ & $q_{t_n,x_3}$ & $\cdots$ & $q_{t_n,x_m}$\\ \hline
+    \end{tabular}
+    \label{cap1_tmd}
+    \caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+En donde cada columna varía conforme el tiempo cronológico lo hace y representa la dinámica de la mortalidad para individuos de $x$ años de edad. Cada fila representa una tabla estática calculada para el año cronológico $t$; cada diagonal representa la tabla de mortalidad para una cohorte, es decir la tabla de mortalidad correspondiente a la generación de año $t$.
+%---------------------------------------------------------------------------------------------------
+\subsection{Estructura de una tabla de mortalidad}
+Dado un grupo de recién nacidos ficticio de tamaño $l_0$, denominado cohorte inicial, dada una edad inicial $x_0$ y dada una edad máxima $\omega$, la estructura considerada para una tabla de mortalidad estática completa es la siguiente:
+
+\begin{description}
+\item[] $x$: representa a la edad que toma valores $\{x_0, \ldots, \omega\}$.
+\item[] $l_x$: representa el número de sobrevivientes a la edad $x$, determinadas a partir de una cohorte inicial de $l_0$ recién nacidos, por lo general la cohorte inicial toma como valor una potencia de 10.
+\item[] $d_x$: representa el número de personas que fallecen entre las edades $x$ y $x + 1$ a partir de los $l_0$ individuos iniciales.
+\item[] $q_x$: representa la probabilidad de que un individuo de edad $x$ muera antes de la edad $x + 1$.
+\item[] $p_x$: representa la probabilidad de que un individuo de edad $x$ sobreviva hasta la edad $x + 1$.
+\item[] $e_x$: representa la esperanza de vida a la edad $x$.
+\end{description}

@@ -1,0 +1,377 @@
+%---------------------------------------------------------------------------------------------------
+\chapter{Análisis de la información}
+\label{chp_analisis_informacion}
+
+%---------------------------------------------------------------------------------------------------
+\section{Bases de datos}
+Para la elaboración de las tablas biométricas se han consultaron las siguientes tablas:
+
+\begin{table}[H]
+    \centering
+    \caption{Tablas consultadas para la construcción de tablas biométricas}
+    \begin{tabular}{ *{2}{c}}
+    \toprule
+    \bf{Afiliados} & \bf{Pensionistas }\\ 
+    \midrule
+    ksrectplanillas & prestaciones	\\ 
+    ksrectpladet & beneficiarios	\\ 
+    kspcotemptip & rol\_periodo	\\
+    kspcotregciv & 	\\ \bottomrule
+    \end{tabular}
+    \label{tab:tablas_consultadas}
+    \caption*{\scriptsize {\bf Fuente:} Bases de datos del IESS y de Registro Civil.}
+    \caption*{\scriptsize {\bf Elaborado por:} DAIE.}
+\end{table}
+
+Todas las tablas tienen fecha corte el 31 de diciembre de 2022 y fecha de extracción el 27 de enero de 2023. A partir de las bases consultadas se procedio a construir una base para afiliados y otra para pensionistas.
+
+La base para afiliados se compone de los siguientes campos:
+
+\begin{itemize}
+\item cdla: indica el número codificado de la  cédula del afiliado;
+\item sexo: indica el sexo del afiliado;
+\item fec\_nac: indica la fecha de nacimiento del afiliado;
+\item fec\_dec: indica la fecha de muerte del afiliado;
+\item fec\_inv: indica la fecha de derecho para la jubilación por invalidez para cada afiliado, no todos los registros cuentan con este valor;
+\item fec\_vej: indica la fecha de derecho para la jubilación por vejez para cada afiliado, no todos los registros cuentan con este valor;
+\item fec\_dis: indica la fecha de derecho para la jubilación por discapacidad para cada afiliado, no todos los registros cuentan con este valor;
+\item fec\_viu: indica la fecha de derecho para la prestación por viudedad para cada afiliado, no todos los registros cuentan con este valor;
+\item fec\_orf:  indica la fecha de derecho para la prestación por orfandad para cada afiliado, no todos los registros cuentan con este valor;
+\item MAAAA\_Y: indica el número de días que el afiliado labora durante el mes Y del año AAAA, con $\text{Y}\in\{1, \ldots, 12\}$ y $\text{AAAA}\in\{2012, \ldots, 2020\}$.
+\end{itemize}
+
+La base para jubilados y pensionistas se compone de los siguientes campos:
+
+\begin{itemize}
+\item cdla: indica el número codificado de la cédula del pensionista;
+\item tipo: indica el tipo de prestación, pudiendo ser: pensionista por invalidez, pensionista por vejez, pensionista por discapacidad, pensionista por viudedad y pensionista por orfandad;
+\item sexo: indica el sexo del pensionista;
+\item fec\_nac: indica la fecha de nacimiento del pensionista;
+\item fec\_dec: indica la fecha de muerte del pensionista;
+\item MAAAA\_Y: indica si el pensionita aparece en el sistema durante el mes Y del año AAAA, con $\text{Y}\in\{1, \ldots, 12\}$ y $\text{AAAA}\in\{2012, \ldots, 2020\}$, tomando el valor 1 si aparece y 0 en caso contrario.
+\end{itemize}
+
+La base que corresponde a afiliados se denomina \textit{sgo\_act\_tran} y se compone de 6.861.203 registros, mientras que la base para pensionistas se denomina \textit{sgo\_pen\_tran} y compone de 831.169 registros. En la siguiente tabla se observa un resumen de algunos campos de estas bases.
+
+\begin{table}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Resumen bases de datos}
+\label{tab:iess_mort_resumen_bases}
+{\fontsize{10}{12}\selectfont
+\begin{tabular}{rrrrr}
+\toprule
+Base	& Hombres  & Mujeres & Total \\
+\midrule
+\textit{sgo\_act\_tran} & 3.875.218 & 2.985.985 & 6.861.203 \\
+\textit{sgo\_pen\_tran} & 400.542 & 430.627 & 831.169 \\ \bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize {\bf Fuente:} Datos administrativos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{table}
+
+%---------------------------------------------------------------------------------------------------
+\section{Análisis de los datos}
+En esta sección se presenta el análisis para cada grupo poblacional de la cantidad de individuos expuestos al riesgo y el número de muertes. Adicionalmente, para cada año del período de observación se presenta el porcentaje de casos observados de la contingencia sobre el valor de la exposición al riesgo, este porcentaje se denotada por $r_t$ y se calcula como:
+\[
+    r_t = 100\%\cdot\dfrac{d_t}{E_t}.
+\]
+\newpage
+Donde:
+\begin{itemize}
+\item $t$: Es el año de observación.
+\item $d_t$: Es la suma del número de muertes observadas para todo el año $t$.
+\item $E_t$: Es la suma de la exposición al riesgo para todo el año $t$.
+\end{itemize}
+%---------------------------------------------------------------------------------------------------
+\subsection{Afiliados activos}
+Para el caso de afiliados activos hombres, en la tabla \ref{tab:iess_afi_act_h}, para el período de observación 2012-2020 se observa que la edad promedio de exposición al riesgo es igual a 38,3 años, la edad promedio de muerte es igual a 52,8 años, el valor de la exposición al riesgo presenta una tasa de crecimiento del 5,67\%, el número de muertes tiene una tasa de crecimiento del 22,78\%, mientras que el valor del porcentajes de casos observados sobre la exposición tiene una tasa de crecimiento igual al 15,93\%.
+
+\begin{table}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Afiliados activos hombres tabulados por año}
+\label{tab:iess_afi_act_h}
+{\fontsize{10}{12}\selectfont
+\begin{tabular}{rrrr}
+\toprule
+Año	& Exposición  & Contingencias & Porcentaje \\
+\midrule
+\input{tablas/iess_sgo_afi_act_est_h_2012_2020.tex}
+\bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize {\bf Fuente:} Datos administrativos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{table}
+
+Para el caso de afiliados activos mujeres, en la tabla \ref{tab:iess_afi_act_m}, para el período de observación 2012-2020 se observa que la edad promedio de exposición al riesgo es igual a 38,8 años, la edad promedio de muerte es igual a 56,7 años, el valor de la exposición al riesgo presenta una tasa de crecimiento del 7,19\%, el número de muertes tiene una tasa de crecimiento del 23,97\%, mientras que el valor del porcentajes de casos observados sobre la exposición tiene una tasa de crecimiento igual al 15,74\%.
+
+\begin{table}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Afiliados activos mujeres tabulados por año}
+\label{tab:iess_afi_act_m}
+{\fontsize{10}{12}\selectfont
+\begin{tabular}{rrrr}
+\toprule
+Año	& Exposición  & Contingencias & Porcentaje \\
+\midrule
+\input{tablas/iess_sgo_afi_act_est_m_2012_2020.tex}
+\bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize {\bf Fuente:} Datos administrativos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{table}
+
+En la figura \ref{fig:iess_afi_act} se observa el comportamiento histórico del porcentaje de casos observados respecto al valor de la exposición al riesgo para afiliados activos, con un crecimiento notable en el año 2020 que corresponde a la pandemia del COVID-19.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Evolución de $r_t$ por año para afiliados activos}
+\label{fig:iess_afi_act}
+\includegraphics[scale=0.8]{graficos/iess_afi_rt.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Pensionistas por vejez}
+Para el caso de pensionistas por vejez hombres, en la tabla \ref{ttab:iess_pen_vej_h}, para el período de observación 2012-2020 se observa que la edad promedio de exposición al riesgo es igual a 72,9 años, la edad promedio de muerte es igual a 80,2 años, el valor de la exposición al riesgo presenta una tasa de crecimiento del 8,03\%, el número de muertes tiene una tasa de crecimiento del 15,10\%, mientras que el valor del porcentajes de casos observados sobre la exposición tiene una tasa de crecimiento igual al $6,54\%$.
+
+\begin{table}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Pensionistas por vejez hombres tabulados por año}
+\label{tab:iess_pen_vej_h}
+{\fontsize{10}{12}\selectfont
+\begin{tabular}{rrrr}
+\toprule
+Año	& Exposición  & Contingencias & Porcentaje \\
+\midrule
+\input{tablas/iess_sgo_pen_vej_est_h_2012_2020.tex}
+\bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize {\bf Fuente:} Datos administrativos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{table}
+
+Para el caso de pensionistas por vejez mujeres, en la tabla \ref{tab:iess_pen_vej_m}, para el período de observación 2012-2020 se observa que la edad promedio de exposición al riesgo es igual a 72,4 años, la edad promedio de muerte es igual a 81,7 años, el valor de la exposición al riesgo presenta una tasa de crecimiento del 8,92\%, el número de muertes tiene una tasa de crecimiento del 11,58\%, mientras que el valor del porcentajes de casos observados sobre la exposición tiene una tasa de crecimiento igual al $2,46\%$.
+
+\begin{table}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Pensionistas por vejez mujeres tabulados por año}
+\label{tab:iess_pen_vej_m}
+{\fontsize{10}{12}\selectfont
+\begin{tabular}{rrrr}
+\toprule
+Año	& Exposición  & Contingencias & Porcentaje \\
+\midrule
+\input{tablas/iess_sgo_pen_vej_est_m_2012_2020.tex}
+\bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize {\bf Fuente:} Datos administrativos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{table}
+
+En la figura \ref{fig:iess_pen_vej} se observa el comportamiento histórico del porcentaje de casos observados respecto al valor de la exposición al riesgo para pensionistas por vejez, con un leve decrecimiento en casi todo el período con un crecimiento en el año 2020 que corresponde a la pandemia del COVID-19.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Evolución de $r_t$ por año para pensionistas por vejez}
+\label{fig:iess_pen_vej}
+\includegraphics[scale=0.8]{graficos/iess_vej_rt.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+%---------------------------------------------------------------------------------------------------
+\subsection{Pensionistas por invalidez}
+Para el caso de pensionistas por invalidez hombres, en la tabla \ref{tab:iess_pen_inv_h}, para el período de observación 2012-2020 se observa que la edad promedio de exposición al riesgo es igual a 62,3 años, la edad promedio de muerte es igual a 66,9 años, el valor de la exposición al riesgo presenta una tasa de crecimiento del 10,90\%, el número de muertes tiene una tasa de crecimiento del 15,95\%, mientras que el valor del porcentajes de casos observados sobre la exposición tiene una tasa de crecimiento igual al $4,54\%$.
+
+\begin{table}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Pensionistas por invalidez hombres tabulados por año}
+\label{tab:iess_pen_inv_h}
+{\fontsize{10}{12}\selectfont
+\begin{tabular}{rrrr}
+\toprule
+Año	& Exposición  & Contingencias & Porcentaje \\
+\midrule
+\input{tablas/iess_sgo_pen_inv_est_h_2012_2020.tex}
+\bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize {\bf Fuente:} Datos administrativos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{table}
+
+Para el caso de pensionistas por invalidez mujeres, en la tabla \ref{tab:iess_pen_inv_m}, para el período de observación 2012-2020 se observa que la edad promedio de exposición al riesgo es igual a 62,4 años, la edad promedio de muerte es igual a 66,1 años, el valor de la exposición al riesgo presenta una tasa de crecimiento del 12,55\%, el número de muertes tiene una tasa de crecimiento del 12,93\%, mientras que el valor del porcentajes de casos observados sobre la exposición tiene una tasa de crecimiento igual al $0,18\%$.
+
+\begin{table}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Pensionistas por invalidez mujeres tabulados por año}
+\label{tab:iess_pen_inv_m}
+{\fontsize{10}{12}\selectfont
+\begin{tabular}{rrrr}
+\toprule
+Año	& Exposición  & Contingencias & Porcentaje \\
+\midrule
+\input{tablas/iess_sgo_pen_inv_est_m_2012_2020.tex}
+\bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize {\bf Fuente:} Datos administrativos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{table}
+
+En la figura \ref{fig:iess_pen_inv} se observa el comportamiento histórico del porcentaje de casos observados respecto al valor de la exposición al riesgo para pensionistas por invalidez, que presenta un decrecimiento que cambia en un crecimiento en el año 2020 que corresponde a la pandemia del COVID-19.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Evolución de $r_t$ por año para pensionistas por invalidez}
+\label{fig:iess_pen_inv}
+\includegraphics[scale=0.8]{graficos/iess_inv_rt.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+%---------------------------------------------------------------------------------------------------
+\subsection{Pensionistas por viudedad}
+Para el caso de pensionistas por viudedad hombres, en la tabla \ref{tab:iess_pen_viu_h}, para el período de observación 2012-2020 se observa que la edad promedio de exposición al riesgo es igual a 70,6 años, la edad promedio de muertes es igual a 82,9 años, el valor de la exposición al riesgo presenta una tasa de crecimiento del 36,66\%, el número de muertes tiene una tasa de crecimiento del 38,78\%, mientras que el valor del porcentajes de casos observados sobre la exposición tiene una tasa de crecimiento igual al $1,54\%$.
+
+\begin{table}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Pensionistas por viudedad hombres tabulados por año}
+\label{tab:iess_pen_viu_h}
+{\fontsize{10}{12}\selectfont
+\begin{tabular}{rrrr}
+\toprule
+Año	& Exposición  & Contingencias & Porcentaje \\
+\midrule
+\input{tablas/iess_sgo_pen_viu_est_h_2012_2020.tex}
+\bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize {\bf Fuente:} Datos administrativos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{table}
+
+Para el caso de pensionistas por viudedad mujeres, en la tabla \ref{tab:iess_pen_viu_m}, para el período de observación 2012-2020 se observa que la edad promedio de exposición al riesgo es igual a 70,8 años, la edad promedio de muertes es igual a 84,4 años, el valor de la exposición al riesgo presenta una tasa de crecimiento del 4,51\%, el número de salidas del sistema por muerte tiene una tasa de crecimiento del 9,19\%, mientras que el valor del porcentajes de casos observados sobre la exposición tiene una tasa de crecimiento igual al 4,47\%.
+
+\begin{table}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Pensionistas por viudedad mujeres tabulados por año}
+\label{tab:iess_pen_viu_m}
+{\fontsize{10}{12}\selectfont
+\begin{tabular}{rrrr}
+\toprule
+Año	& Exposición  & Contingencias & Porcentaje \\
+\midrule
+\input{tablas/iess_sgo_pen_viu_est_m_2012_2020.tex}
+\bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize {\bf Fuente:} Datos administrativos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{table}
+
+En la figura \ref{fig:iess_pen_viu} se observa el comportamiento histórico del porcentaje de casos observados respecto al valor de la exposición al riesgo para pensionistas por viudedad, con un crecimiento notable en el año 2020 que corresponde a la pandemia del COVID-19. Es importante notar la similitud entre mujeres y población total, con la diferencia marcada con los hombres, lo que puede deberse a la cantidad de estos, minoría, respecto al total.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Evolución de $r_t$ por año para pensionistas por viudedad}
+\label{fig:iess_pen_viu}
+\includegraphics[scale=0.8]{graficos/iess_viu_rt.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+%---------------------------------------------------------------------------------------------------
+\subsection{Pensionistas por orfandad}
+Para el caso de pensionistas por orfandad hombres, en la tabla \ref{tab:iess_pen_orf_h}, para el período de observación 2012-2020 se observa que la edad promedio de exposición al riesgo es igual a 24,4 años, la edad promedio de muertes es igual a 55,3 años, el valor de la exposición al riesgo presenta una tasa de crecimiento del 3,08\%, el número de muertes tiene una tasa de crecimiento del 15,18\%, mientras que el valor del porcentajes de casos observados sobre la exposición tiene una tasa de crecimiento igual al 11,91\%.
+
+\begin{table}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Pensionistas por orfandad hombres tabulados por año}
+\label{tab:iess_pen_orf_h}
+{\fontsize{10}{12}\selectfont
+\begin{tabular}{rrrr}
+\toprule
+Año	& Exposición  & Contingencias & Porcentaje \\
+\midrule
+\input{tablas/iess_sgo_pen_orf_est_h_2012_2020.tex}
+\bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize {\bf Fuente:} Datos administrativos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{table}
+
+Para el caso de pensionistas por orfandad mujeres, en la tabla \ref{tab:iess_pen_orf_m}, para el período de observación 2012-2020 se observa que la edad promedio de exposición al riesgo es igual a 48,0 años, la edad promedio de muertes es igual a 78,6 años, el valor de la exposición al riesgo presenta una tasa de decrecimiento del $-0,03\%$, el número de muertes tiene una tasa de crecimiento del 7,19\%, mientras que el valor del porcentajes de casos observados sobre la exposición tiene una tasa de crecimiento igual al 7,25\%.
+
+\begin{table}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Pensionistas por orfandad mujeres tabulados por año}
+\label{tab:iess_pen_orf_m}
+{\fontsize{10}{12}\selectfont
+\begin{tabular}{rrrr}
+\toprule
+Año	& Exposición  & Contingencias & Porcentaje \\
+\midrule
+\input{tablas/iess_sgo_pen_orf_est_m_2012_2020.tex}
+\bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize {\bf Fuente:} Datos administrativos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{table}
+
+En la figura \ref{fig:iess_pen_orf} se observa el comportamiento histórico del porcentaje de casos observados respecto al valor de la exposición al riesgo para pensionistas por orfandad, con un crecimiento notable en el año 2020 que corresponde a la pandemia del COVID-19. Es importante notar la similitud entre mujeres y población total, con la diferencia marcada con los hombres, lo que puede deberse a la cantidad de estos, minoría, respecto al total.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Evolución de $r_t$ por año para pensionistas por orfandad}
+\label{fig:iess_pen_orf}
+\includegraphics[scale=0.8]{graficos/iess_orf_rt.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS\\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+% %---------------------------------------------------------------------------------------------------
+\section{Preparación de los datos}
+Se inició realizando una limpieza de los datos y se procedió a crear tabulados, por sexo y por edad para cada grupo poblacional, se consideraron diferentes rangos de edad de acuerdo a cada grupo. Para cada caso se procedió a determinar los siguientes tabulados:
+ 
+\begin{description}
+\item[] $ER_{i,t,x}^{j,6}$: La exposición al riesgo de muerte para el sexo $i$ a la edad $x$ para el año $t$ para el grupo poblacional $j$.
+\item[] $N_{i,t,x}^{j,6}$: El número de muertes observadas para el sexo $i$ a la edad $x$ para el año $t$ para el grupo poblacional $j$.
+\item[] $\mu_{i,t,x}^{j,6}$: La fuerza de mortalidad para el sexo $i$ a la edad $x$ para el año $t$ para el grupo poblacional $j$.
+\end{description}
+ 
+Donde:
+
+\begin{itemize}
+\item $i$: indica indica el sexo, siendo: 1 para hombre y 2 para mujer.
+\item $t$: indica indica el año, con $t\in\{2012, \ldots, 2020\}$.
+\item $x$: indica la edad, con $x\in\{x_0, \ldots, \omega\}$.
+\item $j$: indica el grupo poblacional, con:
+   \begin{itemize}
+       \item 2 para afiliados activos;
+       \item 4 para pensionistas por vejez;
+       \item 5 para pensionistas por invalidez;
+       \item 7 para pensionistas por viudedad;
+       \item 8 para pensionista por orfandad.
+   \end{itemize}
+\end{itemize}

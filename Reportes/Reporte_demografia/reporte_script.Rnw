@@ -1,0 +1,24 @@
+\documentclass[12pt, a4paper, twoside, openany]{book}
+\input{\Sexpr{REP_style}}
+%\input{\Sexpr{REP_style_math}}
+%---------------------------------------------------------------------------------------------------
+%\SetWatermarkText{\Sexpr{REP_watermark}}
+ \SetWatermarkText{}
+%\SetWatermarkScale{0.30}
+%\SetWatermarkColor[gray]{0.9}
+
+\pagenumbering{arabic}
+\setcounter{page}{326}
+\begin{document}
+
+\pagestyle{repstylescripivm}
+
+\makeatletter
+
+%\input{ tablas/iess_input_script.tex }
+
+\input{ tablas/iess_input_script_sql.tex }
+
+\makeatother
+
+\end{document}

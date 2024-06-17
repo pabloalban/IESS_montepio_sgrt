@@ -1,0 +1,229 @@
+%---------------------------------------------------------------------------------------------------
+\chapter{Metodología}
+\label{chp_metodologia}
+
+%---------------------------------------------------------------------------------------------------
+\section{Estimación y suavizado de las probabilidades brutas}
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Exposición al riesgo y número de contingencias}
+Considerando el intervalo de edad $[x,x+1)$ de cual suponemos que se compone de $n_x$ individuos, dado un individuo $i$, para determinar su aporte individual a la exposición al riesgo de muerte, el individuo es observado desde la edad $x + a_i$ hasta la edad $x+b_i$, donde $0 \leq a_i < b_i \leq 1$, su exposición al riesgo de muerte es la amplitud del período en el que se encuentra en observación, es decir, la exposición al riesgo de cada individuo se calcula por $b_i - a_i$. De esta forma, la exposición total al riesgo de muerte de todo el colectivo se denota por $ER_x$ y se calcula como:
+\begin{equation}
+\label{exposicion}
+    ER_x = \sum_{i = 1}^{n_x}{(b_i - a_i)}.
+\end{equation}
+Denotemos por $d_x$ el número de muertes observadas de los $n_x$ individuos que componen el intervalo de edad durante el período de observación.
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Estimación de probabilidades brutas}
+Dada una edad $x$, para obtener la estimación de las probabilidades brutas se supone que la fuerza de mortalidad es constante $\mu(x+u) = \mu_{x+u}=\mu_{x}$ para cada $u\in]0,1[$. Considerando el valor de la exposición al riesgo, valor que puede modificarse a lo largo del estudio, se tiene que $D_x$ la variable aleatoria que representa el número muertes dentro del período de observación en el intervalo de edad dado, sigue una distribución Poisson con media y varianza igual a $ER_x \mu_{x}$.
+
+De esta forma, si se han observado $d_x$ muertes, la función de verosimilitud $\mathscr{L}$ para todo el colectivo se define por:
+\begin{align*}
+    \mathscr{L}(\mu_{x}) &= \dfrac{\exp\l(ER_x \cdot \mu_{x}\r) \cdot \l(ER_x \cdot \mu_{x}\r)^{d_x}}{d_x!}
+\end{align*}
+y la función log-verosimilitud es:
+\begin{align*}
+    \ln\l(\mathscr{L}\l(\mu_{x}\r)\r) &= - ER_x \cdot \mu_{x} + d_x \cdot \ln\l(ER_x\r) + d_x \cdot \ln\l(\mu_{x}\r) - \ln\l(d_x !\r).
+\end{align*}
+El estimador de máxima verosimilitud $\hat{\mu}_{x}$ de $\mu_{x}$ está dado por:
+\begin{align*}
+    \hat{\mu}_{x} &= \dfrac{d_x}{ER_x}.
+\end{align*}
+%---------------------------------------------------------------------------------------------------
+\subsection{Suavizado de probabilidades brutas}
+De acuerdo con Haberman y Renshaw la graduación se define como los principios y métodos por lo que un conjunto de probabilidades brutas se ajusta para proporcionar una base suavizada que permita hacer inferencia y cálculos prácticos de primas, reservas, etc. De acuerdo con London (1985), para un período concreto y a partir de los datos se obtienen a las probabilidades brutas que pueden presentar cambios bruscos entre edades, se espera que las diferencias entre las probabilidades de dos edades consecutivas no sean excesivamente altas, lo  que conlleva a un ajuste por medio de una función que permita se cumpla está condición.
+
+A pesar de que graduación y smoothing se consideren similares, es importante notar que el objetivo de la graduación no solamente tiene que ver con obtener una curva suave, sino estimar de la forma más adecuada las verdaderas probabilidades. Los métodos de graduación se dividen en paramétricos y no paramétricos, el primero si se ajusta a una función matemática y el segundo si solo se realiza el suavizado.
+
+Para el suavizado se consideran métodos no paramétricos, listados a continuación:
+\begin{enumerate}
+\item Spline de orden 2.
+\item Spline de orden 3.
+\item Spline de orden 2 ponderado con la exposición al riesgo.
+\item Spline de orden 3 ponderado con la exposición al riesgo.
+\item Modelo Lineal Generalizado, con regresión de Poisson, con variable edad como numérica.
+\item Modelo Lineal Generalizado, con regresión de Poisson, con variable edad como factor.
+\item Modelo Lineal Generalizado, con regresión de Poisson, con variable edad como factor ponderado con la exposición al riesgo.
+\end{enumerate}
+
+Para la estimación de los parámetros se consideró el método de los mínimos cuadrados ponderados, que minimiza las distancias entre los valores observados del logaritmo natural de la fuerza de mortalidad y el modelo no paramético elegido. Adicionalmente, para evaluar el ajuste y seleccionar al modelo que presenta el mejor ajuste se consideraron las medidas:
+\begin{itemize}
+\item El Error Medio Cuadrático,denominado por $MSE$, siendo:
+  \begin{equation}
+  \label{mse_ec}
+    MSE = \dfrac{1}{n}\sum_{i=1}^{n}{(y_i - \hat{y}_i)^2}.
+  \end{equation}
+\item El valor de la función de varosimilitud, denominado por loglik, siendo:
+  \begin{equation}
+    \label{llik_ec}
+    loglik = \ln\l(\mathscr{L}\l(\mu_{x}\r)\r).
+  \end{equation}
+\item El Criterio de Información de Akaike, denominado por $AIC$, siendo:
+  \begin{equation}
+  \label{aic_ec}
+    AIC = -2 \cdot loglik + 2 \cdot k.
+  \end{equation}
+\item El Criterio de Información Bayesiano, denominado por $BIC$, siendo:
+  \begin{equation}
+  \label{bic_ec}
+    BIC = -2 \cdot loglik + k \cdot \ln(n).
+  \end{equation}
+\end{itemize}
+Con las variables:
+\begin{enumerate}
+\item[$n$:] Es el número total de observaciones.
+\item[$y_i$:] Son los valores observados.
+\item[$\hat{y}_i$:] Son las predicciones del modelo para los valores $y_i$.
+\item[$k$:] Es el número de parámetros en el modelo.
+\end{enumerate}
+%---------------------------------------------------------------------------------------------------
+\subsection{Completación}
+\subsubsection{Método de Denuit y Goderniaux}
+Denuit y Goderniaux \cite{denuit2005} presentan una técnica destinada a completar la tabla de mortalidad, dado que es posible que para edades seniles no exista información válida para obtener a las probabilidades de mortalidad. El planteamiento es utilizar un modelo cuadrático con variable respuesta los logaritmos de las probabilidades de muerte, el modelo se define como:
+\[
+    \ln(\hat{q}(x)) = a + b\cdot x + c\cdot x^2 + \varepsilon_x
+\]
+donde $a$, $b$ y $c$ son los parámetros del modelo y $\varepsilon \sim \mathscr{N}(0,\sigma^2)$ sujeto a las restricciones:
+
+\begin{enumerate}
+\item La probabilidad de muerte para la edad límite:
+\[
+    \hat{q}(\omega) = 1.
+\]
+\item Restricción de inflexión:
+\[
+    \dfrac{d}{dx}\hat{q}(x)|_{x=\omega} = 0.
+\]
+\end{enumerate}
+La primera restricción impone un límite para el que la vida no continua. La segunda restricción añade concavidad para edades longevas con la existencia de una tangente horizontal en la edad $\omega$. Las restricciones reescriben al modelo como:
+\[
+    \ln(\hat{q}(x)) = c\cdot (\omega-x)^2 + \varepsilon_x
+\]
+%---------------------------------------------------------------------------------------------------
+\section{Construcción de tablas biométricas}
+%---------------------------------------------------------------------------------------------------
+\subsection{Sobre la construcción de la tabla estática}
+Se denotará por $j$ al estado inicial hacia el estado 6, la muerte, mientras que se denotará por $i$ al sexo con $i\in\{\text{hombre}, \text{mujer}, \text{total}\}$, para efectos de cálculo se entiende como total a toda la población, es decir, hombres y mujeres como un solo grupo.
+
+Para la construcción de la tabla de mortalidad estática que cubre un período de observación mayor a un año, dado el estado $j$  y un sexo $i$, para cada $x \in\{x_0, \ldots, \omega\}$, sean:
+\begin{description}
+\item[] $n$: el número de años considerados para el período de observación.
+\item[] $t_a$: el $a$-ésimo año del período de observación con $a\in\lbrace 1, \ldots, n\}$.
+\item[] $E^{j,6}_{i, t_a, x}$: la exposición al riesgo para el $a$-ésimo año del período de observación.
+\item[] $d^{j,6}_{i, t_a, x}$: el número de contingencias observadas para el $a$-ésimo año del período de observación con $a\in\{1,\ldots,n\}$.
+\end{description}
+Definidas las variables exposición al riesgo y número de contingencias observadas para cada año del período de observación, se definen sus equivalentes para todo el período de observación, junto con la fuerza de mortalidad y la probabilidad de muerte.
+\begin{description}
+\item[] $E^{j,6}_{i,x}$: la exposición al riesgo para todo el período de observación, definida como:
+\begin{align*}
+    E^{j,6}_{i,x} = \sum_{a=1}^{n}{E^{j,6}_{i, t_a, x}}.
+\end{align*}
+\item[] $d^{j,6}_{i,x}$: el número de contingencias observadas para todo el período de observación, definida como:
+\begin{align*}
+    d^{j,6}_{i,x} = \sum_{a=1}^{n}{d^{j,6}_{i, t_a, x}}.
+\end{align*}
+\item[] $\dot{\mu}^{j,6}_{i,x}$: la fuerza de mortalidad, definida como:
+\begin{align*}
+    \dot{\mu}^{j,6}_{i,x+\frac{1}{2}} = \dfrac{d^{j,6}_{i,x}}{E^{j,6}_{i,x}}.
+\end{align*}
+\item[] $\dot{q}^{j,6}_{i,x}$: la probabilidad de muerte bruta, definida como:
+\begin{align*}
+    \dot{q}^{j,6}_{i,x} = 1 - \exp\l(-\mu^{j,6}_{i,x+\frac{1}{2}}\r).
+\end{align*}
+\end{description}
+%---------------------------------------------------------------------------------------------------
+\subsection{Pasos para la construcción de tablas estáticas}
+Para construir tablas estáticas para cada sexo $i$ y cada edad $x$ se consideran los siguientes pasos:
+\begin{enumerate}
+    \item Limpieza de datos.
+    \item Obtención de tabulados para la exposición al riesgo $E^{j,6}_{i,x}$ y del número de contingencias observadas $d^{j,6}_{i,x}$.
+    \item Estimación de la fuerza de mortalidad bruta, denotada por $\dot{\mu}^{j,6}_{i,x}$.
+    \item Obtención de la fuerza de mortalidad suavizada, denotada por $\tilde{\mu}^{j,6}_{i,x}$.
+    \item Obtención de la probabilidad de mortalidad suavizada, denotada por $\tilde{q}^{j,6}_{i,x}$.
+    \item Completación de la probabilidad suavizada, denotada por $q^{j,6}_{i,x}$.
+    \item Construcción de la tabla estática.
+\end{enumerate}
+%---------------------------------------------------------------------------------------------------
+\subsection{Construcción de tablas dinámicas}
+Para proyectar a la mortalidad se consideran las tablas de mortalidad dinámicas construidas por la Organización de las Naciones Unidas (ONU), la metodología seguida para la construcción de las tablas se encuentra disponible en línea por medio del siguiente enlace:  \url{https://population.un.org/wpp/Publications/Files/WPP2022_Methodology.pdf}, en donde se detalla el proceso seguido para la preparación de los estimadores poblacionales como: fertilidad total, fertilidad por edad simple, ratio de nacimiento por sexo, entre otros; junto con proyecciones de los estimadores y la estimación de las tasas de mortalidad y construcción de las tablas de mortalidad. En específico se consideran los valores de $l^{6}_{i,t,x}$ para cada $x\in\{0, 1, 5, 10, \cdots, 95, 100\}$, $t\in\{2020, \ldots, 2060\}$ y $i\in\{\text{hombre}, \text{ mujer}\}$ para el caso ecuatoriano. Estos valores deben ser interpolados para obtener sus correspondientes valores para edades simples.
+%---------------------------------------------------------------------------------------------------
+\subsubsection{Interpolación por el método de Kriging}
+Para llevar a cabo la interpolación por edades simples se consideró el método de interpolación por Kriging para cada sexo $i\in\{\text{hombre}, \text{ mujer}\}$ y para cada año $t\in\{2020,\ldots,2060\}$, para lo que se realizan los siguientes pasos:
+\begin{enumerate}
+\item Se crea a la variable $ls^{6}_{i,t,x}$ realizando un salto hacia adelante de los valores de $l^{6}_{i,t,x}$ para todo $x\in\{1, 5, 10, \ldots, 95, 100\}$. Con la consideración de que $ls^{6}_{t, 0} = 0$ 
+\item Se realiza un ajuste para las edades 105 y 110 utilizando la siguiente regla:
+\[
+    l^{6}_{t, 105} = \dfrac{1}{2} \dfrac{l^{6}_{t, 105}}{ls^{6}_{t, 105}} l^{6}_{t, 105}
+    \texty
+    l^{6}_{t, 110} = \dfrac{1}{8} \l(\dfrac{l^{6}_{t, 110}}{ls^{6}_{t, 110}}\r)^2 l^{6}_{t, 110}
+\]
+donde $ls^{6}_{t, 105} = ls^{6}_{t, 110} = l^{6}_{t, 100}$, regla conocida como la condición de máxima entropía.
+\item Se crean las variables $p0^{6}_{t,x}$, $\mu0^{6}_{t,x}$ y  $\ln(\mu0^{6}_{t,x})$, siendo:
+\[
+    p0^{6}_{t,x} = \dfrac{l^{6}_{t,x}}{100.000}, \quad \mu0^{6}_{t,x} = -\ln(p0^{6}_{t,x}) \texty \ln(\mu0^{6}_{t,x}) = \ln(\mu0^{6}_{t,x})
+\]
+para cada $x\in\{0, 1, 5, 10, \ldots, 95, 100\}$.
+\item Se crea un variograma empírico considerando como variable a $\ln(\mu0^{6}_{t,6})$ y como coordenadas a $t$ y $x$, junto con la distancia dada por la norma $L_1$.
+\item Se ajusta el variograma empírico como un variograma gaussiano. Se consideran el valor inicial de coordenadas junto con la distancia y el valor estimado por el variograma empírico.
+\item Se realiza la interpolación por Kriging simple utilizando los resultados dados por el variograma ajustado. La interpolación se renombra como $\ln(\mu^{6}_{t,x})$, con valores para todo $x\in\{0,\ldots,110\}$, para todo $t\in\{2020,\ldots,2060\}$ y para todo $i\in\{\text{hombre},\text{ mujer}\}$.
+\end{enumerate}
+%---------------------------------------------------------------------------------------------------
+\subsubsection{Cálculo de la variación de la probabilidad de muerte}
+Dada la interpolación por Kriging simple se realiza el cálculo de la variación de la probabilidad de muerte, denotada por
+$v^{s}_{x,t}$, para cada $x\in\{0,\ldots,105\}$, para cada $t\in\{2020,\ldots,2060\}$ y para cada $s\in\{\text{hombre}, \text{ mujer}\}$.
+
+Para cada sexo $s\in\{\text{hombre}, \text{ mujer}\}$ se considera un año $t\in\{2020, \ldots, 2060\}$, para la obtención de la variación de la mortalidad para cada $x\in\{0,\ldots,105\}$, para lo que se realizan los siguientes pasos:
+
+\begin{enumerate}
+\item Se calcula a $l^{6}_{t,x}$ como $l^{6}_{t,x} = 100.000 \cdot \exp(- \exp(\ln(\mu^{6}_{t,x}))$, 
+con $l^{6}_{t,0} = 100.000$.
+\item Se calcula $ls^{6}_{t,x}$ como $ls^{6}_{t,x} = l^{6}_{t, x+1}$, con $ls^{6}_{t, 0} = 0$.
+\item Se calcula a $p^{6}_{t,x}$ como $p^{6}_{t,x} = \dfrac{ls^{6}_{t,x}}{l^{6}_{t,x}}$.
+\item Se calcula $q^{6}_{t,x}$ como $q^{6}_{t,x} = 1 - p^{6}_{t,x}$.
+\item Se calcula $qs^{6}_{t,x}$ como $qs^{6}_{t,x} = q^{6}_{t, x+1}$ con $qs^{6}_{t, 0} = 0$.
+\item Se calcula $v^{6}_{t,x}$ como $v^{6}_{t,x} = \dfrac{qs^{6}_{t,x}}{q^{6}_{t,x}}$.
+\end{enumerate}
+%---------------------------------------------------------------------------------------------------
+\subsubsection{Proyección de la mortalidad}
+Para proyectar la mortalidad para la población considerada por sexo $i\in\{\text{hombre}, \text{ mujer}\}$ se realizan los siguientes pasos:
+\begin{enumerate}
+\item Se ajustan los valores de la variación de la mortalidad para el año 2020, esto es, $v^{6}_{2000, x} = 1$ para cada $x\in\{0,\ldots,105\}$.
+\item Se proyecta el valor de probabilidad de muerte incorporando a la variación $v^{6}_{2000, x}$. Dónde:
+\[
+    q^{j, 6}_{2020, x} = q^{j, 6}_{2020, x} v^{6}_{2020, x}
+\]
+para cada $x\in\{0,\ldots,105\}$. Mientras que para cada $t\in\{2021, \ldots,2060\}$ se tiene que:
+\[
+    q^{j, 6}_{t,x} = q^{j, 6}_{t-1,x} v^{6}_{t,x}
+\]
+para cada $x\in\{0,\ldots,105\}$.
+\end{enumerate}
+
+En las edades y años en donde no exista el valor de la probabilidad $q^{6}_{t,x}$ se fija el valor de la probabilidad igual a 0 previó el cálculo del paso 2.
+
+%---------------------------------------------------------------------------------------------------
+\chapter{Hipótesis actuariales}
+\label{chp_hipotesis}
+
+El presente estudio ha sido desarrollado con la finalidad de construir tablas de mortalidad 
+dinámicas que reflejen la experiencia de mortalidad de cada uno de los grupos demográficos amparados 
+por los seguros administrados por el IESS.
+
+La primera hipótesis conduce a la construcción de las tablas de mortalidad estáticas y consiste
+en que la mortalidad se conserva sin desviaciones importantes en el período de observación. 
+Con este supuesto se construyeron las tablas de mortalidad 
+estáticas de los grupos demográficos, con corte a la fecha de valuación \Sexpr{REP$fec_val}.  
+
+En segundo lugar, para realizar las proyecciones de mortalidad y construir las tablas de mortalidad 
+dinámicas de los grupos demográficos, se supone que la dinámica de mortalidad de los grupos demográficos
+estudiados, evolucionará conforme a la dinámica de las proyecciones de mortalidad publicadas por 
+la ONU para la población general del Ecuador.
+
+Además, de forma implícita, se considera el efecto de la pandemia de covid--19 en la mortalidad de 
+los grupos demográficos analizados, cuyo período de incidencia está parcialmente contenido en el 
+período de observación.
+
+Finalmente, las tablas de mortalidad dinámicas se proyectan para situaciones normales, esto es, sin
+considerar posibles desviaciones importantes que puedan alterar su evolución, como por ejemplo la 
+ocurrencia de nuevas pandemias.

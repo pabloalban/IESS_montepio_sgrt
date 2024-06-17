@@ -1,0 +1,799 @@
+%---------------------------------------------------------------------------------------------------
+\chapter{Tablas dinámicas}
+\label{chp_tablas_dinamicas}
+
+%---------------------------------------------------------------------------------------------------
+Se presentan los resultados de la construcción de las tablas estáticas para el período 2012-2020 para las distintas contingencias consideradas, por sexo y por edad simple. Para cada caso se inicia presentando la respectiva pirámide poblacional de la exposición al riesgo y el número de contingencias observadas, se presentan los resultados del suavizado y completado de la probabilidad y se presenta la comparación entre la esperanza de vida.
+
+En el Anexo \ref{chap_tabulados} se observa el detalle de los valores tabulados por edad y sexo para cada contingencia para el período de observación. En el Anexo \ref{chap_modelos} se puede observar el detalle de las medidas de bondad de ajuste por contingencia y por sexo. Finalmente, en el Anexo \ref{chap_tablas_estaticas} se puede observar la tabla estática para el período 2012-2020 por contingencia y por sexo.
+%---------------------------------------------------------------------------------------------------
+\section{Muerte de afiliados activos}
+En la Figura \ref{Figura:pp_aa_Ex} se observa la distribución de la exposición al riesgo de muerte consolidada para afiliados activos por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución de la exposición al riesgo de muerte para afiliados activos}
+\label{Figura:pp_aa_Ex}
+\includegraphics[ scale = 0.8 ]{Imagenes/piramide/ivm_aa_nx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:pp_aa_dx} se presenta el porcentaje del número de muertes observadas durante el período de observación para afiliados activos por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución del número de muertes observadas para afiliados activos}
+\label{Figura:pp_aa_dx}
+\includegraphics[ scale = 0.8 ]{Imagenes/piramide/ivm_aa_dx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Tabla \ref{tab:est_aa} se presenta un resumen de algunas medidas estadísticas de este grupo poblacional.
+
+\begin{table}[H]
+\centering
+\caption{Estadísticas para afiliados activos}
+\label{tab:est_aa}
+\begin{tabular}{ *{5}{|c}|} \hline
+\bf{Sexo} & \bf{B-spline} & \bm{$R^2$} & \bm{$MAPE$} & \bm{$c$}\\ \hline
+Hombres	&	 (14,3)	&	99.60\%	& 0.1604 &	-0.0027702\\ \hline
+Mujeres	&	 (14,3)	&   99.84\%	& 0.1050\% & 	-0.0067764\\ \hline
+\end{tabular}
+\caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+
+En la Tabla \ref{tab:sc_aa} se presenta el resultado del mejor ajuste y los resultados del completado para afiliados activos.
+
+\begin{table}[H]
+\centering
+\caption{Resultados del suavizado y completado para afiliados activos}
+\label{tab:sc_aa}
+\begin{tabular}{ *{5}{|c}|} \hline
+\bf{Sexo} & \bf{B-spline} & \bm{$R^2$} & \bm{$MAPE$} & \bm{$c$}\\ \hline
+Hombres	&	 (14,3)	&	99.60\%	& 0.1604 &	-0.0027702\\ \hline
+Mujeres	&	 (14,3)	&   99.84\%	& 0.1050\% & 	-0.0067764\\ \hline
+\end{tabular}
+\caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+
+En la Figura \ref{Figura:qx_aa_h} se presentan las probabilidades brutas y completadas para el período de observación para afiliados activos hombres por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para afiliados activos hombres}
+\label{Figura:qx_aa_h}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_h.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:qx_aa_m} se presentan las probabilidades brutas y completadas para el período de observación para afiliadas activas mujeres por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para afiliadas activas mujeres}
+\label{Figura:qx_aa_m}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:qx_aa_t} se presentan las probabilidades brutas y completadas para el período de observación para afiliados activos por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para afiliados activos}
+\label{Figura:qx_aa_t}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:lqx_aa} se presenta la comparación de los logaritmos de las probabilidades completadas para el período de observación para afiliados activos por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Comparación del logaritmo natural de la probabilidades completadas para afiliados activos}
+\label{Figura:lqx_aa}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:ex_aa} se presenta la comparación de la esperanza de vida para el período de observación para afiliados activos por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Comparación de la  esperanza de vida para afiliados activos}
+\label{Figura:ex_aa}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+%---------------------------------------------------------------------------------------------------
+\section{Muerte de afiliados inactivos, cesantes y pensionistas por vejez}
+En la Figura \ref{Figura:pp_iv_Ex} se observa la distribución de la exposición al riesgo de muerte consolidada para afiliados inactivos, cesantes y pensionistas por vejez por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución de la exposición al riesgo de muerte para afiliados inactivos, cesantes y pensionistas por vejez}
+\label{Figura:pp_iv_Ex}
+\includegraphics[ scale = 0.8 ]{Imagenes/piramide/ivm_aa_nx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:pp_iv_dx} se presenta el porcentaje del número de muertes observadas durante el período de observación para afiliados inactivos, cesantes y pensionistas por vejez por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución del número de muertes observadas para afiliados inactivos, cesantes y pensionistas por vejez}
+\label{Figura:pp_iv_dx}
+\includegraphics[ scale = 0.8 ]{Imagenes/piramide/ivm_aa_dx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Tabla \ref{tab:est_iv} se presenta un resumen de algunas medidas estadísticas de este grupo poblacional.
+
+\begin{table}[H]
+\centering
+\caption{Estadísticas para afiliados inactivos, cesantes y pensionistas por vejez}
+\label{tab:est_iv}
+\begin{tabular}{ *{5}{|c}|} \hline
+\bf{Sexo} & \bf{B-spline} & \bm{$R^2$} & \bm{$MAPE$} & \bm{$c$}\\ \hline
+Hombres	&	 (14,3)	&	99.60\%	& 0.1604 &	-0.0027702\\ \hline
+Mujeres	&	 (14,3)	&   99.84\%	& 0.1050\% & 	-0.0067764\\ \hline
+\end{tabular}
+\caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+
+En la Tabla \ref{tab:sc_iv} se presenta el resultado del mejor ajuste y los resultados del completado para afiliados inactivos, cesantes y pensionistas por vejez.
+
+\begin{table}[H]
+\centering
+\caption{Resultados del suavizado y completado para afiliados inactivos, cesantes y pensionistas por vejez}
+\label{tab:sc_iv}
+\begin{tabular}{ *{5}{|c}|} \hline
+\bf{Sexo} & \bf{B-spline} & \bm{$R^2$} & \bm{$MAPE$} & \bm{$c$}\\ \hline
+Hombres	&	 (14,3)	&	99.60\%	& 0.1604 &	-0.0027702\\ \hline
+Mujeres	&	 (14,3)	&   99.84\%	& 0.1050\% & 	-0.0067764\\ \hline
+\end{tabular}
+\caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+
+En la Figura \ref{Figura:qx_iv_h} se presentan las probabilidades brutas y completadas para el período de observación para afiliados inactivos, cesantes y pensionistas por vejez hombres por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para afiliados inactivos, cesantes y pensionistas por vejez hombres}
+\label{Figura:qx_iv_h}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_h.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:qx_iv_m} se presentan las probabilidades brutas y completadas para el período de observación para afiliadas inactivas, cesantes y pensionistas por vejez mujeres por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para afiliados inactivos, cesantes y pensionistas por vejez mujeres}
+\label{Figura:qx_iv_m}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:qx_iv_t} se presentan las probabilidades brutas y completadas para el período de observación para afiliados inactivos, cesantes y pensionistas por vejez por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para afiliados inactivos, cesantes y pensionistas por vejez}
+\label{Figura:qx_iv_t}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:lqx_iv} se presenta la comparación de los logaritmos de las probabilidades completadas para el período de observación para afiliados inactivos, cesantes y pensionistas por vejez por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Comparación del logaritmo natural de la probabilidades completadas para afiliados inactivos, cesantes y pensionistas por vejez}
+\label{Figura:lqx_iv}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:ex_iv} se presenta la comparación de la esperanza de vida para el período de observación para afiliados inactivos, cesantes y pensionistas por vejez por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Comparación de la  esperanza de vida para afiliados inactivos, cesantes y pensionistas por vejez}
+\label{Figura:ex_iv}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+%---------------------------------------------------------------------------------------------------
+\section{Muerte de pensionistas por vejez}
+En la Figura \ref{Figura:pp_jv_Ex} se observa la distribución de la exposición al riesgo de muerte consolidada para pensionistas por vejez por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución de la exposición al riesgo de muerte para pensionistas por vejez}
+\label{Figura:pp_jv_Ex}
+\includegraphics[ scale = 0.8 ]{Imagenes/piramide/ivm_aa_nx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:pp_jv_dx} se presenta el porcentaje del número de muertes observadas durante el período de observación para pensionistas por vejez por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución del número de muertes observadas para pensionistas por vejez}
+\label{Figura:pp_jv_dx}
+\includegraphics[ scale = 0.8 ]{Imagenes/piramide/ivm_aa_dx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Tabla \ref{tab:est_jv} se presenta un resumen de algunas medidas estadísticas de este grupo poblacional.
+
+\begin{table}[H]
+\centering
+\caption{Estadísticas para pensionistas por vejez}
+\label{tab:est_jv}
+\begin{tabular}{ *{5}{|c}|} \hline
+\bf{Sexo} & \bf{B-spline} & \bm{$R^2$} & \bm{$MAPE$} & \bm{$c$}\\ \hline
+Hombres	&	 (14,3)	&	99.60\%	& 0.1604 &	-0.0027702\\ \hline
+Mujeres	&	 (14,3)	&   99.84\%	& 0.1050\% & 	-0.0067764\\ \hline
+\end{tabular}
+\caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+
+En la Tabla \ref{tab:sc_jv} se presenta el resultado del mejor ajuste y los resultados del completado para pensionistas por vejez.
+
+\begin{table}[H]
+\centering
+\caption{Resultados del suavizado y completado para pensionistas por vejez}
+\label{tab:sc_jv}
+\begin{tabular}{ *{5}{|c}|} \hline
+\bf{Sexo} & \bf{B-spline} & \bm{$R^2$} & \bm{$MAPE$} & \bm{$c$}\\ \hline
+Hombres	&	 (14,3)	&	99.60\%	& 0.1604 &	-0.0027702\\ \hline
+Mujeres	&	 (14,3)	&   99.84\%	& 0.1050\% & 	-0.0067764\\ \hline
+\end{tabular}
+\caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+
+En la Figura \ref{Figura:qx_jv_h} se presentan las probabilidades brutas y completadas para el período de observación para pensionistas por vejez hombres por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para pensionistas por vejez hombres}
+\label{Figura:qx_jv_h}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_h.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:qx_jv_m} se presentan las probabilidades brutas y completadas para el período de observación para pensionistas por vejez mujeres por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para pensionistas por vejez mujeres}
+\label{Figura:qx_jv_m}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:qx_jv_t} se presentan las probabilidades brutas y completadas para el período de observación para pensionistas por vejez por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para pensionistas por vejez}
+\label{Figura:qx_jv_t}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:lqx_jv} se presenta la comparación de los logaritmos de las probabilidades completadas para el período de observación para pensionistas por vejez por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Comparación del logaritmo natural de la probabilidades completadas para pensionistas por vejez}
+\label{Figura:lqx_jv}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:ex_jv} se presenta la comparación de la esperanza de vida para el período de observación para pensionistas por vejez por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Comparación de la  esperanza de vida para pensionistas por vejez}
+\label{Figura:ex_jv}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+%---------------------------------------------------------------------------------------------------
+\section{Muerte de pensionistas por invalidez y discapacidad}
+En la Figura \ref{Figura:pp_id_Ex} se observa la distribución de la exposición al riesgo de muerte consolidada para pensionistas por invalidez y discapacidad por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución de la exposición al riesgo de muerte para pensionistas por invalidez y discapacidad}
+\label{Figura:pp_id_Ex}
+\includegraphics[ scale = 0.8 ]{Imagenes/piramide/ivm_aa_nx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:pp_id_dx} se presenta el porcentaje del número de muertes observadas durante el período de observación para pensionistas por invalidez y discapacidad por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución del número de muertes observadas para pensionistas por invalidez y discapacidad}
+\label{Figura:pp_id_dx}
+\includegraphics[ scale = 0.8 ]{Imagenes/piramide/ivm_aa_dx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Tabla \ref{tab:est_id} se presenta un resumen de algunas medidas estadísticas de este grupo poblacional.
+
+\begin{table}[H]
+\centering
+\caption{Estadísticas para pensionistas por invalidez y discapacidad}
+\label{tab:est_id}
+\begin{tabular}{ *{5}{|c}|} \hline
+\bf{Sexo} & \bf{B-spline} & \bm{$R^2$} & \bm{$MAPE$} & \bm{$c$}\\ \hline
+Hombres	&	 (14,3)	&	99.60\%	& 0.1604 &	-0.0027702\\ \hline
+Mujeres	&	 (14,3)	&   99.84\%	& 0.1050\% & 	-0.0067764\\ \hline
+\end{tabular}
+\caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+
+En la Tabla \ref{tab:sc_id} se presenta el resultado del mejor ajuste y los resultados del completado para pensionistas por invalidez y discapacidad.
+
+\begin{table}[H]
+\centering
+\caption{Resultados del suavizado y completado para pensionistas por invalidez y discapacidad}
+\label{tab:sc_id}
+\begin{tabular}{ *{5}{|c}|} \hline
+\bf{Sexo} & \bf{B-spline} & \bm{$R^2$} & \bm{$MAPE$} & \bm{$c$}\\ \hline
+Hombres	&	 (14,3)	&	99.60\%	& 0.1604 &	-0.0027702\\ \hline
+Mujeres	&	 (14,3)	&   99.84\%	& 0.1050\% & 	-0.0067764\\ \hline
+\end{tabular}
+\caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+
+En la Figura \ref{Figura:qx_id_h} se presentan las probabilidades brutas y completadas para el período de observación para pensionistas por invalidez y discapacidad hombres por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para pensionistas por invalidez y discapacidad hombres}
+\label{Figura:qx_id_h}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_h.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:qx_id_m} se presentan las probabilidades brutas y completadas para el período de observación para pensionistas por invalidez y discapacidad mujeres por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para pensionistas por invalidez y discapacidad mujeres}
+\label{Figura:qx_id_m}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:qx_id_t} se presentan las probabilidades brutas y completadas para el período de observación para pensionistas por invalidez y discapacidad por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para pensionistas por invalidez y discapacidad}
+\label{Figura:qx_id_t}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:lqx_id} se presenta la comparación de los logaritmos de las probabilidades completadas para el período de observación para pensionistas por invalidez y discapacidad por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Comparación del logaritmo natural de la probabilidades completadas para pensionistas por invalidez y discapacidad}
+\label{Figura:lqx_id}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:ex_id} se presenta la comparación de la esperanza de vida para el período de observación para pensionistas por invalidez y discapacidad por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Comparación de la  esperanza de vida para pensionistas por invalidez y discapacidad}
+\label{Figura:ex_id}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+%---------------------------------------------------------------------------------------------------
+\section{Muerte de pensionistas de viudedad}
+En la Figura \ref{Figura:pp_pv_Ex} se observa la distribución de la exposición al riesgo de muerte consolidada para pensionistas de viudedad por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución de la exposición al riesgo de muerte para pensionistas de viudedad}
+\label{Figura:pp_pv_Ex}
+\includegraphics[ scale = 0.8 ]{Imagenes/piramide/ivm_aa_nx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:pp_pv_dx} se presenta el porcentaje del número de muertes observadas durante el período de observación para pensionistas de viudedad por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución del número de muertes observadas para pensionistas de viudedad}
+\label{Figura:pp_pv_dx}
+\includegraphics[ scale = 0.8 ]{Imagenes/piramide/ivm_aa_dx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Tabla \ref{tab:est_pv} se presenta un resumen de algunas medidas estadísticas de este grupo poblacional.
+
+\begin{table}[H]
+\centering
+\caption{Estadísticas para pensionistas de viudedad}
+\label{tab:est_pv}
+\begin{tabular}{ *{5}{|c}|} \hline
+\bf{Sexo} & \bf{B-spline} & \bm{$R^2$} & \bm{$MAPE$} & \bm{$c$}\\ \hline
+Hombres	&	 (14,3)	&	99.60\%	& 0.1604 &	-0.0027702\\ \hline
+Mujeres	&	 (14,3)	&   99.84\%	& 0.1050\% & 	-0.0067764\\ \hline
+\end{tabular}
+\caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+
+En la Tabla \ref{tab:sc_pv} se presenta el resultado del mejor ajuste y los resultados del completado para pensionistas de viudedad.
+
+\begin{table}[H]
+\centering
+\caption{Resultados del suavizado y completado para pensionistas de viudedad}
+\label{tab:sc_pv}
+\begin{tabular}{ *{5}{|c}|} \hline
+\bf{Sexo} & \bf{B-spline} & \bm{$R^2$} & \bm{$MAPE$} & \bm{$c$}\\ \hline
+Hombres	&	 (14,3)	&	99.60\%	& 0.1604 &	-0.0027702\\ \hline
+Mujeres	&	 (14,3)	&   99.84\%	& 0.1050\% & 	-0.0067764\\ \hline
+\end{tabular}
+\caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+
+En la Figura \ref{Figura:qx_pv_h} se presentan las probabilidades brutas y completadas para el período de observación para pensionistas de viudedad hombres por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para pensionistas de viudedad hombres}
+\label{Figura:qx_pv_h}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_h.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:qx_pv_m} se presentan las probabilidades brutas y completadas para el período de observación para pensionistas de viudedad mujeres por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para pensionistas de viudedad mujeres}
+\label{Figura:qx_pv_m}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:qx_pv_t} se presentan las probabilidades brutas y completadas para el período de observación para pensionistas de viudedad por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para pensionistas de viudedad}
+\label{Figura:qx_pv_t}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:lqx_pv} se presenta la comparación de los logaritmos de las probabilidades completadas para el período de observación para pensionistas de viudedad por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Comparación del logaritmo natural de la probabilidades completadas para pensionistas de viudedad}
+\label{Figura:lqx_pv}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:ex_pv} se presenta la comparación de la esperanza de vida para el período de observación para pensionistas de viudedad por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Comparación de la  esperanza de vida para pensionistas de viudedad}
+\label{Figura:ex_pv}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+%---------------------------------------------------------------------------------------------------
+\section{Muerte de pensionistas de orfandad}
+En la Figura \ref{Figura:pp_po_Ex} se observa la distribución de la exposición al riesgo de muerte consolidada para pensionistas de orfandad por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución de la exposición al riesgo de muerte para pensionistas de orfandad}
+\label{Figura:pp_po_Ex}
+\includegraphics[ scale = 0.8 ]{Imagenes/piramide/ivm_aa_nx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:pp_po_dx} se presenta el porcentaje del número de muertes observadas durante el período de observación para pensionistas de orfandad por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución del número de muertes observadas para pensionistas de orfandad}
+\label{Figura:pp_po_dx}
+\includegraphics[ scale = 0.8 ]{Imagenes/piramide/ivm_aa_dx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Tabla \ref{tab:est_po} se presenta un resumen de algunas medidas estadísticas de este grupo poblacional.
+
+\begin{table}[H]
+\centering
+\caption{Estadísticas para pensionistas de orfandad}
+\label{tab:est_po}
+\begin{tabular}{ *{5}{|c}|} \hline
+\bf{Sexo} & \bf{B-spline} & \bm{$R^2$} & \bm{$MAPE$} & \bm{$c$}\\ \hline
+Hombres	&	 (14,3)	&	99.60\%	& 0.1604 &	-0.0027702\\ \hline
+Mujeres	&	 (14,3)	&   99.84\%	& 0.1050\% & 	-0.0067764\\ \hline
+\end{tabular}
+\caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+
+En la Tabla \ref{tab:sc_po} se presenta el resultado del mejor ajuste y los resultados del completado para pensionistas de orfandad.
+
+\begin{table}[H]
+\centering
+\caption{Resultados del suavizado y completado para pensionistas de orfandad}
+\label{tab:sc_po}
+\begin{tabular}{ *{5}{|c}|} \hline
+\bf{Sexo} & \bf{B-spline} & \bm{$R^2$} & \bm{$MAPE$} & \bm{$c$}\\ \hline
+Hombres	&	 (14,3)	&	99.60\%	& 0.1604 &	-0.0027702\\ \hline
+Mujeres	&	 (14,3)	&   99.84\%	& 0.1050\% & 	-0.0067764\\ \hline
+\end{tabular}
+\caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+
+En la Figura \ref{Figura:qx_po_h} se presentan las probabilidades brutas y completadas para el período de observación para pensionistas de orfandad hombres por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para pensionistas de orfandad hombres}
+\label{Figura:qx_po_h}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_h.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:qx_po_m} se presentan las probabilidades brutas y completadas para el período de observación para pensionistas de orfandad mujeres por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para pensionistas de orfandad mujeres}
+\label{Figura:qx_po_m}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:qx_po_t} se presentan las probabilidades brutas y completadas para el período de observación para pensionistas de orfandad por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Probabilidades brutas y completadas para pensionistas de orfandad}
+\label{Figura:qx_po_t}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:lqx_po} se presenta la comparación de los logaritmos de las probabilidades completadas para el período de observación para pensionistas de orfandad por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Comparación del logaritmo natural de la probabilidades completadas para pensionistas de orfandad}
+\label{Figura:lqx_po}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:ex_po} se presenta la comparación de la esperanza de vida para el período de observación para pensionistas de orfandad por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Comparación de la esperanza de vida para pensionistas de orfandad}
+\label{Figura:ex_po}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+%---------------------------------------------------------------------------------------------------
+\section{Salida del sistema (muerte y otras causas) de pensionistas de viudedad y orfandad}
+En la Figura \ref{Figura:pp_vh_Ex} se observa la distribución de la exposición al riesgo de salidas del sistema de viudas y huérfanos por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución de la exposición al riesgo de salidas del sistema de viudas y huérfanos}
+\label{Figura:pp_vh_Ex}
+\includegraphics[ scale = 0.8 ]{Imagenes/piramide/ivm_aa_nx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:pp_vh_dx} se presenta el porcentaje del número de salidas observadas durante el período de observación para viudas y huérfanos por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución del número de salidas del sistema de viudas y huérfanos}
+\label{Figura:pp_vh_dx}
+\includegraphics[ scale = 0.8 ]{Imagenes/piramide/ivm_aa_dx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Tabla \ref{tab:est_vh} se presenta un resumen de algunas medidas estadísticas de este grupo poblacional.
+
+\begin{table}[H]
+\centering
+\caption{Estadísticas para salidas del sistema de viudas y huérfanos}
+\label{tab:est_vh}
+\begin{tabular}{ *{5}{|c}|} \hline
+\bf{Sexo} & \bf{B-spline} & \bm{$R^2$} & \bm{$MAPE$} & \bm{$c$}\\ \hline
+Hombres	&	 (14,3)	&	99.60\%	& 0.1604 &	-0.0027702\\ \hline
+Mujeres	&	 (14,3)	&   99.84\%	& 0.1050\% & 	-0.0067764\\ \hline
+\end{tabular}
+\caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+
+En la Tabla \ref{tab:sc_vh} se presenta el resultado del mejor ajuste y los resultados del completado para salidas del sistema de viudas y huérfanos.
+
+\begin{table}[H]
+\centering
+\caption{Resultados del suavizado y completado para salidas del sistema de viudas y huérfanos}
+\label{tab:sc_vh}
+\begin{tabular}{ *{5}{|c}|} \hline
+\bf{Sexo} & \bf{B-spline} & \bm{$R^2$} & \bm{$MAPE$} & \bm{$c$}\\ \hline
+Hombres	&	 (14,3)	&	99.60\%	& 0.1604 &	-0.0027702\\ \hline
+Mujeres	&	 (14,3)	&   99.84\%	& 0.1050\% & 	-0.0067764\\ \hline
+\end{tabular}
+\caption*{\scriptsize {\bf Elaborado por:} Dirección Actuarial, de Investigación y Estadística.}
+\end{table}
+
+En la Figura \ref{Figura:qx_vh_h} se presentan las tasas brutas y completadas para el período de observación para salidas del sistema de viudos y huérfanos hombres por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Tasas brutas y completadas para salidas del sistema de viudas y huérfanos hombres}
+\label{Figura:qx_vh_h}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_h.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:qx_vh_m} se presentan las tasas brutas y completadas para el período de observación para salidas del sistema de viudas y huérfanas mujeres por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Tasas brutas y completadas para salidas del sistema de viudas y huérfanos mujeres}
+\label{Figura:qx_vh_m}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:qx_vh_t} se presentan las tasas brutas y completadas para el período de observación para salidas del sistema de viudas y huérfanos por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Tasas brutas y completadas para salidas del sistema de viudas y huérfanos}
+\label{Figura:qx_vh_t}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:lqx_vh} se presenta la comparación de los logaritmos de las tasas completadas para el período de observación para salidas del sistema de viudas y huérfanos por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Comparación del logaritmo natural de las tasas completadas para salidas del sistema de viudas y huérfanos}
+\label{Figura:lqx_vh}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}
+
+En la Figura \ref{Figura:ex_vh} se presenta la comparación de la esperanza de vida para el período de observación para salidas del sistema de viudas y huérfanos por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Comparación de la esperanza de vida para salidas del sistema de viudas y huérfanos}
+\label{Figura:ex_vh}
+\includegraphics[ scale = 0.8 ]{Imagenes/probabilidad/qx_aa_m.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS. \\
+{\bf Elaborado:} Dirección Actuarial, de Investigación y Estadística.}
+\end{figure}

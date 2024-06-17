@@ -1,0 +1,67 @@
+%---------------------------------------------------------------------------------------------------
+\chapter[Introducción]{Introducción}
+\label{chap_Intro}
+
+El artículo 368 de la \legalcite{ConsEcu:2008} determina que:
+
+\begin{displayquote}
+\textbf{Art. 368.-} El sistema de seguridad social comprenderá las entidades públicas, normas,
+políticas, recursos y prestaciones de seguridad social, y funcionará con base en criterios de
+sostenibilidad, eficiencia, celeridad y transparencia. El Estado normará, regulará y controlará las
+actividades relacionadas con la seguridad social. 
+\end{displayquote}
+
+El Instituto Ecuatoriano de Seguridad Social (IESS) es la entidad responsable de la prestación de
+las contingencias del seguro universal obligatorio de sus afiliados; y, su organización se encuentra
+determinada en el Capítulo Dos del Título II de la \legalcite{LeySS}.
+
+Un órgano técnico auxiliar del IESS, es la Dirección Actuarial, de Investigación y Estadística, cuya
+responsabilidad conforme el artículo 45 de la \legalcite{LeySS}, es la siguiente: 
+
+\begin{displayquote}
+\textbf{Art. 45.-} La Dirección Actuarial es órgano de asesoría técnica del IESS, subordinado al
+Consejo Directivo. Tiene a su cargo la preparación de los balances actuariales de cada uno de los
+regímenes de protección del Seguro General Obligatorio; la elaboración de los estudios técnicos y
+los informes periódicos sobre la situación de dichos regímenes y sus proyecciones, la evaluación de
+la cobertura poblacional, el perfil epidemiológico, los índices de siniestralidad de cada riesgo
+protegido, y del equilibrio financiero de los seguros sociales aplicados por el IESS; la preparación
+sistemática, periódica y oportuna de la memoria estadística del IESS, y los demás que ordene el
+Consejo Directivo $[\ldots]$. 
+\end{displayquote}
+
+Dentro del Plan Estratégico del IESS 2018-2028, consta como objetivo estratégico No. 1 “Incrementar
+la sostenibilidad de los fondos de los seguros especializados''; y, como estrategia para cumplir
+dicho objetivo, la de mejorar la gestión institucional en función a los estudios actuariales para
+procurar la sostenibilidad financiera.
+
+El artículo 2 de la Resolución No. C.D. 459 confiere a la Dirección Actuarial, de Investigación y 
+Estadística la responsabilidad de la actualización de las tablas biométricas, que serán preparadas 
+sobre la base de la información de actividad (afiliación) y de siniestralidad (invalidez. vejez, muerte, enfermedad, accidentes del trabajo, cesantía), de la población asegurada al IESS; y, de la 
+información que proporciona el Registro Civil.
+
+Bajo estas consideraciones, al amparo de los artículos 45 de la \legalcite{LeySS}, 10 subnumeral
+2.3, literal b) de la \legalcite{ResIESS_CD535}; y, de los oficios No. SB-DS-2020-0318-O de 22 de
+julio de 2020 e IESS-DG-2020-1640-M de 18 de agosto de 2020, la Dirección Actuarial, de
+Investigación y Estadística presenta la \textbf{“Nota Técnica para la construcción de Tablas de Mortalidad para el Seguro General Obligatorio”}.
+
+%---------------------------------------------------------------------------------------------------
+\section{Objeto del estudio}
+\label{chap_Intro:objeto}
+
+El objeto de la Nota Técnica para la construcción de Tablas de Mortalidad para el Seguro General Obligatorio,
+con fecha de corte al 31 de diciembre de 2020, y un horizonte de 40 años
+(período de valuación 2021 – 2060), es presentar la metodología para la construcción y las 
+tablas de mortalidad construidas para el 
+Seguro General Obligatorio.
+
+%---------------------------------------------------------------------------------------------------
+\section{Horizonte del estudio}
+
+El horizonte de la Nota Técnica para la construcción de Tablas de Mortalidad para el Seguro General Obligatorio, es de 40 años. Por lo tanto, se analiza y proyecta las tablas de mortalidad dinámicas desde 2021 hasta 2060.
+
+%---------------------------------------------------------------------------------------------------
+\section{Estructura del informe}
+
+La estructura de la presente valuación se encuentra conforme lo determinado en el Capítulo
+14 de la \legalcite{SB_0531}, publicada en el Registro Oficial No. 213 de 29 de mayo de 2020.
+

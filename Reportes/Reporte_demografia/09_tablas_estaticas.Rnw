@@ -1,0 +1,421 @@
+%---------------------------------------------------------------------------------------------------
+\chapter{Tablas estáticas}
+\label{chp_tablas_estaticas}
+%---------------------------------------------------------------------------------------------------
+Se presentan los resultados de la construcción de las tablas estáticas para el período 2012-2020 
+para las distintas contingencias consideradas, por sexo y por edad simple. Para cada caso se inicia 
+presentando la respectiva pirámide poblacional de la exposición al riesgo y el número de 
+contingencias observadas, se presentan los resultados del suavizado y completado de la probabilidad
+y se presenta la comparación entre la esperanza de vida.
+
+En el Anexo \ref{chap_tabulados} se observa el detalle de los valores tabulados por edad y sexo para
+cada contingencia para el período de observación. En el Anexo \ref{chap_modelos} se puede observar
+el detalle de las medidas de bondad de ajuste por contingencia y por sexo. Finalmente, en el Anexo 
+\ref{chap_tablas_estaticas} se puede observar la tabla estática para el período 2012-2020 por
+contingencia y por sexo.
+%---------------------------------------------------------------------------------------------------
+\section{Muerte de afiliados activos}
+%---------------------------------------------------------------------------------------------------
+En la Figura \ref{fig:iess_pir_afi_erx} se observa la distribución de la exposición al riesgo de 
+muerte consolidada para afiliados activos por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución de la exposición al riesgo de muerte para afiliados activos}
+\label{fig:iess_pir_afi_erx}
+\includegraphics[scale=0.8]{graficos/iess_pir_afiliados.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+En la Figura \ref{fig:iess_pir_afi_nx} se presenta el porcentaje del número de muertes observadas
+durante el período de observación para afiliados activos por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución del número de muertes observadas para afiliados activos}
+\label{fig:iess_pir_afi_nx}
+\includegraphics[scale=0.8]{graficos/iess_pir_afiliados_nx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+En la Figura \ref{fig:iess_ux_afi} se presentan los logaritmos de la fuerza de mortalidad para el 
+período de observación para afiliados activos por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Logaritmo natural de la fuerza de mortalidad para afiliados activos}
+\label{fig:iess_ux_afi}
+\includegraphics[scale=0.8]{graficos/iess_fuer_2_6.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+A continuación, la tabla estática para afiliados activos.
+
+{\fontsize{10}{12}\selectfont
+\begin{longtable}[h]{C{0.5cm}C{0.5cm}C{1cm}C{1cm}C{1cm}C{0.5cm}}
+\caption{Tabla estática para afiliados activos}\\
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS\\
+{\bf Elaborado:} DAIE} \\
+\label{tab:iess_tab_est_afi_act} \\
+
+  \toprule
+  \multicolumn{1}{l}{\textbf{Sexo}} & 
+  \multicolumn{1}{l}{$x$} &
+  \multicolumn{1}{l}{$\mu_x$} &
+  \multicolumn{1}{l}{$l_x$} & 
+  \multicolumn{1}{l}{$q_x$} & 
+  \multicolumn{1}{l}{$p_x$} & 
+  \multicolumn{1}{l}{$\eringx{x}$} \\ 
+  \midrule
+
+  \endfirsthead
+
+  \toprule
+  \multicolumn{1}{l}{\textbf{Sexo}} & 
+  \multicolumn{1}{l}{$x$} &
+  \multicolumn{1}{l}{$\mu_x$} &
+  \multicolumn{1}{l}{$l_x$} & 
+  \multicolumn{1}{l}{$q_x$} & 
+  \multicolumn{1}{l}{$p_x$} & 
+  \multicolumn{1}{l}{$\eringx{x}$} \\ 
+  \midrule
+  \endhead
+
+\hline \multicolumn{6}{l}{continúa...} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+\input{tablas/iess_tas_2_6.tex}
+\end{longtable}}
+%---------------------------------------------------------------------------------------------------
+\section{Muerte de pensionistas por vejez}
+%---------------------------------------------------------------------------------------------------
+En la Figura \ref{fig:iess_pir_vej_erx} se observa la distribución de la exposición al riesgo de
+muerte consolidada para pensionistas por vejez por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución de la exposición al riesgo de muerte para pensionistas por vejez}
+\label{fig:iess_pir_vej_erx}
+\includegraphics[scale=0.8]{graficos/iess_pir_vejez.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+En la Figura \ref{fig:iess_pir_vej_nx}  se presenta el porcentaje del número de muertes observadas
+durante el período de observación para pensionistas por vejez por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución del número de muertes observadas para pensionistas por vejez}
+\label{fig:iess_pir_vej_nx}
+\includegraphics[scale=0.8]{graficos/iess_pir_vejez_nx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+En la Figura \ref{fig:iess_ux_vej} se presentan los logaritmos de la fuerza de mortalidad para el 
+período de observación para pensionistas por vejez por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Logaritmo natural de la fuerza de mortalidad para pensionistas por vejez}
+\label{fig:iess_ux_vej}
+\includegraphics[scale=0.8]{graficos/iess_fuer_4_6.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+A continuación, la tabla estática para pensionistas por vejez.
+
+{\fontsize{10}{12}\selectfont
+\begin{longtable}[h]{C{0.5cm}C{0.5cm}C{1cm}C{1cm}C{1cm}C{0.5cm}}
+\caption{Tabla estática para pensionistas por vejez}\\
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS\\
+{\bf Elaborado:} DAIE} \\
+\label{tab:iess_tab_est_pen_vej} \\
+  \toprule
+  \multicolumn{1}{l}{\textbf{Sexo}} & 
+  \multicolumn{1}{l}{$x$} &
+  \multicolumn{1}{l}{$\mu_x$} &
+  \multicolumn{1}{l}{$l_x$} & 
+  \multicolumn{1}{l}{$q_x$} & 
+  \multicolumn{1}{l}{$p_x$} & 
+  \multicolumn{1}{l}{$\eringx{x}$} \\ 
+  \midrule
+
+  \endfirsthead
+
+  \toprule
+  \multicolumn{1}{l}{\textbf{Sexo}} & 
+  \multicolumn{1}{l}{$x$} &
+  \multicolumn{1}{l}{$\mu_x$} &
+  \multicolumn{1}{l}{$l_x$} & 
+  \multicolumn{1}{l}{$q_x$} & 
+  \multicolumn{1}{l}{$p_x$} & 
+  \multicolumn{1}{l}{$\eringx{x}$} \\ 
+  \midrule
+  \endhead
+
+\hline \multicolumn{6}{l}{continúa...} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+\input{tablas/iess_tas_4_6.tex}
+\end{longtable}}
+%---------------------------------------------------------------------------------------------------
+\section{Muerte de pensionistas por invalidez}
+%---------------------------------------------------------------------------------------------------
+En la Figura \ref{fig:iess_pir_inv_erx} se observa la distribución de la exposición al riesgo de 
+muerte consolidada para pensionistas por invalidez por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución de la exposición al riesgo de muerte para pensionistas por invalidez}
+\label{fig:iess_pir_inv_erx}
+\includegraphics[scale=0.8]{graficos/iess_pir_invalidez.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+En la Figura \ref{fig:iess_pir_inv_nx}  se presenta el porcentaje del número de muertes observadas 
+durante el período de observación para pensionistas por invalidez por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución del número de muertes observadas para pensionistas por invalidez}
+\label{fig:iess_pir_inv_nx}
+\includegraphics[scale=0.8]{graficos/iess_pir_invalidez_nx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+En la Figura \ref{fig:iess_ux_inv} se presentan los logaritmos de la fuerza de mortalidad para el 
+período de observación para pensionistas por invalidez por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Logaritmo natural de la fuerza de mortalidad para pensionistas por invalidez}
+\label{fig:iess_ux_inv}
+\includegraphics[scale=0.8]{graficos/iess_fuer_5_6.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+A continuación, la tabla estática para pensionistas por invalidez.
+
+{\fontsize{10}{12}\selectfont
+\begin{longtable}[h]{C{0.5cm}C{0.5cm}C{1cm}C{1cm}C{1cm}C{0.5cm}}
+\caption{Tabla estática para pensionistas por invalidez}\\
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS\\
+{\bf Elaborado:} DAIE}\\
+\label{tab:iess_tab_est_pen_inv} \\
+  \toprule
+  \multicolumn{1}{l}{\textbf{Sexo}} & 
+  \multicolumn{1}{l}{$x$} &
+  \multicolumn{1}{l}{$\mu_x$} &
+  \multicolumn{1}{l}{$l_x$} & 
+  \multicolumn{1}{l}{$q_x$} & 
+  \multicolumn{1}{l}{$p_x$} & 
+  \multicolumn{1}{l}{$\eringx{x}$} \\ 
+  \midrule
+
+  \endfirsthead
+
+  \toprule
+  \multicolumn{1}{l}{\textbf{Sexo}} & 
+  \multicolumn{1}{l}{$x$} &
+  \multicolumn{1}{l}{$\mu_x$} &
+  \multicolumn{1}{l}{$l_x$} & 
+  \multicolumn{1}{l}{$q_x$} & 
+  \multicolumn{1}{l}{$p_x$} & 
+  \multicolumn{1}{l}{$\eringx{x}$} \\ 
+  \midrule
+  \endhead
+
+\hline \multicolumn{6}{l}{continúa...} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+\input{tablas/iess_tas_5_6.tex}
+\end{longtable}}
+%---------------------------------------------------------------------------------------------------
+\section{Muerte de pensionistas por viudedad}
+%---------------------------------------------------------------------------------------------------
+En la Figura \ref{fig:iess_pir_viu_erx} se observa la distribución de la exposición al riesgo de 
+muerte consolidada para pensionistas por viudedad por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución de la exposición al riesgo de muerte para pensionistas por viudedad}
+\label{fig:iess_pir_viu_erx}
+\includegraphics[scale=0.8]{graficos/iess_pir_viudedad.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+En la Figura \ref{fig:iess_pir_viu_nx}  se presenta el porcentaje del número de muertes observadas 
+durante el período de observación para pensionistas por viudedad por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución del número de muertes observadas para pensionistas por viudedad}
+\label{fig:iess_pir_viu_nx}
+\includegraphics[scale=0.8]{graficos/iess_pir_viudedad_nx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+En la Figura \ref{fig:iess_ux_viu} se presentan los logaritmos de la fuerza de mortalidad para el
+período de observación para pensionistas por viudedad por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Logaritmo natural de la fuerza de mortalidad para pensionistas por viudedad}
+\label{fig:iess_ux_viu}
+\includegraphics[scale=0.8]{graficos/iess_fuer_7_6.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+A continuación, la tabla estática para pensionistas por viudedad.
+
+{\fontsize{10}{12}\selectfont
+\begin{longtable}[h]{C{0.5cm}C{0.5cm}C{1cm}C{1cm}C{1cm}C{0.5cm}}
+\caption{Tabla estática para pensionistas por viudedad}\\
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS\\
+{\bf Elaborado:} DAIE}\\
+\label{tab:iess_tab_est_pen_viu} \\
+  \toprule
+  \multicolumn{1}{l}{\textbf{Sexo}} & 
+  \multicolumn{1}{l}{$x$} &
+  \multicolumn{1}{l}{$\mu_x$} &
+  \multicolumn{1}{l}{$l_x$} & 
+  \multicolumn{1}{l}{$q_x$} & 
+  \multicolumn{1}{l}{$p_x$} & 
+  \multicolumn{1}{l}{$\eringx{x}$} \\ 
+  \midrule
+
+  \endfirsthead
+
+  \toprule
+  \multicolumn{1}{l}{\textbf{Sexo}} & 
+  \multicolumn{1}{l}{$x$} &
+  \multicolumn{1}{l}{$\mu_x$} &
+  \multicolumn{1}{l}{$l_x$} & 
+  \multicolumn{1}{l}{$q_x$} & 
+  \multicolumn{1}{l}{$p_x$} & 
+  \multicolumn{1}{l}{$\eringx{x}$} \\ 
+  \midrule
+  \endhead
+
+\hline \multicolumn{6}{l}{continúa...} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+\input{tablas/iess_tas_7_6.tex}
+\end{longtable}}
+%---------------------------------------------------------------------------------------------------
+\section{Muerte de pensionistas por orfandad}
+%---------------------------------------------------------------------------------------------------
+En la Figura \ref{fig:iess_pir_orf_erx} se observa la distribución de la exposición al riesgo de 
+muerte consolidada para pensionistas por orfandad por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución de la exposición al riesgo de muerte para pensionistas por orfandad}
+\label{fig:iess_pir_orf_erx}
+\includegraphics[scale=0.8]{graficos/iess_pir_orfandad.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+En la Figura \ref{fig:iess_pir_orf_nx}  se presenta el porcentaje del número de muertes observadas 
+durante el período de observación para pensionistas por orfandad por edad simple y por sexo.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Distribución del número de muertes observadas para pensionistas por orfandad}
+\label{fig:iess_pir_orf_nx}
+\includegraphics[scale=0.8]{graficos/iess_pir_orfandad_nx.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+En la Figura \ref{fig:iess_ux_orf} se presentan los logaritmos de la fuerza de mortalidad para el
+período de observación para pensionistas por orfandad por edad simple.
+
+\begin{figure}[H]
+\centering
+\captionsetup{justification=centering}
+\caption{Logaritmo natural de la fuerza de mortalidad para pensionistas por orfandad}
+\label{fig:iess_ux_orf}
+\includegraphics[scale=0.8]{graficos/iess_fuer_8_6.pdf}
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS \\
+{\bf Elaborado:} DAIE.}
+\end{figure}
+
+A continuación, la tabla estática para pensionistas por orfandad.
+
+{\fontsize{10}{12}\selectfont
+\begin{longtable}[h]{C{0.5cm}C{0.5cm}C{1cm}C{1cm}C{1cm}C{0.5cm}}
+\caption{Tabla estática para pensionistas por orfandad}\\
+\caption*{\scriptsize {\bf Fuente:} Elaborada con datos demográficos del IESS\\
+{\bf Elaborado:} DAIE}\\
+\label{tab:iess_tab_est_pen_orf} \\
+  \toprule
+  \multicolumn{1}{l}{\textbf{Sexo}} & 
+  \multicolumn{1}{l}{$x$} &
+  \multicolumn{1}{l}{$\mu_x$} &
+  \multicolumn{1}{l}{$l_x$} & 
+  \multicolumn{1}{l}{$q_x$} & 
+  \multicolumn{1}{l}{$p_x$} & 
+  \multicolumn{1}{l}{$\eringx{x}$} \\ 
+  \midrule
+
+  \endfirsthead
+
+  \toprule
+  \multicolumn{1}{l}{\textbf{Sexo}} & 
+  \multicolumn{1}{l}{$x$} &
+  \multicolumn{1}{l}{$\mu_x$} &
+  \multicolumn{1}{l}{$l_x$} & 
+  \multicolumn{1}{l}{$q_x$} & 
+  \multicolumn{1}{l}{$p_x$} & 
+  \multicolumn{1}{l}{$\eringx{x}$} \\ 
+  \midrule
+  \endhead
+  
+\hline \multicolumn{6}{l}{continúa...} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+\input{tablas/iess_tas_8_6.tex}
+\end{longtable}}

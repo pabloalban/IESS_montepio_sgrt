@@ -1,0 +1,58 @@
+%---------------------------------------------------------------------------------------------------
+\chapter{Resumen ejecutivo}
+\label{chp_res_ejec}
+
+%---------------------------------------------------------------------------------------------------
+\section{Objeto del estudio}
+\label{chp_res_ejec:objeto}
+El objeto de la Nota Técnica para la construcción de Tablas de Mortalidad para el Seguro General Obligatorio,
+con fecha de corte al 31 de diciembre de 2020, y un horizonte de 40 años
+(período de valuación 2021 – 2060), es presentar la metodología para la construcción y las 
+tablas de mortalidad construidas para el 
+Seguro General Obligatorio.
+
+%---------------------------------------------------------------------------------------------------------
+\section{Resumen de contingencias}
+\label{chp_res_ejec:res_cont}
+
+La presente nota incluye las siguientes contingencias:
+\begin{itemize}
+\item Muerte de afiliados activos;
+\item	Muerte de pensionistas por vejez;
+\item	Muerte de pensionistas por invalidez;
+\item Muerte de pensionistas por viudedad;
+\item Muerte de pensionistas por orfandad.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------------------
+\section{Conclusiones}
+\label{chp_conclusion:conclusiones}
+
+\begin{enumerate}
+\item Las presentes tablas se han realizado siguiendo las técnicas actuariales y demográficas
+de tal forma que se cumple con las recomendaciones para la elaboración de estás tablas.
+\item Se han construido tablas estáticas para el período de observación 2012-2020 y se ha proyectado tablas
+dinámicas para el período 2021-2060 para la valuación actuarial del Seguro General
+Obligatorio para las contingencias: muerte para afiliados activos, muerte para pensionista por vejez, muerte para pensionistas por invaldiez, muerte para pensionistas por viudedad y muerte para pensionistas por orfandad.
+\item Para cada grupo poblacional el proyectar la mortalidad utilizando las tablas dinámicas
+elaboradas por las Naciones Unidas permite obtener una disminución en la probabilidad
+de muerte para todo el período de proyección que va desde 2021 hasta 2060, lo que se
+traduce en un incremento de la esperanza de vida, a pesar de ser influenciado por el
+efecto de la COVID-19.
+\end{enumerate}
+
+%---------------------------------------------------------------------------------------------------
+\section{Recomendaciones}
+\label{chp_conclusion:recomendacion}
+
+\begin{enumerate}
+\item Se debe revisar y de ser necesario actualizar las bases utilizadas tanto para cotizantes y
+pensionistas en cuanto a la existencia de registros cuya muerte es anterior a la última
+aparición en el sistema.
+\item Se recomienda que el Sistema de Pensiones realice un registro total de los expedientes
+físicos de las prestaciones otorgadas para años anteriores al 2012, con la finalidad de tener
+una historia más amplia de la siniestralidad de la población beneficiaria de pensiones.
+\item Se recomienda que la Dirección Nacional de Afiliación y Cobertura realice un registro
+y/o actualización de sus bases para años anteriores al 2005 con la finalidad de obtener
+un espectro más amplio de la siniestralidad en períodos más extensos de análisis.
+\end{enumerate}

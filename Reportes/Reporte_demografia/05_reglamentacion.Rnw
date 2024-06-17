@@ -1,0 +1,76 @@
+%---------------------------------------------------------------------------------------------------
+\chapter{Reglamentación}
+\label{chp_reglamentacion}
+
+%---------------------------------------------------------------------------------------------------
+\textbf{Constitución de la República del Ecuador}
+
+El artículo 370 de la Constitución de la República del Ecuador establece que:
+
+\emph{Art. 370.- El Instituto Ecuatoriano de Seguridad Social, entidad autónoma regulada por la ley, será responsable de la prestación de las contingencias del seguro universal obligatorio a sus afiliados. La Policía Nacional y las Fuerzas Armadas podrán contar con un régimen especial de seguridad social, de acuerdo con la ley; sus entidades de seguridad social formarán parte de la red pública integral de salud y del sistema de seguridad social.}
+
+\textbf{Ley de Seguridad Social}
+
+El artículo 54 de la Ley de Seguridad Social establece que:
+
+\emph{Art. 45.- RESPONSABILIDAD.- La Dirección Actuarial es órgano de asesoría técnica del IESS, subordinado al Consejo Directivo. Tiene a su cargo la preparación de los balances actuariales de cada uno de los regímenes de protección del Seguro General Obligatorio; la elaboración de los estudios técnicos y los informes periódicos sobre la situación de dichos regímenes y sus proyecciones; la evaluación de la cobertura poblacional, el perfil epidemiológico, los índices de siniestralidad de cada riesgo protegido, y del equilibrio financiero de los seguros sociales aplicados por el IESS [...].}
+
+\textbf{Resolución Nro. C.D. 459 de 1 de octubre de 2013}
+
+El artículo 1 de la Resolución Nro. C.D. 459 de 1 de octubre de 2013 establece que:
+
+\emph{Art. 1.- La Dirección Actuarial y de Investigación del IESS tendrá bajo su responsabilidad la actualización de las tablas biométricas, que serán preparadas sobre la base de la información de actividad (afiliación) y de siniestralidad (invalidez. vejez, muerte, enfermedad, accidentes del trabajo, cesantía), de la población asegurada al IESS; y, de la información que proporciona el Registro Civil.} 
+
+\textbf{Resolución No. SB-2017-810 de la Codificación de las Normas de la Superintendencia de Bancos de 20 de septiembre de 2017}
+
+El artículo 2 de la Sección I.- Objetivos y definiciones de la Resolución No. SB-2017-810 de la Codificación de las Normas de la Superintendencia de Bancos establece que:
+
+\emph{ARTÍCULO 2.- Para efectos de la presente norma de control se considerarán las siguientes definiciones:
+\begin{enumerate}
+\item[a.] \textbf{Actuario:} Persona natural o jurídica, calificada por la Superintendencia de Bancos y facultada para elaborar, revisar y/o aprobar estudios actuariales, capacitada para evaluar las consecuencias financieras de contingencias y eventos que pueden afectar a las entidades del Sistema Nacional de Seguridad Social.
+\item[b.] \textbf{Estudio Actuarial:} Estudio profesional técnico elaborado por una persona natural o jurídica previamente calificada por la Superintendencia de Bancos, que mediante la aplicación de cálculos matemáticos y técnicas especializadas, permite determinar la viabilidad financiera - actuarial de un fondo previsional o seguro.
+\item[c.] \textbf{Balance actuarial.-} Consiste en la técnica que permite valuar en la forma más apropiada la aplicación de un determinado régimen financiero de un seguro administrado por una entidad de seguridad social. Esta técnica compara el activo y pasivo contingentes y el patrimonio de los fondos administrados por las entidades de seguridad social, en un horizonte de valuación definido y presentado en una fecha determinada.
+\item[d.] \textbf{Evento Subsecuente.-} Evento que es conocido por el actuario después de la fecha del estudio actuarial (o fecha a la que haga referencia el servicio actuarial), pero antes de que realice la comunicación de los resultados.
+\item[e.] \textbf{Máximo organismo de gobierno.-} Cuerpos colegiados conformados en las entidades del Sistema de Seguridad Social, de acuerdo a lo establecido en la legislación y normativa vigentes.
+\item[f.] \textbf{Regímenes de financiamiento.-} Son los sistemas de financiamiento de las prestaciones que deben entregar los fondos o seguros administrados por las entidades de seguridad social.
+\item[g.] \textbf{Tablas biométricas.-} Constituyen la estandarización cuantitativa de las contingencias ocurridas a la población asegurada, traducidas en probabilidades de: muerte, vejez, invalidez, discapacidad, nupcias, accidentes, enfermedad, entre otros.
+\item[h.] \textbf{Población asegurada.-} Constituye la población afiliada activa; la población pasiva causante (jubilados, retirados, inválidos y discapacitados) y la población pasiva de beneficiarios (viudas, viudos, hijas, hijos u otros).
+\item[i.] \textbf{Reservas.-} Acumulación de los valores anuales resultantes de la diferencia positiva entre los ingresos y egresos de un fondo o seguro, los mismos que son capitalizados.
+\end{enumerate}
+}
+
+El artículo 5 de la Sección III.- Prácticas adecuadas de la Resolución No. SB-2018-810 de la Codificación de las Normas de la Superintendencia de Bancos establece que:
+
+\emph{ARTÍCULO 5.- Para la elaboración de los estudios actuariales, el actuario deberá observar los Estándares de Prácticas Actuariales de la Asociación Internacional de Actuarios, y las Directrices del Trabajo Actuarial para la Seguridad Social, de la Asociación Internacional de la Seguridad Social (AISS) y la Organización internacional del Trabajo (OIT), en lo que fueren aplicables; los cuales tienen como objetivo guiar a los profesionales con respecto al trabajo actuarial.}
+
+Los literales L y M del artículo 14 de la Sección IV.- Contenido del estudio de la Resolución No. SB-2017-810 de la Codificación de las Normas de la Superintendencia de Bancos, al respecto de las tablas biométricas establecen que:
+
+\emph{ARTÍCULO 14.- El estudio actuarial deberá contener como mínimo, lo siguiente: (...)
+\begin{enumerate}
+\item[L.] NOTA TÉCNICA
+\begin{enumerate}
+\item[i.] Base de datos: Descripción de la información contenida en las bases de datos que sirvieron para la elaboración del estudio;
+\item[ii.] Fuentes de información; y,
+\item[iii.] Metodología utilizada en la obtención de hipótesis, tablas biométricas, modelo, en el caso de que no se haya descrito en las secciones anteriores.
+\end{enumerate}
+\item[M.] ANEXOS\newline
+Se deberán presentar los anexos que permitan conocer los detalles de los temas considerados en la elaboración del estudio. Entre los cuales se deben adjuntar:
+\begin{enumerate}
+\item[i.] Tablas biométricas utilizadas; (...)
+\end{enumerate}
+\end{enumerate}}
+
+\textbf{Directrices sobre el Trabajo Actuarial para la Seguridad Social de la Asociación Internacional de la Seguridad Social de 2016}
+
+La Directriz 33 sobre el Trabajo Actuarial para la Seguridad Social de la Asociación Internacional de la Seguridad Social y la Organización Internacional del Trabajo, establece que:
+
+\emph{Directriz 33. Contribución actuarial a la gestión de los riesgos del régimen\newline
+[...] Riesgo de los gastos en prestaciones\newline
+La información sobre el riesgo de costo de las prestaciones puede proceder de la valuación actuarial y del análisis del flujo de caja. La medición de este riesgo considerara un análisis de la experiencia de las valuaciones pasadas y las correspondientes conciliaciones y análisis de sensibilidad, como se describe en las Directrices 7 y 8. Se garantizará que esta información se base en las tablas de mortalidad y de morbilidad y en otras hipótesis pertinentes (Directriz 3).}
+
+El artículo 1 de la Resolución No. C.D. 459 de 1 de octubre de 2013, establece que:
+
+PRIMERA.- Hasta que en cumplimiento de la presente Resolución, la Dirección 
+Actuaria! y de Investigación actualice las tablas biométricas, se continuarán utilizando 
+las que se vienen aplicando para efecto del cálculo de responsabilidades patronales Y 
+reservas matemáticas.
