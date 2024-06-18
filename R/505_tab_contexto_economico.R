@@ -4,9 +4,17 @@ message( '\tLectura del contexto económico' )
 # Carga de datos -----------------------------------------------------------------------------------
 load( file = paste0( parametros$RData, 'IESS_contexto_economico.RData' ) )
 load( paste0( parametros$RData, 'IESS_macro_estudio.RData' ) )
+load( paste0( parametros$RData, 'BIESS_proy_tasa_rendimiento.RData' ) )
+
 
 # Cargar función tildes a latex---------------------------------------------------------------------
 source( 'R/500_tildes_a_latex.R', encoding = 'UTF-8', echo = FALSE )
+
+#Parámetros-----------------------------------------------------------------------------------------
+
+anio_fin = 40 + 2020
+anio_ini <- 2021
+anio_corte <- 2020
 
 #Tabla del contexto económico-----------------------------------------------------------------------
 message( '\tTablas del contexto económico' )
@@ -259,33 +267,79 @@ print( aux_xtab,
 
 
 #Tabla de resumen de hipótesis----------------------------------------------------------------------
+aux <- tasas_macro_anuales %>%
+  dplyr::filter( anio >= 2021, anio <= anio_fin ) %>%
+  dplyr::mutate( 
+    t_pib =  mean( t_pib,   na.rm = TRUE ),
+    tp = mean( tp_anual,   na.rm = TRUE ),
+    t_sal = mean( t_sal,   na.rm = TRUE ),
+    t_sbu = mean( t_sbu,   na.rm = TRUE ),
+    inf = mean( inf_anual,   na.rm = TRUE )
+  ) %>%
+  distinct( t_pib, .keep_all = TRUE ) %>%
+  dplyr::select( t_pib, tp, t_sal, t_sbu, inf ) %>%
+  gather( ., key = 'hipotesis', value = 'tasas' ) %>%
+  mutate( 
+    hipotesis = c( 
+      'Crecimiento del PIB ( a precios actuales )',
+      'Tasa Pasiva Referencial',
+      'Crecimiento Salarial',
+      'Crecimiento del SBU',
+      'Inflación Promedio Acumulada'
+    )
+  )
 
-aux <- Hipotesis
-
-aux_xtab <- xtable( aux, digits = c(0, 0, 3 ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, 2 ) )
 
 aux_xtab <- tildes_a_latex( aux_xtab )
-
 print( aux_xtab, 
        file = paste0( parametros$resultado_tablas, 'iess_hip_macro', '.tex' ),
        type = 'latex',
        include.colnames = FALSE, include.rownames = FALSE,
        format.args = list( decimal.mark = ',', big.mark = '.' ),
        only.contents = TRUE,
-       hline.after = nrow(aux),
+       hline.after = nrow( aux ),
        sanitize.text.function = identity )
+
+aux <- hipotesis
+aux <- rbind( aux, c('Tasa actuarial', 6.25))
+aux$tasas <- as.numeric( aux$tasas )
+
+aux_xtab <- xtable( aux, digits = c( 0, 0, 2 ) )
+
+aux_xtab <- tildes_a_latex( aux_xtab )
+print( aux_xtab, 
+       file = paste0( parametros$resultado_tablas, 'iess_hip_macro_ssc', '.tex' ),
+       type = 'latex',
+       include.colnames = FALSE, include.rownames = FALSE,
+       format.args = list( decimal.mark = ',', big.mark = '.' ),
+       only.contents = TRUE,
+       hline.after = nrow( aux ),
+       sanitize.text.function = identity )
+
 
 #Tabla de predicciones por año----------------------------------------------------------------------
 message( '\tTablas del modelo predictivo de las hipótesis macro-económicas' )
-aux <- tasas_macro_pred %>%
-  filter( anio >= 2023 ) %>%
-  mutate( anio = as.character( anio ) ) %>%
-  mutate( tasa_activa = 100 * tasa_activa,
-          tasa_pasiva = 100 * tasa_pasiva,
-          inflación_prom = 100 * inflación_prom)
 
-aux_xtab <- xtable( aux, digits = c(0, 0, rep( 2, 6 ) ) )
+aux_1 <- tasas_macro_anuales %>% 
+  dplyr::select( anio,
+                 t_sal ) %>% 
+  mutate( anio = as.character( anio ) )
 
+aux <- predicciones_anuales %>%
+  filter( anio >= anio_corte + 1, anio <= anio_fin ) %>%
+  mutate( anio = as.character( anio ),
+          pib_anual = pib_anual / 1000 ) %>% 
+  left_join(., aux_1, by = 'anio' ) %>% 
+  dplyr::select( anio,
+                 pib_anual,
+                 tp_anual,
+                 t_sal,
+                 sbu_anual,
+                 ipc_dic,
+                 inf_anual )
+
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, 6 ) ) )
 print( aux_xtab, 
        file = paste0( parametros$resultado_tablas, 'iess_tasas_macro_pred', '.tex' ),
        type = 'latex',
@@ -297,33 +351,32 @@ print( aux_xtab,
 
 #Tabla de coeficientes del modelo-------------------------------------------------------------------
 
-aux <- coeficientes
-
-aux_xtab <- xtable( aux, digits = c(0, 0, rep( 5, 6 ) ) )
-
-aux_xtab <- tildes_a_latex( aux_xtab )
-
-print( aux_xtab, 
-       file = paste0( parametros$resultado_tablas, 'iess_coeficientes', '.tex' ),
-       type = 'latex',
-       include.colnames = FALSE, include.rownames = FALSE,
-       format.args = list( decimal.mark = ',', big.mark = '.' ),
-       only.contents = TRUE,
-       hline.after = nrow(aux),
-       sanitize.text.function = identity )
+# aux <- coeficientes
+# 
+# aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 5, 6 ) ) )
+# 
+# aux_xtab <- tildes_a_latex( aux_xtab )
+# 
+# print( aux_xtab, 
+#        file = paste0( parametros$resultado_tablas, 'iess_coeficientes', '.tex' ),
+#        type = 'latex',
+#        include.colnames = FALSE, include.rownames = FALSE,
+#        format.args = list( decimal.mark = ',', big.mark = '.' ),
+#        only.contents = TRUE,
+#        hline.after = nrow(aux),
+#        sanitize.text.function = identity )
 
 #Tabla de prueba de normalidad----------------------------------------------------------------------
+aux <- jarque_bera_test
 
-aux <- shapiro_test
-
-aux_xtab <- xtable( aux, digits = c(0, 0, rep( 5, 2 ) ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 5, 2 ) ) )
 
 aux_xtab <- tildes_a_latex( aux_xtab )
 
-aux_xtab <- xtable( aux_xtab, digits = c(0, 0, 5, 5 ) )
+aux_xtab <- xtable( aux_xtab, digits = c( 0, 0, 5, 5 ) )
 
 print( aux_xtab, 
-       file = paste0( parametros$resultado_tablas, 'iess_shapiro_test', '.tex' ),
+       file = paste0( parametros$resultado_tablas, 'iess_jb_test', '.tex' ),
        type = 'latex',
        include.colnames = FALSE, include.rownames = FALSE,
        format.args = list( decimal.mark = ',', big.mark = '.' ),
@@ -332,11 +385,9 @@ print( aux_xtab,
        sanitize.text.function = identity )
 
 #Tabla de prueba de homocedasticidad----------------------------------------------------------------
-
 aux <- homocedasticidad
 
-aux_xtab <- xtable( aux, digits = c(0, 0, rep( 5, 2 ) ) )
-
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 5, 2 ) ) )
 print( aux_xtab, 
        file = paste0( parametros$resultado_tablas, 'iess_homocedasticidad', '.tex' ),
        type = 'latex',
@@ -346,18 +397,14 @@ print( aux_xtab,
        hline.after = nrow(aux),
        sanitize.text.function = identity )
 
-
-
 #Tabla matriz de correlaciones----------------------------------------------------------------------
-
 aux <- ma_correlaciones
 
-aux_xtab <- xtable( aux, digits = c(0, 0, rep( 5, 6 ) ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 5, 5 ) ) )
 
 aux_xtab <- tildes_a_latex( aux_xtab )
 
-aux_xtab <- xtable( aux_xtab, digits = c(0, 0, rep( 5, 6 ) ) )
-
+aux_xtab <- xtable( aux_xtab, digits = c( 0, 0, rep( 5, 5 ) ) )
 print( aux_xtab, 
        file = paste0( parametros$resultado_tablas, 'iess_ma_correlaciones', '.tex' ),
        type = 'latex',
@@ -368,15 +415,13 @@ print( aux_xtab,
        sanitize.text.function = identity )
 
 #Tabla matriz de p-valores de la prueba de multicolinealidad----------------------------------------
-
 aux <- ma_multi_p_valores
 
-aux_xtab <- xtable( aux, digits = c(0, 0, rep( 5, 6 ) ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 5, 5 ) ) )
 
 aux_xtab <- tildes_a_latex( aux_xtab )
 
-aux_xtab <- xtable( aux_xtab, digits = c(0, 0, rep( 5, 6 ) ) )
-
+aux_xtab <- xtable( aux_xtab, digits = c( 0, 0, rep( 5, 5 ) ) )
 print( aux_xtab, 
        file = paste0( parametros$resultado_tablas, 'iess_ma_multi_p_valores', '.tex' ),
        type = 'latex',
@@ -388,31 +433,28 @@ print( aux_xtab,
 
 #Tabla matriz de covarianza-------------------------------------------------------------------------
 
-aux <- covarianza
-
-aux_xtab <- xtable( aux, digits = c(0, 0, rep( 2, 6 ) ) )
-
-aux_xtab <- tildes_a_latex( aux_xtab )
-
-print( aux_xtab, 
-       file = paste0( parametros$resultado_tablas, 'iess_ma_covarianza', '.tex' ),
-       type = 'latex',
-       include.colnames = FALSE, include.rownames = FALSE,
-       format.args = list( decimal.mark = ',', big.mark = '.' ),
-       only.contents = TRUE,
-       hline.after = nrow(aux),
-       sanitize.text.function = identity )
+# aux <- covarianza
+# 
+# aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, 6 ) ) )
+# 
+# aux_xtab <- tildes_a_latex( aux_xtab )
+# 
+# print( aux_xtab, 
+#        file = paste0( parametros$resultado_tablas, 'iess_ma_covarianza', '.tex' ),
+#        type = 'latex',
+#        include.colnames = FALSE, include.rownames = FALSE,
+#        format.args = list( decimal.mark = ',', big.mark = '.' ),
+#        only.contents = TRUE,
+#        hline.after = nrow(aux),
+#        sanitize.text.function = identity )
 
 
 #Tabla de la prueba de nulidad de coeficientes------------------------------------------------------
-
 aux <- test_nulidad_nulidad
 
-aux_xtab <- xtable( aux, digits = c(0, 0,2 ) )
-
+aux_xtab <- xtable( aux, digits = c( 0, 0, 2 ) )
 aux_xtab <- tildes_a_latex( aux_xtab )
-
-print( aux_xtab, 
+print( aux_xtab,
        file = paste0( parametros$resultado_tablas, 'iess_test_nulidad_nulidad', '.tex' ),
        type = 'latex',
        include.colnames = FALSE, include.rownames = FALSE,
@@ -423,11 +465,9 @@ print( aux_xtab,
 
 
 #Tabla del test de Box Ljung------------------------------------------------------------------------
-
 aux <- box_ljung 
 
-aux_xtab <- xtable( aux, digits = c(0, 0, 5, 0, 5 ) )
-
+aux_xtab <- xtable( aux, digits = c( 0, 0, 5, 0, 5 ) )
 print( aux_xtab, 
        file = paste0( parametros$resultado_tablas, 'iess_test_box_ljung', '.tex' ),
        type = 'latex',
@@ -437,26 +477,201 @@ print( aux_xtab,
        hline.after = nrow(aux),
        sanitize.text.function = identity )
 
+#Tabla de coeficientes del modelo de series multivariante-------------------------------------------
+modelo <- coeficientes$varresult
 
-#Tabla de prueba de normalidad----------------------------------------------------------------------
+modelo_diff_pib <- modelo$diff_pib$coefficients
+modelo_diff_tasa_pasiva <- modelo$diff_tasa_pasiva$coefficients
+modelo_diff_sal_prom <- modelo$diff_sal_prom$coefficients
+modelo_diff_sbu <- modelo$diff_sbu$coefficients
+modelo_diff_ipc <- modelo$diff_ipc$coefficients
 
-aux <- shapiro_test
+test_significancia <- rbind( modelo_diff_pib,
+                             modelo_diff_tasa_pasiva,
+                             modelo_diff_sal_prom,
+                             modelo_diff_sbu,
+                             modelo_diff_ipc ) %>% 
+  as_tibble( . ) %>% 
+  clean_names() %>% 
+  mutate( p_value = if_else( pr_t < 0.001,
+                             "p < 0,001",
+                             format( round( pr_t, 3),
+                                     nsmall = 3,
+                                     decimal.mark = ",", big.mark = ".") ) ) %>% 
+  dplyr::select( -pr_t )
 
-aux_xtab <- xtable( aux, digits = c(0, 0, rep( 5, 2 ) ) )
 
-aux_xtab <- tildes_a_latex( aux_xtab )
+sigma_diff_pib <- format( round( modelo$diff_pib$sigma, 4 ),
+                          nsmall = 3,
+                          decimal.mark = ",", big.mark = "." ) 
 
-print( aux_xtab, 
-       file = paste0( parametros$resultado_tablas, 'iess_shapiro_test', '.tex' ),
-       type = 'latex',
-       include.colnames = FALSE, include.rownames = FALSE,
-       format.args = list( decimal.mark = ',', big.mark = '.' ),
-       only.contents = TRUE,
-       hline.after = nrow(aux),
-       sanitize.text.function = identity )
+df_diff_pib <- modelo$diff_pib$df
 
+f_diff_pib <- format( round(  modelo$diff_pib$fstatistic[1], 4 ),
+                      nsmall = 3,
+                      decimal.mark = ",", big.mark = "." ) 
+
+f_value_diff_pib <- pf( modelo$diff_pib$fstatistic[1], 
+                        modelo$diff_pib$fstatistic[2], 
+                        modelo$diff_pib$fstatistic[3], lower.tail = FALSE)
+
+
+f_value_diff_pib <- if_else( f_value_diff_pib < 0.001,
+                             " <\\,0,001",
+                             format( round(  f_value_diff_pib, 4 ),
+                                     nsmall = 3,
+                                     decimal.mark = ",", big.mark = "." )  )
+
+
+sigma_diff_tasa_pasiva <- format( round( modelo$diff_tasa_pasiva$sigma, 4 ),
+                                  nsmall = 3,
+                                  decimal.mark = ",", big.mark = "." ) 
+
+df_diff_tasa_pasiva <- modelo$diff_tasa_pasiva$df
+
+f_diff_tasa_pasiva <- format( round(  modelo$diff_tasa_pasiva$fstatistic[1], 4 ),
+                              nsmall = 3,
+                              decimal.mark = ",", big.mark = "." ) 
+
+f_value_diff_tasa_pasiva <- pf( modelo$diff_tasa_pasiva$fstatistic[1], 
+                                modelo$diff_tasa_pasiva$fstatistic[2], 
+                                modelo$diff_tasa_pasiva$fstatistic[3], lower.tail = FALSE)
+
+
+f_value_diff_tasa_pasiva <- if_else( f_value_diff_tasa_pasiva < 0.001,
+                                     " <\\,0,001",
+                                     format( round(  f_value_diff_tasa_pasiva, 4 ),
+                                             nsmall = 3,
+                                             decimal.mark = ",", big.mark = "." )  )
+
+sigma_diff_sal_prom <- format( round( modelo$diff_sal_prom$sigma, 4 ),
+                               nsmall = 3,
+                               decimal.mark = ",", big.mark = "." ) 
+
+df_diff_sal_prom <- modelo$diff_sal_prom$df
+
+f_diff_sal_prom <- format( round(  modelo$diff_sal_prom$fstatistic[1], 4 ),
+                           nsmall = 3,
+                           decimal.mark = ",", big.mark = "." ) 
+
+f_value_diff_sal_prom <- pf( modelo$diff_sal_prom$fstatistic[1], 
+                             modelo$diff_sal_prom$fstatistic[2], 
+                             modelo$diff_sal_prom$fstatistic[3], lower.tail = FALSE)
+
+f_value_diff_sal_prom <- if_else( f_value_diff_sal_prom < 0.001,
+                                  " <\\,0,001",
+                                  format( round(  f_value_diff_sal_prom, 4 ),
+                                          nsmall = 3,
+                                          decimal.mark = ",", big.mark = "." )  )
+
+sigma_diff_sbu <- format( round( modelo$diff_sbu$sigma, 4 ),
+                          nsmall = 3,
+                          decimal.mark = ",", big.mark = "." ) 
+
+df_diff_sbu <- modelo$diff_sbu$df
+
+f_diff_sbu <- format( round(  modelo$diff_sbu$fstatistic[1], 4 ),
+                      nsmall = 3,
+                      decimal.mark = ",", big.mark = "." ) 
+
+f_value_diff_sbu <- pf( modelo$diff_sbu$fstatistic[1], 
+                        modelo$diff_sbu$fstatistic[2], 
+                        modelo$diff_sbu$fstatistic[3], lower.tail = FALSE)
+
+
+f_value_diff_sbu <- if_else( f_value_diff_sbu < 0.001,
+                             " <\\,0,001",
+                             format( round(  f_value_diff_sbu, 4 ),
+                                     nsmall = 3,
+                                     decimal.mark = ",", big.mark = "." )  )
+
+
+sigma_diff_ipc <- format( round( modelo$diff_ipc$sigma, 4 ),
+                          nsmall = 3,
+                          decimal.mark = ",", big.mark = "." ) 
+
+df_diff_ipc <- modelo$diff_ipc$df
+
+f_diff_ipc <- format( round(  modelo$diff_ipc$fstatistic[1], 4 ),
+                      nsmall = 3,
+                      decimal.mark = ",", big.mark = "." ) 
+
+f_value_diff_ipc <- pf( modelo$diff_ipc$fstatistic[1], 
+                        modelo$diff_ipc$fstatistic[2], 
+                        modelo$diff_ipc$fstatistic[3], lower.tail = FALSE )
+
+
+f_value_diff_ipc <- if_else( f_value_diff_ipc < 0.001,
+                             " $<\\,0,001$",
+                             format( round(  f_value_diff_ipc, 4 ),
+                                     nsmall = 3,
+                                     decimal.mark = ",", big.mark = "." )  )
+
+aux <- data.frame( var = c( '$AR(1)\\;\\nabla Pib$',
+                            '$AR(1)\\;\\nabla IPC$',
+                            '$AR(2)\\;\\nabla Pib$',
+                            '$AR(1)\\;\\nabla \\text{Tasa Pasiva}$',
+                            '$AR(1)\\;\\nabla Salarios$',
+                            '$Constante$',
+                            '$AR(1)\\;\\nabla SBU$',
+                            '$AR(2)\\;\\nabla SBU$',
+                            '$AR(2)\\;\\nabla IPC$',
+                            '$Constante$',
+                            '$AR(1)\\;\\nabla IPC$',
+                            '$Constante$' ), 
+                   test_significancia )
+
+
+xtb_aux <- xtable( aux, digits = c( 0, 0, 6, 6, 6, 0 ) )
+
+print( xtb_aux,
+       file = paste0( parametros$resultado_tablas, 'iess_modelo_macro_coef', '.tex' ),
+       type = 'latex', 
+       comment=FALSE,
+       include.colnames = FALSE, 
+       include.rownames = FALSE, 
+       format.args = list( decimal.mark = ',', big.mark = '.' ), 
+       only.contents = TRUE, 
+       hline.after = c( 3, 4, 6, 10, 12 ),
+       sanitize.text.function = identity,
+       add.to.row = 
+         list( pos = list( 3, 4, 6, 10, 12 ), #, 4, 6, 10, 12), # posición después de 3, 4, 6, 10, 12
+               command = c( paste(" \\hline \n", "\\multicolumn{5}{l}{Error estándar de los residuos: ",sigma_diff_pib," sobre ", df_diff_pib[2], " grados de libertad} \\\\ \n", "\\multicolumn{5}{l}{Estadístico - $F$: ", f_diff_pib, " sobre ", df_diff_pib[1], " y ",df_diff_pib[2] , " grados de libertad, p-valor", f_value_diff_pib, "}", " \\\\ \\hline  \n \\multicolumn{5}{c}{\\textbf{Ecuación para $\\nabla \\text{Tasa pasiva}$ } } \\\\  \n"),
+                            paste( "\\hline \n \\multicolumn{5}{l}{Error estándar de los residuos: ",sigma_diff_tasa_pasiva," sobre ", df_diff_tasa_pasiva[2], " grados de libertad} \\\\ \n", "\\multicolumn{5}{l}{Estadístico $F$: ", f_diff_tasa_pasiva, " sobre ", df_diff_tasa_pasiva[1], " y ",df_diff_tasa_pasiva[2] , " grados de libertad, p-valor", f_value_diff_tasa_pasiva, "}", "\\\\ \\hline \n \\multicolumn{5}{c}{\\textbf{Ecuación para $\\nabla \\text{Salario Promedio}$}} \\\\ \n"),
+                            paste(" \\hline \n", "\\multicolumn{5}{l}{Error estándar de los residuos: ",sigma_diff_sal_prom," sobre ", df_diff_sal_prom[2], " grados de libertad} \\\\ \n", "\\multicolumn{5}{l}{Estadístico $F$: ", f_diff_sal_prom, " sobre ", df_diff_sal_prom[1], " y ",df_diff_sal_prom[2] , " grados de libertad, p-valor", f_value_diff_sal_prom, "}", "\\\\ \\hline \n \\multicolumn{5}{c}{\\textbf{Ecuación para $\\nabla SBU$}} \\\\ \n"),
+                            paste(" \\hline \n", "\\multicolumn{5}{l}{Error estándar de los residuos: ",sigma_diff_sbu," sobre ", df_diff_sbu[2], " grados de libertad} \\\\ \n", "\\multicolumn{5}{l}{Estadístico $F$: ", f_diff_sbu, " sobre ", df_diff_sbu[1], " y ",df_diff_sbu[2] , " grados de libertad, p-valor", f_value_diff_sbu, "}", "\\\\ \\hline \n \\multicolumn{5}{c}{\\textbf{Ecuación para $\\nabla IPC$}} \\\\ \n"),
+                            paste(" \\hline \n", "\\multicolumn{5}{l}{Error estándar de los residuos: ",sigma_diff_ipc," sobre ", df_diff_ipc[2], " grados de libertad} \\\\ \n", "\\multicolumn{5}{l}{Estadístico $F$: ", f_diff_ipc, " sobre ", df_diff_ipc[1], " y ",df_diff_ipc[2] , " grados de libertad, p-valor", f_value_diff_ipc, "} \\\\" )
+               ) ) )
+
+
+#Tabla de coeficientes del modelo de series de rendimientos del BIESS-------------------------------
+aux <- coeficientes_biess %>% 
+  mutate( var = c( '$AR(1)$',
+                   '$AR(2)$' ) )
+
+sigma_modelo <- format( round( se_mod_biess, 4 ),
+                        nsmall = 3,
+                        decimal.mark = ",", big.mark = "." ) 
+
+xtb_aux <- xtable( aux, digits = c( 0, 0, 6, 6, 6, 6 ) )
+print( xtb_aux,
+       file = paste0( parametros$resultado_tablas, 'iess_modelo_biess_coef', '.tex' ),
+       type = 'latex', 
+       comment=FALSE,
+       include.colnames = FALSE, 
+       include.rownames = FALSE, 
+       format.args = list( decimal.mark = ',', big.mark = '.' ), 
+       only.contents = TRUE, 
+       hline.after = c( 2 ),
+       sanitize.text.function = identity,
+       add.to.row = 
+         list( pos = list( 2 ),
+               command = c( paste( " \\hline \n", "\\multicolumn{5}{l}{Error estándar de los residuos: ",
+                                   sigma_modelo,
+                                   " sobre 131 grados de libertad} \\\\ " ) ) ) )
 
 #Borrando data frames-------------------------------------------------------------------------------
 message( paste( rep( '-', 100 ), collapse = '' ) )
 rm( list = ls( )[ !( ls( ) %in% c( 'parametros' ) ) ] )
 gc( )
+

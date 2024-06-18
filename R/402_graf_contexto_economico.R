@@ -9,6 +9,12 @@ load( paste0( parametros$RData, 'ONU_proyeccion_poblacion.RData' ) )
 load( paste0( parametros$RData, 'IESS_onu_pea_ecu_int.RData' ) )
 load( paste0( parametros$RData, 'IESS_contexto_economico.RData' ) )
 load( paste0( parametros$RData, 'IESS_macro_estudio.RData' ) )
+load( paste0( parametros$RData, 'BIESS_proy_tasa_rendimiento.RData' ) )
+
+# 0. Parámetros-------------------------------------------------------------------------------------
+anio_fin = 40 + 2020
+anio_ini <- 2002
+anio_corte <- 2022
 
 #1. Evolución histórica-----------------------------------------------------------------------------
 ##Evolución histórica del índice de precios (IPC)----------------------------------------------------
@@ -358,204 +364,1076 @@ ggsave( plot = biess_rendimiento,
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
 
-#2. Predicciones------------------------------------------------------------------------------------
-##Predicciones Salario básico unificado-------------------------------------------------------------
+# 2. Predicciones-----------------------------------------------------------------------------------
+# Predicciones PIB nominal--------------------------------------------------------------------------
+aux <- intervalos_confianza %>% 
+  group_by( anio ) %>% 
+  mutate( pib_anual = sum( pib, na.rm = TRUE )/1000,
+          lim_inf_pib = sum( lim_inf_pib )/1000,
+          lim_sup_pib = sum( lim_sup_pib )/1000 ) %>% 
+  ungroup( ) %>% 
+  distinct( ., anio, .keep_all = TRUE ) %>% 
+  dplyr::select( anio, pib_anual, lim_inf_pib, lim_sup_pib ) %>% 
+  mutate( lim_inf_pib = if_else( anio == anio_corte,
+                                 pib_anual,
+                                 lim_inf_pib ),
+          lim_sup_pib = if_else( anio == anio_corte,
+                                 pib_anual,
+                                 lim_sup_pib ) )
 
-aux <- tasas_macro_pred
-aux_his <- aux %>% filter( anio <= 2022 )
-aux_pred <- aux %>% filter( anio >= 2022 )
+aux_his <- aux %>% filter( anio <= anio_corte )
+aux_pred <- aux %>% filter( anio >= anio_corte, anio <= anio_fin )
 
-lim_y<- c( 0 ,300000000 )
-salto_y = 50000000
-brks_y <- seq(lim_y[1],lim_y[2],salto_y)
-lbls_y <- formatC( brks_y, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
+lim_y <- c( 0 , 250000 )
+salto_y = 50000
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <-
+  formatC( 
+    brks_y,
+    digits = 0,
+    format = 'f',
+    big.mark = '.',
+    decimal.mark = ','
+  )
 
-iess_pib_pred <- ggplot() +
-  geom_line( data = aux_his, aes( x = anio, y = pib_nominal  ,group=1 ),
-             size = graf_line_size,colour= parametros$iess_green) +
-  geom_line( data = aux_pred, aes( x = anio, y = pib_nominal  , group=1 ),
-             size = graf_line_size,colour = parametros$iess_green,linetype = "dashed") +
-  xlab("Años")+
-  ylab("PIB nominal (miles USD)") +
-  scale_y_continuous( breaks = brks_y, labels = lbls_y, limits = lim_y) +
-  scale_x_continuous( labels = seq(2006, 2060, 9), breaks = seq(2006, 2060, 9)) +
-  theme_bw() +
+iess_pib_pred <- ggplot(  ) +
+  geom_line( 
+    data = aux_his,
+    aes( x = anio, y = pib_anual, group = 1 ),
+    linewidth = graf_line_size,
+    colour = parametros$iess_green
+  ) + 
+  geom_ribbon( data = aux_pred,
+               aes( x = anio,
+                    ymin = lim_inf_pib,
+                    ymax = lim_sup_pib ), 
+               fill = 'blue',
+               alpha = 0.2 ) +
+  geom_line( 
+    data = aux_pred,
+    aes( x = anio, y = pib_anual, group = 1 ),
+    linewidth = graf_line_size,
+    colour = parametros$iess_green,
+    linetype = 'dashed'
+  ) +
+  xlab( '' ) +
+  ylab( 'PIB nominal ( millones de USD )' ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_continuous( labels = seq( 2000, anio_fin, by = 5 ),
+                      breaks = seq( 2000, anio_fin, by = 5 ) ) +
+  theme_bw(  ) +
   plt_theme
 
-ggsave( plot = iess_pib_pred,
-        filename = paste0( parametros$resultado_graficos, 'iess_pib_pred', parametros$graf_ext ),
-        width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
+ggsave( 
+  plot = iess_pib_pred,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'iess_pib_pred',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
 
-##Predicciones Salario promedio anual---------------------------------------------------------------
+# Predicciones Salario promedio anual---------------------------------------------------------------
+aux <- intervalos_confianza %>% 
+  group_by( anio ) %>% 
+  mutate( sal_anual = sum( sal_prom, na.rm = TRUE ),
+          lim_inf_sal_prom = sum( lim_inf_sal_prom ),
+          lim_sup_sal_prom = sum( lim_sup_sal_prom ) ) %>% 
+  ungroup( ) %>% 
+  distinct( ., anio, .keep_all = TRUE ) %>% 
+  dplyr::select( anio, sal_anual, lim_inf_sal_prom, lim_sup_sal_prom ) %>% 
+  mutate( lim_inf_sal_prom = if_else( anio == anio_corte,
+                                      sal_anual,
+                                      lim_inf_sal_prom ),
+          lim_sup_sal_prom = if_else( anio == anio_corte,
+                                      sal_anual,
+                                      lim_sup_sal_prom ) )
 
-aux <- tasas_macro_pred
-aux_his <- aux %>% filter( anio <= 2022 )
-aux_pred <- aux %>% filter( anio >= 2022 )
+aux_his <- aux %>% filter( anio <= anio_corte )
+aux_pred <- aux %>% filter( anio >= anio_corte, anio <= anio_fin )
 
-lim_y<- c(0,25000)
+lim_y <- c( 0, 25000 )
 salto_y = 5000
-brks_y <- seq(lim_y[1],lim_y[2],salto_y)
-lbls_y <- formatC( brks_y, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <-
+  formatC( 
+    brks_y,
+    digits = 0,
+    format = 'f',
+    big.mark = '.',
+    decimal.mark = ','
+  )
 
-iess_sal_pred <- ggplot() +
-  geom_line( data = aux_his, aes( x = anio, y = sal_anual,group=1 ),
-             size = graf_line_size,colour= parametros$iess_green) +
-  geom_line( data = aux_pred, aes( x = anio, y = sal_anual, group=1 ),
-             size = graf_line_size,colour = parametros$iess_green,linetype = "dashed") +
-  xlab("Años")+
-  ylab("Salario promedio anual (USD)") +
-  scale_y_continuous( breaks = brks_y, labels = lbls_y, limits = lim_y) +
-  scale_x_continuous( labels = seq(2006, 2060, 9), breaks = seq(2006, 2060, 9)) +
-  theme_bw() +
+iess_sal_pred <- ggplot(  ) +
+  geom_line( 
+    data = aux_his,
+    aes( x = anio, y = sal_anual, group = 1 ),
+    linewidth = graf_line_size,
+    colour = parametros$iess_green
+  ) +
+  geom_ribbon( data = aux_pred,
+               aes( x = anio,
+                    ymin = lim_inf_sal_prom,
+                    ymax = lim_sup_sal_prom ), 
+               fill = 'blue',
+               alpha = 0.2 ) +
+  geom_line( 
+    data = aux_pred,
+    aes( x = anio, y = sal_anual, group = 1 ),
+    linewidth = graf_line_size,
+    colour = parametros$iess_green,
+    linetype = 'dashed'
+  ) +
+  xlab( '' ) +
+  ylab( 'Salario promedio anual ( USD )' ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_continuous( labels = seq( 2000, anio_fin, by = 5 ),
+                      breaks = seq( 2000, anio_fin, by = 5 ) ) +
+  theme_bw(  ) +
   plt_theme
 
-ggsave( plot = iess_sal_pred,
-        filename = paste0( parametros$resultado_graficos, 'iess_sal_pred', parametros$graf_ext ),
-        width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
+ggsave( 
+  plot = iess_sal_pred,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'iess_sal_pred',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
 
-
-
-##Predicciones  del salario básico unificado--------------------------------------------------------
-
+# Predicciones  del salario básico unificado--------------------------------------------------------
 message( '\tGraficando salario básico unificado' )
-aux<- tasas_macro_pred
-aux_his <- aux %>% filter( anio <= 2022 )
-aux_pred <- aux %>% filter( anio >= 2022 )
 
-lim_y<- c( 0, 1200 )
-salto_y <- 100
-brks_y <- seq(lim_y[1],lim_y[2],salto_y)
-lbls_y <- formatC( brks_y, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
+aux <- intervalos_confianza %>% 
+  filter( mes == '6' ) %>% 
+  dplyr::select( anio, sbu, lim_inf_sbu, lim_sup_sbu ) %>% 
+  mutate( lim_inf_sbu = if_else( anio == anio_corte,
+                                 sbu,
+                                 lim_inf_sbu ),
+          lim_sup_sbu = if_else( anio == anio_corte,
+                                 sbu,
+                                 lim_sup_sbu ) )
 
+aux_his <- aux %>% filter( anio <= anio_corte )
+aux_pred <- aux %>% filter( anio >= anio_corte, anio <= anio_fin )
 
-iess_sbu_pred <- ggplot() +
-  geom_line( data = aux_his, aes( x = anio, y = sbu, group=1),
-             size = graf_line_size, colour = parametros$iess_green ) +
-  geom_line( data = aux_pred, aes( x = anio, y = sbu, group=1),
-             size = graf_line_size,  colour = parametros$iess_green,linetype = "dashed") +
-  xlab("Años")+
-  ylab("SBU (USD)") +
-  scale_y_continuous(breaks = brks_y, labels = lbls_y, limits = lim_y) +
-  scale_x_continuous( labels = seq(2006, 2060, 9), breaks = seq(2006, 2060, 9)) +
-  theme_bw() +
+lim_y <- c( 0, 1300 )
+salto_y <- 200
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <-
+  formatC( 
+    brks_y,
+    digits = 0,
+    format = 'f',
+    big.mark = '.',
+    decimal.mark = ','
+  )
+
+iess_sbu_pred <- ggplot(  ) +
+  geom_line( 
+    data = aux_his,
+    aes( x = anio, y = sbu, group = 1 ),
+    linewidth = graf_line_size,
+    colour = parametros$iess_green
+  ) +
+  geom_ribbon( data = aux_pred,
+               aes( x = anio,
+                    ymin = lim_inf_sbu,
+                    ymax = lim_sup_sbu ), 
+               fill = 'blue',
+               alpha = 0.2 ) +
+  geom_line( 
+    data = aux_pred,
+    aes( x = anio, y = sbu, group = 1 ),
+    linewidth = graf_line_size,
+    colour = parametros$iess_green,
+    linetype = 'dashed'
+  ) +
+  xlab( '' ) +
+  ylab( 'SBU ( USD )' ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_continuous( labels = seq( 2000, anio_fin, by = 5 ),
+                      breaks = seq( 2000, anio_fin, by = 5 ) ) +
+  theme_bw(  ) +
   plt_theme
 
-ggsave( plot = iess_sbu_pred,
-        filename = paste0( parametros$resultado_graficos, 'iess_sbu_pred', parametros$graf_ext ),
-        width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
+ggsave( 
+  plot = iess_sbu_pred,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'iess_sbu_pred',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
 
-
-##Predicciones tasa activa--------------------------------------------------------------------------
-
-message( '\tGraficando tasa activa' )
-aux <- tasas_macro_pred
-aux_his <- aux %>% filter( anio <= 2022 )
-aux_pred <- aux %>% filter( anio >= 2022 )
-
-lim_y<- c(0.07,0.11)
-salto_y = 0.005
-brks_y <- seq(lim_y[1],lim_y[2],salto_y)
-lbls_y <- paste0(as.character(c(seq(abs(lim_y[1]), abs(lim_y[2]), salto_y)*100) ), "%" )
-
-iess_ta_pred <- ggplot() +
-  geom_line( data = aux_his, aes( x = anio, y = tasa_activa, group=1 ),
-             size = graf_line_size,colour = parametros$iess_green ) +
-  geom_line( data = aux_pred, aes( x = anio, y = tasa_activa, group=1),
-             size = graf_line_size, colour = parametros$iess_green, linetype = "dashed") +
-  xlab("Años")+
-  ylab("Tasa activa referencial") +
-  scale_y_continuous(breaks = brks_y, labels = lbls_y, limits = lim_y) +
-  scale_x_continuous( labels = seq(2006, 2060, 9), breaks = seq(2006, 2060, 9)) +
-  theme_bw() +
-  plt_theme
-
-ggsave( plot = iess_ta_pred,
-        filename = paste0( parametros$resultado_graficos, 'iess_ta_pred', parametros$graf_ext ),
-        width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
-
-##Predicciones tasa pasiva--------------------------------------------------------------------------
+# Predicciones tasa pasiva--------------------------------------------------------------------------
 message( '\tGraficando tasa pasiva' )
-aux <- tasas_macro_pred
-aux_his <- aux %>% filter( anio <= 2022 )
-aux_pred <- aux %>% filter( anio >= 2022 )
 
-lim_y<- c(0.03,0.07)
-salto_y = 0.01
-brks_y <- seq(lim_y[1],lim_y[2],salto_y)
-lbls_y <- paste0(as.character(c(seq(abs(lim_y[1]), abs(lim_y[2]), salto_y)*100) ), "%" )
+aux <- intervalos_confianza %>% 
+  mutate( fecha = as.Date( paste0( anio, '-', mes, '-01', '%Y-%m-%d' ) ) ) %>% 
+  dplyr::select( fecha, tasa_pasiva, lim_inf_tasa_pasiva, lim_sup_tasa_pasiva ) %>% 
+  mutate( lim_inf_tasa_pasiva = if_else( year( fecha ) == anio_corte & month( fecha ) == 12,
+                                         tasa_pasiva,
+                                         lim_inf_tasa_pasiva ),
+          lim_sup_tasa_pasiva = if_else( year( fecha ) == anio_corte & month( fecha ) == 12,
+                                         tasa_pasiva,
+                                         lim_sup_tasa_pasiva ) )
 
-iess_tp_pred <- ggplot() +
-  geom_line( data = aux_his, aes( x = anio, y = tasa_pasiva, group=1 ),
-             colour = parametros$iess_green,size = graf_line_size ) +
-  geom_line( data = aux_pred, aes( x = anio, y = tasa_pasiva, group=1 ),
-             size = graf_line_size,colour = parametros$iess_green,size = graf_line_size, linetype = "dashed") +
-  xlab("Años")+
-  ylab("Tasa pasiva referencial") +
-  scale_y_continuous(breaks = brks_y, labels = lbls_y, limits = lim_y) +
-  scale_x_continuous( labels = seq(2006, 2060, 9), breaks = seq(2006, 2060, 9)) +
-  theme_bw() +
-  plt_theme
+aux_his <- aux %>% filter(  fecha <= as.Date( '2022-12-01' ) )
+aux_pred <- aux %>% filter( fecha >= as.Date( '2022-12-01' ), year( fecha ) <= anio_fin )
 
-ggsave( plot = iess_tp_pred,
-        filename = paste0( parametros$resultado_graficos, 'iess_tp_pred', parametros$graf_ext ),
-        width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
+lim_y <- c( 0, 13 )
+salto_y = 2
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <-
+  paste0( as.character( c( seq( 
+    abs( lim_y[1] ), abs( lim_y[2] ), salto_y
+  ) ) ), '%' )
 
-##Predicciones inflación----------------------------------------------------------------------------
+iess_tp_pred <- ggplot(  ) +
+  geom_line( 
+    data = aux_his,
+    aes( x = fecha, y = tasa_pasiva, group = 1 ),
+    colour = parametros$iess_green,
+    linewidth = graf_line_size
+  ) +
+  geom_ribbon( data = aux_pred,
+               aes( x = fecha,
+                    ymin = lim_inf_tasa_pasiva,
+                    ymax = lim_sup_tasa_pasiva ), 
+               fill = 'blue',
+               alpha = 0.2 ) +
+  geom_line( 
+    data = aux_pred,
+    aes( x = fecha,
+         y = tasa_pasiva, group = 1 ),
+    linewidth = graf_line_size,
+    colour = parametros$iess_green,
+    linetype = 'dashed'
+  ) +
+  xlab( '' ) +
+  ylab( 'Tasa pasiva referencial' ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_date( 
+    breaks = seq( as.Date( '2000-12-01' ), as.Date( paste0( anio_fin,'-12-01' ) ), by = '60 months' ),
+    date_labels = '%b %Y',
+    limits = as.Date( c( '2000-12-01', paste0( anio_fin,'-12-01' ) ), '%Y-%m-%d' )
+  ) +
+  theme_bw(  ) +
+  plt_theme  +
+  theme( axis.text.x = element_text( 
+    angle = 90,
+    hjust = 0.5,
+    vjust = 0.5
+  ) )
+
+ggsave( 
+  plot = iess_tp_pred,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'iess_tp_pred',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
+
+# Predicciones IPC----------------------------------------------------------------------------------
+message( '\tGraficando IPC' )
+
+aux <- intervalos_confianza %>% 
+  mutate( fecha = as.Date( paste0( anio, '-', mes, '-01', '%Y-%m-%d' ) ) ) %>% 
+  dplyr::select( fecha, ipc, lim_inf_ipc, lim_sup_ipc ) %>% 
+  mutate( lim_inf_ipc = if_else( year( fecha ) == anio_ini & month( fecha ) == 12,
+                                 ipc,
+                                 lim_inf_ipc ),
+          lim_sup_ipc = if_else( year( fecha ) == anio_ini & month( fecha ) == 12,
+                                 ipc,
+                                 lim_sup_ipc ) )
+
+aux_his <- aux %>% filter(  fecha <= as.Date( '2022-12-01' ) )
+aux_pred <- aux %>% filter( fecha >= as.Date( '2022-12-01' ), year( fecha ) <= anio_fin )
+
+lim_y <- c( 40, 220 )
+salto_y = 20
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <-
+  paste0( as.character( c( seq( 
+    abs( lim_y[1] ), abs( lim_y[2] ), salto_y
+  ) ) ) )
+
+iess_ipc_pred <- ggplot(  ) +
+  geom_line( 
+    data = aux_his,
+    aes( x = fecha, y = ipc, group = 1 ),
+    colour = parametros$iess_green,
+    linewidth = graf_line_size
+  ) +
+  geom_ribbon( data = aux_pred,
+               aes( x = fecha,
+                    ymin = lim_inf_ipc,
+                    ymax = lim_sup_ipc ), 
+               fill = 'blue',
+               alpha = 0.2 ) +
+  geom_line( 
+    data = aux_pred,
+    aes( x = fecha, y = ipc, group = 1 ),
+    linewidth = graf_line_size,
+    colour = parametros$iess_green,
+    linetype = 'dashed'
+  ) +
+  xlab( '' ) +
+  ylab( 'IPC' ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_date( 
+    breaks = seq( as.Date( '2000-12-01' ), as.Date( paste0( anio_fin,'-12-01' ) ), by = '60 months' ),
+    date_labels = '%b %Y',
+    limits = as.Date( c( '2000-12-01', paste0( anio_fin,'-12-01' ) ), '%Y-%m-%d' )
+  ) +
+  theme_bw(  ) +
+  plt_theme  +
+  theme( axis.text.x = element_text( 
+    angle = 90,
+    hjust = 0.5,
+    vjust = 0.5
+  ) )
+
+ggsave( 
+  plot = iess_ipc_pred,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'iess_ipc_pred',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
+
+# Predicciones del rendimiento del BIESS------------------------------------------------------------
+message( '\tGraficando rendimiento del BIESS' )
+
+aux <- predicciones_mensuales_biess %>% 
+  mutate( fecha = as.Date( paste0( anio, '-', mes, '-01', '%Y-%m-%d' ) ) ) %>% 
+  dplyr::select( fecha, rendimiento_biess, lim_inf, lim_sup ) %>% 
+  mutate( lim_inf_ipc = if_else( year( fecha ) == anio_ini & month( fecha ) == 12,
+                                 rendimiento_biess,
+                                 lim_inf ),
+          lim_sup_ipc = if_else( year( fecha ) == anio_ini & month( fecha ) == 12,
+                                 rendimiento_biess,
+                                 lim_sup ) )
+
+aux_his <- aux %>% filter(  fecha <= as.Date( '2022-12-01' ) )
+aux_pred <- aux %>% filter( fecha >= as.Date( '2022-12-01' ), year( fecha ) <= anio_fin )
+
+lim_y <- c( 5, 15 )
+salto_y = 2
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <-
+  paste0( as.character( c( seq( 
+    abs( lim_y[1] ), abs( lim_y[2] ), salto_y
+  ) ) ), '%' )
+
+biess_rendimiento_pred <- ggplot(  ) +
+  geom_line( 
+    data = aux_his,
+    aes( x = fecha, y = rendimiento_biess, group = 1 ),
+    colour = parametros$iess_green,
+    linewidth = graf_line_size
+  ) +
+  geom_ribbon( data = aux_pred,
+               aes( x = fecha,
+                    ymin = lim_inf,
+                    ymax = lim_sup ), 
+               fill = 'blue',
+               alpha = 0.2 ) +
+  geom_line( 
+    data = aux_pred,
+    aes( x = fecha, y = rendimiento_biess, group = 1 ),
+    linewidth = graf_line_size,
+    colour = parametros$iess_green,
+    linetype = 'dashed'
+  ) +
+  xlab( '' ) +
+  ylab( 'Tasa de rendimiento neto del BIESS' ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_date( 
+    breaks = seq( as.Date( '2010-12-01' ), as.Date( paste0( anio_fin,'-12-01' ) ), by = '60 months' ),
+    date_labels = '%b %Y',
+    limits = as.Date( c( '2010-12-01', paste0( anio_fin,'-12-01' ) ), '%Y-%m-%d' )
+  ) +
+  theme_bw(  ) +
+  plt_theme  +
+  theme( axis.text.x = element_text( 
+    angle = 90,
+    hjust = 0.5,
+    vjust = 0.5
+  ) )
+
+ggsave( 
+  plot = biess_rendimiento_pred,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'biess_rendimiento_pred',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
+
+# Predicciones inflación----------------------------------------------------------------------------
 message( '\tGraficando inflación' )
-aux <- tasas_macro_pred
-aux_his <- aux %>% filter( anio <= 2022 )
-aux_pred <- aux %>% filter( anio >= 2022 )
-lim_y<- c(-0.01,0.09)
-salto_y = 0.01
-brks_y <- seq(lim_y[1],lim_y[2],salto_y)
-lbls_y <- paste0(as.character(seq(lim_y[1], lim_y[2], salto_y)*100), "%")
 
-iess_inf_pred <- ggplot() +
-  geom_line( data = aux_his, aes( x = anio, y = inflación_prom, group=1),colour = parametros$iess_green,
-             size = graf_line_size ) +
-  geom_line( data = aux_pred, aes( x = anio, y = inflación_prom, group=1 ),
-             size = graf_line_size, colour = parametros$iess_green,linetype = "dashed") +
-  xlab("Años")+
-  ylab("Tasa inflación promedio") +
-  scale_y_continuous(breaks = brks_y, labels = lbls_y, limits = lim_y) +
-  scale_x_continuous( labels = seq(2006, 2060, 9), breaks = seq(2006, 2060, 9)) +
-  theme_bw() +
+aux <- predicciones_anuales
+aux_his <- aux %>% filter( anio <= anio_corte )
+aux_pred <- aux %>% filter( anio >= anio_corte, anio <= anio_fin )
+lim_y <- c( -1, 9 )
+salto_y = 1
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <-
+  paste0( as.character( seq( lim_y[1], lim_y[2], salto_y ) ), '%' )
+
+iess_inf_pred <- ggplot(  ) +
+  geom_line( 
+    data = aux_his,
+    aes( x = anio, y = inf_anual, group = 1 ),
+    colour = parametros$iess_green,
+    linewidth = graf_line_size
+  ) +
+  geom_line( 
+    data = aux_pred,
+    aes( x = anio, y = inf_anual, group = 1 ),
+    linewidth = graf_line_size,
+    colour = parametros$iess_blue,
+    linetype = 'dashed'
+  ) +
+  xlab( '' ) +
+  ylab( 'Tasa inflación acumulada anual promedio' ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_continuous( labels = seq( 2000, anio_fin, by = 5 ),
+                      breaks = seq( 2000, anio_fin, by = 5 ) ) +
+  theme_bw(  ) +
   plt_theme
 
-ggsave( plot = iess_inf_pred,
-        filename = paste0( parametros$resultado_graficos, 'iess_inf_pred', parametros$graf_ext ),
-        width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
+ggsave( 
+  plot = iess_inf_pred,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'iess_inf_pred',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
 
-## Prueba de Independencia de errores de Box-Ljung--------------------------------------------------
+# Gráfico agrupado----------------------------------------------------------------------------------
+plt_var_macro_a <-
+  marrangeGrob( 
+    list( 
+      iess_pib_pred,
+      iess_sal_pred
+    ),
+    nrow = 2,
+    ncol = 1,
+    top = ''
+  )
+
+ggsave( 
+  plot = plt_var_macro_a,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'plt_var_macro_a',
+    parametros$graf_ext
+  ),
+  width = 20,
+  height = 14,
+  units = graf_units,
+  dpi = graf_dpi
+)
+
+plt_var_macro_b <-
+  marrangeGrob( 
+    list( 
+      iess_sbu_pred,
+      iess_tp_pred
+    ),
+    nrow = 2,
+    ncol = 1,
+    top = ''
+  )
+
+ggsave( 
+  plot = plt_var_macro_b,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'plt_var_macro_b',
+    parametros$graf_ext
+  ),
+  width = 20,
+  height = 14,
+  units = graf_units,
+  dpi = graf_dpi
+)
+
+plt_var_macro_c <-
+  marrangeGrob( 
+    list( 
+      iess_ipc_pred,
+      iess_inf_pred
+    ),
+    nrow = 2,
+    ncol = 1,
+    top = ''
+  )
+
+ggsave( 
+  plot = plt_var_macro_c,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'plt_var_macro_c',
+    parametros$graf_ext
+  ),
+  width = 20,
+  height = 14,
+  units = graf_units,
+  dpi = graf_dpi
+)
+
+# 3. Prueba de Independencia de errores de Box-Ljung------------------------------------------------
+
+# 3.1. Prueba de Box-Ljung aumentada multivariante--------------------------------------------------
 aux <- as_tibble( box_ljung )
 
-lim_y<- c( 0, 0.9 )
+lim_y <- c( 0, 0.9 )
 salto_y = 0.1
-brks_y <- seq(lim_y[1],lim_y[2],salto_y)
-lbls_y <- paste0(as.character(seq(lim_y[1], lim_y[2], salto_y)*100), "%")
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <- paste0( format( seq( lim_y[1], lim_y[2], salto_y ),         
+                          nsmall = 1,
+                          decimal.mark = ',',
+                          big.mark = '.' ) )
 
-
-iess_box_ljung <- ggplot( aux, aes( x = m, y = p_valor )) +
-  geom_segment( aes( x = m, xend = m,
-                     y = 0, yend = p_valor ), 
-                color = parametros$iess_blue, 
-                linetype = 6 ) +
-  geom_hline( yintercept = 0,  color = "black", size = 0.5 ) + 
-  geom_hline( yintercept = 0.05,  color = "red", size = 0.5, linetype="dashed" ) + 
-  geom_point( color = parametros$iess_green, size = 2) +
-  scale_y_continuous( breaks = brks_y, labels = brks_y, limits = lim_y ) +
-  scale_x_continuous( labels = seq( 1, 8, 1 ), breaks = seq( 1, 8, 1 ) ) +
-  theme_bw() +
+iess_box_ljung <- ggplot( aux, aes( x = m, y = p_valor ) ) +
+  geom_segment( 
+    aes( 
+      x = m,
+      xend = m,
+      y = 0,
+      yend = p_valor
+    ),
+    color = parametros$iess_blue,
+    linetype = 6
+  ) +
+  geom_hline( yintercept = 0,
+              color = 'black',
+              size = 0.5 ) +
+  geom_hline( 
+    yintercept = 0.05,
+    color = 'red',
+    size = 0.5,
+    linetype = 'dashed'
+  ) +
+  geom_point( color = parametros$iess_green, size = 2 ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_continuous( labels = seq( 1, 10, 1 ), breaks = seq( 1, 10, 1 ) ) +
+  theme_bw(  ) +
   plt_theme +
-  xlab("m") +
-  ylab("p-valor")
+  xlab( '' ) +
+  ylab( 'p-valor' )
 
+ggsave( 
+  plot = iess_box_ljung,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'iess_box_ljung_aumentada',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
 
-ggsave( plot = iess_box_ljung,
-        filename = paste0( parametros$resultado_graficos, 'iess_box_ljung', parametros$graf_ext ),
-        width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
+# 3.2. Prueba de Box-Ljung PIB----------------------------------------------------------------------
+aux <- as.data.frame( box_ljung_pib ) %>%
+  clean_names( . )
 
-#3. Las pirámides poblacionales de la población nacional -------------------------------------------
+lim_y <-
+  c( 0, max( ( max( 
+    round( aux$p_value * 10, 0 )
+  )  + 1 ) / 10, 0.3 ) )
+salto_y = 0.1
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <- paste0( format( seq( lim_y[1], lim_y[2], salto_y ),         
+                          nsmall = 1,
+                          decimal.mark = ',',
+                          big.mark = '.' ) )
+lbls_x <- seq( 1, max( aux$lags ), 2 )
+brks_x <- seq( 1, max( aux$lags ), 2 )
+
+iess_box_ljung_pib <- ggplot( aux, aes( x = lags, y = p_value ) ) +
+  geom_segment( 
+    aes( 
+      x = lags,
+      xend = lags,
+      y = 0,
+      yend = p_value
+    ),
+    color = parametros$iess_blue,
+    linetype = 6
+  ) +
+  geom_hline( yintercept = 0,
+              color = 'black',
+              size = 0.5 ) +
+  geom_hline( 
+    yintercept = 0.05,
+    color = 'red',
+    size = 0.5,
+    linetype = 'dashed'
+  ) +
+  geom_point( color = parametros$iess_green, size = 2 ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_continuous( labels = lbls_x, breaks = brks_x ) +
+  theme_bw(  ) +
+  plt_theme +
+  xlab( '' ) +
+  ylab( 'p-valor' ) +
+  ggtitle( TeX( 'Residuos de $\\nabla$ PIB' ) )
+
+ggsave( 
+  plot = iess_box_ljung_pib,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'iess_box_ljung_pib',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
+
+# 3.3. Prueba de Box-Ljung salarios-----------------------------------------------------------------
+aux <- as.data.frame( box_ljung_sal ) %>%
+  clean_names( . )
+
+lim_y <-
+  c( 0, max( ( max( 
+    round( aux$p_value * 10, 0 )
+  )  + 1 ) / 10, 0.3 ) )
+salto_y = 0.1
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <- paste0( format( seq( lim_y[1], lim_y[2], salto_y ),         
+                          nsmall = 1,
+                          decimal.mark = ',',
+                          big.mark = '.' ) )
+lbls_x <- seq( 1, max( aux$lags ), 2 )
+brks_x <- lbls_x
+
+iess_box_ljung_sal <- ggplot( aux, aes( x = lags, y = p_value ) ) +
+  geom_segment( 
+    aes( 
+      x = lags,
+      xend = lags,
+      y = 0,
+      yend = p_value
+    ),
+    color = parametros$iess_blue,
+    linetype = 6
+  ) +
+  geom_hline( yintercept = 0,
+              color = 'black',
+              size = 0.5 ) +
+  geom_hline( 
+    yintercept = 0.05,
+    color = 'red',
+    size = 0.5,
+    linetype = 'dashed'
+  ) +
+  geom_point( color = parametros$iess_green, size = 2 ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_continuous( labels = lbls_x, breaks = brks_x ) +
+  theme_bw(  ) +
+  plt_theme +
+  xlab( '' ) +
+  ylab( 'p-valor' ) + 
+  ggtitle( TeX( 'Residuos de $\\nabla$ Salarios Promedio' ) )
+
+ggsave( 
+  plot = iess_box_ljung_sal,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'iess_box_ljung_sal',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
+
+# 3.4. Prueba de Box-Ljung SBU----------------------------------------------------------------------
+aux <- as.data.frame( box_ljung_sbu ) %>%
+  clean_names( . )
+
+lim_y <-
+  c( 0, max( ( max( 
+    round( aux$p_value * 10, 0 )
+  )  + 1 ) / 10, 0.3 ) )
+salto_y = 0.1
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <- paste0( format( seq( lim_y[1], lim_y[2], salto_y ),         
+                          nsmall = 1,
+                          decimal.mark = ',',
+                          big.mark = '.' ) )
+lbls_x <- seq( 1, max( aux$lags ), 2 )
+brks_x <- lbls_x
+
+iess_box_ljung_sbu <- ggplot( aux, aes( x = lags, y = p_value ) ) +
+  geom_segment( 
+    aes( 
+      x = lags,
+      xend = lags,
+      y = 0,
+      yend = p_value
+    ),
+    color = parametros$iess_blue,
+    linetype = 6
+  ) +
+  geom_hline( yintercept = 0,
+              color = 'black',
+              size = 0.5 ) +
+  geom_hline( 
+    yintercept = 0.05,
+    color = 'red',
+    size = 0.5,
+    linetype = 'dashed'
+  ) +
+  geom_point( color = parametros$iess_green, size = 2 ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_continuous( labels = lbls_x, breaks = brks_x ) +
+  theme_bw(  ) +
+  plt_theme +
+  xlab( '' ) +
+  ylab( 'p-valor' ) + 
+  ggtitle( TeX( 'Residuos de $\\nabla$ SBU' ) )
+
+ggsave( 
+  plot = iess_box_ljung_sbu,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'iess_box_ljung_sbu',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
+
+# 3.4. Prueba de Box-Ljung tasa pasiva--------------------------------------------------------------
+aux <- as.data.frame( box_ljung_tp ) %>%
+  clean_names( . )
+
+lim_y <-
+  c( 0, max( ( max( 
+    round( aux$p_value * 10, 0 )
+  )  + 1 ) / 10, 0.3 ) )
+salto_y = 0.1
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <- paste0( format( seq( lim_y[1], lim_y[2], salto_y ),         
+                          nsmall = 1,
+                          decimal.mark = ',',
+                          big.mark = '.' ) )
+lbls_x <- seq( 1, max( aux$lags ), 2 )
+brks_x <- lbls_x
+
+iess_box_ljung_tp <- ggplot( aux, aes( x = lags, y = p_value ) ) +
+  geom_segment( 
+    aes( 
+      x = lags,
+      xend = lags,
+      y = 0,
+      yend = p_value
+    ),
+    color = parametros$iess_blue,
+    linetype = 6
+  ) +
+  geom_hline( yintercept = 0,
+              color = 'black',
+              size = 0.5 ) +
+  geom_hline( 
+    yintercept = 0.05,
+    color = 'red',
+    size = 0.5,
+    linetype = 'dashed'
+  ) +
+  geom_point( color = parametros$iess_green, size = 2 ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_continuous( labels = lbls_x, breaks = brks_x ) +
+  theme_bw(  ) +
+  plt_theme +
+  xlab( '' ) +
+  ylab( 'p-valor' ) + 
+  ggtitle( TeX( 'Residuos de $\\nabla$ Tasa pasiva' ) )
+
+ggsave( 
+  plot = iess_box_ljung_tp,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'iess_box_ljung_tp',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
+
+# 3.5. Prueba de Box-Ljung IPC----------------------------------------------------------------------
+aux <- as.data.frame( boc_ljung_ipc ) %>%
+  clean_names( . )
+
+lim_y <-
+  c( 0, max( ( max( 
+    round( aux$p_value * 10, 0 )
+  )  + 1 ) / 10, 0.3 ) )
+salto_y = 0.1
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <- paste0( format( seq( lim_y[1], lim_y[2], salto_y ),         
+                          nsmall = 1,
+                          decimal.mark = ',',
+                          big.mark = '.' ) )
+lbls_x <- seq( 1, max( aux$lags ), 2 )
+brks_x <- lbls_x
+
+iess_box_ljung_ipc <- ggplot( aux, aes( x = lags, y = p_value ) ) +
+  geom_segment( 
+    aes( 
+      x = lags,
+      xend = lags,
+      y = 0,
+      yend = p_value
+    ),
+    color = parametros$iess_blue,
+    linetype = 6
+  ) +
+  geom_hline( yintercept = 0,
+              color = 'black',
+              size = 0.5 ) +
+  geom_hline( 
+    yintercept = 0.05,
+    color = 'red',
+    size = 0.5,
+    linetype = 'dashed'
+  ) +
+  geom_point( color = parametros$iess_green, size = 2 ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_continuous( labels = lbls_x, breaks = brks_x ) +
+  theme_bw(  ) +
+  plt_theme +
+  xlab( '' ) +
+  ylab( 'p-valor' ) + 
+  ggtitle( TeX( 'Residuos de $\\nabla$ IPC' ) )
+
+ggsave( 
+  plot = iess_box_ljung_tp,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'iess_box_ljung_ipc',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
+
+# 3.5 Gráfico de todas las pruebas de Box-Ljung-----------------------------------------------------
+iess_box_ljung_grupo <-
+  ggarrange( 
+    ggarrange( 
+      iess_box_ljung_pib,
+      iess_box_ljung_sal,
+      iess_box_ljung_sbu,
+      ncol = 3 ),
+    ggarrange(
+      iess_box_ljung_tp,
+      iess_box_ljung_ipc,
+      ncol = 2
+    ),
+    nrow = 2
+  )
+
+ggsave( 
+  plot = iess_box_ljung_grupo,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'iess_box_ljung_grupo',
+    parametros$graf_ext
+  ),
+  width = 24.5,
+  height = 12,
+  units = graf_units,
+  dpi = graf_dpi
+)
+
+# 4. Pruebas de diagnóstico del modelo del BIESS----------------------------------------------------
+# 4.1. Prueba de Box-Ljung--------------------------------------------------------------------------
+aux <- as_tibble( box_ljung_biess ) %>% 
+  clean_names()
+
+lim_y <- c( 0, 1 )
+salto_y = 0.2
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <- paste0( format( seq( lim_y[1], lim_y[2], salto_y ),         
+                          nsmall = 1,
+                          decimal.mark = ',',
+                          big.mark = '.' ) )
+
+biess_box_ljung <- ggplot( aux, aes( x = lags, y = p_value ) ) +
+  geom_segment( 
+    aes( 
+      x = lags,
+      xend = lags,
+      y = 0,
+      yend = p_value
+    ),
+    color = parametros$iess_blue,
+    linetype = 6
+  ) +
+  geom_hline( yintercept = 0,
+              color = 'black',
+              size = 0.5 ) +
+  geom_hline( 
+    yintercept = 0.05,
+    color = 'red',
+    size = 0.5,
+    linetype = 'dashed'
+  ) +
+  geom_point( color = parametros$iess_green, size = 2 ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_continuous( labels = seq( 1, 20, 2 ), breaks = seq( 1, 20, 2 ) ) +
+  theme_bw(  ) +
+  plt_theme +
+  #xlab( 'm' ) +
+  ylab( 'p-valor' )
+
+ggsave( 
+  plot = biess_box_ljung,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'biess_box_ljung',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
+
+# 4.2. Prueba de errores cuadráticos----------------------------------------------------------------
+aux <- as_tibble( portmanteau_biess ) %>% 
+  clean_names()
+
+lim_y <- c( 0, 0.2 )
+salto_y = 0.05
+brks_y <- seq( lim_y[1], lim_y[2], salto_y )
+lbls_y <- paste0( format( seq( lim_y[1], lim_y[2], salto_y ),         
+                          nsmall = 1,
+                          decimal.mark = ',',
+                          big.mark = '.' ) )
+
+biess_portmanteau <- ggplot( aux, aes( x = lags, y = p_value ) ) +
+  geom_segment( 
+    aes( 
+      x = lags,
+      xend = lags,
+      y = 0,
+      yend = p_value
+    ),
+    color = parametros$iess_blue,
+    linetype = 6
+  ) +
+  geom_hline( yintercept = 0,
+              color = 'black',
+              size = 0.5 ) +
+  geom_hline( 
+    yintercept = 0.05,
+    color = 'red',
+    size = 0.5,
+    linetype = 'dashed'
+  ) +
+  geom_point( color = parametros$iess_green, size = 2 ) +
+  scale_y_continuous( breaks = brks_y,
+                      labels = lbls_y,
+                      limits = lim_y ) +
+  scale_x_continuous( labels = seq( 1, 20, 2 ), breaks = seq( 1, 20, 2 ) ) +
+  theme_bw(  ) +
+  plt_theme +
+  #xlab( 'm' ) +
+  ylab( 'p-valor' )
+
+ggsave( 
+  plot = biess_portmanteau,
+  filename = paste0( 
+    parametros$resultado_graficos,
+    'biess_portmanteau',
+    parametros$graf_ext
+  ),
+  width = graf_width,
+  height = graf_height,
+  units = graf_units,
+  dpi = graf_dpi
+)
+
+#5. Las pirámides poblacionales de la población nacional -------------------------------------------
 
 poblacion <- as_tibble( ONU_proyeccion_poblacion ) %>%
   filter( year %in% c( 2022, 2042, 2062 ),
