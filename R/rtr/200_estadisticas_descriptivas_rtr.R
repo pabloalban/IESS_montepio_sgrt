@@ -293,27 +293,27 @@ tab_evo_monto_of <- monto_fun(  prestaciones_orfandad  )
 
 #4. Tabla de edades para pirámides------------------------------------------------------------------
 
-pir_ben_pp <- ben_pir_fun(  prestaciones_pp, '2020'  )
-pir_ben_pt <- ben_pir_fun(  prestaciones_pt, '2020'  )
-pir_ben_pa <- ben_pir_fun(  prestaciones_pa, '2020'  )
-pir_ben_vo <- ben_pir_fun(  prestaciones_viudez, '2020'  )
-pir_ben_of <- ben_pir_fun(  prestaciones_orfandad, '2020'  )
+pir_ben_pp <- ben_pir_fun(  prestaciones_pp, '2022'  )
+pir_ben_pt <- ben_pir_fun(  prestaciones_pt, '2022'  )
+pir_ben_pa <- ben_pir_fun(  prestaciones_pa, '2022'  )
+pir_ben_vo <- ben_pir_fun(  prestaciones_viudez, '2022'  )
+pir_ben_of <- ben_pir_fun(  prestaciones_orfandad, '2022'  )
 
 #5. Tablas de pirámides de pensiones----------------------------------------------------------------
 
-pir_pensiones_pp <- pension_pir_fun(  prestaciones_pp, '2020'  )
-pir_pensiones_pt <- pension_pir_fun(  prestaciones_pt, '2020'  )
-pir_pensiones_pa <- pension_pir_fun(  prestaciones_pa, '2020'  )
-pir_pensiones_vo <- pension_pir_fun(  prestaciones_viudez, '2020'  )
-pir_pensiones_of <- pension_pir_fun(  prestaciones_orfandad, '2020'  )
+pir_pensiones_pp <- pension_pir_fun(  prestaciones_pp, '2022'  )
+pir_pensiones_pt <- pension_pir_fun(  prestaciones_pt, '2022'  )
+pir_pensiones_pa <- pension_pir_fun(  prestaciones_pa, '2022'  )
+pir_pensiones_vo <- pension_pir_fun(  prestaciones_viudez, '2022'  )
+pir_pensiones_of <- pension_pir_fun(  prestaciones_orfandad, '2022'  )
 
 #6. Tablas de los beneficiarios por rangos de pensiones---------------------------------------------
 
-tab_rango_monto_pp <- rango_monto(  prestaciones_pp, '2020'  )
-tab_rango_monto_pt <- rango_monto(  prestaciones_pt, '2020'  )
-tab_rango_monto_pa <- rango_monto(  prestaciones_pa, '2020'  )
-tab_rango_monto_vo <- rango_monto(  prestaciones_viudez, '2020'  )
-tab_rango_monto_of <- rango_monto(  prestaciones_orfandad, '2020'  )
+tab_rango_monto_pp <- rango_monto(  prestaciones_pp, '2022'  )
+tab_rango_monto_pt <- rango_monto(  prestaciones_pt, '2022'  )
+tab_rango_monto_pa <- rango_monto(  prestaciones_pa, '2022'  )
+tab_rango_monto_vo <- rango_monto(  prestaciones_viudez, '2022'  )
+tab_rango_monto_of <- rango_monto(  prestaciones_orfandad, '2022'  )
 
 #7. Subsidios---------------------------------------------------------------------------------------
 message( "\tTablas sobre subsidios del SGRT" )
@@ -379,12 +379,12 @@ tab_evo_monto_subsidios <- b %>%
 
 ##7.3 Tabla de edades para pirámides----------------------------------------------------------------
 
-pir_ben_subsidios <- ben_pir_fun(  subsidios_rtr, '2020'  )
+pir_ben_subsidios <- ben_pir_fun(  subsidios_rtr, '2022'  )
 
 ##7.4 Tablas de pirámides de pensiones--------------------------------------------------------------
 
 a <- subsidios_rtr %>% 
-  filter(  anio == 2020  ) %>% 
+  filter(  anio == 2022  ) %>% 
   group_by(  anio, cedula  ) %>%
   mutate(  valor = sum(  valor, na.rm = TRUE  )  ) %>%
   ungroup(   ) %>%
@@ -409,7 +409,7 @@ pir_montos_subsidios <- a
 ##7.5 Tabla Subsidios entregado por rango de montos-------------------------------------------------
 
 a <- subsidios_rtr %>% 
-  filter(  anio == 2020  ) %>% 
+  filter(  anio == 2022  ) %>% 
   group_by(  anio, cedula  ) %>%
   mutate(  valor = sum(  valor, na.rm = TRUE  )  ) %>%
   ungroup(   ) %>%
@@ -572,10 +572,10 @@ tab_evo_monto_indemnizaciones <- rbind(  a, b  ) %>%
 ##8.3 Tabla de edades para pirámides----------------------------------------------------------------
 
 pir_ben_indemnizaciones <- indemnizaciones_rt_2022 %>% 
-  filter(  anio == 2020  ) %>% 
+  filter(  anio == 2022  ) %>% 
   distinct(   mes, cedula, .keep_all = TRUE  ) %>%
   mutate( edad = round( age_calc( fecha_nacimiento,
-                                  enddate = as.Date( "31/12/2020","%d/%m/%Y" ),
+                                  enddate = as.Date( "31/12/2022","%d/%m/%Y" ),
                                   units = "years",
                                   precise = FALSE  )  ) ) %>%
   group_by(  sexo, edad  ) %>%
@@ -593,13 +593,13 @@ pir_ben_indemnizaciones <- indemnizaciones_rt_2022 %>%
 ##8.4 Tablas de pirámides de pensiones--------------------------------------------------------------
 
 a <- indemnizaciones_rt_2022 %>% 
-  filter(  anio == 2020  ) %>% 
+  filter(  anio == 2022  ) %>% 
   group_by(  anio, cedula  ) %>%
   mutate(  valor = sum(  valor_pension_concedida, na.rm = TRUE  )  ) %>%
   ungroup(   ) %>%
   distinct(  cedula, .keep_all = TRUE  ) %>%
   mutate( edad = round( age_calc( fecha_nacimiento,
-                                  enddate = as.Date( "30/06/2020","%d/%m/%Y" ),
+                                  enddate = as.Date( "30/06/2022","%d/%m/%Y" ),
                                   units = "years",
                                   precise = FALSE  )  ) ) %>%
   group_by(  sexo, edad  ) %>%
@@ -618,7 +618,7 @@ pir_montos_indemnizaciones <- a
 ##8.5 Tabla indemnizaciones entregado por rango de montos-------------------------------------------
 
 a <- indemnizaciones_rt_2022 %>% 
-  filter(  anio == 2020  ) %>% 
+  filter(  anio == 2022  ) %>% 
   group_by(  anio, cedula  ) %>%
   mutate(  valor = sum(  valor_pension_concedida, na.rm = TRUE  )  ) %>%
   ungroup(   ) %>%
@@ -669,7 +669,7 @@ tab_rango_monto_indemnizaciones <- a
 ## 9.1 Subsidios------------------------------------------------------------------------------------
 message( "\tEstadísticas Subsidios" )
 aux <- subsidios_rtr %>%
-  filter(  anio == '2020'  ) %>%
+  filter(  anio == '2022'  ) %>%
   group_by(  sexo  ) %>%
   mutate(  prom_sub = mean(  valor  )  ) %>%
   ungroup(   ) %>%
@@ -678,9 +678,9 @@ aux <- subsidios_rtr %>%
 
 
 aux <- subsidios_rtr %>%
-  filter(  anio == '2020'  ) %>%
+  filter(  anio == '2022'  ) %>%
   mutate( edad = round( age_calc( fecha_nacimiento,
-                                  enddate = as.Date( "30/06/2020","%d/%m/%Y" ),
+                                  enddate = as.Date( "30/06/2022","%d/%m/%Y" ),
                                   units = "years",
                                   precise = FALSE  )  ) ) %>%
   group_by(  sexo  ) %>%
@@ -699,7 +699,7 @@ aux <- aux %>%
 ## 9.2 Indemnizaciones-------------------------------------------------------------------------------
 message( "\tEstadísticas Indemnizaciones" )
 aux <- indemnizaciones_rt_2022 %>%
-  filter(  anio == '2020'  ) %>%
+  filter(  anio == '2022'  ) %>%
   group_by(  sexo  ) %>%
   mutate(  prom_sub = mean(  liquido_a_pagar  )  ) %>%
   ungroup(   ) %>%
@@ -708,9 +708,9 @@ aux <- indemnizaciones_rt_2022 %>%
 
 
 aux <- indemnizaciones_rt_2022 %>%
-  filter(  anio == '2020'  ) %>%
+  filter(  anio == '2022'  ) %>%
   mutate( edad = round( age_calc( fecha_nacimiento,
-                                  enddate = as.Date( "30/06/2020","%d/%m/%Y" ),
+                                  enddate = as.Date( "30/06/2022","%d/%m/%Y" ),
                                   units = "years",
                                   precise = FALSE  )  ) ) %>%
   group_by(  sexo  ) %>%
@@ -730,7 +730,7 @@ aux <- aux %>%
 estadisticas_fun <- function( .data22 ) {
   b <- .data22 %>%
     lazy_dt(   ) %>% 
-    filter(  anio == '2020'  ) %>%
+    filter(  anio == '2022'  ) %>%
     group_by(  cedula, mes  ) %>%
     mutate(  tot_ingr =  sum(  ifelse(  rubro %in% c( 1,
                                                       2,
@@ -796,7 +796,7 @@ estadisticas_fun <- function( .data22 ) {
     ungroup(   ) %>%
     filter(  !is.na( fecha_nacimiento )  ) %>%
     mutate( edad = round( age_calc( fecha_nacimiento,
-                                    enddate = as.Date( "31/12/2020","%d/%m/%Y" ),
+                                    enddate = as.Date( "31/12/2022","%d/%m/%Y" ),
                                     units = "years",
                                     precise = FALSE  )  ) ) %>%
     group_by(  anio, sexo  ) %>%
@@ -858,7 +858,7 @@ aux <- estadisticas_fun( prestaciones_viudez  ) %>%
 ## 9.5 Pensiones orfandad---------------------------------------------------------------------------
 message( "\tEstadísticas orfandad" )
 
-aux <- estadisticas_fun( prestaciones_orfandad  ) %>%
+aux <- estadisticas_fun( prestaciones_orfandad %>% filter( )  ) %>%
   mutate_if( is.numeric, round, digits = 2 ) %>%
   mutate_at(  c( 2:ncol( . ) ), as.character )
 
@@ -867,7 +867,7 @@ aux <- estadisticas_fun( prestaciones_orfandad  ) %>%
 #10 . Estadísticas de cotizantes--------------------------------------------------------------------
 
 aux <- sgo_act_tran_anio %>% 
-  filter( anio <= 2020, anio >= 2012 ) %>% 
+  filter( anio <= 2022, anio >= 2012 ) %>% 
   group_by( anio, sexo ) %>% 
   mutate( ERx = sum( ERx_act, na.rm = TRUE ),
           masa_sal = sum( S , na.rm = TRUE ) ) %>% 
@@ -896,7 +896,7 @@ evo_masa_sgo <- aux %>%
 ##6.3 Distribución de salarios----------------------------------------------------------------------
 
 dist_sal_edad_sexo <- sgo_act_tran_anio %>% 
-  filter( anio == 2020 ) %>% 
+  filter( anio == 2022 ) %>% 
   filter(  x < 106, x > 14 ) %>% 
   group_by( x, sexo ) %>% 
   mutate( ERx = sum( M2x, na.rm = TRUE ),

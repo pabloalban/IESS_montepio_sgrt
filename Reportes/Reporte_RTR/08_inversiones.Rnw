@@ -27,7 +27,7 @@ social''\footnote{La normativa citada se encuentra derogada, pero se encontraba 
 mayoría del período de valuación.}, en el cual manifiesta que la fórmula para calcular el
 rendimiento efectivo promedio ponderado, $\overline{TIR}$, es:
 \begin{equation}
-\overline{TIR}=\frac{\sum^{K}_{1} TIR_{i}\cdot VP_{i}}{\sum^{k}_{1}VP_{i}},
+\overline{TIR}=\frac{\sum^{k}_{i=1} TIR_{i}\cdot VP_{i}}{\sum^{k}_{i=1}VP_{i}},
 \end{equation}
 
 donde: $TIR_{i}$ es el rendimiento efectivo de la operación de contado $i$, $VP_{i}$ es el valor

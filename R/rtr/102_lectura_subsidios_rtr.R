@@ -2,6 +2,10 @@ message( paste( rep( '-', 100 ), collapse = '' ) )
 
 message( '\tLectura de pagos de subsidios de SGRT' )
 
+#Parámetros de filtrado-----------------------------------------------------------------------------
+anio_max <- 2022
+anio_min <- 2014
+
 #Cargando pagos de subsidios -----------------------------------------------------------------------
 
 message( '\tLeyendo subsidios de SGRT' )
@@ -70,7 +74,7 @@ subsidios_rtr <- (
   mutate( sexo = if_else( sexo == "Femenino                        ", "F", "M" ) ) %>%
   mutate( anio = year( fecha_transferencia ),
           mes = month( fecha_transferencia ) ) %>%
-  filter( anio <= 2020, anio >= 2012 ) %>%
+  filter( anio <= anio_max, anio >= anio_min ) %>%
   dplyr::select( 
     cedula,
     sexo,

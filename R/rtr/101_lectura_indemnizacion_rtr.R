@@ -3,8 +3,8 @@ message(  paste(  rep( '-', 100  ), collapse = ''  )  )
 message(  '\tLectura de pagos de indemnizaciones de RTR'  )
 
 #Parámetros de filtrado-----------------------------------------------------------------------------
-anio_max <- 2020
-anio_min <- 2012
+anio_max <- 2022
+anio_min <- 2014
 
 #Path del archivo---- ------------------------------------------------------------------------------
 file <- paste0( parametros$Data_seg, 'IESS_RTR_indemnizaciones_2012_2018.xlsx'  )

@@ -8,8 +8,8 @@ source( 'R/401_graf_plantilla.R', encoding = 'UTF-8', echo = FALSE )
 load( file = paste0( parametros$RData_seg, 'IESS_RTR_tablas_demografia.RData' ) )
 
 # Parámetros----------------------------------------------------------------------------------------
-x_lim <- c( 2012, 2020 )
-x_brk <- 2012:2020
+x_lim <- c( 2014, 2022 )
+x_brk <- 2014:2022
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
 #1.Evolución de beneficiarios de SGRT---------------------------------------------------------------
@@ -496,7 +496,7 @@ aux <- pir_montos_subsidios %>%
   arrange( sexo, edad )
 
 salto_y <- 10
-brks_y <- round( c( seq( min(aux$fdp), 0, length.out = 6), seq( 0, max(aux$fdp), length.out = 4 )[-1] ) )
+brks_y <- round( c( seq( min(aux$fdp), 0, length.out = 3), seq( 0, max(aux$fdp), length.out = 8 )[-1] ) )
 lbls_y <- paste0( '$', formatC( abs( brks_y ), digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' ) )
 brks_x <- seq( 15, 100, salto_y )
 lbls_x <- paste0( as.character( brks_x ) )
