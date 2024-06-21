@@ -153,10 +153,10 @@ ingresos_anuales_huerfanos_circunstancia <- sgrt_pen_tran_orf %>%
 
 
 base <- sgrt_pen_tran_orf %>%  filter( !is.na( causante ) )
-n = 20000
+n = nrow( sgrt_pen_tran_orf )
 
 
-i <- data.frame( i = sample( base$i, size = n, replace = FALSE, prob = NULL) )
+i <- data.frame( i = sample( base$i, size = n, replace = TRUE, prob = NULL) )
 
 base <- left_join( i, base, by = 'i' )
 
@@ -182,6 +182,8 @@ aux_b <- base %>%
   dplyr::select( anio, `defunción afiliado`, porc_A, `defunción jubilado`, porc_J, total ) %>% 
   arrange( anio )
 
+mean( aux_b$porc_A )
+mean( aux_b$porc_J )
 #Bootsrapping---------------------------------------------------------------------------------------
 
 set.seed(12345)
