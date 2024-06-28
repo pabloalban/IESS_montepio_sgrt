@@ -149,101 +149,108 @@ ingresos_anuales_huerfanos_circunstancia <- sgrt_pen_tran_orf %>%
   arrange( anio )
 
 
-##1.2 Bootsrapping imgresos de huerfanos------------------------------------------------------------
+#2 Bootstrapping ingresos de huérfanos--------------------------------------------------------------
 
+##2.1. Declaración función--------------------------------------------------------------------------
 
-base <- sgrt_pen_tran_orf %>%  filter( !is.na( causante ) )
-n = nrow( sgrt_pen_tran_orf )
-
-
-i <- data.frame( i = sample( base$i, size = n, replace = TRUE, prob = NULL) )
-
-base <- left_join( i, base, by = 'i' )
-
-aux_b <- base %>% 
-  mutate( x = round( as.numeric( difftime( fecha_ingreso, fecha_nacimiento, units = "days") ) / 365 ), 0 ) %>% 
-  distinct( ., cedula, .keep_all = TRUE ) %>% 
-  filter( fecha_ingreso > as.Date( "2014-01-01" ) ) %>% 
-  mutate( anio = year( fecha_ingreso ) ) %>% 
-  group_by( anio, circunstancia, x ) %>% 
-  mutate( Nx_ing = n( ) ) %>% 
-  ungroup( ) %>% 
-  distinct( ., anio, circunstancia, x, .keep_all = TRUE ) %>% 
-  dplyr::select( anio, circunstancia, x, Nx_ing )  %>% 
-  group_by( anio, circunstancia ) %>%  
-  mutate( N = n( ) ) %>% 
-  distinct( anio, circunstancia, .keep_all = TRUE ) %>%
-  dplyr::select( anio, circunstancia, N ) %>% 
-  pivot_wider( names_from = circunstancia, values_from = N ) %>% 
-  replace(., is.na(.), 0 ) %>% 
-  mutate( total = `defunción jubilado` + `defunción afiliado` ) %>% 
-  mutate( porc_J = 100 * `defunción jubilado` / total,
-          porc_A = 100 * `defunción afiliado` / total ) %>% 
-  dplyr::select( anio, `defunción afiliado`, porc_A, `defunción jubilado`, porc_J, total ) %>% 
-  arrange( anio )
-
-mean( aux_b$porc_A )
-mean( aux_b$porc_J )
-#Bootsrapping---------------------------------------------------------------------------------------
-
-set.seed(12345)
-
-foo <- function(data, indices, cor.type){
-  dt<-data[indices,]
-  c(
-    cor(dt[,1], dt[,2], method=cor.type),
-    median(dt[,1]),
-    median(dt[,2])
-  )
+estadistico <- function( data ){
+  #set.seed(12345)
+  
+  base <- data %>%  filter( !is.na( causante ) )
+  n = nrow( data )
+  
+  i <- data.frame( i = sample( base$i, size = n, replace = TRUE, prob = NULL) )
+  
+  base <- left_join( i, base, by = 'i' )
+  
+  aux_b <- base %>% 
+    mutate( x = round( as.numeric( difftime( fecha_ingreso, fecha_nacimiento, units = "days") ) / 365 ), 0 ) %>% 
+    distinct( ., cedula, .keep_all = TRUE ) %>% 
+    filter( fecha_ingreso > as.Date( "2014-01-01" ) ) %>% 
+    mutate( anio = year( fecha_ingreso ) ) %>% 
+    group_by( anio, circunstancia, x ) %>% 
+    mutate( Nx_ing = n( ) ) %>% 
+    ungroup( ) %>% 
+    distinct( ., anio, circunstancia, x, .keep_all = TRUE ) %>% 
+    dplyr::select( anio, circunstancia, x, Nx_ing )  %>% 
+    group_by( anio, circunstancia ) %>%  
+    mutate( N = n( ) ) %>% 
+    distinct( anio, circunstancia, .keep_all = TRUE ) %>%
+    dplyr::select( anio, circunstancia, N ) %>% 
+    pivot_wider( names_from = circunstancia, values_from = N ) %>% 
+    replace(., is.na(.), 0 ) %>% 
+    mutate( total = `defunción jubilado` + `defunción afiliado` ) %>% 
+    mutate( porc_J = 100 * `defunción jubilado` / total,
+            porc_A = 100 * `defunción afiliado` / total ) %>% 
+    dplyr::select( anio, `defunción afiliado`, porc_A, `defunción jubilado`, porc_J, total ) %>% 
+    arrange( anio )
+  
+  
+  porc_A <- mean( aux_b$porc_A )
+  porc_J <- mean( aux_b$porc_J )
+  
+  return( list( porc_A = porc_A, porc_J = porc_J ) )
 }
 
-myBootstrap <- boot::boot( iris, foo, R = 1000, cor.type = 's' )
 
 
-set.seed( 12345 )
-sample( iris$Sepal.Length, size = 10, replace = FALSE, prob = NULL)
+bootstrap <- function( data, n ){
+  
+  porc_A <- c( rep( 0, n ) )
+  porc_J <- c( rep( 0, n ) )
+  
+  for ( i in 1:n ) {
+  aux <- estadistico( data )
+  
+  porc_A[ i ] <- aux$porc_A
+  porc_J[ i ] <- aux$porc_J
+  }
+
+  return( list( porc_A = porc_A, porc_J = porc_J ) )
+}
+
+
+## 2.2. Tabla resumen estadísticos------------------------------------------------------------------
+n = 2000
+
+muestreo <- data.frame( porc_A = bootstrap( sgrt_pen_tran_orf, n )$porc_A,
+                        porc_J = bootstrap( sgrt_pen_tran_orf, n )$porc_J )
+
+tab_est_porcentaje <- data.frame( causante = c( 'Afiliado', 'Jubilado' ),
+                               tamano_muestra = c( n, n ),
+                               media = c( mean( muestreo$porc_A ), 100 - mean( muestreo$porc_A ) ),
+                               sd = c( std( muestreo$porc_A ), mean( muestreo$porc_J ) ),
+                               ic_inf = c( as.numeric( quantile( muestreo$porc_A, probs = 0.025 ) ), 
+                                           as.numeric( quantile( muestreo$porc_J, probs = 0.025 ) ) ), 
+                               ic_sup = c( as.numeric( quantile( muestreo$porc_A, probs = 0.975 ) ),
+                                           as.numeric( quantile( muestreo$porc_J, probs = 0.975 ) ) )
+                               )
+
+tab_est_beneficarios <- data.frame( causante = c( 'Afiliado', 'Jubilado' ),
+                                   tamano_muestra = c( n, n ),
+                                   media = c( nrow( sgrt_pen_tran_orf ) * mean( muestreo$porc_A ) / 100,
+                                              nrow( sgrt_pen_tran_orf ) * ( 100 - mean( muestreo$porc_A ) ) / 100 ),
+                                   sd = c(  nrow( sgrt_pen_tran_orf ) * std( muestreo$porc_A ) / 100,  nrow( sgrt_pen_tran_orf ) * std( muestreo$porc_J ) / 100 ),
+                                   ic_inf = c( nrow( sgrt_pen_tran_orf ) * as.numeric( quantile( muestreo$porc_A, probs = 0.025 ) ) / 100, 
+                                               nrow( sgrt_pen_tran_orf ) * as.numeric( quantile( muestreo$porc_J, probs = 0.025 ) ) / 100 ), 
+                                   ic_sup = c( nrow( sgrt_pen_tran_orf ) * as.numeric( quantile( muestreo$porc_A, probs = 0.975 ) ) / 100,
+                                               nrow( sgrt_pen_tran_orf ) * as.numeric( quantile( muestreo$porc_J, probs = 0.975 ) ) / 100 ),
+                                   beneficiarios = c( nrow( sgrt_pen_tran_orf ) * mean( muestreo$porc_A ) / 100,
+                                                      nrow( sgrt_pen_tran_orf ) * ( 100 - mean( muestreo$porc_A ) ) / 100 )
+                                   ) 
+  
+
+porc_A <- mean( muestreo$porc_A ) / 100
+porc_J <- ( 100 - mean( muestreo$porc_A ) ) / 100
 
 #Guardar en Rdatas----------------------------------------------------------------------------------
 message( "\tGuardando Rdatas" )
-save(  tab_evo_ben_pt,
-       tab_evo_ben_pp,
-       tab_evo_ben_pa,
-       tab_evo_ben_vo,
-       tab_evo_ben_of,
-       tab_evo_monto_pp,
-       tab_evo_monto_pt,
-       tab_evo_monto_pa,
-       tab_evo_monto_vo,
-       tab_evo_monto_of,
-       pir_ben_pp,
-       pir_ben_pt,
-       pir_ben_pa,
-       pir_ben_vo,
-       pir_ben_of,
-       pir_pensiones_pp,
-       pir_pensiones_pt,
-       pir_pensiones_pa,
-       pir_pensiones_vo,
-       pir_pensiones_of,
-       tab_rango_monto_pp,
-       tab_rango_monto_pt,
-       tab_rango_monto_pa,
-       tab_rango_monto_vo,
-       tab_rango_monto_of,
-       tab_evo_ben_subsidios,
-       tab_evo_monto_subsidios,
-       pir_ben_subsidios,
-       pir_montos_subsidios,
-       tab_rango_monto_subsidios,
-       tab_evo_ben_indemnizaciones,
-       tab_evo_monto_indemnizaciones,
-       pir_ben_indemnizaciones,
-       pir_montos_indemnizaciones,
-       tab_rango_monto_indemnizaciones,
-       evo_er_sgo,
-       evo_masa_sgo,
-       dist_sal_edad_sexo,
-       file = paste0(  parametros$RData_seg, 'IESS_RTR_tablas_demografia.RData'  )  )
+save(  muestreo,
+       tab_est_porcentaje,
+       tab_est_beneficarios,
+       porc_A,
+       porc_J,
+       file = paste0(  parametros$RData_seg, 'IESS_RTR_bootstrap.RData'  )  )
 #Limpiar Ram----------------------------------------------------------------------------------------
 message(  paste(  rep( '-', 100  ), collapse = ''  )  )
 rm(  list = ls(  )[ !(  ls(  ) %in% c(  'parametros'  )  ) ]  )
