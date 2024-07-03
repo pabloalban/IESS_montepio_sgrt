@@ -81,11 +81,14 @@ ggplot() +
   geom_line(data=dent, aes( x=x, y=y) ) +
   #geom_ribbon(data= base::subset(dent,dent$quant == '0'),aes(x=x,ymax=y),ymin=0, fill="green4",alpha=0.3)
 geom_ribbon(data = dent, aes( x = x, y = y, ymin = 0, ymax=y, fill = quant,alpha=0.3)) + 
-  scale_x_continuous(breaks=quantiles) + scale_fill_manual(values = c("red",
+  #scale_x_continuous(breaks=quantiles) +
+  scale_fill_manual(values = c("red",
                                                                       "gray90",
                                                                       "red") ) +
   theme_bw( ) +
-  plt_theme
+  plt_theme +
+  geom_vline( data = muestreo, aes( xintercept = mean( porc_A ), color = "red" ),
+             linetype = "dashed" )
   
   
 #Evolución histórica de las inversiones en préstamos quirografarios---------------------------------

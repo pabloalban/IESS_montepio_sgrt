@@ -72,7 +72,7 @@ suppressPackageStartupMessages( library( treemapify ) )
 suppressPackageStartupMessages( library( vars ) )
 suppressPackageStartupMessages( library( weakARMA ) )
 suppressPackageStartupMessages( library( xtable ) )
-suppressPackageStartupMessages( library( zoo ) )
+# suppressPackageStartupMessages( library( zoo ) )
 
 # extrafont::font_import()
 suppressMessages( loadfonts() )
