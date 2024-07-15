@@ -27,13 +27,13 @@ rm( list = ls()[ !(ls() %in% c( "parametros",
                                 "tas_0_15",
                                 "tas_0_16" ) ) ] )
 
-sal_2020 <- sgo_act_tran_anio %>% 
-  filter( anio == 2020 ) %>% 
+sal_2022 <- sgo_act_tran_anio %>% 
+  filter( anio == 2022 ) %>% 
   mutate( sal_prom = S / ERx_act ) %>% 
   dplyr::select( sexo, x, l2x,  ERx_act, sal_prom )
 
-sum(sal_2020$ERx_act, na.rm = TRUE )
-sum(sal_2020$l2x, na.rm = TRUE )
+sum(sal_2022$ERx_act, na.rm = TRUE )
+sum(sal_2022$l2x, na.rm = TRUE )
 
 tas_2_12 <- tas_2_12 %>% 
   dplyr::select( sexo, x, t_2_12_int )
@@ -51,7 +51,7 @@ age_grid <- c( 0: 105 )
 coef_incap_12 <- sgrt_pen_tran_pa_pt_pp_anio %>%
   filter( coef_incap >= 0.8 ) %>% #No hay más ingresos por incapacidad permanente parcial
   group_by( sexo ) %>% 
-  mutate( P_2020 = sum( if_else( anio == 2020,
+  mutate( P_2022 = sum( if_else( anio == 2022,
                                  P,
                                  0 ), na.rm = TRUE ) ) %>% 
   ungroup( ) %>% 
@@ -59,8 +59,8 @@ coef_incap_12 <- sgrt_pen_tran_pa_pt_pp_anio %>%
   mutate( coef_incap_12 = weighted.mean( coef_incap,  Nx_ing, na.rm = TRUE  ) ) %>% 
   ungroup( ) %>% 
   distinct( sexo, x, .keep_all = TRUE ) %>% 
-  dplyr::select( sexo, x, coef_incap_12, P, P_2020 ) %>% 
-  full_join( ., sal_2020, by = c( 'sexo', 'x' ) ) %>% 
+  dplyr::select( sexo, x, coef_incap_12, P, P_2022 ) %>% 
+  full_join( ., sal_2022, by = c( 'sexo', 'x' ) ) %>% 
   full_join( ., tas_2_12, by = c( 'sexo', 'x' ) ) %>% 
   filter( x >= 15, x <= 105 ) %>% 
   arrange( sexo, x )
@@ -133,7 +133,7 @@ coef_incap_12 <- rbind( coef_incap_12_h, coef_incap_12_m )
 
 coef_incap_13 <- sgrt_pen_tran_indem_anio %>%
   group_by( sexo ) %>% 
-  mutate( P_2020 = sum( if_else( anio == 2020,
+  mutate( P_2022 = sum( if_else( anio == 2022,
                                  P,
                                  0 ), na.rm = TRUE ) ) %>% 
   ungroup( ) %>% 
@@ -141,8 +141,8 @@ coef_incap_13 <- sgrt_pen_tran_indem_anio %>%
   mutate( coef_incap_13 = weighted.mean(coef_incap,  Nx_ing, na.rm = TRUE  ) ) %>% 
   ungroup( ) %>% 
   distinct( sexo, x, .keep_all = TRUE ) %>% 
-  dplyr::select( sexo, x, coef_incap_13, P, P_2020 ) %>% 
-  full_join( ., sal_2020, by = c( 'sexo', 'x' ) ) %>% 
+  dplyr::select( sexo, x, coef_incap_13, P, P_2022 ) %>% 
+  full_join( ., sal_2022, by = c( 'sexo', 'x' ) ) %>% 
   full_join( ., tas_2_13, by = c( 'sexo', 'x' ) ) %>% 
   filter( x >= 15, x <= 105 ) %>% 
   arrange( sexo, x )
@@ -152,6 +152,7 @@ coef_incap_13_h <- coef_incap_13 %>%
   filter( sexo == 'H' )
 
 aux <- coef_incap_13_h %>% 
+  filter( is.finite( coef_incap_13 ) ) %>% 
   filter( !is.na( coef_incap_13 ) ) %>% 
   filter( !( x %in% c( '18', '88', '72', '79' ) ) )
 
@@ -171,8 +172,8 @@ coef_incap_13_h <- expand.grid( sexo = c( 'H' ),
   full_join( ., pred, by = c('x') ) %>%
   # mutate( lx_2_13 =  t_2_13_int * ERx_act ) %>% 
   # mutate( P_int = 5 * coef_incap_13_int * sal_prom * lx_2_13 ) %>% 
-  mutate( coef_incap_13 = ( coef_incap_13 * mean( P_2020, na.rm = TRUE ) /  sum ( 5 * coef_incap_13 * sal_prom * t_2_13_int * ERx_act, na.rm = TRUE ) ) ) %>% 
-  mutate( coef_incap_13_int = ( coef_incap_13_int * mean( P_2020, na.rm = TRUE ) /  sum ( 5 * coef_incap_13_int * sal_prom * t_2_13_int * ERx_act, na.rm = TRUE ) ) ) %>% 
+  #mutate( coef_incap_13 = ( coef_incap_13 * mean( P_2022, na.rm = TRUE ) /  sum ( 5 * coef_incap_13 * sal_prom * t_2_13_int * ERx_act, na.rm = TRUE ) ) ) %>% 
+  #mutate( coef_incap_13_int = ( coef_incap_13_int * mean( P_2022, na.rm = TRUE ) /  sum ( 5 * coef_incap_13_int * sal_prom * t_2_13_int * ERx_act, na.rm = TRUE ) ) ) %>% 
   dplyr::select( sexo, x, coef_incap_13, coef_incap_13_int, sal_prom, t_2_13_int, ERx_act )
 
 sum( 5 * coef_incap_13_h$coef_incap_13_int * coef_incap_13_h$sal_prom * coef_incap_13_h$t_2_13_int * coef_incap_13_h$ERx_act, na.rm = TRUE )
@@ -203,10 +204,6 @@ coef_incap_13_m <- expand.grid( sexo = c( 'M' ),
                                 x = age_grid ) %>% 
   full_join( ., coef_incap_13_m, by = c('x', 'sexo') ) %>% 
   full_join( ., pred, by = c('x') ) %>%
-  # mutate( lx_2_13 =  t_2_13_int * ERx_act ) %>% 
-  # mutate( P_int = 5 * coef_incap_13_int * sal_prom * lx_2_13 ) %>% 
-  mutate( coef_incap_13 = ( coef_incap_13 * mean( P_2020, na.rm = TRUE ) /  sum ( 5 * coef_incap_13 * sal_prom * t_2_13_int * ERx_act, na.rm = TRUE ) ) ) %>% 
-  mutate( coef_incap_13_int = ( coef_incap_13_int * mean( P_2020, na.rm = TRUE ) /  sum ( 5 * coef_incap_13_int * sal_prom * t_2_13_int * ERx_act, na.rm = TRUE ) ) ) %>% 
   dplyr::select( sexo, x, coef_incap_13, coef_incap_13_int, sal_prom, t_2_13_int, ERx_act )
 
 
@@ -291,7 +288,7 @@ dias_sub_14 <- rbind( dias_sub_14_m, dias_sub_14_h )
 
 coef_incap_14 <- sgrt_pen_tran_sub_anio %>%
   group_by( sexo ) %>% 
-  mutate( P_2020 = sum( if_else( anio == 2020,
+  mutate( P_2022 = sum( if_else( anio == 2022,
                                  P,
                                  0 ), na.rm = TRUE ) ) %>% 
   ungroup( ) %>% 
@@ -299,8 +296,8 @@ coef_incap_14 <- sgrt_pen_tran_sub_anio %>%
   mutate( coef_incap_14 = weighted.mean( coef_incap,  Nx_ing, na.rm = TRUE  ) ) %>% 
   ungroup( ) %>% 
   distinct( sexo, x, .keep_all = TRUE ) %>% 
-  dplyr::select( sexo, x, coef_incap_14, P, P_2020 ) %>% 
-  full_join( ., sal_2020, by = c( 'sexo', 'x' ) ) %>% 
+  dplyr::select( sexo, x, coef_incap_14, P, P_2022 ) %>% 
+  full_join( ., sal_2022, by = c( 'sexo', 'x' ) ) %>% 
   full_join( ., tas_2_14, by = c( 'sexo', 'x' ) ) %>% 
   full_join( ., dias_sub_14, by = c( 'sexo', 'x' ) ) %>% 
   filter( x >= 15, x <= 105 ) %>% 
@@ -329,8 +326,8 @@ coef_incap_14_h <- expand.grid( sexo = c( 'H' ),
                                 x = age_grid ) %>% 
   full_join( ., coef_incap_14_h, by = c('x', 'sexo') ) %>% 
   full_join( ., pred, by = c('x') )  %>%
-  mutate( coef_incap_14 = ( coef_incap_14 * mean( P_2020, na.rm = TRUE ) /  sum ( dias_sub_14_int * coef_incap_14 * sal_prom * t_2_14_int * ERx_act/360, na.rm = TRUE ) ) ) %>%
-  mutate( coef_incap_14_int = ( coef_incap_14_int * mean( P_2020, na.rm = TRUE ) /  sum ( dias_sub_14_int * coef_incap_14_int * sal_prom * t_2_14_int * ERx_act/360, na.rm = TRUE ) ) ) %>%
+  mutate( coef_incap_14 = ( coef_incap_14 * mean( P_2022, na.rm = TRUE ) /  sum ( dias_sub_14_int * coef_incap_14 * sal_prom * t_2_14_int * ERx_act/360, na.rm = TRUE ) ) ) %>%
+  mutate( coef_incap_14_int = ( coef_incap_14_int * mean( P_2022, na.rm = TRUE ) /  sum ( dias_sub_14_int * coef_incap_14_int * sal_prom * t_2_14_int * ERx_act/360, na.rm = TRUE ) ) ) %>%
   dplyr::select( sexo, x, coef_incap_14, dias_sub_14_int, coef_incap_14_int, sal_prom, t_2_14_int, ERx_act )
 
 
@@ -362,8 +359,8 @@ coef_incap_14_m <- expand.grid( sexo = c( 'M' ),
                                 x = age_grid ) %>% 
   full_join( ., coef_incap_14_m, by = c('x', 'sexo') ) %>% 
   full_join( ., pred, by = c('x') )  %>%
-  mutate( coef_incap_14 = ( coef_incap_14 * mean( P_2020, na.rm = TRUE ) /  sum ( dias_sub_14_int * coef_incap_14 * sal_prom * t_2_14_int * ERx_act/360, na.rm = TRUE ) ) ) %>%
-  mutate( coef_incap_14_int = ( coef_incap_14_int * mean( P_2020, na.rm = TRUE ) /  sum ( dias_sub_14_int * coef_incap_14_int * sal_prom * t_2_14_int * ERx_act/360, na.rm = TRUE ) ) ) %>%
+  #mutate( coef_incap_14 = ( coef_incap_14 * mean( P_2022, na.rm = TRUE ) /  sum ( dias_sub_14_int * coef_incap_14 * sal_prom * t_2_14_int * ERx_act/360, na.rm = TRUE ) ) ) %>%
+  #mutate( coef_incap_14_int = ( coef_incap_14_int * mean( P_2022, na.rm = TRUE ) /  sum ( dias_sub_14_int * coef_incap_14_int * sal_prom * t_2_14_int * ERx_act/360, na.rm = TRUE ) ) ) %>%
   dplyr::select( sexo, x, coef_incap_14, dias_sub_14_int, coef_incap_14_int, sal_prom, t_2_14_int, ERx_act )
 
 
@@ -380,7 +377,7 @@ coef_incap_14 <- rbind( coef_incap_14_m, coef_incap_14_h )
 coef_incap_15 <- sgrt_pen_tran_orf_anio %>%
   filter( coef_incap > 0 ) %>%
   group_by( sexo ) %>% 
-  mutate( P_2020 = sum( if_else( anio == 2020,
+  mutate( P_2022 = sum( if_else( anio == 2022,
                                  P,
                                  0 ), na.rm = TRUE ) ) %>% 
   ungroup( ) %>% 
@@ -388,8 +385,8 @@ coef_incap_15 <- sgrt_pen_tran_orf_anio %>%
   mutate( coef_incap_15 = weighted.mean( coef_incap,  Nx_ing, na.rm = TRUE  ) ) %>% 
   ungroup( ) %>% 
   distinct( sexo, x, .keep_all = TRUE ) %>% 
-  dplyr::select( sexo, x, coef_incap_15, P, P_2020 ) %>% 
-  full_join( ., sal_2020, by = c( 'sexo', 'x' ) ) %>% 
+  dplyr::select( sexo, x, coef_incap_15, P, P_2022 ) %>% 
+  full_join( ., sal_2022, by = c( 'sexo', 'x' ) ) %>% 
   full_join( ., tas_0_15, by = c( 'sexo', 'x' ) ) %>% 
   arrange( sexo, x ) %>% 
   filter( x < 18 )
@@ -456,7 +453,7 @@ coef_incap_15 <- rbind( coef_incap_15_h, coef_incap_15_m ) %>%
 coef_incap_16 <- sgrt_pen_tran_viu_anio %>%
   filter( coef_incap > 0 ) %>%
   group_by( sexo ) %>% 
-  mutate( P_2020 = sum( if_else( anio == 2020,
+  mutate( P_2022 = sum( if_else( anio == 2022,
                                  P,
                                  0 ), na.rm = TRUE ) ) %>% 
   ungroup( ) %>% 
@@ -464,8 +461,8 @@ coef_incap_16 <- sgrt_pen_tran_viu_anio %>%
   mutate( coef_incap_16 = mean( coef_incap, na.rm = TRUE  ) ) %>% 
   ungroup( ) %>% 
   distinct( sexo, x, .keep_all = TRUE ) %>% 
-  dplyr::select( sexo, x, coef_incap_16, P, P_2020 ) %>% 
-  full_join( ., sal_2020, by = c( 'sexo', 'x' ) ) %>% 
+  dplyr::select( sexo, x, coef_incap_16, P, P_2022 ) %>% 
+  full_join( ., sal_2022, by = c( 'sexo', 'x' ) ) %>% 
   full_join( ., tas_0_16, by = c( 'sexo', 'x' ) ) %>% 
   arrange( sexo, x ) %>% 
   filter( x >= 15, x <= 105 )

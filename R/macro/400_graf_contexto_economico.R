@@ -11,11 +11,11 @@ load( file = parametros$macro_rdata_biess_proy )
 
 # 0. Parámetros-------------------------------------------------------------------------------------
 if( parametros$seguro %in% c( 'SAL' ) ) {
-  anio_fin = 10 + 2020
+  anio_fin = 10 + 2022
 } else if ( parametros$seguro %in% c( 'SSC' ) ) {
-  anio_fin = 20 + 2020
+  anio_fin = 20 + 2022
 } else {
-  anio_fin = 40 + 2020
+  anio_fin = 40 + 2022
 }
 
 anio_ini <- 2002
@@ -899,7 +899,7 @@ aux <- intervalos_confianza %>%
 aux_his <- aux %>% filter(  fecha <= as.Date( '2022-12-01' ) )
 aux_pred <- aux %>% filter( fecha >= as.Date( '2022-12-01' ), year( fecha ) <= anio_fin )
 
-lim_y <- c( 40, 220 )
+lim_y <- c( 40, 240 )
 salto_y = 20
 brks_y <- seq( lim_y[1], lim_y[2], salto_y )
 lbls_y <-

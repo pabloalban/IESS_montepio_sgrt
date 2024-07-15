@@ -21,7 +21,7 @@ rm( list = ls()[ !(ls() %in% c( "parametros",
 
 #Parámetros
 
-anio_fin <- 2020
+anio_fin <- 2022
 mes_fin <- 12
 fecha_corte <- as.Date( paste0( anio_fin, "-", mes_fin, "-12") )
 #1. Pensionistas iniciales de PA, PT y PP-----------------------------------------------------------
@@ -45,7 +45,7 @@ l_12_ini <- rbind( prestaciones_pa,
              sexo = c( 'H', 'M' ),
              x = c( 15:105 ) ), ., by = c( 't', 'sexo', 'x' ) ) %>% 
   group_by( sexo ) %>% 
-  mutate( ERx_incap_2020 = sum( l_12, na.rm = TRUE ) ) %>% 
+  mutate( ERx_incap_2022 = sum( l_12, na.rm = TRUE ) ) %>% 
   ungroup( ) %>% 
   mutate( l_12 = ifelse( is.na( l_12 ),
                            0,
@@ -76,7 +76,7 @@ l_12_ini_h <- expand.grid( t = 0,
                              x = c( 15:105 ) )%>% 
   full_join( ., l_12_ini_h, by = c( 'x', 'sexo', 't' ) ) %>%
   full_join( ., pred, by = 'x' ) %>% 
-  mutate( l_12_int = ( l_12_int * ERx_incap_2020 /  sum ( l_12_int, na.rm = TRUE ) ) ) %>% 
+  mutate( l_12_int = ( l_12_int * ERx_incap_2022 /  sum ( l_12_int, na.rm = TRUE ) ) ) %>% 
   mutate( l_12_int = if_else( is.na( l_12_int ),
                                 0,
                                 l_12_int ) )
@@ -114,7 +114,7 @@ l_12_ini_m <- expand.grid( t = 0,
                              x = c( 15:105 ) )%>% 
   full_join( ., l_12_ini_m, by = c( 'x', 'sexo', 't' ) ) %>%
   full_join( ., pred, by = 'x' ) %>% 
-  mutate( l_12_int = ( l_12_int * ERx_incap_2020 /  sum ( l_12_int, na.rm = TRUE ) ) ) %>% 
+  mutate( l_12_int = ( l_12_int * ERx_incap_2022 /  sum ( l_12_int, na.rm = TRUE ) ) ) %>% 
   mutate( l_12_int = if_else( is.na( l_12_int ),
                                 0,
                                 l_12_int ) )
@@ -146,7 +146,7 @@ l_15_ini <- prestaciones_orfandad %>%
                           sexo = c( 'H', 'M' ),
                           x = c( 0:105 ) ), ., by = c( 't', 'sexo', 'x' ) ) %>% 
   group_by( sexo ) %>% 
-  mutate( ERx_incap_2020 = sum( l_15, na.rm = TRUE ) ) %>% 
+  mutate( ERx_incap_2022 = sum( l_15, na.rm = TRUE ) ) %>% 
   ungroup( ) %>% 
   mutate( l_15 = ifelse( is.na( l_15 ),
                            0,
@@ -189,7 +189,7 @@ l_15_ini_h <- left_join( l_15_ini_h, pred, by = 'x' ) %>%
   mutate( l_15_int = if_else( l_15_int < 0,
                                 l_15,
                                 l_15_int ) ) %>% 
-  mutate( l_15_int = ( l_15_int * ERx_incap_2020 /  sum ( l_15_int, na.rm = TRUE ) ) )
+  mutate( l_15_int = ( l_15_int * ERx_incap_2022 /  sum ( l_15_int, na.rm = TRUE ) ) )
 
 #Gráfico de Control
 plot( l_15_ini_h$x, l_15_ini_h$l_15 )
@@ -236,7 +236,7 @@ l_15_ini_m <- left_join( l_15_ini_m, pred, by = 'x' ) %>%
   mutate( l_15_int = if_else( l_15_int < 0,
                                 l_15,
                                 l_15_int ) ) %>% 
-  mutate( l_15_int = ( l_15_int * ERx_incap_2020 /  sum ( l_15_int, na.rm = TRUE ) ) )
+  mutate( l_15_int = ( l_15_int * ERx_incap_2022 /  sum ( l_15_int, na.rm = TRUE ) ) )
 
 #Gráficos de control
 plot( l_15_ini_m$x, l_15_ini_m$l_15 )
@@ -265,7 +265,7 @@ l_16_ini <- prestaciones_viudez %>%
                           sexo = c( 'H', 'M' ),
                           x = c( 15:105 ) ), ., by = c( 't', 'sexo', 'x' ) ) %>% 
   group_by( sexo ) %>% 
-  mutate( ERx_incap_2020 = sum( l_16, na.rm = TRUE ) ) %>% 
+  mutate( ERx_incap_2022 = sum( l_16, na.rm = TRUE ) ) %>% 
   ungroup( ) %>% 
   mutate( l_16 = ifelse( is.na( l_16 ),
                            0,
@@ -297,8 +297,8 @@ l_16_ini_h <- expand.grid( t = 0,
   mutate( l_16_int = if_else( l_16_int < 0,
                                 l_16,
                                 l_16_int ),
-          ERx_incap_2020 = mean( ERx_incap_2020, na.rm = TRUE ) ) %>% 
-  mutate( l_16_int = ( l_16_int * ERx_incap_2020 /  sum ( l_16_int, na.rm = TRUE ) ) ) 
+          ERx_incap_2022 = mean( ERx_incap_2022, na.rm = TRUE ) ) %>% 
+  mutate( l_16_int = ( l_16_int * ERx_incap_2022 /  sum ( l_16_int, na.rm = TRUE ) ) ) 
 
 #Gráfico de control
 plot( l_16_ini_h$x, l_16_ini_h$l_16 )
@@ -336,7 +336,7 @@ l_16_ini_m <- expand.grid( t = 0,
   mutate( l_16_int = if_else( l_16_int < 0,
                                 l_16,
                                 l_16_int ) ) %>% 
-  mutate( l_16_int = ( l_16_int * ERx_incap_2020 /  sum( l_16_int, na.rm = TRUE ) ) ) %>% 
+  mutate( l_16_int = ( l_16_int * ERx_incap_2022 /  sum( l_16_int, na.rm = TRUE ) ) ) %>% 
   mutate( l_16_int = ifelse( is.na( l_16_int ),
                                 0,
                                 l_16_int ) )

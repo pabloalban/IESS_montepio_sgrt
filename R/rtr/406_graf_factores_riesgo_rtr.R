@@ -19,7 +19,7 @@ x_lim <- c( 15, 105 )
 x_brk <- seq( x_lim[1], x_lim[2], 10 )
 x_lbl <- x_brk
 
-y_lim <- c( 0, 0.0005 )
+y_lim <- c( 0, 0.001 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 6 )
 y_lbl <- paste0(formatC( y_brk * 100, digits = 2, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
 
@@ -34,6 +34,7 @@ siniestra_indem_h <-  ggplot( data = aux ) +
   scale_color_manual( values =  c( parametros$iess_green, parametros$iess_blue ), 
                       labels = c( 'alisado', 'estimado' ) ) +
   scale_y_continuous(labels = y_lbl,
+                     breaks = y_brk,
                      limits = y_lim ) +
   scale_x_continuous( breaks = x_brk, labels = x_lbl, limits = x_lim ) +
   #scale_y_continuous( breaks = y_brk, labels = y_lbl, limits = y_lim ) +
@@ -166,7 +167,7 @@ x_lim <- c( 15, 105 )
 x_brk <- seq( x_lim[1], x_lim[2], 10 )
 x_lbl <- x_brk
 
-y_lim <- c( 0, 0.01 )
+y_lim <- c( 0, 0.015 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 5 )
 y_lbl <- paste0( formatC( y_brk * 100, digits = 1, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
 
@@ -236,8 +237,8 @@ x_lim <- c( 15, 105 )
 x_brk <- seq( x_lim[1], x_lim[2], 10 )
 x_lbl <- x_brk
 
-y_lim <- c( 0.4, 0.7 )
-y_brk <- seq( y_lim[1], y_lim[2], length.out = 11 )
+y_lim <- c( 0.6, 0.8 )
+y_brk <- seq( y_lim[1], y_lim[2], length.out = 6 )
 y_lbl <- paste0( formatC( y_brk, digits = 2, format = 'f', big.mark = '.', decimal.mark = ',' ), "%" )
 
 porc_incap_subs_h <-ggplot( data = aux ) + 
@@ -269,7 +270,7 @@ x_lim <- c( 15, 105 )
 x_brk <- seq( x_lim[1], x_lim[2], 10 )
 x_lbl <- x_brk
 
-y_lim <- c( 0.5, 0.8 )
+y_lim <- c( 0.65, 0.8 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 7 )
 y_lbl <- paste0( formatC( y_brk, digits = 2, format = 'f', big.mark = '.', decimal.mark = ',' ), "%" )
 
@@ -304,7 +305,7 @@ x_lim <- c( 15, 105 )
 x_brk <- seq( x_lim[1], x_lim[2], 10 )
 x_lbl <- x_brk
 
-y_lim <- c( 0, 60 )
+y_lim <- c( 0, 30 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 7 )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
 
@@ -514,7 +515,7 @@ x_lim <- c( 0, 18 )
 x_brk <- seq( x_lim[1], x_lim[2], 2 )
 x_lbl <- x_brk
 
-y_lim <- c( 0, 0.008 )
+y_lim <- c( 0, 0.00008 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 11 )
 y_lbl <- paste0(formatC( y_brk * 100, digits = 3, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
 
@@ -547,7 +548,7 @@ x_lim <- c( 0, 18 )
 x_brk <- seq( x_lim[1], x_lim[2], 2 )
 x_lbl <- x_brk
 
-y_lim <- c( 0, 0.015 )
+y_lim <- c( 0, 0.00008 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 11 )
 y_lbl <- paste0(formatC( y_brk * 100, digits = 3, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
 
@@ -656,7 +657,7 @@ x_lim <- c( 15, 105 )
 x_brk <- seq( x_lim[1], x_lim[2], 10 )
 x_lbl <- x_brk
 
-y_lim <- c( 0, 0.00002 )
+y_lim <- c( 0, 0.0001 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 11 )
 y_lbl <- paste0(formatC( y_brk * 100, digits = 4, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
 
@@ -689,7 +690,7 @@ x_lim <- c( 15, 105 )
 x_brk <- seq( x_lim[1], x_lim[2], 10 )
 x_lbl <- x_brk
 
-y_lim <- c( 0, 0.002 )
+y_lim <- c( 0, 0.008 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 11 )
 y_lbl <- paste0(formatC( y_brk * 100, digits = 2, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
 
@@ -725,8 +726,8 @@ x_lim <- c( 15, 105 )
 x_brk <- seq( x_lim[1], x_lim[2], 10 )
 x_lbl <- x_brk
 
-y_lim <- c( 0, 1 )
-y_brk <- seq( y_lim[1], y_lim[2], length.out = 11 )
+y_lim <- c( 0, 0.3 )
+y_brk <- seq( y_lim[1], y_lim[2], length.out = 6 )
 y_lbl <- paste0(formatC( y_brk * 100, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
 
 
@@ -757,8 +758,8 @@ x_lim <- c( 15, 105 )
 x_brk <- seq( x_lim[1], x_lim[2], 10 )
 x_lbl <- x_brk
 
-y_lim <- c( 0, 1 )
-y_brk <- seq( y_lim[1], y_lim[2], length.out = 11 )
+y_lim <- c( 0, 0.3 )
+y_brk <- seq( y_lim[1], y_lim[2], length.out = 6 )
 y_lbl <- paste0(formatC( y_brk * 100, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
 
 

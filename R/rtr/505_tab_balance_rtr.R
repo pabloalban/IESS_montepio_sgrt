@@ -12,8 +12,8 @@ for ( i in 1:length( escenarios_lista ) ) {
   
   # Masa salarial ----------------------------------------------------------------------------------
   if ( escenario == 'escenario_1' ) {
-    aux <- balance_anual[ , list( t = t + parametros$anio_ini, M ) ]
-    aux <- aux[ t > 2020 ]
+    aux <- balance_anual[ , list( t = t + 2022, M ) ]
+    aux <- aux[ t > 2022 ]
     aux[ , t := as.character( t ) ]
     xtb_aux <- xtable( aux, digits = c( 0, 0, 2 ) )
     print( xtb_aux,
@@ -26,8 +26,8 @@ for ( i in 1:length( escenarios_lista ) ) {
            sanitize.text.function = identity )
   }
   # Balance corriente ------------------------------------------------------------------------------
-  aux <- balance_anual[ , list( t = t + parametros$anio_ini, A, B, G, V_cor, V_cap ) ]
-  aux <- aux[ t > 2020 ]
+  aux <- balance_anual[ , list( t = t + 2022, A, B, G, V_cor, V_cap ) ]
+  aux <- aux[ t > 2022 ]
   aux[ , t := as.character( t ) ]
   xtb_aux <- xtable( aux, digits = c( 0, 0, 2, 2, 2, 2, 2 ) )
   print( xtb_aux,
@@ -40,9 +40,9 @@ for ( i in 1:length( escenarios_lista ) ) {
          sanitize.text.function = identity )
   
   # Aportes ----------------------------------------------------------------------------------------
-  aux <- balance_anual[ , list( t = t + parametros$anio_ini, A2, A12, A15, A16, A_est, 
+  aux <- balance_anual[ , list( t = t + 2022, A2, A12, A15, A16, A_est, 
                                 A ) ]
-  aux <- aux[ t > 2020 ]
+  aux <- aux[ t > 2022 ]
   aux[ , t := as.character( t ) ]
   xtb_aux <- xtable( aux, digits = c( 0, 0, rep( 2, 6 ) ) )
   print( xtb_aux,
@@ -55,8 +55,8 @@ for ( i in 1:length( escenarios_lista ) ) {
          sanitize.text.function = identity )
   
   # Beneficios -------------------------------------------------------------------------------------
-  aux <- balance_anual[ , list( t = t + parametros$anio_ini, B12, B13, B13, B15, B16, B_sal, B ) ]
-  aux <- aux[ t > 2020 ]
+  aux <- balance_anual[ , list( t = t + 2022, B12, B13, B13, B15, B16, B_sal, B ) ]
+  aux <- aux[ t > 2022 ]
   aux[ , t := as.character( t ) ]
   xtb_aux <- xtable( aux, digits = c( 0, 0, rep( 2, 7 ) ) )
   print( xtb_aux,
@@ -69,9 +69,9 @@ for ( i in 1:length( escenarios_lista ) ) {
          sanitize.text.function = identity )
   
   # Balance dinámico (actuarial) -------------------------------------------------------------------
-  aux <- balance_anual[ , list( anio = t + parametros$anio_ini, t, A2_vap, A_est_vap, B_vap, G_vap, 
+  aux <- balance_anual[ , list( anio = t + 2022, t, A2_vap, A_est_vap, B_vap, G_vap, 
                                 V0, V ) ]
-  aux <- aux[ anio > 2020 ]
+  aux <- aux[ anio > 2022 ]
   aux[ , anio := as.character( anio ) ]
   xtb_aux <- xtable( aux, digits = c( 0, 0, 0, 2, 2, 2, 2, 2, 2 ) )
   print( xtb_aux,
@@ -84,9 +84,9 @@ for ( i in 1:length( escenarios_lista ) ) {
          sanitize.text.function = identity )
   
   # Balance dinámico (aportes) ---------------------------------------------------------------------
-  aux <- balance_anual[ , list( anio = t + parametros$anio_ini, t, A2_vap, A12_vap, A15_vap, A16_vap, 
+  aux <- balance_anual[ , list( anio = t + 2022, t, A2_vap, A12_vap, A15_vap, A16_vap, 
                                 A_est_vap, A_vap ) ]
-  aux <- aux[ anio > 2020 ]
+  aux <- aux[ anio > 2022 ]
   aux[ , anio := as.character( anio ) ]
   xtb_aux <- xtable( aux, digits = c( 0, 0, 0, rep( 2, 6 ) ) )
   print( xtb_aux,
@@ -99,9 +99,9 @@ for ( i in 1:length( escenarios_lista ) ) {
          sanitize.text.function = identity )
   
   # Balance dinámico (beneficios) ------------------------------------------------------------------
-  aux <- balance_anual[ , list( anio = t + parametros$anio_ini, t, B12_vap, B13_vap, B14_vap,
+  aux <- balance_anual[ , list( anio = t + 2022, t, B12_vap, B13_vap, B14_vap,
                                 B15_vap, B16_vap, B_sal_vap, B_vap ) ]
-  aux <- aux[ anio > 2020 ]
+  aux <- aux[ anio > 2022 ]
   aux[ , anio := as.character( anio ) ]
   xtb_aux <- xtable( aux, digits = c( 0, 0, 0, rep( 2, 7 ) ) )
   print( xtb_aux,

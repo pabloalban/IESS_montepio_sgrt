@@ -27,7 +27,7 @@ rm( list = ls()[ !(ls() %in% c( "parametros",
 #1. Suavizado de pensiones iniciales de PA, PT y PP, sin decimos-----------------------------------
 
 aux <- sgrt_pen_tran_pa_pt_pp %>% 
-  filter( anio == '2020' ) %>% 
+  filter( anio == '2022' ) %>% 
   mutate( coef_decima_tercera = mean( coef_decima_tercera, na.rm = TRUE ) ) %>%
   mutate( coef_decima_cuarta = mean( coef_decima_cuarta, na.rm = TRUE ) ) %>%
   distinct( anio, .keep_all = TRUE ) %>% 
@@ -37,7 +37,7 @@ coef_decima_tercera_b_12 <- aux$coef_decima_tercera
 coef_decima_cuarta_b_12 <- aux$coef_decima_cuarta
 
 b_12_ini <- sgrt_pen_tran_pa_pt_pp_anio %>% 
-  filter( anio == '2020' ) %>% 
+  filter( anio == '2022' ) %>% 
   group_by( sexo, x ) %>% 
   mutate( b_12 = P / ERx_incap ) %>% 
   ungroup( ) %>% 
@@ -122,7 +122,7 @@ sum( b_12_ini_m$b_12_int * b_12_ini_m$l_12_int, na.rm = TRUE  )
 #2. Suavizado de pensiones iniciales de orfandad, sin decimos--------------------------------------
 
 aux <- sgrt_pen_tran_orf %>% 
-  filter( anio == '2020' ) %>% 
+  filter( anio == '2022' ) %>% 
   mutate( coef_decima_tercera = mean( coef_decima_tercera, na.rm = TRUE ) ) %>%
   mutate( coef_decima_cuarta = mean( coef_decima_cuarta, na.rm = TRUE ) ) %>%
   distinct( anio, .keep_all = TRUE ) %>% 
@@ -132,7 +132,7 @@ coef_decima_tercera_b_15 <- aux$coef_decima_tercera
 coef_decima_cuarta_b_15 <- aux$coef_decima_cuarta
 
 b_15_ini <- sgrt_pen_tran_orf_anio %>% 
-  filter( anio == '2020' ) %>% 
+  filter( anio == '2022' ) %>% 
   group_by( sexo, x ) %>% 
   mutate( b_15 = P / ERx_incap ) %>% 
   ungroup( ) %>% 
@@ -215,7 +215,7 @@ sum( b_15_ini_m$b_15_int * b_15_ini_m$l_15_int, na.rm = TRUE  )
 
 #3. Suavizado de pensiones iniciales de viudedad, sin decimos--------------------------------------
 aux <- sgrt_pen_tran_viu %>% 
-  filter( anio == '2020' ) %>% 
+  filter( anio == '2022' ) %>% 
   mutate( coef_decima_tercera = mean( coef_decima_tercera, na.rm = TRUE ) ) %>%
   mutate( coef_decima_cuarta = mean( coef_decima_cuarta, na.rm = TRUE ) ) %>%
   distinct( anio, .keep_all = TRUE ) %>% 
@@ -225,7 +225,7 @@ coef_decima_tercera_b_16 <- aux$coef_decima_tercera
 coef_decima_cuarta_b_16 <- aux$coef_decima_cuarta
 
 b_16_ini <- sgrt_pen_tran_viu_anio %>% 
-  filter( anio == '2020' ) %>% 
+  filter( anio == '2022' ) %>% 
   group_by( sexo, x ) %>% 
   mutate( b_16 = P / ERx_incap ) %>% 
   ungroup( ) %>% 

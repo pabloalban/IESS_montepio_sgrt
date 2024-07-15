@@ -22,6 +22,7 @@ source( 'R/rtr/403_graf_comp_primas_rtr.R', encoding = 'UTF-8', echo = FALSE )
 source( 'R/rtr/404_graf_balance_actuarial_rtr.R', encoding = 'UTF-8', echo = FALSE )
 source( 'R/rtr/405_graf_proyeccion_poblacion_rtr.R', encoding = 'UTF-8', echo = FALSE )
 source( 'R/rtr/406_graf_factores_riesgo_rtr.R', encoding = 'UTF-8', echo = FALSE )
+source( 'R/rtr/408_graf_bootstrap.R', encoding = 'UTF-8', echo = FALSE )
 
 # Tablas específicas de RTR ------------------------------------------------------------------------
 source( 'R/rtr/500_tab_analisis_financiero_rtr.R', encoding = 'UTF-8', echo = FALSE )
@@ -36,6 +37,7 @@ source( 'R/rtr/509_tab_decrementos_rtr.R', encoding = 'UTF-8', echo = FALSE )
 source( 'R/rtr/510_tab_resumen_resultados_rtr.R', encoding = 'UTF-8', echo = FALSE )
 source( 'R/rtr/505_tab_balance_rtr.R', encoding = 'UTF-8', echo = FALSE )
 source( 'R/rtr/506_tab_escenarios_rtr.R', encoding = 'UTF-8', echo = FALSE )
+source( 'R/rtr/512_tab_bootstrap_rtr.R', encoding = 'UTF-8', echo = FALSE )
 
 # Reporte LaTeX ------------------------------------------------------------------------------------
 source( parametros$reporte_script, encoding = 'UTF-8', echo = FALSE )

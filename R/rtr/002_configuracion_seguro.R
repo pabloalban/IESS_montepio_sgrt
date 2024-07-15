@@ -3,9 +3,9 @@ message( paste( rep( '-', 100 ), collapse = '' ) )
 message( '\tConfiguraciones particulares para el seguro SGRT' )
 
 parametros$rtr_horizonte <- 40 # en años  
-parametros$rtr_fec_fin <- ymd( '2020-12-31', tz = parametros$time_zone )
+parametros$rtr_fec_fin <- ymd( '2022-12-31', tz = parametros$time_zone )
 parametros$rtr_fec_ini <- ymd( '2012-01-01', tz = parametros$time_zone ) # fecha inicio del periodo de observación
-parametros$rtr_reserva_ini <- 1202240160.65 # reserva inicial registrada en el patrimonio del balance
+parametros$rtr_reserva_ini <- 1378270202.68 # reserva inicial registrada en el patrimonio del balance
 parametros$rtr_anio_max <- year( parametros$rtr_fec_fin )
 parametros$rtr_anio_min <- year( parametros$rtr_fec_ini )
 

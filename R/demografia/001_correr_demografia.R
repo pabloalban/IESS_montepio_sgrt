@@ -37,14 +37,14 @@ if ( parametros$anio_ini == 2018 ) {
   # source( 'R/demografia/002_configurar_demografia.R', encoding = 'UTF-8', echo = FALSE )
   
   ## Carga información -----------------------------------------------------------------------------
-  source( 'R/demografia/101_lectura_transiciones_iess.R', encoding = 'UTF-8', echo = FALSE )
-  source( 'R/demografia/106_lectura_pea_inec.R', encoding = 'UTF-8', echo = FALSE )
+  #source( 'R/demografia/101_lectura_transiciones_iess.R', encoding = 'UTF-8', echo = FALSE )
+  #source( 'R/demografia/106_lectura_pea_inec.R', encoding = 'UTF-8', echo = FALSE )
   
   ## SGO estadísticas y estimaciones ---------------------------------------------------------------
   # script con alto costo de ejecución en memoria y procesamiento
-  source( 'R/demografia/102_preparacion_transiciones_iess.R', encoding = 'UTF-8', echo = FALSE )
+  #source( 'R/demografia/102_preparacion_transiciones_iess.R', encoding = 'UTF-8', echo = FALSE )
   
-  source( 'R/demografia/103_preparacion_poblacion_inicial.R', encoding = 'UTF-8', echo = FALSE )
+  #source( 'R/demografia/103_preparacion_poblacion_inicial.R', encoding = 'UTF-8', echo = FALSE )
   source( 'R/demografia/204_estadistica_salario_pensiones.R', encoding = 'UTF-8', echo = FALSE )
   
   # script con alto costo de ejecución en memoria y procesamiento
@@ -59,22 +59,22 @@ if ( parametros$anio_ini == 2018 ) {
   source( 'R/demografia/307_proyeccion_poblacion.R', encoding = 'UTF-8', echo = FALSE )
   
   ## SSC estadísticas y estimaciones ---------------------------------------------------------------
-  source( 'R/demografia/102_preparacion_transiciones_ssc.R', encoding = 'UTF-8', echo = FALSE )
-  source( 'R/demografia/303_suavizado_tablas_ssc.R', encoding = 'UTF-8', echo = FALSE )
-  source( 'R/demografia/305_proyeccion_mortalidad_ssc.R', encoding = 'UTF-8', echo = FALSE )
-  source( 'R/demografia/306_probabilidades_transicion_ssc.R', encoding = 'UTF-8', echo = FALSE )
-  source( 'R/demografia/307_proyeccion_poblacion_ssc.R', encoding = 'UTF-8', echo = FALSE )
+  #source( 'R/demografia/102_preparacion_transiciones_ssc.R', encoding = 'UTF-8', echo = FALSE )
+  #source( 'R/demografia/303_suavizado_tablas_ssc.R', encoding = 'UTF-8', echo = FALSE )
+  #source( 'R/demografia/305_proyeccion_mortalidad_ssc.R', encoding = 'UTF-8', echo = FALSE )
+  #source( 'R/demografia/306_probabilidades_transicion_ssc.R', encoding = 'UTF-8', echo = FALSE )
+  #source( 'R/demografia/307_proyeccion_poblacion_ssc.R', encoding = 'UTF-8', echo = FALSE )
   
   ## CES y DES estadísticas y estimaciones ---------------------------------------------------------
-  source( 'R/demografia/101_lectura_transiciones_activos_ces_des.R', encoding = 'UTF-8', echo = FALSE )
-  source( 'R/demografia/102_preparacion_transiciones_ces_des.R', encoding = 'UTF-8', echo = FALSE )
-  source( 'R/demografia/307_proyeccion_beneficiarios_des.R', encoding = 'UTF-8', echo = FALSE ) 
+  #source( 'R/demografia/101_lectura_transiciones_activos_ces_des.R', encoding = 'UTF-8', echo = FALSE )
+  #source( 'R/demografia/102_preparacion_transiciones_ces_des.R', encoding = 'UTF-8', echo = FALSE )
+  #source( 'R/demografia/307_proyeccion_beneficiarios_des.R', encoding = 'UTF-8', echo = FALSE ) 
   
   ## RTR estadísticas y estimaciones ---------------------------------------------------------------
-  source( 'R/demografia/107_preparacion_transiciones_pensionistas_rtr.R', encoding = 'UTF-8', echo = FALSE ) 
-  source( 'R/demografia/205_suavizado_transicion_pensionista_rtr.R', encoding = 'UTF-8', echo = FALSE ) 
-  source( 'R/demografia/206_suavizado_pensionistas_iniciales_rtr.R', encoding = 'UTF-8', echo = FALSE ) 
-  source( 'R/demografia/308_proyeccion_poblacion_rtr.R', encoding = 'UTF-8', echo = FALSE ) 
+  #source( 'R/demografia/107_preparacion_transiciones_pensionistas_rtr.R', encoding = 'UTF-8', echo = FALSE ) 
+  #source( 'R/demografia/205_suavizado_transicion_pensionista_rtr.R', encoding = 'UTF-8', echo = FALSE ) 
+  #source( 'R/demografia/206_suavizado_pensionistas_iniciales_rtr.R', encoding = 'UTF-8', echo = FALSE ) 
+  #source( 'R/demografia/308_proyeccion_poblacion_rtr.R', encoding = 'UTF-8', echo = FALSE ) 
 
 }
 

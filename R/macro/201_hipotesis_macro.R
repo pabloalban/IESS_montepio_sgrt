@@ -11,7 +11,7 @@ load( parametros$macro_rdata_series_int )
 
 ## 1.1. Parámetros ---------------------------------------------------------------------------------
 
-n = 38 #Número de años a predecir
+n = 40 #Número de años a predecir
 anio_ini = 2002 # Año inicial
 alpha = 0.05 # (1 - alpha )*100% límites de predicciones
 
@@ -267,7 +267,7 @@ pred <- pred %>%
 
 #Cálculo de la inflación promedio y las fechas
 predicciones_mensuales <- pred %>%
-  cbind( expand.grid( mes = c( 1:12 ), anio = c( anio_ini:2060 ) ), . ) %>%
+  cbind( expand.grid( mes = c( 1:12 ), anio = c( anio_ini:2062 ) ), . ) %>%
   group_by( anio ) %>%
   mutate( inf_prom = mean( inf_anual ) ) %>%
   mutate( pib = pib * 1000000 ) %>%
@@ -313,7 +313,7 @@ tasas_macro_anuales <- predicciones_anuales %>%
   dplyr::mutate( t_sal = 100 * ( sal_anual - dplyr::lag( sal_anual ) ) / dplyr::lag( sal_anual ) ) %>%
   dplyr::mutate( t_sbu = 100 * ( sbu_anual - dplyr::lag( sbu_anual ) ) / dplyr::lag( sbu_anual ) ) %>%
   dplyr::select( anio, t_pib, t_sal, t_sbu, tp_anual, inf_anual ) %>%
-  dplyr::filter( anio >= 2021, anio <= 2060 ) %>% 
+  dplyr::filter( anio >= 2023, anio <= 2062 ) %>% 
   mutate( t_sal = if_else( anio == '2023',
                           3,
                           t_sal ) ) #Debido a hechos subsecuentes, se ha observado que la tasa de crecimiento del salario promedio es 3,96%; pero siguiendo buenas practicas actuariales, se usa la tasa de crecimiento salaial igual a 3% para el 2023.
@@ -328,7 +328,7 @@ tasas_macro_anuales <- predicciones_anuales %>%
 ## 4.3. Tabla resumen de parámetros ----------------------------------------------------------------
 
 hipotesis <- tasas_macro_anuales %>%
-  dplyr::filter( anio >= 2021, anio <= 2060 ) %>%
+  dplyr::filter( anio >= 2023, anio <= 2062 ) %>%
   dplyr::mutate( 
     t_pib =  mean( t_pib,   na.rm = TRUE ),
     tp = mean( tp_anual,   na.rm = TRUE ),

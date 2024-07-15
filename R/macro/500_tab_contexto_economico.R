@@ -11,15 +11,15 @@ source( 'R/500_tildes_a_latex.R', encoding = 'UTF-8', echo = FALSE )
 
 #Parámetros-----------------------------------------------------------------------------------------
 if( parametros$seguro %in% c( 'SAL' ) ) {
-  anio_fin = 10 + 2020
+  anio_fin = 10 + 2022
 } else if ( parametros$seguro %in% c( 'SSC' ) ) {
-  anio_fin = 20 + 2020
+  anio_fin = 20 + 2022
 } else {
-  anio_fin = 40 + 2020
+  anio_fin = 40 + 2022
 }
 
-anio_ini <- 2021
-anio_corte <- 2020
+anio_ini <- 2023
+anio_corte <- 2022
 
 #Tabla del contexto económico-----------------------------------------------------------------------
 message( '\tTablas del contexto económico' )

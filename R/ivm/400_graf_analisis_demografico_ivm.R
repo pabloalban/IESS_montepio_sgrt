@@ -11,11 +11,11 @@ load( file = parametros$demo_rdata_sgo_est_dem )
 ## Gráficos Afiliados SGO Activos ------------------------------------------------------------------
 message( '\tGraficando población afiliada activa inicial SGO del IESS' )
 aux <- copy( est_sal_anio_sexo_edad )
-aux <- aux[ anio <= parametros$anio_ini, ]
+aux <- aux[ anio <= 2022, ]
 aux <- data.table( dcast( aux, anio ~ sexo, value.var = 'ER_act', fun.aggregate = sum, na.rm = TRUE ) )
 aux[ , total := H + M ]
 
-x_lim <- c( 2012, 2020 )
+x_lim <- c( 2012, 2022 )
 x_brk <- seq( x_lim[ 1 ], x_lim[ 2 ], 1 )
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
@@ -47,11 +47,11 @@ ggsave( plot = iess_pob_afi_ini_sgo,
 ## Gráficos Afiliados TNRH Activos -----------------------------------------------------------------
 message( '\tGraficando población afiliada activa inicial TNRH del IESS' )
 aux <- copy( est_sal_anio_sexo_edad )
-aux <- aux[ anio > 2015 & anio <= parametros$anio_ini, ]
+aux <- aux[ anio > 2015 & anio <= 2022, ]
 aux <- data.table( dcast( aux, anio ~ sexo, value.var = 'ER_tnrh_act', fun.aggregate = sum, na.rm = TRUE ) )
 aux[ , total := H + M ]
 
-x_lim <- c( 2015, 2020 )
+x_lim <- c( 2015, 2022 )
 x_brk <- seq( x_lim[ 1 ], x_lim[ 2 ], 1 )
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
@@ -86,7 +86,7 @@ x_max <- 105
 x_min <- 0
 
 aux <- est_sal_anio_sexo_edad[ , list( anio, sexo, x, PER = PER2 ) ]
-aux <- aux[ anio == parametros$anio_ini, ]
+aux <- aux[ anio == 2022, ]
 aux <- aux[ x >= x_min & x <= x_max ]
 aux[ is.na( PER ), PER := 0 ]
 aux[ sexo == 'H', PER := -PER ]
@@ -124,7 +124,7 @@ x_max <- 105
 x_min <- 0
 
 aux <- est_sal_anio_sexo_edad[ , list( anio, sexo, x, ER = ER_tnrh_act ) ]
-aux <- aux[ anio == parametros$anio_ini, ]
+aux <- aux[ anio == 2022, ]
 aux <- aux[ x >= x_min & x <= x_max ]
 aux[ is.na( ER ), ER := 0 ]
 aux[ , PER := ER / sum( ER, na.rm = TRUE ) ]
@@ -169,7 +169,7 @@ y_brk <- seq( y_lim[ 1 ], y_lim[ 2 ], length.out = 11 )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ', ' )
 
 x_stp <- 1
-x_lim <- c( 2012, 2020 )
+x_lim <- c( 2012, 2022 )
 x_brk <- seq( x_lim[ 1 ], x_lim[ 2 ], x_stp )
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
@@ -203,7 +203,7 @@ y_brk <- seq( y_lim[ 1 ], y_lim[ 2 ], length.out = 11 )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ', ' )
 
 x_stp <- 1
-x_lim <- c( 2012, 2020 )
+x_lim <- c( 2012, 2022 )
 x_brk <- seq( x_lim[ 1 ], x_lim[ 2 ], x_stp )
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
@@ -227,7 +227,7 @@ ggsave( plot = iess_masa_salarial_ini,
 
 ## Graficando masa salarial del SGO por sexo y monto -----------------------------------------------
 message( '\tGraficando masa salarial SGO por sexo y monto' )
-aux <- est_sal_anio_sexo_edad[ anio == parametros$anio_ini, list( sexo, ER = ER_act, ESm ) ]
+aux <- est_sal_anio_sexo_edad[ anio == 2022, list( sexo, ER = ER_act, ESm ) ]
 slst <- seq( 0, 3000, 100 )
 aux[ , sg := cut( ESm, breaks = slst, include.lowest = TRUE, right = FALSE, ordered_result = TRUE, dig.lab = 4 ) ]
 aux <- aux[ , list( n = sum( ER, na.rm = TRUE ) ), by = list( sexo, sg ) ]
@@ -258,7 +258,7 @@ ggsave( plot = iess_pir_masa_salarial,
 ## Graficando masa salarial del TNRH por sexo y monto ----------------------------------------------
 message( '\tGraficando masa salarial TNRH por sexo y monto' )
 
-aux <- est_sal_anio_sexo_edad[ anio == parametros$anio_ini, list( sexo, ER = ER_tnrh_act, ESTm ) ]
+aux <- est_sal_anio_sexo_edad[ anio == 2022, list( sexo, ER = ER_tnrh_act, ESTm ) ]
 slst <- seq( 0, 400, 25 )
 aux[ , sg := cut( ESTm, breaks = slst, include.lowest = TRUE, right = FALSE, ordered_result = TRUE, dig.lab = 4 ) ]
 aux <- aux[ , list( n = sum( ER, na.rm = TRUE ) ), by = list( sexo, sg ) ]
@@ -1038,7 +1038,7 @@ ggsave( plot = iess_jef_male_edad_riesgo_inac,
 ## Gráfico porcentaje de pensionistas por tipo -----------------------------------------------------
 message( '\tGraficando proporcion de pensionistas por sexo y tipo' )
 # aux <- est_pen_se
-# aux <- aux[ anio == parametros$anio_ini ]
+# aux <- aux[ anio == 2022 ]
 # aux[ , desc := paste0( str_to_title( tipo ), ' ', ifelse( sexo == 'H', 'hombres', 'mujeres' ) ) ]
 # aux[ , porf := paste0( formatC( 100 * PER, decimal.mark = ', ', digits = 2, format = 'f' ), '%' ) ]
 # 
@@ -1057,7 +1057,7 @@ message( '\tGraficando proporcion de pensionistas por sexo y tipo' )
 ## Distribución de la edad de los pensionistas del SGO, hombres ------------------------------------
 message( '\tTotal de Pensionistas del SGO' )
 male_pen <- est_pen_anio_tipo_sexo_x[ 
-  anio == parametros$anio_ini & sexo == 'H',
+  anio == 2022 & sexo == 'H',
   list( n = sum( ER, na.rm = TRUE ) ),
   by = list( tipo, sexo, x ) ]
 male_pen <- male_pen[ x >= 0 & x <= 105 ]
@@ -1106,7 +1106,7 @@ ggsave( plot = iess_pension_ssc_male ,
 
 ## Distribución de la edad de los pensionistas del SGO, mujeres -------------------------------------
 female_pen <- est_pen_anio_tipo_sexo_x[ 
-  anio == parametros$anio_ini & sexo == 'M',
+  anio == 2022 & sexo == 'M',
   list( n = sum( ER, na.rm = TRUE ) ),
   by = list( tipo, sexo, x ) ]
 male_pen <- male_pen[ x >= 0 & x <= 105 ]
@@ -1157,7 +1157,7 @@ ggsave( plot = iess_pension_ssc_female ,
 
 ## Porcentaje de pensionistas del SGO por tipo y sexo ----------------------------------------------
 message( '\tPorcentaje de pensionistas del SGO por tipo y sexo' )
-aux <- est_pen_anio_tipo_sexo[ anio == parametros$anio_ini ]
+aux <- est_pen_anio_tipo_sexo[ anio == 2022 ]
 aux[ , desc := paste0( str_to_title( tipo ), ' ', ifelse( sexo == 'H', 'hombres', 'mujeres' ) ) ]
 aux[ , por := ER / sum( ER ) ]
 aux[ , porf := paste0( formatC( 100 * por, decimal.mark = ', ', digits = 2, format = 'f' ), '%' ) ]
@@ -1179,7 +1179,7 @@ ggsave( plot = plt_tree,
 
 ## Beneficios pagados por pensiones en el SGO ------------------------------------------------------
 message( '\tGraficando beneficios pagados por pensionistas por sexo y tipo' )
-aux <- est_pen_anio_tipo_sexo[ anio == parametros$anio_ini ]
+aux <- est_pen_anio_tipo_sexo[ anio == 2022 ]
 aux[ , desc := paste0( str_to_title( tipo ), ' ', ifelse( sexo == 'H', 'hombres', 'mujeres' ) ) ]
 aux[ , por := P / sum( P ) ]
 aux[ , porf := paste0( formatC( 100 * por, decimal.mark = ', ', digits = 2, format = 'f' ), '%' ) ]
@@ -1214,7 +1214,7 @@ for ( i in 1:length( tipos ) ) {
   message( '\tGraficando pirámide de pensionistas de ', tab_nom[ i ], ' por edad y sexo SGO del IESS' )
   
   aux <- est_pen_anio_tipo_sexo_x[ tipo == tipos[ i ], list( anio, sexo, x, PER ) ]
-  aux <- aux[ anio == parametros$anio_ini, ]
+  aux <- aux[ anio == 2022, ]
   aux <- aux[ x >= x_min & x <= x_max ]
   aux[ is.na( PER ), PER := 0 ]
   aux[ sexo == 'H', PER := -PER ]
@@ -1252,13 +1252,13 @@ for ( i in 1:length( tipos ) ) {
   message( '\tGraficando evolución de la población jubilada por ', tab_nom[ i ], ' del SGO' )
   
   aux <- est_pen_anio_tipo_sexo[ 
-    tipo == tipos[ i ] & anio <= parametros$anio_ini,
+    tipo == tipos[ i ] & anio <= 2022,
     list( ER = sum( ER, na.rm = TRUE ) ),
     by = list( anio, sexo ) ]
   aux <- dcast.data.table( aux, anio ~ sexo, value.var = 'ER', fun.aggregate = sum , na.rm = TRUE )
   aux[ , total := H + M ]
   
-  x_lim <- c( 2012, 2020 )
+  x_lim <- c( 2012, 2022 )
   x_brk <- seq( x_lim[ 1 ], x_lim[ 2 ], 1 )
   x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
   
@@ -1294,7 +1294,7 @@ for ( i in 1:length( tipos ) ) {
   ### Pirámide por monto de pensión ----------------------------------------------------------------
   message( '\tGraficando pensionistas por monto y sexo SGO del IESS' )
   
-  aux <- est_pen[ anio == parametros$anio_ini, list( anio, tipo, sexo, x, ER, EPm ) ]
+  aux <- est_pen[ anio == 2022, list( anio, tipo, sexo, x, ER, EPm ) ]
   aux <- aux[ x >= x_min & x <= x_max & tipo == tipos[ i ] ]
   aux[ , pen_clas := cut( EPm, breaks = pen_lst, include.lowest = TRUE, right = FALSE, 
                           ordered_result = TRUE, dig.lab = 5 ) ]

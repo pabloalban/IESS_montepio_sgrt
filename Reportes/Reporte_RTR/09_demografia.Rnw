@@ -1951,3 +1951,71 @@ Durante el año 2020, el 50\% de los beneficiarios por pensiones de viudedad rec
   \input{tablas/tab_rango_monto_vo_rtr.tex}
 \end{longtable}
 }
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Estimación de fallecidos por accidentes laborales}
+
+
+
+\begin{figure}[H]
+\centering
+\caption{Simulaciones Bootstrap del porcentaje montepios causados por afiliados fallecidos por accidentes laborales}
+\label{fig:iess_evo_ben_vo_rtr}
+\includegraphics[scale=1]{graficos/iess_porc_a_rtr.pdf}
+\caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
+\\Elaborado: DAIE}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\caption{Simulaciones Bootstrap del porcentaje montepios causados por afiliados fallecidos por accidentes laborales}
+\label{fig:iess_evo_ben_vo_rtr}
+\includegraphics[scale=1]{graficos/iess_porc_j_rtr.pdf}
+\caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
+\\Elaborado: DAIE}
+\end{figure}
+
+
+\begin{table}[H]
+\centering
+\caption{Estimación del número de montepios entregados entre 2012 a 2022 por tipo de causante}
+\label{tab:iess_resultados_resumen_ejec}
+{\fontsize{9}{11}\selectfont
+\begin{tabular}{lrrrrr}
+\toprule
+\multicolumn{1}{l}{Causante Montepío} &
+\multicolumn{1}{c}{Muestra} &
+\multicolumn{1}{c}{Media}  &
+\multicolumn{1}{c}{Desviación Estándar}  &
+\multicolumn{1}{c}{Percentil 2,5\%}  &
+\multicolumn{1}{c}{Percentil 97,5\%} \\
+\midrule
+\input{tablas/tab_est_ben_bootstrap_rtr.tex}
+%\bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize Elaborado: DAIE}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Estimación del porcentaje de montepios entregados entre 2012 a 2022 por tipo de causante}
+\label{tab:iess_resultados_resumen_ejec}
+{\fontsize{9}{11}\selectfont
+\begin{tabular}{lrrrrr}
+\toprule
+\multicolumn{1}{l}{Causante Montepío} &
+\multicolumn{1}{c}{Muestra} &
+\multicolumn{1}{c}{Media}  &
+\multicolumn{1}{c}{Desviación Estándar}  &
+\multicolumn{1}{c}{Percentil 2,5\%}  &
+\multicolumn{1}{c}{Percentil 97,5\%} \\
+\midrule
+\input{tablas/tab_porc_ben_bootstrap_rtr.tex}
+%\bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize Elaborado: DAIE}
+\end{table}

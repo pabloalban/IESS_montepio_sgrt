@@ -253,7 +253,7 @@ save( PEA_proy, file = parametros$demo_rdata_sgo_pea_proj )
 message( '\tPreparando población inicial para SGO' )
 
 ## Población por inicial por tiempo de servicio ----------------------------------------------------
-load( paste0( parametros$demo_rdata_sgo_incom_tran_act_anio, parametros$anio_ini, '.RData' ) )
+load( paste0( parametros$demo_rdata_sgo_incom_tran_act_anio, 2022, '.RData' ) )
 l0xs <- copy( sgo_comp_tran )
 rm( sgo_comp_tran )
 
@@ -272,7 +272,7 @@ l0xs <- merge.data.table(
   by = c( 'sexo', 'x', 's' ),
   all.y = TRUE )
 
-aux <- PEA_proy[ anio == parametros$anio_ini, list( sexo, x, s = 0, l1 = peax ) ]
+aux <- PEA_proy[ anio == 2022, list( sexo, x, s = 0, l1 = peax ) ]
 l0xs <- merge.data.table( l0xs, aux, by = c( 'sexo', 'x', 's' ), all.x = TRUE )
 l0xs[ is.na( l1 ), l1 := 0 ]
 l0xs[ is.na( l2 ), l2 := 0 ]
@@ -304,16 +304,16 @@ message( '\tPreparación de población inicial de activos y cesantes/inactivos' 
 l0 <- expand.grid( sexo = factor( c( 'H', 'M' ), levels = c( 'H', 'M', 'HM' ) ), x = xlst )
 l0 <- as.data.table( l0 )
 
-lact <- sgo_act_tran_anio[ anio == parametros$anio_ini, list( sexo, x, l2 = l2x, l3 = l3x ) ]
+lact <- sgo_act_tran_anio[ anio == 2022, list( sexo, x, l2 = l2x, l3 = l3x ) ]
 l0 <- merge.data.table( l0, lact, by = c( 'sexo', 'x' ), all.x = TRUE )
 
-aux <- PEA_proy[ anio == parametros$anio_ini, list( sexo, x, l1 = peax ) ]
+aux <- PEA_proy[ anio == 2022, list( sexo, x, l1 = peax ) ]
 l0 <- merge.data.table( l0, aux, by = c( 'sexo', 'x' ), all.x = TRUE )
 l0[ , l1 := pmax( l1 - l2 - l3, 0 ) ]
 
 ## Procesando información de pensionistas ----------------------------------------------------------
 message( '\tPreparación de población inicial de pensionistas' )
-load( paste0( parametros$demo_rdata_sgo_incom_tran_pen_anio, parametros$anio_ini, '.RData' ) )
+load( paste0( parametros$demo_rdata_sgo_incom_tran_pen_anio, 2022, '.RData' ) )
 
 sgo_comp_tran[ , s := round( imp, 0 ) ]
 sgo_comp_tran[ is.na( s ), s := 0 ]
@@ -349,13 +349,13 @@ setcolorder( l0xs, c( 'sexo', 'x', 's', 'l1', 'l2', 'l3', 'l4', 'l5', 'l7', 'l8'
 
 ## Guardando población inicial SGO -----------------------------------------------------------------
 message( '\tGuardando población inicial SGO' )
-save( l0, l0xs, file = parametros$demo_rdata_sgo_pob_ini )
+save( l0, l0xs, file = "Y:/IESS_montepio_sgrt/RData/demografia/IESS_SGO_poblacion_inicial_2022.RData"  )
 
 # Para el SSC --------------------------------------------------------------------------------------
 message( '\tPreparando población inicial para SSC' )
 
 ## Población por inicial por tiempo de servicio ----------------------------------------------------
-load( paste0( parametros$demo_rdata_ssc_incom_tran_act_anio, parametros$anio_ini, '.RData' ) )
+load( paste0( parametros$demo_rdata_ssc_incom_tran_act_anio, 2022, '.RData' ) )
 l0xs <- copy( ssc_comp_tran )
 rm( ssc_comp_tran )
 
@@ -377,7 +377,7 @@ l0xs <- merge.data.table(
   all.y = TRUE )
 rm( aux )
 
-aux <- PEA_proy[ anio == parametros$anio_ini, list( sexo, x, s = 0, l1 = peax_r ) ]
+aux <- PEA_proy[ anio == 2022, list( sexo, x, s = 0, l1 = peax_r ) ]
 l0xs <- merge.data.table( l0xs, aux, by = c( 'sexo', 'x', 's' ), all.x = TRUE )
 l0xs[ is.na( l1 ), l1 := 0 ]
 l0xs[ is.na( l2 ), l2 := 0 ]
@@ -410,16 +410,16 @@ message( '\tPreparación de población inicial de activos y cesantes/inactivos' 
 l0 <- expand.grid( sexo = factor( c( 'H', 'M' ), levels = c( 'H', 'M', 'HM' ) ), x = xlst )
 l0 <- as.data.table( l0 )
 
-lact <- sgo_act_tran_anio[ anio == parametros$anio_ini, list( sexo, x, l2 = l2x, l3 = l3x ) ]
+lact <- sgo_act_tran_anio[ anio == 2022, list( sexo, x, l2 = l2x, l3 = l3x ) ]
 l0 <- merge.data.table( l0, lact, by = c( 'sexo', 'x' ), all.x = TRUE )
 
-aux <- PEA_proy[ anio == parametros$anio_ini, list( sexo, x, l1 = peax_r ) ]
+aux <- PEA_proy[ anio == 2022, list( sexo, x, l1 = peax_r ) ]
 l0 <- merge.data.table( l0, aux, by = c( 'sexo', 'x' ), all.x = TRUE )
 l0[ , l1 := pmax( l1 - l2 - l3, 0 ) ]
 
 ## Procesando información de pensionistas ----------------------------------------------------------
 message( '\tPreparación de población inicial de pensionistas' )
-load( paste0( parametros$demo_rdata_ssc_incom_tran_pen_anio, parametros$anio_ini, '.RData' ) )
+load( paste0( parametros$demo_rdata_ssc_incom_tran_pen_anio, 2022, '.RData' ) )
 
 ssc_comp_tran[ , s := round( imp, 0 ) ]
 ssc_comp_tran[ is.na( s ), s := 0 ]

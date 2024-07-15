@@ -92,7 +92,7 @@ sgrt_pen_tran_pa_pt_pp <- rbind( prestaciones_pa, prestaciones_pt, prestaciones_
   mutate( fecha_ingreso = if_else( fecha_ingreso == as.Date( '2012-01-01' ),
                                    NA,
                                    fecha_ingreso ) ) %>% 
-  mutate( fecha_salida = if_else( fecha_salida == as.Date( '2020-12-01' ),
+  mutate( fecha_salida = if_else( fecha_salida == as.Date( '2022-12-01' ),
                                    NA,
                                   fecha_salida ) ) %>% 
   group_by( anio, cedula ) %>% 
@@ -131,7 +131,7 @@ aux_a <- sgrt_pen_tran_pa_pt_pp %>%
 aux_b <- sgrt_pen_tran_pa_pt_pp %>% 
   mutate( x = round( as.numeric( difftime( as.Date( paste0( year( fecha_ingreso ), "-06-30"), "%Y-%m-%d" ) , fecha_nacimiento, units = "days" ) ) / 365, 0 ) ) %>% 
   filter( cod_tipo_prestacion %in% c('PA', 'PT') ) %>%  #desde 2014 no se permite nuevos ingresos de incapcidad PP
-  filter( fecha_ingreso < as.Date( "2020-12-01" ),
+  filter( fecha_ingreso < as.Date( "2022-12-01" ),
           fecha_ingreso > as.Date( "2012-01-01" ) ) %>% 
   distinct( ., cedula, .keep_all = TRUE ) %>% 
   filter( fecha_ingreso != as.Date( "2012-01-01" ) ) %>% 
@@ -151,12 +151,12 @@ aux_sal <- sgrt_pen_tran_pa_pt_pp %>%
   mutate( fecha_salida = max_planilla ) %>% 
   
   mutate( x = round( as.numeric( difftime( as.Date( paste0( year( fecha_salida ), "-06-30" ) ) , fecha_nacimiento, units = "days" ) / 365 ), 0 ) ) %>%
-  filter( fecha_salida < as.Date( "2020-12-01" ),
+  filter( fecha_salida < as.Date( "2022-12-01" ),
           fecha_salida > as.Date( "2012-01-01" ) ) %>% 
   distinct( cedula, .keep_all = TRUE ) %>% 
   mutate( anio = year( fecha_salida ) ) %>% 
   group_by( anio, sexo, x ) %>% 
-  mutate( Nx_sal = sum( ifelse ( fecha_salida != as.Date( "2020-12-01" ),
+  mutate( Nx_sal = sum( ifelse ( fecha_salida != as.Date( "2022-12-01" ),
                                  1,
                                  0 ) ) ) %>% 
   ungroup( ) %>% 
@@ -339,7 +339,7 @@ sgrt_pen_tran_orf <- prestaciones_orfandad %>%
   mutate( fecha_ingreso = if_else( fecha_ingreso == as.Date( '2012-01-01' ),
                                    NA,
                                    fecha_ingreso ) ) %>% 
-  mutate( fecha_salida = if_else( fecha_salida == as.Date( '2020-12-01' ),
+  mutate( fecha_salida = if_else( fecha_salida == as.Date( '2022-12-01' ),
                                   NA,
                                   fecha_salida ) ) %>% 
   group_by( anio, cedula ) %>% 
@@ -390,7 +390,7 @@ aux_ing <- full_join( aux_a, aux_b, by = c('anio', 'sexo', 'x') )
 ##4.2. (15 ---> 0 ) Salida de pensionistas de orfandad----------------------------------------------
 
 aux_sal <- sgrt_pen_tran_orf %>% 
-  filter( fecha_salida < as.Date( "2020-12-01" ),
+  filter( fecha_salida < as.Date( "2022-12-01" ),
           fecha_salida > as.Date( "2012-01-01" ) ) %>% 
   mutate( x = round( as.numeric( difftime( as.Date( paste0( year( fecha_salida ), '-06-30') ), fecha_nacimiento, units = "days") ) / 365, 0 ) ) %>% 
   distinct( cedula, .keep_all = TRUE ) %>% 
@@ -509,7 +509,7 @@ aux_ing <- full_join( aux_a, aux_b, by = c('anio', 'sexo', 'x') )
 
 aux_sal <- sgrt_pen_tran_viu %>% 
   mutate( x = round( as.numeric( difftime( as.Date( paste0( year( fecha_salida ), "-06-30" ) ) , fecha_nacimiento, units = "days" ) / 365 ), 0 ) ) %>%
-  filter( fecha_salida < as.Date( "2020-12-01" ),
+  filter( fecha_salida < as.Date( "2022-12-01" ),
           fecha_salida > as.Date( "2012-01-01" ) ) %>% 
   distinct( cedula, .keep_all = TRUE ) %>%
   mutate( anio = year( fecha_salida ) ) %>% 

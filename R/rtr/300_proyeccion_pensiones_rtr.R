@@ -18,6 +18,7 @@ load( paste0( parametros$RData_seg, 'IESS_RTR_porcentaje_incapacidad_ajustado.RD
 load( parametros$demo_rdata_rtr_pob_proy  )
 load( parametros$demo_rdata_sgo_pob_proy )
 load( parametros$demo_rdata_inec_fert_model )
+load( file = paste0(  parametros$RData_seg, 'IESS_RTR_bootstrap.RData'  ) )
 
 # Borrando variables, solo quedan variables a ser utilizadas
 rm( list = ls()[ !( ls() %in% c( parametros_lista,
@@ -30,7 +31,7 @@ rm( list = ls()[ !( ls() %in% c( parametros_lista,
                                  "pob_proy_rtr",
                                  "pob_proy",
                                  "pob_proy_ts",
-                                 "sal_pro",
+                                 "sal_proy",
                                  "coef_incap_12",
                                  "coef_incap_13",
                                  "coef_incap_14",
@@ -47,13 +48,24 @@ rm( list = ls()[ !( ls() %in% c( parametros_lista,
                                  "fer_dat",
                                  "nup_dat",
                                  "cen_iess_hij_alis",
-                                 "cen_iess_cony_alis"  ) ) ] )
+                                 "cen_iess_cony_alis",
+                                 'porc_A', 
+                                 'porc_J',
+                                 'cal_pen_orf_nue',
+                                 'cal_pen_orf_ant', 
+                                 'cal_pen_viu_nue',
+                                 'cal_pen_viu_ant' ) ) ] )
 
 #Parámetros
 
 coef_orfandad <- 0.4
 coef_viudedad <- 0.6
 hijos_prom_por_mujer <- 2.05
+
+cal_pen_orf_nue <- esc$cal_pen_orf_nue
+cal_pen_orf_ant <- esc$cal_pen_orf_ant
+cal_pen_viu_nue <- esc$cal_pen_viu_nue
+cal_pen_viu_ant <- esc$cal_pen_viu_ant
 
 #1. Preparando tablas auxiliares--------------------------------------------------------------------
 
@@ -184,9 +196,13 @@ for ( g in c( 1, 2 ) ) {
     for ( x in c( 1: 105 ) ) { 
       b12[ t + 1, x + 1, g ] <- ( l12[ t, x, g ] * b12[ t, x, g ] * ( 1 + i_p[ t + 1, x + 1, g ] ) + l2_12[ t + 1, x + 1, g ] * sal_prom[ t + 1, x + 1, g ] * coef_incap_12[ x + 1, g ] ) / (  l12[ t, x, g ] + l2_12[ t + 1, x + 1, g ] + 0.00001 )
      
-       b15[ t + 1, x + 1, g ] <- ( l15[ t, x, g ] * b15[ t, x, g ] * ( 1 + i_p[ t + 1, x + 1, g ] ) + coef_orfandad * l0_15[ t + 1, x + 1, g ] * sal_prom_padres[ t + 1, x + 1, g ] * coef_incap_15[ x + 1, g ] / hijos_prom_por_mujer ) / ( l15[ t, x, g ]  + l0_15[ t + 1, x + 1, g ] + 0.00001 )
+       b15[ t + 1, x + 1, g ] <- ( l15[ t, x, g ] * b15[ t, x, g ] * ( 1 + i_p[ t + 1, x + 1, g ] ) +
+                                     ( porc_J  * coef_orfandad * l0_15[ t + 1, x + 1, g ] * sal_prom_padres[ t + 1, x + 1, g ] * coef_incap_15[ x + 1, g ] +
+                                      porc_A  * coef_orfandad * cal_pen_orf_nue * l0_15[ t + 1, x + 1, g ] * sal_prom_padres[ t + 1, x + 1, g ] / hijos_prom_por_mujer ) ) / ( l15[ t, x, g ]  + l0_15[ t + 1, x + 1, g ] + 0.00001 )
       
-       b16[ t + 1, x + 1, g ] <- ( l16[ t, x, g ] * b16[ t, x, g ] * ( 1 + i_p[ t + 1, x + 1, g ] ) + coef_viudedad * l0_16[ t + 1, x + 1, g ] * sal_prom[ t + 1, x + 1, g ] * coef_incap_16[ x + 1, g ] ) / (  l16[ t, x, g ] + l0_16[ t + 1, x + 1, g ] + 0.00001 )
+       b16[ t + 1, x + 1, g ] <- ( l16[ t, x, g ] * b16[ t, x, g ] * ( 1 + i_p[ t + 1, x + 1, g ] ) +
+                                     ( porc_J * coef_viudedad * cal_pen_viu_nue * l0_16[ t + 1, x + 1, g ] * sal_prom[ t + 1, x + 1, g ] * coef_incap_16[ x + 1, g ] +
+                                         porc_A  * coef_viudedad * cal_pen_viu_nue * l0_16[ t + 1, x + 1, g ] * sal_prom[ t + 1, x + 1, g ] ) ) / (  l16[ t, x, g ] + l0_16[ t + 1, x + 1, g ] + 0.00001 )
 
     }
   }

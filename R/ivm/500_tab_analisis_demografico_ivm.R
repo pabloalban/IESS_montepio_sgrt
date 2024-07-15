@@ -4,12 +4,13 @@ message( paste( rep( '-', 100 ), collapse = '' ) )
 load( file = parametros$demo_rdata_sgo_est_dem )
 # load( file = parametros$ivm_rdata_est_demo )
 
+
 # Número de Afiliados SGO --------------------------------------------------------------------------
 message( '\tNúmero de afiliados SGO activos' )
 
 aux <- copy( est_sal_anio_sexo_edad )
 aux_est_sal_anio_sexo_edad <- aux 
-aux <- aux[ anio <= parametros$anio_ini,]
+aux <- aux[ anio <= 2022,]
 aux <- data.table( dcast( aux, anio ~ sexo, value.var = "ER_act", fun.aggregate = sum, na.rm = TRUE ) )
 aux[ , total := H + M ]
 aux[ , st := shift( total, type = c( "lag" ) ) ]
@@ -30,7 +31,7 @@ print( aux_xtable,
 
 aux <- copy( est_sal_anio_sexo_edad )
 aux_est_sal_anio_sexo_edad <- aux 
-aux <- aux[ anio <= parametros$anio_ini,]
+aux <- aux[ anio <= 2022,]
 aux <- data.table( dcast( aux, anio ~ sexo, value.var = "m2", fun.aggregate = sum, na.rm = TRUE ) )
 aux[ , total := H + M ]
 aux[ , st := shift( total, type = c( "lag" ) ) ]
@@ -52,7 +53,7 @@ print( aux_xtable,
 # Número de Afiliados TNRH -------------------------------------------------------------------------
 message( '\tNúmero de afiliados TNRH activos' )
 aux <- copy( est_sal_anio_sexo_edad )
-aux <- aux[ anio <= parametros$anio_ini,]
+aux <- aux[ anio <= 2022,]
 aux <- data.table( dcast( aux, anio ~ sexo,value.var = "ER_tnrh_act", fun.aggregate = sum, na.rm = TRUE ) )
 aux[ , total := H + M ]
 aux <- aux[ anio >= 2015, ]
@@ -73,7 +74,7 @@ print( aux_xtable,
        sanitize.text.function = identity )
 
 aux <- copy( est_sal_anio_sexo_edad )
-aux <- aux[ anio <= parametros$anio_ini,]
+aux <- aux[ anio <= 2022,]
 aux <- data.table( dcast( aux, anio ~ sexo,value.var = "m13", fun.aggregate = sum, na.rm = TRUE ) )
 aux[ , total := H + M ]
 aux <- aux[ anio >= 2015, ]
@@ -96,7 +97,7 @@ print( aux_xtable,
 # Masa salarial SGO --------------------------------------------------------------------------------
 message( '\tMasa salarial de afiliados SGO activos' )
 aux <- copy( est_sal_anio_sexo_edad )
-aux <- aux[anio <= parametros$anio_ini,]
+aux <- aux[anio <= 2022,]
 aux <- data.table( dcast( aux, anio ~ sexo,value.var = "S", fun.aggregate = sum, na.rm = TRUE ) )
 aux[ , total := H + M ]
 aux[ , st := shift( total, type = c( "lag" ) ) ]
@@ -119,7 +120,7 @@ print( aux_xtable,
 # Masa salarial TNRH -------------------------------------------------------------------------------
 message( '\tMasa salarial de afiliados TNRH activos' )
 aux <- copy( est_sal_anio_sexo_edad )
-aux <- aux[ anio <= parametros$anio_ini & ER_tnrh_act > 0, ]
+aux <- aux[ anio <= 2022 & ER_tnrh_act > 0, ]
 aux <- dcast.data.table( aux, anio ~ sexo,value.var = "ST", fun.aggregate = sum, na.rm = TRUE )
 aux[ , total := H + M ]
 aux[ , st := shift( total, type = c( "lag" ) ) ]
@@ -290,22 +291,22 @@ for ( i in 1:length( tipos ) ) {
     est_pen_anio_tipo_sexo[ , tp := ifelse( is.infinite( tp ), NA , tp ) ]
     est_pen_anio_tipo_sexo[ , tpm := ifelse( is.infinite( tpm ), NA , tpm ) ]
     
-    aux <- est_pen_anio_tipo[ tipo == tipos[i] & anio <= parametros$anio_ini ]
+    aux <- est_pen_anio_tipo[ tipo == tipos[i] & anio <= 2022 ]
     aux <- aux[ anio >= 2014, ]
-    aux1 <- est_pen_anio_tipo_sexo[ tipo == tipos[ i ] & anio <= parametros$anio_ini ]
+    aux1 <- est_pen_anio_tipo_sexo[ tipo == tipos[ i ] & anio <= 2022 ]
     aux1 <- aux1[ anio >= 2014, ]
-    aux2 <- est_pen_anio_tipo_sexo[ tipo == tipos[ i ] & anio <= parametros$anio_ini & sexo == 'H' ]
+    aux2 <- est_pen_anio_tipo_sexo[ tipo == tipos[ i ] & anio <= 2022 & sexo == 'H' ]
     aux2 <- aux2[ anio >= 2014, ]
-    aux3 <- est_pen_anio_tipo_sexo[ tipo == tipos[ i ] & anio <= parametros$anio_ini & sexo == 'M' ]
+    aux3 <- est_pen_anio_tipo_sexo[ tipo == tipos[ i ] & anio <= 2022 & sexo == 'M' ]
     aux3 <- aux3[ anio >= 2014, ]
   } else {
-    aux <- est_pen_anio_tipo[ tipo == tipos[i] & anio <= parametros$anio_ini ]
+    aux <- est_pen_anio_tipo[ tipo == tipos[i] & anio <= 2022 ]
     aux <- aux[anio >= 2012, ]
-    aux1 <- est_pen_anio_tipo_sexo[ tipo == tipos[ i ] & anio <= parametros$anio_ini ]
+    aux1 <- est_pen_anio_tipo_sexo[ tipo == tipos[ i ] & anio <= 2022 ]
     aux1 <- aux1[ anio >= 2012, ]
-    aux2 <- est_pen_anio_tipo_sexo[ tipo == tipos[ i ] & anio <= parametros$anio_ini & sexo == 'H' ]
+    aux2 <- est_pen_anio_tipo_sexo[ tipo == tipos[ i ] & anio <= 2022 & sexo == 'H' ]
     aux2 <- aux2[ anio >= 2012, ]
-    aux3 <- est_pen_anio_tipo_sexo[ tipo == tipos[ i ] & anio <= parametros$anio_ini & sexo == 'M' ]
+    aux3 <- est_pen_anio_tipo_sexo[ tipo == tipos[ i ] & anio <= 2022 & sexo == 'M' ]
     aux3 <- aux3[ anio >= 2012, ]
   }
 
@@ -374,7 +375,7 @@ for ( i in 1:length( tipos ) ) {
 rm( aux, aux1, aux2, aux3, aux_xtable )
 
 # Edad promedio ------------------------------------------------------------------------------------
-aux <- copy( est_pen_anio_tipo_sexo_x[ anio==parametros$anio_ini & !(tipo%in%c('DISCAPACIDAD') ),
+aux <- copy( est_pen_anio_tipo_sexo_x[ anio==2022 & !(tipo%in%c('DISCAPACIDAD') ),
                                        list(tipo, sexo, x) ] )
 aux1 <- data.table( dcast( aux, tipo ~ sexo, value.var = 'x', fun.aggregate = mean, na.rm = TRUE ) )
 aux1[ , tot := c( rowMeans( aux1[, 2:3], na.rm = TRUE ) ) ]

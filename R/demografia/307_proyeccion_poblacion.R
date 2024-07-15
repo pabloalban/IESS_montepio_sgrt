@@ -21,7 +21,7 @@ load( parametros$demo_rdata_sgo_tasas_tran )
 load( parametros$demo_rdata_sgo_probs_tran )
 load( parametros$demo_rdata_sgo_din_dec )
 load( parametros$demo_rdata_sgo_pea_proj )
-load( parametros$demo_rdata_sgo_pob_ini )
+load( "Y:/IESS_montepio_sgrt/RData/demografia/IESS_SGO_poblacion_inicial_2022.RData" )
 
 # Borrando variables, solo quedan variables a ser utilizadas
 vars <- c( 'parametros', 'onu_pea_tot_int', 'l0', 'l0xs', 'Ph', 'Pm', 
@@ -32,11 +32,11 @@ rm( list = ls()[ !( ls() %in% vars ) ] )
 # Parámetros ---------------------------------------------------------------------------------------
 # Tiempo
 t_min <- 0
-t_max <- parametros$demo_horizonte # horizonte de proyección
+t_max <- 40 # horizonte de proyección
 t_lst <- seq( t_min, t_max, 1 )
 
 # Año inicial de proyección
-anio_ini <- parametros$anio_ini
+anio_ini <- 2022
 
 # Año final de proyección
 anio_fin <- anio_ini + t_max
@@ -682,3 +682,4 @@ save( lm, lh, ltm, lth, lm_mont, lh_mont, lm_dep, lh_dep,
 message( paste( rep('-', 100 ), collapse = '' ) )
 rm( list = ls()[ !( ls() %in% c( 'parametros' ) ) ] )
 gc()
+

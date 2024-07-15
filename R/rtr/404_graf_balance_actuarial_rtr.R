@@ -14,10 +14,10 @@ for ( i in 1:length( escenarios_lista ) ) {
   cols_fun <- colorRampPalette( c( 'gold', parametros$iess_green, parametros$iess_blue ) )
   cols_graf <- cols_fun( num_anios )
   
-  balance_anual[ , t := t + parametros$anio_ini ]
+  balance_anual[ , t := t + 2022]
   # grafico balance capitalizado -------------------------------------------------------------------
   
-  x_lim <- c( parametros$anio_ini, parametros$anio_ini + parametros$horizonte )
+  x_lim <- c(2022, 2022 + parametros$horizonte )
   x_brk <- seq( x_lim[1], x_lim[2], 5 )
   x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
   
@@ -47,7 +47,7 @@ for ( i in 1:length( escenarios_lista ) ) {
   
   
   # Gráfico del balance actuarial con barras--------------------------------------------------------
-  x_lim <- c( parametros$anio_ini, parametros$anio_ini + parametros$horizonte )
+  x_lim <- c(2022, 2022+ parametros$horizonte )
   x_brk <- seq( x_lim[1], x_lim[2], 5 )
   x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
   
@@ -120,9 +120,9 @@ for ( i in 1:length( escenarios_lista ) ) {
   cols_fun <- colorRampPalette( c( 'gold', parametros$iess_green, parametros$iess_blue ) )
   cols_graf <- cols_fun( num_anios )
   
-  balance_anual[ , t := t + parametros$anio_ini ]
+  balance_anual[ , t := t + 2022]
   # grafico balance actuarial ----------------------------------------------------------------------
-  x_lim <- c( parametros$anio_ini, parametros$anio_ini + parametros$horizonte )
+  x_lim <- c(2022, 2022+ parametros$horizonte )
   x_brk <- seq( x_lim[1], x_lim[2], 5 )
   x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
   
@@ -153,7 +153,7 @@ for ( i in 1:length( escenarios_lista ) ) {
           width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
   
   #Gráfico del balance actuarial con barras-----------------------------------------------------------
-  x_lim <- c( parametros$anio_ini, parametros$anio_ini + parametros$horizonte )
+  x_lim <- c(2022, 2022+ parametros$horizonte )
   x_brk <- seq( x_lim[1], x_lim[2], 5 )
   x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
   

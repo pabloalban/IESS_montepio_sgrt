@@ -14,9 +14,10 @@ message( '\tTablas estimación bootstrap' )
 
 ## 1.1 Tabla estimación de afiliados fallecidos-----------------------------------------------------
 
-aux <- tab_est_beneficarios
+aux <- tab_est_beneficarios %>% 
+  dplyr::select( -beneficiarios )
 
-aux_xtab <- xtable( aux, digits = c( 0, 0, 0, rep( 2, 5 ) ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, 0, rep( 2, 4 ) ) )
 
 print( aux_xtab,
        file = paste0( parametros$resultado_tablas, 'tab_est_ben_bootstrap_rtr', '.tex' ),

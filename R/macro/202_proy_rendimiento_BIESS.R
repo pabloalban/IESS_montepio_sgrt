@@ -7,7 +7,7 @@ load( parametros$macro_rdata_info )
 
 ## 1.1. Parámetros----------------------------------------------------------------------------------
 
-n = 38 #Número de años a predecir
+n = 40 #Número de años a predecir
 anio_ini = 2012 # Año inicial
 
 # Cargar funciones----------------------------------------------------------------------------------
@@ -209,7 +209,7 @@ ts.plot( ts(forecast$rendimiento_biess),
 
 #Predicciones mensuales
 
-predicciones_mensuales_biess <-   cbind( expand.grid( mes = c( 1:12 ), anio = c( anio_ini:2060 ) ),
+predicciones_mensuales_biess <-   cbind( expand.grid( mes = c( 1:12 ), anio = c( anio_ini:2062 ) ),
                                    forecast ) %>% 
   mutate( fecha = as.Date( paste0( anio, "-", mes, "-01", "%Y-%m-%d" ) ) ) %>% 
   dplyr::select( mes, anio, fecha, rendimiento_biess, lim_inf, lim_sup )

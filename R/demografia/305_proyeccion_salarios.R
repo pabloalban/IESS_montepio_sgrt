@@ -3,7 +3,7 @@ message( paste( rep( '-', 100 ), collapse = '' ) )
 
 # Carga información --------------------------------------------------------------------------------
 message( '\tCargando información' )
-load( file = paste0( parametros$demo_rdata_sgo_incom_tran_act_anio, parametros$anio_ini, '.RData' ) )
+load( file = paste0( parametros$demo_rdata_sgo_incom_tran_act_anio, 2020, '.RData' ) )
 
 # Parámetros ---------------------------------------------------------------------------------------
 message( '\tPreparando parámetros' )
@@ -11,7 +11,7 @@ message( '\tPreparando parámetros' )
 # Horizonte de proyección
 t_max <- parametros$demo_horizonte
 
-anio_ini <- parametros$anio_ini
+anio_ini <- 2022
 
 sexo_lst <- factor( c( 'H', 'M' ), levels = c( 'H', 'M' ) )
 t_lst <- seq( 0, parametros$demo_horizonte, 1 )
@@ -29,7 +29,7 @@ aux <- data.table( expand_grid(
   sexo = sexo_lst,
   s = s_lst,
   x = x_lst ) )
-aux[ , anio := t + parametros$anio_ini ]
+aux[ , anio := t + 2022 ]
 aux[ , r := x - s ]
 aux[ , u := s - t ]
 aux <- merge.data.table(
