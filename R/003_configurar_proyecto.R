@@ -135,7 +135,7 @@ parametros$exe_seg <- paste0( parametros$work_dir, 'R/', tolower( parametros$seg
 
 # Configuración de gráficos-------------------------------------------------------------------------
 parametros$graf_template <- 'R/401_graf_plantilla.R'
-parametros$graf_ext <- '.pdf'
+parametros$graf_ext <- '.png'
 
 # Variables automáticas ----------------------------------------------------------------------------
 parametros$Data_seg <- paste0( parametros$Data, parametros$seguro, '/' )

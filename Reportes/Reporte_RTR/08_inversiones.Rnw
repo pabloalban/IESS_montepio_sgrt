@@ -129,7 +129,7 @@ Elaborado: DAIE}
 \caption{Evolución histórica del portafolio total de inversiones del Seguro General de Riesgos del
 Trabajo con su rendimiento neto}
 \label{fig:iess_inversiones_rnd_neto}
-\includegraphics[scale=1.2]{graficos/iess_inversiones_rnd_neto.pdf}
+\includegraphics[scale=1.2]{graficos/iess_inversiones_rnd_neto.png}
 \caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS \\
 Elaborado: DAIE}
 \end{figure}
@@ -454,7 +454,7 @@ Elaborado: DAIE}
 \caption{Evolución histórica de las inversiones en préstamos quirografarios del Seguro General de
 Riesgos del Trabajo y su rendimiento promedio ponderado}
 \label{fig:ess_prestamos_quirografarios_rtr}
-\includegraphics[scale=1]{graficos/iess_prestamos_quirografarios_rtr.pdf}
+\includegraphics[scale=1]{graficos/iess_prestamos_quirografarios_rtr.png}
 \caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -474,7 +474,7 @@ A 31 de diciembre de 2022, el portafolio de inversiones dispone en inversiones e
 \centering
 \caption{Evolución histórica de las inversiones del Seguro General de Riesgos del Trabajo en Bonos del Estado y su rendimiento promedio ponderado}
 \label{fig:iess_inversiones_bonos_rtr}
-\includegraphics[scale=1]{graficos/iess_inversiones_bonos_rtr.pdf}
+\includegraphics[scale=1]{graficos/iess_inversiones_bonos_rtr.png}
 \caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -716,7 +716,7 @@ Elaborado: DAIE}
 \centering
 \caption{Evolución histórica de las inversiones del \Sexpr{REP_seg} en Certificados de Tesorería y su rendimiento promedio ponderado}
 \label{fig:iess_inversiones_bonos_rtr}
-\includegraphics[scale=1]{graficos/iess_inversiones_cetes_rtr.pdf}
+\includegraphics[scale=1]{graficos/iess_inversiones_cetes_rtr.png}
 \caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -793,7 +793,7 @@ Las inversiones del portafolio de inversiones del \Sexpr{REP_seg} en obligacione
 \centering
 \caption{Evolución histórica de las inversiones del Seguro General de Riesgos del Trabajo en Obligaciones y su rendimiento promedio ponderado}
 \label{fig:iess_inversiones_obligaciones_rtr}
-\includegraphics[scale=1]{graficos/iess_inversiones_obligaciones_rtr.pdf}
+\includegraphics[scale=1]{graficos/iess_inversiones_obligaciones_rtr.png}
 \caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -954,7 +954,7 @@ Elaborado: DAIE}
 \caption{Evolución histórica de las inversiones del Seguro General de Riesgos del Trabajo en títulos
 financieros y su rendimiento promedio ponderado}
 \label{fig:iess_inversiones_titulos_financieros_rtr}
-\includegraphics[scale=1]{graficos/iess_inversiones_titularizaciones_rtr.pdf}
+\includegraphics[scale=1]{graficos/iess_inversiones_titularizaciones_rtr.png}
 \caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -1237,7 +1237,7 @@ Elaborado: DAIE}
 \centering
 \caption{Evolución histórica de las inversiones del \Sexpr{REP_seg} en Papel Comercial y su rendimiento promedio ponderado}
 \label{fig:iess_inversiones_papel_comercial_rtr}
-\includegraphics[scale=1]{graficos/iess_inversiones_papel_comercial_rtr.pdf}
+\includegraphics[scale=1]{graficos/iess_inversiones_papel_comercial_rtr.png}
 \caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -1467,7 +1467,7 @@ La \legalcite{ResIESS_CD501} de 13 de noviembre de 2015, cambió las tasas de ap
 \centering
 \caption{Comparación de las primas de aportes: Resolución C.D. 501 – Resolución C.D. 261}
 \label{fig:comp_tas_apo}
-\includegraphics[scale=1]{graficos/iess_grafico_tasas_aporte.pdf}
+\includegraphics[scale=1]{graficos/iess_grafico_tasas_aporte.png}
 \caption*{\scriptsize Fuente: Resoluciones No. C.D.501 y No. C.D.261 \\
             Elaborado: DAIE}
 \end{figure}

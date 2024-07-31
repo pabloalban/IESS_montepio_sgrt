@@ -95,7 +95,7 @@ ggsave(
   filename = paste0( 
     parametros$resultado_graficos,
     'iess_inflacion',
-    parametros$graf_ext
+    '.jpg'
   ),
   width = graf_width,
   height = graf_height,

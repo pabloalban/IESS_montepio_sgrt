@@ -164,7 +164,7 @@ Por otro lado, durante el período 2012 a 2020, se registran la muerte de 592 pe
 \caption{ Probabilidades de transiciones de pensionistas de incapacidad del \Sexpr{REP_seg} }
 \label{fig:iess_factores_riesgos_incap}
 \centering
-\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_1.pdf}
+\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_1.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 \end{landscape}
@@ -175,7 +175,7 @@ Por otro lado, durante el período 2012 a 2020, se registran la muerte de 592 pe
 \caption{ Probabilidades de transiciones de pensionistas de orfandad del \Sexpr{REP_seg} }
 \label{fig:iess_factores_riesgos_orf}
 \centering
-\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_4.pdf}
+\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_4.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 \end{landscape}
@@ -185,7 +185,7 @@ Por otro lado, durante el período 2012 a 2020, se registran la muerte de 592 pe
 \caption{ Probabilidades de transiciones de pensionistas de viudedad del \Sexpr{REP_seg} }
 \label{fig:iess_factores_riesgos_viu}
 \centering
-\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_5.pdf}
+\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_5.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 \end{landscape}
@@ -249,7 +249,7 @@ siniestralidad, tales como: la tasa de siniestralidad, $p^{2,13}_{g,x}$, y el po
 \caption{Siniestralidad y porcentaje de incapacidad para las indemnizaciones por incapacidad permanente parcial}
 \label{fig:iess_factores_riesgos_indm}
 \centering
-\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_2.pdf}
+\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_2.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 \end{landscape}
@@ -314,7 +314,7 @@ En la tabla \ref{tab:iess_factores_riesgos_subs} y la figura \ref{fig:iess_facto
 incapacidad temporal}
 \label{fig:iess_factores_riesgos_subs}
 \centering
-\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_3.pdf}
+\includegraphics[scale=0.9]{graficos/iess_factor_riesgo_3.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 \end{landscape}
