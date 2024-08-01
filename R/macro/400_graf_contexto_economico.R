@@ -11,22 +11,23 @@ load( file = parametros$macro_rdata_biess_proy )
 
 # 0. Parámetros-------------------------------------------------------------------------------------
 if( parametros$seguro %in% c( 'SAL' ) ) {
-  anio_fin = 10 + 2022
+  anio_fin = 10 + 2020
 } else if ( parametros$seguro %in% c( 'SSC' ) ) {
-  anio_fin = 20 + 2022
+  anio_fin = 20 + 2020
 } else {
-  anio_fin = 40 + 2022
+  anio_fin = 40 + 2020
 }
 
 anio_ini <- 2002
 anio_corte <- 2022
+brk_lim <- '2022-12-01'
 
 # 1. Evolución histórica----------------------------------------------------------------------------
 # Evolución histórica del índice de precios ( IPC )-------------------------------------------------
 message( '\tGraficando análisis de contexto' )
 aux <- inflacion %>%
   filter( anio >= '2003',
-          anio <= '2020' ) %>%
+          anio <= anio_corte ) %>%
   dplyr::select( periodo,
                  ipc,
                  inflacion_mensual,
@@ -61,9 +62,9 @@ iess_inflacion  <- ggplot( data = aux, aes( x = periodo ) ) +
                   color = 'aIPC' ),
              linewidth = graf_line_size ) +
   scale_x_date( 
-    breaks = seq( as.Date( '2002-12-01' ), as.Date( '2020-12-01' ), by = '24 months' ),
+    breaks = seq( as.Date( '2002-12-01' ), as.Date( brk_lim ), by = '24 months' ),
     date_labels = '%b %Y',
-    limits = as.Date( c( '2002-12-01', '2020-12-01' ), '%Y-%m-%d' )
+    limits = as.Date( c( '2002-12-01', brk_lim ), '%Y-%m-%d' )
   ) +
   scale_y_continuous( 
     breaks = y_brk,
@@ -95,7 +96,7 @@ ggsave(
   filename = paste0( 
     parametros$resultado_graficos,
     'iess_inflacion',
-    '.jpg'
+    parametros$graf_ext
   ),
   width = graf_width,
   height = graf_height,
@@ -108,7 +109,7 @@ message( '\tGraficando análisis de desempleo' )
 
 aux <- desempleo %>%
   filter( anio >= '2007',
-          anio <= '2020' ) %>%
+          anio <= anio_corte ) %>%
   dplyr::select( periodo,
                  desempleo_nacional,
                  empleo_adecuado_pleno_n ) %>%
@@ -146,9 +147,9 @@ iess_desempleo  <- ggplot( data = aux, aes( x = periodo ) ) +
                   color = 'adesempleo_nacional' ),
              linewidth = graf_line_size ) +
   scale_x_date( 
-    breaks = seq( as.Date( '2007-12-01' ), as.Date( '2020-12-01' ), by = '12 months' ),
+    breaks = seq( as.Date( '2007-12-01' ), as.Date( brk_lim ), by = '12 months' ),
     date_labels = '%b %Y',
-    limits = as.Date( c( '2007-12-01', '2020-12-01' ), '%Y-%m-%d' )
+    limits = as.Date( c( '2007-12-01', brk_lim ), '%Y-%m-%d' )
   ) +
   scale_y_continuous( 
     breaks = y_brk,
@@ -190,9 +191,9 @@ ggsave(
 
 # Evolución del salario básico unificado ( SBU )----------------------------------------------------
 aux <- sbu %>%
-  filter( anio <= '2020' )
+  filter( anio <= anio_corte )
 
-x_lim <- c( 2000, 2020 )
+x_lim <- c( 2000, anio_corte )
 x_brk <- seq( x_lim[1] , x_lim[2], 2 )
 x_lbl <-
   formatC( 
@@ -257,7 +258,7 @@ aux <- salarios %>%
   na.omit( . ) %>%
   filter( periodo >= as.Date( '01/12/2006', '%d/%m/%Y' ) )
 
-x_lim <- c( 2005, 2020 )
+x_lim <- c( 2005, anio_corte )
 x_brk <- seq( x_lim[1], x_lim[2], 1 )
 x_lbl <-
   formatC( 
@@ -286,9 +287,9 @@ iess_salarios_evo <- ggplot( data = aux,
              linewidth = graf_line_size ) +
   labs( x = 'Año', y = 'Salario promedio ( USD )' ) +
   scale_x_date( 
-    breaks = seq( as.Date( '2006-12-01' ), as.Date( '2020-12-01' ), by = '12 months' ),
+    breaks = seq( as.Date( '2006-12-01' ), as.Date( brk_lim ), by = '12 months' ),
     date_labels = '%b %Y',
-    limits = as.Date( c( '2006-12-01', '2020-12-01' ), '%Y-%m-%d' )
+    limits = as.Date( c( '2006-12-01', brk_lim ), '%Y-%m-%d' )
   ) +
   scale_y_continuous( breaks = y_brk,
                       labels = y_lbl,
@@ -317,7 +318,7 @@ ggsave(
 # Evolución histórica del PIB del Ecuador-----------------------------------------------------------
 aux <- pib_real %>%
   filter( anio >= '2000',
-          anio <= '2020' ) %>%
+          anio <= anio_corte ) %>%
   mutate( periodo = ymd( paste0( anio, '/01/01' ) ) ) %>%
   mutate( apib_constantes = pib_constantes  / 1000000 ) %>%
   mutate( var = 'PIB a precios constantes' )
@@ -325,7 +326,7 @@ aux <- pib_real %>%
 scl = 1000  # escala de millones
 hmts = 3 #homotecia
 
-x_lim <- c( 2000, 2020 )
+x_lim <- c( 2000, anio_corte )
 x_brk <- seq( x_lim[1], x_lim[2], by = 2 )
 x_lbl <-
   formatC( 
@@ -369,9 +370,9 @@ iess_pib_real <- ggplot( data = aux,
   ) +
   scale_linetype_manual( NULL, values = 1 ) +
   scale_x_date( 
-    breaks = seq( as.Date( '2000-01-01' ), as.Date( '2020-01-01' ), by = '24 months' ),
+    breaks = seq( as.Date( '2000-01-01' ), as.Date( '2022-01-01' ), by = '24 months' ),
     date_labels = '%Y',
-    limits = as.Date( c( '2000-0-01', '2020-12-31' ), '%Y-%m-%d' )
+    limits = as.Date( c( '2000-0-01', '2022-12-31' ), '%Y-%m-%d' )
   ) +
   scale_y_continuous( 
     name = 'PIB a precios constantes ( millones de USD )',
@@ -421,7 +422,7 @@ ggsave(
 message( '\tGraficando tasas de interés' )
 aux <- tasas_interes %>%
   filter( anio >= '2003',
-          anio <= '2020' ) %>%
+          anio <= anio_corte ) %>%
   arrange( periodo )
 
 y_lim <- c( 2, 16 )
@@ -446,9 +447,9 @@ iess_tasas_interes  <- ggplot( data = aux, aes( x = periodo ) ) +
                   color = 'tasa_pasiva' ),
              linewidth = graf_line_size ) +
   scale_x_date( 
-    breaks = seq( as.Date( '2002-12-01' ), as.Date( '2020-12-01' ), by = '24 months' ),
+    breaks = seq( as.Date( '2002-12-01' ), as.Date( brk_lim ), by = '24 months' ),
     date_labels = '%b %Y',
-    limits = as.Date( c( '2002-12-01', '2020-12-01' ), '%Y-%m-%d' )
+    limits = as.Date( c( '2002-12-01', brk_lim ), '%Y-%m-%d' )
   ) +
   scale_y_continuous( breaks = y_brk,
                       labels = y_lbl,
@@ -538,9 +539,9 @@ biess_rendimiento <- ggplot( data = df_bar,
   ) +
   scale_linetype_manual( NULL, values = 1 ) +
   scale_x_date( 
-    breaks = seq( as.Date( '2011-12-01' ), as.Date( '2020-12-01' ), by = '12 months' ),
+    breaks = seq( as.Date( '2011-12-01' ), as.Date( brk_lim ), by = '12 months' ),
     date_labels = '%b %Y',
-    limits = as.Date( c( '2011-12-01', '2020-12-01' ), '%Y-%m-%d' )
+    limits = as.Date( c( '2011-12-01', brk_lim ), '%Y-%m-%d' )
   ) +
   scale_y_continuous( 
     name = 'Fondos administrados BIESS ( millones USD )',
@@ -899,7 +900,7 @@ aux <- intervalos_confianza %>%
 aux_his <- aux %>% filter(  fecha <= as.Date( '2022-12-01' ) )
 aux_pred <- aux %>% filter( fecha >= as.Date( '2022-12-01' ), year( fecha ) <= anio_fin )
 
-lim_y <- c( 40, 240 )
+lim_y <- c( 40, 220 )
 salto_y = 20
 brks_y <- seq( lim_y[1], lim_y[2], salto_y )
 lbls_y <-

@@ -2,9 +2,9 @@ message( '\tEstableciendo plantilla de gráficos' )
 
 
 # Preliminares --------------------------------------------------------------------------------
-tam_letra <- rel( 1 )
-tam_letra_tit <- rel( 1 )
-tam_letra_lab <- rel( 1 )
+tam_letra <- rel( 0.8 )
+tam_letra_tit <- rel( 0.8 )
+tam_letra_lab <- rel( 0.8 )
 
 tipo_letra <- "Linux Libertine"
 base_family_2 <- "Linux Libertine"
@@ -16,7 +16,7 @@ graf_grid_minor_size <- 0.20
 graf_width <- 13
 graf_height <- 9
 graf_units <- 'cm'
-graf_dpi <- 100
+graf_dpi <- 75
 
 ## color definitions
 main_color <- "white"

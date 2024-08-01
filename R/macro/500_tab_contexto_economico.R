@@ -11,14 +11,13 @@ source( 'R/500_tildes_a_latex.R', encoding = 'UTF-8', echo = FALSE )
 
 #Parámetros-----------------------------------------------------------------------------------------
 if( parametros$seguro %in% c( 'SAL' ) ) {
-  anio_fin = 10 + 2022
+  anio_fin = 10 + 2020
 } else if ( parametros$seguro %in% c( 'SSC' ) ) {
-  anio_fin = 20 + 2022
+  anio_fin = 20 + 2020
 } else {
-  anio_fin = 40 + 2022
+  anio_fin = 40 + 2020
 }
 
-anio_ini <- 2023
 anio_corte <- 2022
 
 #Tabla del contexto económico-----------------------------------------------------------------------
@@ -125,11 +124,10 @@ print( aux_xtab,
        sanitize.text.function = identity )
 
 #Tabla de aumento de pensiones----------------------------------------------------------------------
-aux <- incre_pensiones %>%
-  dplyr::select( -x2021,
-                 -x2022 )
+aux <- incre_pensiones
 
-aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, 6 ) ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
+
 print( aux_xtab, 
        file = paste0( parametros$resultado_tablas, 'iess_incre_pensiones', '.tex' ),
        type = 'latex',
@@ -240,27 +238,7 @@ print( aux_xtab,
        sanitize.text.function = identity )
 
 #Tabla de resumen de hipótesis----------------------------------------------------------------------
-aux <- tasas_macro_anuales %>%
-  dplyr::filter( anio >= 2021, anio <= anio_fin ) %>%
-  dplyr::mutate( 
-    t_pib =  mean( t_pib,   na.rm = TRUE ),
-    tp = mean( tp_anual,   na.rm = TRUE ),
-    t_sal = mean( t_sal,   na.rm = TRUE ),
-    t_sbu = mean( t_sbu,   na.rm = TRUE ),
-    inf = mean( inf_anual,   na.rm = TRUE )
-  ) %>%
-  distinct( t_pib, .keep_all = TRUE ) %>%
-  dplyr::select( t_pib, tp, t_sal, t_sbu, inf ) %>%
-  gather( ., key = 'hipotesis', value = 'tasas' ) %>%
-  mutate( 
-    hipotesis = c( 
-      'Crecimiento del PIB ( a precios actuales )',
-      'Tasa Pasiva Referencial',
-      'Crecimiento Salarial',
-      'Crecimiento del SBU',
-      'Inflación Promedio Acumulada'
-    )
-  )
+aux <- hipotesis
 
 aux_xtab <- xtable( aux, digits = c( 0, 0, 2 ) )
 
@@ -271,7 +249,7 @@ print( aux_xtab,
        include.colnames = FALSE, include.rownames = FALSE,
        format.args = list( decimal.mark = ',', big.mark = '.' ),
        only.contents = TRUE,
-       hline.after = nrow( aux ),
+       hline.after = NULL,
        sanitize.text.function = identity )
 
 aux <- hipotesis
@@ -287,7 +265,7 @@ print( aux_xtab,
        include.colnames = FALSE, include.rownames = FALSE,
        format.args = list( decimal.mark = ',', big.mark = '.' ),
        only.contents = TRUE,
-       hline.after = nrow( aux ),
+       hline.after = NULL,
        sanitize.text.function = identity )
 
 
@@ -642,6 +620,54 @@ print( xtb_aux,
                command = c( paste( " \\hline \n", "\\multicolumn{5}{l}{Error estándar de los residuos: ",
                                    sigma_modelo,
                                    " sobre 131 grados de libertad} \\\\ " ) ) ) )
+
+# #Tabla de tasas de pobreza--------------------------------------------------------------------------
+# 
+# message( '\tTabla de tasas de pobreza' )
+# 
+# aux <- pobreza %>% 
+#   mutate( anio = as.character( anio ),
+#           t_pobreza_hombre = 100 * t_pobreza_hombre,
+#           t_pobreza_mujer = 100 * t_pobreza_mujer,
+#           t_pobreza_n = 100 * t_pobreza_n,
+#           crecmiento = 100 * crecmiento )
+# 
+# aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
+# 
+# aux_xtab <- tildes_a_latex( aux_xtab )
+# 
+# print( aux_xtab,
+#        file = paste0( parametros$resultado_tablas, 'iess_tasa_pobreza', '.tex' ),
+#        type = 'latex',
+#        include.colnames = FALSE, include.rownames = FALSE,
+#        format.args = list( decimal.mark = ',', big.mark = '.' ),
+#        only.contents = TRUE,
+#        hline.after = nrow( aux ),
+#        sanitize.text.function = identity )
+# 
+# #Tabla de tasas pobreza extrema---------------------------------------------------------------------
+# 
+# message( '\tTabla de tasas de pobreza extrema' )
+# 
+# aux <- pobreza_extrema %>% 
+#   mutate( anio = as.character( anio ),
+#           t_pobreza_hombre = 100 * t_pobreza_hombre,
+#           t_pobreza_mujer = 100 * t_pobreza_mujer,
+#           t_pobreza_nacional  = 100 * t_pobreza_nacional,
+#           crecimiento = 100 * crecimiento )
+# 
+# aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
+# 
+# aux_xtab <- tildes_a_latex( aux_xtab )
+# 
+# print( aux_xtab,
+#        file = paste0( parametros$resultado_tablas, 'iess_tasa_pobreza_extrema', '.tex' ),
+#        type = 'latex',
+#        include.colnames = FALSE, include.rownames = FALSE,
+#        format.args = list( decimal.mark = ',', big.mark = '.' ),
+#        only.contents = TRUE,
+#        hline.after = nrow( aux ),
+#        sanitize.text.function = identity )
 
 #Borrando data frames-------------------------------------------------------------------------------
 message( paste( rep( '-', 100 ), collapse = '' ) )

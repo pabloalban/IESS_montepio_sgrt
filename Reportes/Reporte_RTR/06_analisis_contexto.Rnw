@@ -75,7 +75,7 @@ El Ecuador registró la inflación acumulada más alta de su historia en el año
 \centering
 \caption{Evolución histórica del índice de precios al consumidor e inflación acumulada}
 \label{fig:iess_inflacion}
-\includegraphics[scale=1.2]{graficos/iess_inflacion.png}
+\includegraphics[scale=1]{graficos/iess_inflacion.jpg}
 \caption*{\scriptsize {\bf Fuente:} Instituto Nacional de Estadísticas y Censos \\
             {\bf Elaborado:} DAIE}
 \end{figure}
@@ -84,7 +84,7 @@ Los años con mayor inflación interanual fueron 2000, 2001, 2002 y 2008 con val
 
 \subsection{Evolución histórica del desempleo}
 
-Según la información levantada por el INEC\footnote{\url{https://www.ecuadorencifras.gob.ec/estadisticas-laborales-febrero-2023-2/}}, mediante la Encuesta Nacional de Empleo, Desempleo y Subempleo (ENEMDU), el Ecuador es un país con bajo porcentaje de empleo pleno o adecuado \footnote{ Empleo adecuadoo pleno: Personas con empleo que, durante la semana de referencia, perciben ingresos laborales iguales o superiores al salario mínimo, trabajan igual o más de 40 horas a la semana, independientemente del deseo y disponibilidad de trabajar horas adicionales.}, con 36,04\% de la población económicamente activa en 2021, y que antes de la pandemia de la COVID-19, se registraba al 31 de diciembre de 2019 el 38,85\%. Históricamente el empleo pleno tiene una tendencia a la baja; puesto que a diciembre de 2007, se registró el 43,20\% de empleo pleno en la población económicamente activa del Ecuador. Por otro lado, las mujeres ecuatorianas son las que registran menor empleo pleno (28,81\%), que los hombres con el 41,12\% a diciembre de 2022.
+Según la información levantada por el INEC\footnote{\url{https://www.ecuadorencifras.gob.ec/estadisticas-laborales-febrero-2023-2/}}, mediante la Encuesta Nacional de Empleo, Desempleo y Subempleo (ENEMDU), el Ecuador es un país con bajo porcentaje de empleo pleno o adecuado \footnote{ Empleo adecuado pleno: Personas con empleo que, durante la semana de referencia, perciben ingresos laborales iguales o superiores al salario mínimo, trabajan igual o más de 40 horas a la semana, independientemente del deseo y disponibilidad de trabajar horas adicionales.}, con 36,04\% de la población económicamente activa en 2021, y que antes de la pandemia de la COVID-19, se registraba al 31 de diciembre de 2019 el 38,85\%. Históricamente el empleo pleno tiene una tendencia a la baja; puesto que, a diciembre de 2007, se registró el 43,20\% de empleo pleno en la población económicamente activa del Ecuador. Por otro lado, las mujeres ecuatorianas son las que registran menor empleo pleno (28,81\%), que los hombres con el 41,12\% a diciembre de 2022.
 
 Por otro lado, la evolución histórica del subempleo \footnote{Subempleados: Personas con empleo que, durante la semana de referencia, percibieron ingresos inferiores al salario mínimo y/o trabajaron menos de la jornada legal y tienen el deseo y disponibilidad de trabajar horas adicionales.} en el Ecuador se registró en 19,37\% a diciembre de 2022, con el 23,43\% en los hombres y 19,05\% en las mujeres. Cabe señalar que el subempleo aumentó del 17,79\% a diciembre de 2019 a 22,85\% a diciembre de 2020, debido a la pandemia. Y el año que se registró menor tasa de subempleo fue en diciembre de 2012, con 9,01\%.
 
@@ -92,7 +92,7 @@ Por otro lado, la evolución histórica del subempleo \footnote{Subempleados: Pe
 \centering
 \caption{Serie histórica del Salario Básico Unificado}
 \label{fig:iess_desempleo}
-\includegraphics[scale=1.2]{graficos/iess_desempleo.png}
+\includegraphics[scale=1]{graficos/iess_desempleo.jpg}
 \caption*{\scriptsize Fuente: INEC \\
   Elaborado: DAIE}
 \end{figure}
@@ -193,7 +193,7 @@ Elaborado: DAIE}
 \centering
 \caption{Serie histórica del Salario Básico Unificado}
 \label{fig:iess_sbu}
-\includegraphics[scale=1]{graficos/iess_sbu.png}
+\includegraphics[scale=1]{graficos/iess_sbu.jpg}
 \caption*{\scriptsize {\bf Fuente:} Ministerio de Relaciones Laborales \\
   {\bf Elaborado:} DAIE}
 \end{figure}
@@ -208,7 +208,7 @@ Los ingresos por aportes que recibe el IESS es un porcentaje fijo de la materia 
 \centering
 \caption{Evolución histórica del salario promedio de los cotizantes al SGO}
 \label{fig:iess_salarios}
-\includegraphics[scale=1]{graficos/iess_salarios_evo.png}
+\includegraphics[scale=1]{graficos/iess_salarios_evo.jpg}
 \caption*{\scriptsize Fuente: Planillas de la DNAC - IESS \\
   Elaborado: DAIE}
 \end{figure}
@@ -305,7 +305,7 @@ Elaborado: DAIE}
 \centering
 \caption{Evolución histórica del crecimiento real del PIB del Ecuador}
 \label{fig:iess_pib_real}
-\includegraphics[scale=1.2]{graficos/iess_pib_real.png}
+\includegraphics[scale=1]{graficos/iess_pib_real.jpg}
 \caption*{\scriptsize Fuente: Banco Mundial. \\
   Elaborado: DAIE}
 \end{figure}
@@ -558,7 +558,6 @@ Elaborado: DAIE}
 \end{longtable}
 }
 }
-
 %---------------------------------------------------------------------------------------------------
 \section{Proyección de las tasas utilizadas en el estudio}
 \label{chp_contexto:modelo_macro}
@@ -836,7 +835,7 @@ cero (0).
 \caption{Gráfica de los p - valores para las estadísticas $Q_k(m)$ para las 5 dimensiones del
 modelo, la línea discontinua indica un error de tipo I del 5\%}
 \label{fig:iess_box_ljung}
-\includegraphics[scale=1]{graficos/iess_box_ljung_grupo.png}
+\includegraphics[scale=1]{graficos/iess_box_ljung_grupo.jpg}
 \caption*{\scriptsize \centering {\bf Elaborado:} DAIE}
 \end{center}
 \end{figure}
@@ -990,7 +989,7 @@ Las figuras \ref{fig:plt_var_macro_a},  \ref{fig:plt_var_macro_b} y \ref{fig:plt
 \begin{center}
 \caption{Predicciones del PIB nominal (en millones de dólares) y salario anual promedio}
 \label{fig:plt_var_macro_a}
-\includegraphics[scale=0.95]{graficos/plt_var_macro_a.png}
+\includegraphics[scale=1]{graficos/plt_var_macro_a.jpg}
 \caption*{\scriptsize  {\bf Elaborado:} DAIE}
 \end{center}
 \end{figure}
@@ -1000,7 +999,7 @@ Las figuras \ref{fig:plt_var_macro_a},  \ref{fig:plt_var_macro_b} y \ref{fig:plt
 \begin{center}
 \caption{Predicciones del salario básico unificado (en dólares) y tasa pasiva referencial}
 \label{fig:plt_var_macro_b}
-\includegraphics[scale=1]{graficos/plt_var_macro_b.png}
+\includegraphics[scale=1]{graficos/plt_var_macro_b.jpg}
 \caption*{\scriptsize {\bf Elaborado:} DAIE}
 \end{center}
 \end{figure}
@@ -1010,7 +1009,7 @@ Las figuras \ref{fig:plt_var_macro_a},  \ref{fig:plt_var_macro_b} y \ref{fig:plt
 \begin{center}
 \caption{Predicciones del IPC e inflación acumulada promedio}
 \label{fig:plt_var_macro_c}
-\includegraphics[scale=1]{graficos/plt_var_macro_c.png}
+\includegraphics[scale=1]{graficos/plt_var_macro_c.jpg}
 \caption*{\scriptsize {\bf Elaborado:} DAIE}
 \end{center}
 \end{figure}
@@ -1102,7 +1101,7 @@ obtuvo de la diferencia entre la tasa activa y la tasa pasiva.
 \centering
 \caption{Evolución de las tasas referenciales activa y pasiva}
 \label{fig:iess_tasas_interes}
-\includegraphics[scale=1.0]{graficos/iess_tasas_interes.png}
+\includegraphics[scale=1]{graficos/iess_tasas_interes.jpg}
 \caption*{\scriptsize Fuente: Banco Central del Ecuador \\
   Elaborado: DAIE}
 \end{figure}
@@ -1402,7 +1401,7 @@ operativos y administrativos, sobre el fondo administrado promedio de los últim
 \centering
 \caption{Evolución del rendimiento neto del portafolio global de inversiones del BIESS}
 \label{fig:iess_portaf_hist}
- \includegraphics[scale=1.2]{graficos/biess_rendimiento.png}
+ \includegraphics[scale=1]{graficos/biess_rendimiento.jpg}
  \caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS y Dirección de Tesorería - BIESS \\
 Elaborado: DAIE}
 \end{figure}
@@ -1472,7 +1471,7 @@ en la tabla \ref{tab:iess_modelo_biess_coef}.
 \caption{Gráfica de los p - valores para las estadísticas $Q_k(m)$ para los residuos del modelo para
 la tasa de rendimiento del BIESS, la línea discontinua indica un error de tipo I del 5\%}
 \label{fig:biess_box_ljung}
- \includegraphics[scale=1.2]{graficos/biess_box_ljung.png}
+ \includegraphics[scale=1]{graficos/biess_box_ljung.jpg}
  \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -1491,7 +1490,7 @@ se rechaza la hipótesis nula (independencia de los errores) a un nivel de signi
 \caption{Prueba de Box-Ljung de los residuos al cuadrado del modelo para la tasa de rendimiento del
 BIESS}
 \label{fig:biess_portmanteau}
- \includegraphics[scale=1.2]{graficos/biess_portmanteau.png}
+ \includegraphics[scale=1]{graficos/biess_portmanteau.jpg}
  \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -1512,7 +1511,7 @@ horizonte de predicciones de la valuación actuarial.
 \centering
 \caption{Predicciones de la tasa de rendimiento neto del portafolio global de inversiones del BIESS}
 \label{fig:biess_rendimiento_pred}
- \includegraphics[scale=1.2]{graficos/biess_rendimiento_pred.png}
+ \includegraphics[scale=1]{graficos/biess_rendimiento_pred.jpg}
  \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -1529,7 +1528,7 @@ horizonte de predicciones de la valuación actuarial.
 % \caption{Pirámides poblacionales nacionales para el año 2022}
 % \label{fig:iess_pir_poblacion2022}
 % \centering
-% \includegraphics[scale=1.0]{graficos/iess_pir_poblacion_2022.png}
+% \includegraphics[scale=1]{graficos/iess_pir_poblacion_2022.jpg}
 %   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
 %   Elaborado: DAIE}
 % \end{figure}
@@ -1538,7 +1537,7 @@ horizonte de predicciones de la valuación actuarial.
 % \caption{Pirámides poblacionales nacionales para el año 2042}
 % \label{fig:iess_pir_poblacion2042}
 % \centering
-% \includegraphics[scale=1.0]{graficos/iess_pir_poblacion_2042.png}
+% \includegraphics[scale=1]{graficos/iess_pir_poblacion_2042.jpg}
 %   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
 %   Elaborado: DAIE}
 % \end{figure}
@@ -1549,7 +1548,7 @@ horizonte de predicciones de la valuación actuarial.
 % \caption{Pirámides poblacionales nacionales para el año 2062}
 % \label{fig:iess_pir_poblacion2062}
 % \centering
-% \includegraphics[scale=1.0]{graficos/iess_pir_poblacion_2062.png}
+% \includegraphics[scale=1]{graficos/iess_pir_poblacion_2062.jpg}
 %   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
 %   Elaborado: DAIE}
 % \end{figure}
@@ -1574,7 +1573,7 @@ horizonte de predicciones de la valuación actuarial.
 % \caption{Pirámides poblacionales de la PEA para el año 2022}
 % \label{fig:iess_pir_pea2022}
 % \centering
-% \includegraphics[scale=1.0]{graficos/iess_pir_pea_2022.png}
+% \includegraphics[scale=1]{graficos/iess_pir_pea_2022.jpg}
 %   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
 %   Elaborado: DAIE}
 % \end{figure}
@@ -1586,7 +1585,7 @@ horizonte de predicciones de la valuación actuarial.
 % \caption{Pirámides poblacionales de la PEA para el año 2042}
 % \label{fig:iess_pir_pea2042}
 % \centering
-% \includegraphics[scale=1.0]{graficos/iess_pir_pea_2042.png}
+% \includegraphics[scale=1]{graficos/iess_pir_pea_2042.jpg}
 %   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
 %   Elaborado: DAIE}
 % \end{figure}
@@ -1595,7 +1594,7 @@ horizonte de predicciones de la valuación actuarial.
 % \caption{Pirámides poblacionales de la PEA para el año 2062}
 % \label{fig:iess_pir_pea2062}
 % \centering
-% \includegraphics[scale=1.0]{graficos/iess_pir_pea_2058.png}
+% \includegraphics[scale=1]{graficos/iess_pir_pea_2058.jpg}
 %   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
 %   Elaborado: DAIE}
 % \end{figure}
