@@ -75,7 +75,7 @@ El Ecuador registró la inflación acumulada más alta de su historia en el año
 \centering
 \caption{Evolución histórica del índice de precios al consumidor e inflación acumulada}
 \label{fig:iess_inflacion}
-\includegraphics[scale=1]{graficos/iess_inflacion.jpg}
+\includegraphics[scale=1]{graficos/iess_inflacion.png}
 \caption*{\scriptsize {\bf Fuente:} Instituto Nacional de Estadísticas y Censos \\
             {\bf Elaborado:} DAIE}
 \end{figure}
@@ -92,7 +92,7 @@ Por otro lado, la evolución histórica del subempleo \footnote{Subempleados: Pe
 \centering
 \caption{Serie histórica del Salario Básico Unificado}
 \label{fig:iess_desempleo}
-\includegraphics[scale=1]{graficos/iess_desempleo.jpg}
+\includegraphics[scale=1]{graficos/iess_desempleo.png}
 \caption*{\scriptsize Fuente: INEC \\
   Elaborado: DAIE}
 \end{figure}
@@ -193,7 +193,7 @@ Elaborado: DAIE}
 \centering
 \caption{Serie histórica del Salario Básico Unificado}
 \label{fig:iess_sbu}
-\includegraphics[scale=1]{graficos/iess_sbu.jpg}
+\includegraphics[scale=1]{graficos/iess_sbu.png}
 \caption*{\scriptsize {\bf Fuente:} Ministerio de Relaciones Laborales \\
   {\bf Elaborado:} DAIE}
 \end{figure}
@@ -208,7 +208,7 @@ Los ingresos por aportes que recibe el IESS es un porcentaje fijo de la materia 
 \centering
 \caption{Evolución histórica del salario promedio de los cotizantes al SGO}
 \label{fig:iess_salarios}
-\includegraphics[scale=1]{graficos/iess_salarios_evo.jpg}
+\includegraphics[scale=1]{graficos/iess_salarios_evo.png}
 \caption*{\scriptsize Fuente: Planillas de la DNAC - IESS \\
   Elaborado: DAIE}
 \end{figure}
@@ -305,7 +305,7 @@ Elaborado: DAIE}
 \centering
 \caption{Evolución histórica del crecimiento real del PIB del Ecuador}
 \label{fig:iess_pib_real}
-\includegraphics[scale=1]{graficos/iess_pib_real.jpg}
+\includegraphics[scale=1]{graficos/iess_pib_real.png}
 \caption*{\scriptsize Fuente: Banco Mundial. \\
   Elaborado: DAIE}
 \end{figure}
@@ -835,7 +835,7 @@ cero (0).
 \caption{Gráfica de los p - valores para las estadísticas $Q_k(m)$ para las 5 dimensiones del
 modelo, la línea discontinua indica un error de tipo I del 5\%}
 \label{fig:iess_box_ljung}
-\includegraphics[scale=1]{graficos/iess_box_ljung_grupo.jpg}
+\includegraphics[scale=1]{graficos/iess_box_ljung_grupo.png}
 \caption*{\scriptsize \centering {\bf Elaborado:} DAIE}
 \end{center}
 \end{figure}
@@ -989,7 +989,7 @@ Las figuras \ref{fig:plt_var_macro_a},  \ref{fig:plt_var_macro_b} y \ref{fig:plt
 \begin{center}
 \caption{Predicciones del PIB nominal (en millones de dólares) y salario anual promedio}
 \label{fig:plt_var_macro_a}
-\includegraphics[scale=1]{graficos/plt_var_macro_a.jpg}
+\includegraphics[scale=1]{graficos/plt_var_macro_a.png}
 \caption*{\scriptsize  {\bf Elaborado:} DAIE}
 \end{center}
 \end{figure}
@@ -999,7 +999,7 @@ Las figuras \ref{fig:plt_var_macro_a},  \ref{fig:plt_var_macro_b} y \ref{fig:plt
 \begin{center}
 \caption{Predicciones del salario básico unificado (en dólares) y tasa pasiva referencial}
 \label{fig:plt_var_macro_b}
-\includegraphics[scale=1]{graficos/plt_var_macro_b.jpg}
+\includegraphics[scale=1]{graficos/plt_var_macro_b.png}
 \caption*{\scriptsize {\bf Elaborado:} DAIE}
 \end{center}
 \end{figure}
@@ -1009,7 +1009,7 @@ Las figuras \ref{fig:plt_var_macro_a},  \ref{fig:plt_var_macro_b} y \ref{fig:plt
 \begin{center}
 \caption{Predicciones del IPC e inflación acumulada promedio}
 \label{fig:plt_var_macro_c}
-\includegraphics[scale=1]{graficos/plt_var_macro_c.jpg}
+\includegraphics[scale=1]{graficos/plt_var_macro_c.png}
 \caption*{\scriptsize {\bf Elaborado:} DAIE}
 \end{center}
 \end{figure}
@@ -1101,7 +1101,7 @@ obtuvo de la diferencia entre la tasa activa y la tasa pasiva.
 \centering
 \caption{Evolución de las tasas referenciales activa y pasiva}
 \label{fig:iess_tasas_interes}
-\includegraphics[scale=1]{graficos/iess_tasas_interes.jpg}
+\includegraphics[scale=1]{graficos/iess_tasas_interes.png}
 \caption*{\scriptsize Fuente: Banco Central del Ecuador \\
   Elaborado: DAIE}
 \end{figure}
@@ -1401,7 +1401,7 @@ operativos y administrativos, sobre el fondo administrado promedio de los últim
 \centering
 \caption{Evolución del rendimiento neto del portafolio global de inversiones del BIESS}
 \label{fig:iess_portaf_hist}
- \includegraphics[scale=1]{graficos/biess_rendimiento.jpg}
+ \includegraphics[scale=1]{graficos/biess_rendimiento.png}
  \caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS y Dirección de Tesorería - BIESS \\
 Elaborado: DAIE}
 \end{figure}
@@ -1471,7 +1471,7 @@ en la tabla \ref{tab:iess_modelo_biess_coef}.
 \caption{Gráfica de los p - valores para las estadísticas $Q_k(m)$ para los residuos del modelo para
 la tasa de rendimiento del BIESS, la línea discontinua indica un error de tipo I del 5\%}
 \label{fig:biess_box_ljung}
- \includegraphics[scale=1]{graficos/biess_box_ljung.jpg}
+ \includegraphics[scale=1]{graficos/biess_box_ljung.png}
  \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -1490,7 +1490,7 @@ se rechaza la hipótesis nula (independencia de los errores) a un nivel de signi
 \caption{Prueba de Box-Ljung de los residuos al cuadrado del modelo para la tasa de rendimiento del
 BIESS}
 \label{fig:biess_portmanteau}
- \includegraphics[scale=1]{graficos/biess_portmanteau.jpg}
+ \includegraphics[scale=1]{graficos/biess_portmanteau.png}
  \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -1511,7 +1511,7 @@ horizonte de predicciones de la valuación actuarial.
 \centering
 \caption{Predicciones de la tasa de rendimiento neto del portafolio global de inversiones del BIESS}
 \label{fig:biess_rendimiento_pred}
- \includegraphics[scale=1]{graficos/biess_rendimiento_pred.jpg}
+ \includegraphics[scale=1]{graficos/biess_rendimiento_pred.png}
  \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -1528,7 +1528,7 @@ horizonte de predicciones de la valuación actuarial.
 % \caption{Pirámides poblacionales nacionales para el año 2022}
 % \label{fig:iess_pir_poblacion2022}
 % \centering
-% \includegraphics[scale=1]{graficos/iess_pir_poblacion_2022.jpg}
+% \includegraphics[scale=1]{graficos/iess_pir_poblacion_2022.png}
 %   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
 %   Elaborado: DAIE}
 % \end{figure}
@@ -1537,7 +1537,7 @@ horizonte de predicciones de la valuación actuarial.
 % \caption{Pirámides poblacionales nacionales para el año 2042}
 % \label{fig:iess_pir_poblacion2042}
 % \centering
-% \includegraphics[scale=1]{graficos/iess_pir_poblacion_2042.jpg}
+% \includegraphics[scale=1]{graficos/iess_pir_poblacion_2042.png}
 %   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
 %   Elaborado: DAIE}
 % \end{figure}
@@ -1548,7 +1548,7 @@ horizonte de predicciones de la valuación actuarial.
 % \caption{Pirámides poblacionales nacionales para el año 2062}
 % \label{fig:iess_pir_poblacion2062}
 % \centering
-% \includegraphics[scale=1]{graficos/iess_pir_poblacion_2062.jpg}
+% \includegraphics[scale=1]{graficos/iess_pir_poblacion_2062.png}
 %   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
 %   Elaborado: DAIE}
 % \end{figure}
@@ -1573,7 +1573,7 @@ horizonte de predicciones de la valuación actuarial.
 % \caption{Pirámides poblacionales de la PEA para el año 2022}
 % \label{fig:iess_pir_pea2022}
 % \centering
-% \includegraphics[scale=1]{graficos/iess_pir_pea_2022.jpg}
+% \includegraphics[scale=1]{graficos/iess_pir_pea_2022.png}
 %   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
 %   Elaborado: DAIE}
 % \end{figure}
@@ -1585,7 +1585,7 @@ horizonte de predicciones de la valuación actuarial.
 % \caption{Pirámides poblacionales de la PEA para el año 2042}
 % \label{fig:iess_pir_pea2042}
 % \centering
-% \includegraphics[scale=1]{graficos/iess_pir_pea_2042.jpg}
+% \includegraphics[scale=1]{graficos/iess_pir_pea_2042.png}
 %   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
 %   Elaborado: DAIE}
 % \end{figure}
@@ -1594,7 +1594,7 @@ horizonte de predicciones de la valuación actuarial.
 % \caption{Pirámides poblacionales de la PEA para el año 2062}
 % \label{fig:iess_pir_pea2062}
 % \centering
-% \includegraphics[scale=1]{graficos/iess_pir_pea_2058.jpg}
+% \includegraphics[scale=1]{graficos/iess_pir_pea_2058.png}
 %   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
 %   Elaborado: DAIE}
 % \end{figure}

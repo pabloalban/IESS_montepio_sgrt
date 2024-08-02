@@ -2,9 +2,9 @@ message( '\tEstableciendo plantilla de gráficos' )
 
 
 # Preliminares --------------------------------------------------------------------------------
-tam_letra <- rel( 0.8 )
-tam_letra_tit <- rel( 0.8 )
-tam_letra_lab <- rel( 0.8 )
+tam_letra <- rel( 1 )
+tam_letra_tit <- rel( 1 )
+tam_letra_lab <- rel( 1 )
 
 tipo_letra <- "Linux Libertine"
 base_family_2 <- "Linux Libertine"
@@ -16,7 +16,7 @@ graf_grid_minor_size <- 0.20
 graf_width <- 13
 graf_height <- 9
 graf_units <- 'cm'
-graf_dpi <- 75
+graf_dpi <- 85
 
 ## color definitions
 main_color <- "white"
@@ -66,34 +66,34 @@ plt_theme <- theme_bw( ) +
 
 # Estilo con leyenda -------------------------------------------------------------------------------
 plt_theme_legend <- theme_bw( ) + theme( text = element_text( color = 'black' ),
-                           panel.grid.major.x = element_line( colour = "grey85", size = graf_grid_major_size, linetype = 3 ),
-                           panel.grid.major.y = element_line( colour = "grey85", size = graf_grid_major_size, linetype = 3 ),
-                           panel.grid.minor.x = element_line( colour = "grey85", size = graf_grid_minor_size, linetype = 3 ),
-                           panel.grid.minor.y = element_line( colour = "grey85", size = graf_grid_minor_size, linetype = 3 ),
-                           plot.margin = unit( plot_margin, "mm" ),
-                           legend.title = element_blank(),
-                           legend.position = 'bottom',
-                           legend.text = element_text( size = tam_letra_lab, colour = 'black', 
-                                                       face = 'plain', family = tipo_letra ),
-                           # legend.margin = unit( 0.5, "cm" ),
-                           # legend.key.size = unit( 0.25, "cm" ),
-                           plot.title = element_text( size = tam_letra_tit, colour = 'black',
-                                                      face = 'plain', family = tipo_letra,
-                                                      hjust = 0.5 , vjust = 0.5 ),
-                           axis.title.x = element_text( face = 'plain', angle = 0, colour = 'black', 
-                                                        size = tam_letra_lab, family = tipo_letra, 
-                                                        vjust = 0, hjust = 0.5,
-                                                        margin = margin( t = 10, r = 0, b = 0, l = 0 ) ),
-                           axis.title.y = element_text( face = 'plain', angle = 90, colour = 'black', 
-                                                        size = tam_letra_lab, family = tipo_letra, 
-                                                        vjust = 0, hjust = 0.5,
-                                                        margin = margin(t = 0, r = 10, b = 0, l = 0) ),
-                           axis.text.x = element_text( face = 'plain', angle = 0, colour = 'black', 
-                                                       size = tam_letra, family = tipo_letra, 
-                                                       vjust = 0, hjust = 0.5 ),
-                           axis.text.y = element_text( face = 'plain', angle = 0, colour = 'black', 
-                                                       size = tam_letra, family = tipo_letra, 
-                                                       vjust = 0, hjust = 0.5 )
+                                         panel.grid.major.x = element_line( colour = "grey85", size = graf_grid_major_size, linetype = 3 ),
+                                         panel.grid.major.y = element_line( colour = "grey85", size = graf_grid_major_size, linetype = 3 ),
+                                         panel.grid.minor.x = element_line( colour = "grey85", size = graf_grid_minor_size, linetype = 3 ),
+                                         panel.grid.minor.y = element_line( colour = "grey85", size = graf_grid_minor_size, linetype = 3 ),
+                                         plot.margin = unit( plot_margin, "mm" ),
+                                         legend.title = element_blank(),
+                                         legend.position = 'bottom',
+                                         legend.text = element_text( size = tam_letra_lab, colour = 'black', 
+                                                                     face = 'plain', family = tipo_letra ),
+                                         # legend.margin = unit( 0.5, "cm" ),
+                                         # legend.key.size = unit( 0.25, "cm" ),
+                                         plot.title = element_text( size = tam_letra_tit, colour = 'black',
+                                                                    face = 'plain', family = tipo_letra,
+                                                                    hjust = 0.5 , vjust = 0.5 ),
+                                         axis.title.x = element_text( face = 'plain', angle = 0, colour = 'black', 
+                                                                      size = tam_letra_lab, family = tipo_letra, 
+                                                                      vjust = 0, hjust = 0.5,
+                                                                      margin = margin( t = 10, r = 0, b = 0, l = 0 ) ),
+                                         axis.title.y = element_text( face = 'plain', angle = 90, colour = 'black', 
+                                                                      size = tam_letra_lab, family = tipo_letra, 
+                                                                      vjust = 0, hjust = 0.5,
+                                                                      margin = margin(t = 0, r = 10, b = 0, l = 0) ),
+                                         axis.text.x = element_text( face = 'plain', angle = 0, colour = 'black', 
+                                                                     size = tam_letra, family = tipo_letra, 
+                                                                     vjust = 0, hjust = 0.5 ),
+                                         axis.text.y = element_text( face = 'plain', angle = 0, colour = 'black', 
+                                                                     size = tam_letra, family = tipo_letra, 
+                                                                     vjust = 0, hjust = 0.5 )
 )
 
 # Theme Time-Series -----------------------------------------------------------------------------

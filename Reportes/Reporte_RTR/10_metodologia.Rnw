@@ -349,7 +349,7 @@ $\tilde{\mu}^{1,2}_{g,x}$.
 \begin{figure}[H]
 \caption{Logaritmo de la fuerza de transición, estimada y alisada, $\mu^{1,2}_{t,g,x}$}
 \begin{center}
-\includegraphics[scale=0.8]{graficos/iess_fuer_1_2.jpg}
+\includegraphics[scale=0.8]{graficos/iess_fuer_1_2.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{center}
 \end{figure}
@@ -370,7 +370,7 @@ determinada mediante el siguiente cálculo.
 % \begin{figure}[H]
 % \caption{Logaritmo de la fuerza de transición, estimada y alisada, $\mu^{1,6}_{t,g,x}$}
 % \begin{center}
-% % \includegraphics[scale=0.6]{graficos/iess_fuer_1_2.jpg}
+% % \includegraphics[scale=0.6]{graficos/iess_fuer_1_2.png}
 % \caption*{\scriptsize Elaborado: DAIE}
 % \end{center}
 % \end{figure}
@@ -382,7 +382,7 @@ Los resultados de la estimación y alisamiento tomando en cuenta las consideraci
 \begin{figure}[H]
 \caption{Logaritmo de la fuerza de transición, estimada y alisada, $\mu^{2,3}_{t,g,x}$}
 \begin{center}
-\includegraphics[scale=0.65]{graficos/iess_fuer_2_3.jpg}
+\includegraphics[scale=0.65]{graficos/iess_fuer_2_3.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{center}
 \end{figure}
@@ -394,7 +394,7 @@ Los resultados de la estimación y alisamiento tomando en cuenta las consideraci
 \begin{figure}[H]
 \caption{Logaritmo de la fuerza de transición, estimada y alisada, $\mu^{2,4}_{t,g,x}$}
 \begin{center}
-\includegraphics[scale=0.65]{graficos/iess_fuer_2_4.jpg}
+\includegraphics[scale=0.65]{graficos/iess_fuer_2_4.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{center}
 \end{figure}
@@ -408,7 +408,7 @@ sección \ref{chp_modelo:sec_cad_markov_cont}.
 \begin{figure}[H]
 \caption{Logaritmo de la fuerza de transición, estimada y alisada, $\mu^{2,5}_{t,g,x}$}
 \begin{center}
-\includegraphics[scale=0.6]{graficos/iess_fuer_2_5.jpg}
+\includegraphics[scale=0.6]{graficos/iess_fuer_2_5.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{center}
 \end{figure}
@@ -420,7 +420,7 @@ sección \ref{chp_modelo:sec_cad_markov_cont}.
 \begin{figure}[H]
 \caption{Logaritmo de la fuerza de transición, estimada y alisada, $\mu^{2,6}_{t,g,x}$}
 \begin{center}
-\includegraphics[scale=0.6]{graficos/iess_fuer_2_6.jpg}
+\includegraphics[scale=0.6]{graficos/iess_fuer_2_6.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{center}
 \end{figure}
@@ -432,7 +432,7 @@ sección \ref{chp_modelo:sec_cad_markov_cont}.
 \begin{figure}[H]
 \caption{Logaritmo de la fuerza de transición, estimada y alisada, $\mu^{3,2}_{t,g,x}$}
 \begin{center}
-\includegraphics[scale=0.65]{graficos/iess_fuer_3_2.jpg}
+\includegraphics[scale=0.65]{graficos/iess_fuer_3_2.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{center}
 \end{figure}
@@ -444,7 +444,7 @@ sección \ref{chp_modelo:sec_cad_markov_cont}.
 \begin{figure}[H]
 \caption{Logaritmo de la fuerza de transición, estimada y alisada, $\mu^{3,6}_{t,g,x}$}
 \begin{center}
-\includegraphics[scale=0.65]{graficos/iess_fuer_3_6.jpg}
+\includegraphics[scale=0.65]{graficos/iess_fuer_3_6.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{center}
 \end{figure}
@@ -472,7 +472,7 @@ resultantes por las proyecciones de la ONU.
 \begin{figure}[H]
 \caption{Logaritmo de la fuerza de transición, estimada y alisada, $\mu^{4,6}_{t,g,x}$}
 \begin{center}
-\includegraphics[scale=0.6]{graficos/iess_fuer_4_6.jpg}
+\includegraphics[scale=0.6]{graficos/iess_fuer_4_6.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{center}
 \end{figure}
@@ -497,7 +497,7 @@ decrementos independientes para $i \in \{2,3,4\}$.
 \begin{figure}[H]
 \caption{Logaritmo de la fuerza de transición, estimada y alisada, $\mu^{5,6}_{t,g,x}$}
 \begin{center}
-\includegraphics[scale=0.6]{graficos/iess_fuer_5_6.jpg}
+\includegraphics[scale=0.6]{graficos/iess_fuer_5_6.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{center}
 \end{figure}
@@ -779,7 +779,7 @@ presentan las transiciones anuales de un estado a otro en \ref{tab:pob_proy_tot_
 \begin{figure}[H]
 \caption{Proyección de la población desagregada por sexo, en cada estado}
 \label{fig:pob_proy_tot_tran}
-\includegraphics[scale=0.5]{graficos/iess_pob_proy.jpg}
+\includegraphics[scale=0.5]{graficos/iess_pob_proy.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -933,7 +933,7 @@ presentan las transiciones anuales de un estado a otro en \ref{tab:pob_proy_tot_
 \caption{Proyección de la población desagregada por sexo, en cada estado}
 \centering
 \label{graf:pob_proy_tot_ivm}
-\includegraphics[scale=1.0]{graficos/iess_pob_proy_1.jpg}
+\includegraphics[scale=1.0]{graficos/iess_pob_proy_1.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -942,7 +942,7 @@ presentan las transiciones anuales de un estado a otro en \ref{tab:pob_proy_tot_
 \Sexpr{REP_seg}}
 \label{graf:pob_proy_tot_rtr}
 \centering
-\includegraphics[scale=1.0]{graficos/iess_pob_proy_2.jpg}
+\includegraphics[scale=1.0]{graficos/iess_pob_proy_2.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -993,7 +993,7 @@ cobertura, pagados por este concepto en los últimos años observados.
 % \begin{figure}[H]
 % \caption{Superficie de probabilidad de que un cotizante tenga cónyuge cotizando}
 % \centering
-% \includegraphics[scale=1.0]{graficos/iess_probabilidades_conyuge.jpg}
+% \includegraphics[scale=1.0]{graficos/iess_probabilidades_conyuge.png}
 % \caption*{\scriptsize Elaborado: DAIE}
 % \end{figure}
 % \end{landscape}
@@ -1054,28 +1054,28 @@ El alisamiento es realizado para las cuatro combinaciones posibles de sexos de p
 % \begin{figure}[H]
 % \caption{Probabilidad para una mujer de tener un hijo mujer}
 % \centering
-% \includegraphics[scale=0.9]{graficos/iess_probabilidades_hijos_mm.jpg}
+% \includegraphics[scale=0.9]{graficos/iess_probabilidades_hijos_mm.png}
 % \caption*{\scriptsize Elaborado: DAIE}
 % \end{figure}
 % 
 % \begin{figure}[H]
 % \caption{Probabilidad para una mujer de tener un hijo hombre}
 % \centering
-% \includegraphics[scale=0.9]{graficos/iess_probabilidades_hijos_mh.jpg}
+% \includegraphics[scale=0.9]{graficos/iess_probabilidades_hijos_mh.png}
 % \caption*{\scriptsize Elaborado: DAIE}
 % \end{figure}
 % 
 % \begin{figure}[H]
 % \caption{Probabilidad para un hombre de tener un hijo mujer}
 % \centering
-% \includegraphics[scale=0.9]{graficos/iess_probabilidades_hijos_hm.jpg}
+% \includegraphics[scale=0.9]{graficos/iess_probabilidades_hijos_hm.png}
 % \caption*{\scriptsize Elaborado: DAIE}
 % \end{figure}
 % 
 % \begin{figure}[H]
 % \caption{Probabilidad para un hombre de tener un hijo hombre}
 % \centering
-% \includegraphics[scale=0.9]{graficos/iess_probabilidades_hijos_hh.jpg}
+% \includegraphics[scale=0.9]{graficos/iess_probabilidades_hijos_hh.png}
 % \caption*{\scriptsize Elaborado: DAIE}
 % \end{figure}
 % \end{landscape}

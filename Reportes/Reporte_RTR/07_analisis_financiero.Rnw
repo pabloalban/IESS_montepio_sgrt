@@ -44,7 +44,7 @@ Elaborado: DAIE}
 \centering
 \caption{Evolución del activo del Fondo del \Sexpr{REP_seg}}
 \label{fig:iess_activo_fondo_rtr}
-\includegraphics[scale=1]{graficos/iess_activo_fondo_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_activo_fondo_rtr.png}
 \caption*{\scriptsize Fuente:Balance Financiero del SGRT - DNGF  \\
 Elaborado: DAIE}
 \end{figure}
@@ -351,7 +351,7 @@ En términos monetarios, en el año 2015 el Fondo del \Sexpr{REP_seg} registró 
 \centering
 \caption{Evolución del pasivo del Fondo del \Sexpr{REP_seg}}
 \label{fig:iess_pasivo_fondo_rtr}
-\includegraphics[scale=1]{graficos/iess_pasivo_fondo_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_pasivo_fondo_rtr.png}
 \caption*{\scriptsize Fuente:Balance Financiero del SGRT - DNGF
 \\ Elaborado: DAIE}
 \end{figure}
@@ -595,7 +595,7 @@ Desde el año 2021, el porcentaje de aportación al \Sexpr{REP_seg} creció de 0
 \centering
 \caption{Evolución del patrimonio del Fondo del \Sexpr{REP_seg}}
 \label{fig:iess_patrimonio_fondo_rtr}
-\includegraphics[scale=1]{graficos/iess_patrimonio_fondo_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_patrimonio_fondo_rtr.png}
 \caption*{\scriptsize Fuente: Balance Financiero del SGRT - DNGF \\
 Elaborado: DAIE}
 \end{figure}
@@ -841,7 +841,7 @@ Durante el año 2022, el Fondo del \Sexpr{REP_seg} recibió por ingresos USD 270
 \centering
 \caption{Evolución de los ingresos del Fondo del \Sexpr{REP_seg}}
 \label{fig:iess_ingresos_fondo_rtr}
-\includegraphics[scale=1]{graficos/iess_ingresos_fondo_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_ingresos_fondo_rtr.png}
 \caption*{\scriptsize Fuente:Balance Financiero del SGRT - DNGF
 \\Elaborado: DAIE}
 \end{figure}
@@ -1132,7 +1132,7 @@ Para el año 2022, los gastos del Fondo alcanzaron los USD 72.047.794,69, un inc
 \centering
 \caption{Evolución del Gasto del Fondo del \Sexpr{REP_seg} }
 \label{fig:iess_gastos_fondo_rtr}
-\includegraphics[scale=1]{graficos/iess_gastos_fondo_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_gastos_fondo_rtr.png}
 \caption*{\scriptsize Fuente: Estados Financieros IESS del Fondo Administrado de Riesgos del Trabajo.
 \\ Elaborado: DAIE}
 \end{figure}
@@ -1396,7 +1396,7 @@ El resultado del ejercicio del año 2022 arrojó un superávit o ingreso neto de
 \centering
 \caption{Evolución del resultado del ejercicio del Fondo del \Sexpr{REP_seg} }
 \label{fig:iess_resultado_del_ejercicio_rtr}
-\includegraphics[scale=1]{graficos/iess_resultado_del_ejercicio_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_resultado_del_ejercicio_rtr.png}
 \caption*{\scriptsize Fuente: Estados Financieros IESS del Fondo Administrado de Riesgos del Trabajo.
 \\ Elaborado: DAIE}
 \end{figure}

@@ -144,7 +144,7 @@ comparación entre los aportes (línea azul) y los beneficios (línea verde).
 \caption{Escenario legal: evolución del balance actuarial $V_T$}
 \label{graf:bal_vap_esc_1}
 \centering
-\includegraphics[scale=1]{graficos/iess_balance_vap_rv_escenario_1.jpg}
+\includegraphics[scale=1]{graficos/iess_balance_vap_rv_escenario_1.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -152,7 +152,7 @@ comparación entre los aportes (línea azul) y los beneficios (línea verde).
 \caption{Escenario legal: aportes y beneficios del balance actuarial $V_T$}
 \label{graf:apo_ben_bal_din_esc_1}
 \centering
-\includegraphics[scale=1]{graficos/iess_apo_ben_bal_dinamico_escenario_1.jpg}
+\includegraphics[scale=1]{graficos/iess_apo_ben_bal_dinamico_escenario_1.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -352,7 +352,7 @@ de los beneficios (línea verde).
 \caption{Escenario legal: la reserva $V^{cap}_t$}
 \label{graf:bal_cap_esc_1}
 \centering
-\includegraphics[scale=0.95]{graficos/iess_balance_capitalizado_rv_escenario_1.jpg}
+\includegraphics[scale=0.95]{graficos/iess_balance_capitalizado_rv_escenario_1.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -360,7 +360,7 @@ de los beneficios (línea verde).
 \caption{Escenario legal: aportes y beneficios del balance capitalizado}
 \label{graf:apo_ben_bal_cap_esc_1}
 \centering
-\includegraphics[scale=0.95]{graficos/iess_apo_ben_bal_capitalizado_escenario_1.jpg}
+\includegraphics[scale=0.95]{graficos/iess_apo_ben_bal_capitalizado_escenario_1.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -580,7 +580,7 @@ comparación entre los aportes (línea azul) y los beneficios (línea verde).
 \caption{Escenario intermedio: evolución del balance actuarial $V_T$}
 \label{graf:bal_vap_esc_2}
 \centering
-\includegraphics[scale=1]{graficos/iess_balance_vap_rv_escenario_2.jpg}
+\includegraphics[scale=1]{graficos/iess_balance_vap_rv_escenario_2.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -588,7 +588,7 @@ comparación entre los aportes (línea azul) y los beneficios (línea verde).
 \caption{Escenario intermedio: aportes y beneficios del balance actuarial $V_T$}
 \label{graf:apo_ben_bal_din_esc_2}
 \centering
-\includegraphics[scale=1]{graficos/iess_apo_ben_bal_dinamico_escenario_2.jpg}
+\includegraphics[scale=1]{graficos/iess_apo_ben_bal_dinamico_escenario_2.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -788,7 +788,7 @@ de los beneficios (línea verde).
 \caption{Escenario intermedio: la reserva $V^{cap}_t$}
 \label{graf:bal_cap_esc_2}
 \centering
-\includegraphics[scale=0.95]{graficos/iess_balance_capitalizado_rv_escenario_2.jpg}
+\includegraphics[scale=0.95]{graficos/iess_balance_capitalizado_rv_escenario_2.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -796,7 +796,7 @@ de los beneficios (línea verde).
 \caption{Escenario intermedio: aportes y beneficios del balance capitalizado}
 \label{graf:apo_ben_bal_cap_esc_2}
 \centering
-\includegraphics[scale=0.95]{graficos/iess_apo_ben_bal_capitalizado_escenario_2.jpg}
+\includegraphics[scale=0.95]{graficos/iess_apo_ben_bal_capitalizado_escenario_2.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -1017,7 +1017,7 @@ comparación entre los aportes (línea azul) y los beneficios (línea verde).
 \caption{Escenario pesimista: evolución del balance actuarial $V_T$}
 \label{graf:bal_vap_esc_3}
 \centering
-\includegraphics[scale=1]{graficos/iess_balance_vap_rv_escenario_3.jpg}
+\includegraphics[scale=1]{graficos/iess_balance_vap_rv_escenario_3.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -1025,7 +1025,7 @@ comparación entre los aportes (línea azul) y los beneficios (línea verde).
 \caption{Escenario pesimista: aportes y beneficios del balance actuarial $V_T$}
 \label{graf:apo_ben_bal_din_esc_3}
 \centering
-\includegraphics[scale=1]{graficos/iess_apo_ben_bal_dinamico_escenario_3.jpg}
+\includegraphics[scale=1]{graficos/iess_apo_ben_bal_dinamico_escenario_3.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -1225,7 +1225,7 @@ de los beneficios (línea verde).
 \caption{Escenario pesimista: la reserva $V^{cap}_t$}
 \label{graf:bal_cap_esc_3}
 \centering
-\includegraphics[scale=0.95]{graficos/iess_balance_capitalizado_rv_escenario_3.jpg}
+\includegraphics[scale=0.95]{graficos/iess_balance_capitalizado_rv_escenario_3.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
@@ -1233,7 +1233,7 @@ de los beneficios (línea verde).
 \caption{Escenario pesimista: aportes y beneficios del balance capitalizado}
 \label{graf:apo_ben_bal_cap_esc_3}
 \centering
-\includegraphics[scale=0.95]{graficos/iess_apo_ben_bal_capitalizado_escenario_3.jpg}
+\includegraphics[scale=0.95]{graficos/iess_apo_ben_bal_capitalizado_escenario_3.png}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 

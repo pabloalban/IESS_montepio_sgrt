@@ -86,7 +86,7 @@ pandemia COVID-19, que en comparación al año 2019 representa un \Sexpr{REP$afi
 \caption{Evolución de la población afiliada al SGO}
 \label{fig:iess_afi_activos_sgo}
 \centering
-\includegraphics[scale=0.75]{graficos/iess_pob_afi_sgo_ini.jpg}
+\includegraphics[scale=0.75]{graficos/iess_pob_afi_sgo_ini.png}
 \caption*{\scriptsize Fuente: Dirección Nacional de Afiliación y Cobertura \\
 Elaborado: DAIE}
 \end{figure}
@@ -98,7 +98,7 @@ SGO por edad y sexo.
 \caption{Distribución por edad y sexo de la población afiliada al SGO}
 \label{fig:iess_pir_afiliados}
 \centering
-\includegraphics[scale=0.75]{graficos/iess_pir_afiliados_sgo.jpg}
+\includegraphics[scale=0.75]{graficos/iess_pir_afiliados_sgo.png}
 \caption*{\scriptsize Fuente: Dirección Nacional de Afiliación y Cobertura \\
 Elaborado: DAIE}
 \end{figure}
@@ -169,7 +169,7 @@ mientras que para los hombres es de \Sexpr{REP$edad_prom_h} años.
 % \caption{Evolución de la población afiliada al TNRH}
 % \label{fig:iess_afi_activos_tnrh}
 % \centering
-% \includegraphics[scale=0.75]{graficos/iess_pob_afi_tnrh_ini.jpg}
+% \includegraphics[scale=0.75]{graficos/iess_pob_afi_tnrh_ini.png}
 % \caption*{\scriptsize Fuente: Dirección Nacional de Afiliación y Cobertura \\
 % Elaborado: DAIE}
 % \end{figure}
@@ -181,7 +181,7 @@ mientras que para los hombres es de \Sexpr{REP$edad_prom_h} años.
 % \caption{Distribución por edad y sexo de la población afiliada al TNRH}
 % \label{fig:iess_pir_afiliados_tnrh}
 % \centering
-% \includegraphics[scale=0.75]{graficos/iess_pir_afiliados_tnrh.jpg}
+% \includegraphics[scale=0.75]{graficos/iess_pir_afiliados_tnrh.png}
 % \caption*{\scriptsize Fuente: Dirección Nacional de Afiliación y Cobertura \\
 % Elaborado: DAIE}
 % \end{figure}
@@ -236,7 +236,7 @@ económica y social producida por la pandemia COVID-19.
 \caption{Evolución anual de la masa salarial del SGO en el período 2012–2020}
 \label{fig:iess_masa_salarial_sgo}
 \centering
-\includegraphics[scale=0.75]{graficos/iess_masa_salarial_sgo_ini.jpg}
+\includegraphics[scale=0.75]{graficos/iess_masa_salarial_sgo_ini.png}
 \caption*{\scriptsize Fuente: Dirección Nacional de Afiliación y Cobertura. \\
 Elaborado: DAIE}
 \end{figure}
@@ -250,7 +250,7 @@ tiene un promedio de USD \Sexpr{REP$sal_prom}, para ambos sexos.
 \caption{Distribución por sexo del salario declarado de los afiliados del SGO en el 2020}
 \label{fig:iess_pir_masa_salarial}
 \centering
-\includegraphics[scale=0.75]{graficos/iess_pir_masa_salarial_sgo.jpg}
+\includegraphics[scale=0.75]{graficos/iess_pir_masa_salarial_sgo.png}
 \caption*{\scriptsize Fuente: Base de datos de planillas. \\
 Elaborado: DAIE}
 \end{figure}
@@ -386,7 +386,7 @@ Los subsidios por accidente de trabajo se calcularán en la forma establecida en
 \centering
 \caption{Evolución histórica de los beneficiarios de subsidios del \Sexpr{REP_seg}}
 \label{fig:iess_subsidios_rtr}
-\includegraphics[scale=1]{graficos/iess_evo_ben_subsidios_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_evo_ben_subsidios_rtr.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -528,7 +528,7 @@ Durante el año 2020, se entregaron USD 2.600.721,16 por subsidios, lo que repre
 \centering
 \caption{Distribución de beneficiarios de subsidios, por edad y sexo}
 \label{fig:iess_pir_ben_subsidios}
-\includegraphics[scale=1]{graficos/iess_pir_ben_subsidios.jpg}
+\includegraphics[scale=1]{graficos/iess_pir_ben_subsidios.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -538,7 +538,7 @@ Durante el año 2020, se entregaron USD 2.600.721,16 por subsidios, lo que repre
 \centering
 \caption{Distribución de los montos promedios entregados por subsidios de incapacidad temporal, por edad y sexo}
 \label{fig:iess_pir_montos_subsidios}
-\includegraphics[scale=1]{graficos/iess_pir_montos_subsidios.jpg}
+\includegraphics[scale=1]{graficos/iess_pir_montos_subsidios.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -660,7 +660,7 @@ Elaborado: DAIE}
 \centering
 \caption{Evolución histórica de la población beneficiaria de indemnizaciones del \Sexpr{REP_seg}}
 \label{fig:iess_evo_ben_indemnizaciones_rtr}
-\includegraphics[scale=1]{graficos/iess_evo_ben_indemnizaciones_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_evo_ben_indemnizaciones_rtr.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -671,7 +671,7 @@ La edad promedio de los beneficiarios es 38,81 años en los hombres y 46,12 en l
 \centering
 \caption{Distribución de la población beneficiaria de indemnizaciones, por edad y sexo}
 \label{fig:iess_pir_ben_indemnizaciones}
-\includegraphics[scale=1]{graficos/iess_pir_ben_indemnizaciones.jpg}
+\includegraphics[scale=1]{graficos/iess_pir_ben_indemnizaciones.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -803,7 +803,7 @@ Durante el año 2020, el 40\% de los beneficiarios por indemnizaciones recibiero
 \centering
 \caption{Distribución de los montos promedios entregados por indemnizaciones, por edad y sexo}
 \label{fig:iess_pir_montos_indemnizaciones}
-\includegraphics[scale=1]{graficos/iess_pir_montos_indemnizaciones.jpg}
+\includegraphics[scale=1]{graficos/iess_pir_montos_indemnizaciones.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -878,7 +878,7 @@ Durante el año 2020, se entregaron USD 16.053.302,61 por pensiones de incapacid
 \centering
 \caption{Evolución histórica de la población beneficiaria de rentas vitalicias por incapacidad permanente parcial del \Sexpr{REP_seg}}
 \label{fig:iess_evo_ben_pp_rtr}
-\includegraphics[scale=1]{graficos/iess_evo_ben_pp_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_evo_ben_pp_rtr.png}
 \caption*{\scriptsize Fuente: DSGRT
 \\Elaborado: DAIE}
 \end{figure}
@@ -889,7 +889,7 @@ Durante el año 2020, se entregaron USD 16.053.302,61 por pensiones de incapacid
 \centering
 \caption{Distribución de la población pensionistas por incapacidad permanente parcial, por edad y sexo, a la fecha de corte}
 \label{fig:iess_pir_ben_pp}
-\includegraphics[scale=1]{graficos/iess_pir_ben_pp.jpg}
+\includegraphics[scale=1]{graficos/iess_pir_ben_pp.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -983,7 +983,7 @@ Por consiguiente, el valor liquido a pagar a los pensionistas de incapacidad per
 \centering
 \caption{Distribución de las pensiones promedio, incluido décimos, entregados por incapacidad permanente parcial, por edad y sexo}
 \label{fig:iess_pir_pensiones_pp}
-\includegraphics[scale=1]{graficos/iess_pir_pensiones_pp.jpg}
+\includegraphics[scale=1]{graficos/iess_pir_pensiones_pp.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -1102,7 +1102,7 @@ Elaborado: DAIE}
 \centering
 \caption{Evolución histórica de la población beneficiaria por incapacidad permanente total del \Sexpr{REP_seg}}
 \label{fig:iess_evo_ben_pt_rtr}
-\includegraphics[scale=1]{graficos/iess_evo_ben_pt_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_evo_ben_pt_rtr.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -1197,7 +1197,7 @@ Elaborado: DAIE}
 \centering
 \caption{Distribución de la población de pensionistas por incapacidad permanente total, por edad y sexo}
 \label{fig:iess_pir_ben_pt}
-\includegraphics[scale=1]{graficos/iess_pir_ben_pt.jpg}
+\includegraphics[scale=1]{graficos/iess_pir_ben_pt.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -1208,7 +1208,7 @@ Elaborado: DAIE}
 \centering
 \caption{Distribución de las pensiones promedio, incluido décimos, entregados por incapacidad permanente total, por edad y sexo}
 \label{fig:iess_pir_pensiones_pt}
-\includegraphics[scale=1]{graficos/iess_pir_pensiones_pt.jpg}
+\includegraphics[scale=1]{graficos/iess_pir_pensiones_pt.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -1281,7 +1281,7 @@ El asegurado que fuere declarado con incapacidad permanente absoluta tendrá der
 \centering
 \caption{Evolución histórica de pensionistas por incapacidad permanente absoluta del \Sexpr{REP_seg}}
 \label{fig:iess_evo_ben_pa_rtr}
-\includegraphics[scale=1]{graficos/iess_evo_ben_pa_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_evo_ben_pa_rtr.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -1435,7 +1435,7 @@ Elaborado: DAIE}
 \centering
 \caption{Distribución de la población de pensionistas por incapacidad permanente absoluta, por edad y sexo}
 \label{fig:iess_pir_ben_pa}
-\includegraphics[scale=1]{graficos/iess_pir_ben_pa.jpg}
+\includegraphics[scale=1]{graficos/iess_pir_ben_pa.png}
 \caption*{\scriptsize DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -1493,7 +1493,7 @@ Durante el año 2020, el 50\% de los beneficiarios por pensiones de incapacidad 
 \centering
 \caption{Distribución de las pensiones promedio, incluido décimos, entregados por incapacidad permanente absoluta, por edad y sexo}
 \label{fig:iess_pir_pensiones_pa}
-\includegraphics[scale=1]{graficos/iess_pir_pensiones_pa.jpg}
+\includegraphics[scale=1]{graficos/iess_pir_pensiones_pa.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -1514,7 +1514,7 @@ En el año 2020, se entregó pensiones de orfandad del \Sexpr{REP_seg} a 3.249 b
 \centering
 \caption{Evolución histórica de pensionistas por orfandad del \Sexpr{REP_seg}}
 \label{fig:iess_evo_ben_of_rtr}
-\includegraphics[scale=1]{graficos/iess_evo_ben_of_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_evo_ben_of_rtr.png}
 \caption*{\scriptsize Fuente: DSGRT
 \\Elaborado: DAIE}
 \end{figure}
@@ -1660,7 +1660,7 @@ En la figura \ref{fig:iess_pir_pensiones_of}, se muestra la pirámide poblaciona
 \centering
 \caption{Distribución de la población de pensionistas por orfandad, por edad y sexo}
 \label{fig:iess_pir_ben_of}
-\includegraphics[scale=1]{graficos/iess_pir_ben_of.jpg}
+\includegraphics[scale=1]{graficos/iess_pir_ben_of.png}
 \caption*{\scriptsize Fuente: DSGRT
 \\Elaborado: DAIE}
 \end{figure}
@@ -1673,7 +1673,7 @@ Por consiguiente, el valor liquido a pagar a los beneficiarios de una pensión d
 \centering
 \caption{Distribución de las pensiones promedio, incluido décimos, de orfandad, por edad y sexo}
 \label{fig:iess_pir_pensiones_of}
-\includegraphics[scale=1]{graficos/iess_pir_pensiones_of.jpg}
+\includegraphics[scale=1]{graficos/iess_pir_pensiones_of.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -1793,7 +1793,7 @@ En el año 2020, se entregó pensiones de viudedad del \Sexpr{REP_seg} a 4.442 b
 \centering
 \caption{Evolución histórica de pensionistas de montepío por viudez del \Sexpr{REP_seg}}
 \label{fig:iess_evo_ben_vo_rtr}
-\includegraphics[scale=1]{graficos/iess_evo_ben_of_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_evo_ben_of_rtr.png}
 \caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
 \\Elaborado: DAIE}
 \end{figure}
@@ -1804,7 +1804,7 @@ En el año 2020, se entregó pensiones de viudedad del \Sexpr{REP_seg} a 4.442 b
 \centering
 \caption{Distribución de la población de pensionista de montepío por viudez, por edad y sexo}
 \label{fig:iess_pir_ben_vo}
-\includegraphics[scale=1]{graficos/iess_pir_ben_vo.jpg}
+\includegraphics[scale=1]{graficos/iess_pir_ben_vo.png}
 \caption*{\scriptsize Fuente: DSGRT
 \\Elaborado: DAIE}
 \end{figure}
@@ -1895,7 +1895,7 @@ Elaborado: DAIE}
 \centering
 \caption{Distribución de las pensiones promedio, incluido décimos, de viudedad, por edad y sexo}
 \label{fig:iess_pir_pensiones_vo}
-\includegraphics[scale=1]{graficos/iess_pir_pensiones_vo.jpg}
+\includegraphics[scale=1]{graficos/iess_pir_pensiones_vo.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS
 \\Elaborado: DAIE}
 \end{figure}
@@ -1961,7 +1961,7 @@ Durante el año 2020, el 50\% de los beneficiarios por pensiones de viudedad rec
 \centering
 \caption{Simulaciones Bootstrap del porcentaje montepios causados por afiliados fallecidos por accidentes laborales}
 \label{fig:iess_evo_ben_vo_rtr}
-\includegraphics[scale=1]{graficos/iess_porc_a_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_porc_a_rtr.png}
 \caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
 \\Elaborado: DAIE}
 \end{figure}
@@ -1971,7 +1971,7 @@ Durante el año 2020, el 50\% de los beneficiarios por pensiones de viudedad rec
 \centering
 \caption{Simulaciones Bootstrap del porcentaje montepios causados por afiliados fallecidos por accidentes laborales}
 \label{fig:iess_evo_ben_vo_rtr}
-\includegraphics[scale=1]{graficos/iess_porc_j_rtr.jpg}
+\includegraphics[scale=1]{graficos/iess_porc_j_rtr.png}
 \caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
 \\Elaborado: DAIE}
 \end{figure}
