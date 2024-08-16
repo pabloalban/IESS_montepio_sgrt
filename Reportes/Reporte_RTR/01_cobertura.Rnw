@@ -42,7 +42,7 @@ Instituto Ecuatoriano de Seguridad Social}}}}}
 \vspace{5cm}
 
 \vspace{1.3cm}
-\hspace*{7cm}{\fontsize{15}{18}{\bfseries{\selectfont{\textcolor{iess_blue}{Quito - Ecuador, \Sexpr{REP$fec_val}}}}}}
+\hspace*{6cm}{\fontsize{15}{18}{\bfseries{\selectfont{\textcolor{iess_blue}{Quito - Ecuador, agosto de 2024}}}}}
 \normalfont
 \clearpage
 

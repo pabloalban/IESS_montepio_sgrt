@@ -5,16 +5,21 @@
 %---------------------------------------------------------------------------------------------------
 \section{Definición clara del objeto del estudio}
 \label{chp_res_ejec:objeto}
-El presente estudio actuarial abarca al Seguro General de Riesgos del Trabajo, con fecha de corte 31
-de diciembre de 2020 y un horizonte de 40 años, cuyo objetivo es evaluar la capacidad del Fondo para
-que cumpla con las obligaciones futuras causadas por las contingencias de accidentes de trabajo y 
-enfermedades profesionales u ocupacionales en los escenarios económicos, financieros y demográficos 
-que se esperan a mediano y largo plazo, para que se adopten las resoluciones necesarias que permitan
-garantizar el pago de las prestaciones a los asegurados.
+
+En atención al memorando Nro. IESS-DSGRT-2024-0455-M, de fecha 08 de abril de 2024, suscrito por Dr. Fabián Antonio Escalante Álvarez, Director del Seguro General de Riesgos del Trabajo, que solicita:
+
+\textit{``Conforme a lo indicado sobre el cambio de la pensión de montepío en caso de fallecimiento inmediato o posterior, este Seguro plantea en el proyecto de reforma que este cálculo debe realizarse sobre la pensión de incapacidad permanente absoluta (100\%), ya que en la actualidad la pensión de montepío en el Seguro General de Riesgos del Trabajo se calcula sobre la incapacidad permanente total (80\%); por lo cual, solicito de la manera más comedida se realice el análisis, pronunciamiento, informe o estudio actuarial sobre el cambio de esta prestación, según corresponda en el marco de la normativa vigente”.}
+
+Y en concordancia del artículo 233 de la Ley de Seguridad Social, que establece:
+
+\textit{``No se creará prestación alguna ni se mejorarán las existentes a cargo del Seguro Social Obligatorio aplicado por el IESS, si no se encontraren debidamente financiadas y respaldadas en los resultados de estudios actuariales que demuestren su solvencia y sostenibilidad”.}
+Se presenta el siguiente estudio actuarial.
+
 
 %---------------------------------------------------------------------------------------------------
 \section{Descripción concisa de las características regulatorias del fondo o seguro}
 \label{chp_res_ejec:descripcion}
+
 El Seguro General de Riesgos del Trabajo es un fondo de capitalización colectiva, con beneficio 
 definido y prima media general. La prima es aplicada mensualmente a la materia gravada, que es 
 depositada en el IESS con la finalidad de formar capitales de inversión y junto con sus rendimientos 

@@ -156,6 +156,15 @@ detalle_certificado_inversiones <- readxl::read_excel(
   skip = 0
 ) %>% clean_names(  )
 
+desinversiones <- readxl::read_excel( 
+  file,
+  sheet = 'cid_20',
+  col_names = TRUE,
+  col_types = NULL,
+  na = "",
+  skip = 0
+) %>% clean_names(  )
+
 #Guardando en un Rdata------------------------------------------------------------------------------
 message( '\tGuardando inversiones en un solo data.frame' )
 

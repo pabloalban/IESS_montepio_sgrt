@@ -2,9 +2,9 @@ message( '\tEstableciendo plantilla de gráficos' )
 
 
 # Preliminares --------------------------------------------------------------------------------
-tam_letra <- rel( 1 )
-tam_letra_tit <- rel( 1 )
-tam_letra_lab <- rel( 1 )
+tam_letra <- rel( 0.9 )
+tam_letra_tit <- rel( 0.8 )
+tam_letra_lab <- rel( 0.8 )
 
 tipo_letra <- "Linux Libertine"
 base_family_2 <- "Linux Libertine"

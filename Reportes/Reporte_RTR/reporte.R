@@ -33,8 +33,8 @@ REP$bib_lib <- 'bibliografia_libros.bib'
 REP$bib_art <- 'bibliografia_articulos.bib'
 REP$bib_ley <- 'bibliografia_leyes.bib'
 
-REP$tit <- 'Valuación Actuarial del Fondo del Seguro General de Riesgos del Trabajo'
-REP$nom_seg <- 'Seguro de Invalidez, Vejez y Muerte'
+REP$tit <- 'Estudio Actuarial para la reforma prestacional sobre montepíos del Seguro General de Riesgos del Trabajo'
+REP$nom_seg <- 'Seguro General de Riesgos del Trabajo'
 REP$seg <- switch( parametros$seguro,
                    'ivm' = 'Seguro IVM',
                    'ces' = 'Seguro de Cesantía',

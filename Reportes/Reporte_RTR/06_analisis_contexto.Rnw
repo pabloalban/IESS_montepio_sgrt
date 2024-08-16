@@ -6,7 +6,7 @@ El artículo 7 del CAPÍTULO II:``REQUISITOS TÉCNICOS PARA LA ELABORACIÓN, PRE
 
 ``\textit{iv. Evolución y tendencia económica de al menos los últimos cinco (5) años: inflación, tasa de interés financiero, incremento de salarios y pensiones, entre otros}''.
 
-En concordancia a la normativa antes señalada, en el presente capítulo se presenta un análisis del contexto económico del Ecuador, en el cual se abordarán: la evolución histórica desde la dolarización, predicciones en futuro de la condición económica del país, un breve análisis de la situación actual y prevista del mercado de inversiones en el Ecuador y un análisis de las tendencias demográficas de la población total del Ecuador y su población económicamente activa para dentro de 20 y 40 años.
+En concordancia a la normativa antes señalada, en el presente capítulo se presenta un análisis del contexto económico del Ecuador, en el cual se abordarán: la evolución histórica desde la dolarización, predicciones en futuro de la condición económica del país, un breve análisis de la situación actual y prevista del mercado de inversiones en el Ecuador.
 
 \section{Análisis de las tasas históricas relevantes para el estudio}
 % 
@@ -75,7 +75,7 @@ El Ecuador registró la inflación acumulada más alta de su historia en el año
 \centering
 \caption{Evolución histórica del índice de precios al consumidor e inflación acumulada}
 \label{fig:iess_inflacion}
-\includegraphics[scale=1]{graficos/iess_inflacion.png}
+\includegraphics[scale=1.2]{graficos/iess_inflacion.png}
 \caption*{\scriptsize {\bf Fuente:} Instituto Nacional de Estadísticas y Censos \\
             {\bf Elaborado:} DAIE}
 \end{figure}
@@ -90,9 +90,9 @@ Por otro lado, la evolución histórica del subempleo \footnote{Subempleados: Pe
 
 \begin{figure}[H]
 \centering
-\caption{Serie histórica del Salario Básico Unificado}
+\caption{Serie histórica de la tasa de desempleo y empleo pleno nacional}
 \label{fig:iess_desempleo}
-\includegraphics[scale=1]{graficos/iess_desempleo.png}
+\includegraphics[scale=1.2]{graficos/iess_desempleo.png}
 \caption*{\scriptsize Fuente: INEC \\
   Elaborado: DAIE}
 \end{figure}
@@ -150,7 +150,7 @@ Elaborado: DAIE}
 Otra de las hipótesis a considerarse en los modelos matemáticos – actuariales es el comportamiento del salario básico unificado (SBU), debido a que las pensiones máximas y mínimas dependen de un porcentaje del SBU y del número de aportaciones. El Salario Básico Unificado en el Ecuador presenta un crecimiento lineal desde la dolarización en el 2000, año el cual el SBU era igual a USD 48,17.
 
 {\setlength{\tabcolsep}{16pt}
-{\fontsize{11}{14}\selectfont
+{\fontsize{11}{16}\selectfont
 \begin{longtable}[H]{crrr}
   \caption{Evolución histórica del Salario Básico Unificado}
 \label{tab:iess_sbu} \\
@@ -214,7 +214,7 @@ Los ingresos por aportes que recibe el IESS es un porcentaje fijo de la materia 
 \end{figure}
 
 {\setlength{\tabcolsep}{7pt}
-{\fontsize{11}{14}\selectfont
+{\fontsize{11}{16}\selectfont
 \begin{longtable}[H]{crrr}
   \caption{Evolución histórica del salario promedio de los cotizantes al SGO}
 \label{tab:iess_salarios} \\
@@ -262,7 +262,7 @@ La información referente al Producto Interno Bruto del Ecuador se obtuvo de la 
 
 
 {\setlength{\tabcolsep}{5pt}
-{\fontsize{10}{12}\selectfont
+{\fontsize{10}{16}\selectfont
 \begin{longtable}[H]{crrc}
   \caption{Evolución histórica del PIB del Ecuador}
 \label{tab:iess_pib_real} \\
@@ -305,7 +305,7 @@ Elaborado: DAIE}
 \centering
 \caption{Evolución histórica del crecimiento real del PIB del Ecuador}
 \label{fig:iess_pib_real}
-\includegraphics[scale=1]{graficos/iess_pib_real.png}
+\includegraphics[scale=1.2]{graficos/iess_pib_real.png}
 \caption*{\scriptsize Fuente: Banco Mundial. \\
   Elaborado: DAIE}
 \end{figure}
@@ -325,7 +325,7 @@ A partir del año 2016, con la expedición de la \legalcite{Leyjlab}; la cual en
 
 
 {\setlength{\tabcolsep}{5pt}
-{\fontsize{11}{13}\selectfont
+{\fontsize{11}{14}\selectfont
 \begin{longtable}[H]{lrrrrrrrr}
   \caption{Crecimiento de las pensiones en el IESS}
 \label{tab:iess_incre_pensiones} \\
@@ -389,7 +389,7 @@ Elaborado: DAIE}
 Mediante el artículo 234 de la \legalcite{LeySS}, se establecen las pensiones mínimas en porcentajes del SBU entregadas mensualmente por el IESS, en función de los años aportados (ver tabla \ref{tab:iess_pension_min}). En cambio, el artículo 5 de la\legalcite{ResIESS_CD300} establece las pensiones máximas en porcentajes del SBU (ver tabla \ref{tab:iess_pension_max}).
 
 {\setlength{\tabcolsep}{5pt}
-{\fontsize{11}{13}\selectfont
+{\fontsize{11}{14}\selectfont
 \begin{longtable}[H]{lcrrrrrr}
   \caption{Evolución histórica de las pensiones mínimas}
 \label{tab:iess_pension_min} \\
@@ -474,7 +474,7 @@ Elaborado: DAIE}
 
 
 {\setlength{\tabcolsep}{5pt}
-{\fontsize{11}{13}\selectfont
+{\fontsize{11}{14}\selectfont
 \begin{longtable}[H]{lcrrrrrrr}
   \caption{Evolución histórica de las pensiones máximas}
 \label{tab:iess_pension_max} \\
@@ -829,19 +829,6 @@ blanco) o si hay algo más detrás de ellos; si las autocorrelaciones para los e
 distintas de cero o no (es decir, las correlaciones en la población de la que se toma la muestra son
 cero (0).
 
-\begin{landscape}
-\begin{figure}[H]
-\begin{center}
-\caption{Gráfica de los p - valores para las estadísticas $Q_k(m)$ para las 5 dimensiones del
-modelo, la línea discontinua indica un error de tipo I del 5\%}
-\label{fig:iess_box_ljung}
-\includegraphics[scale=1]{graficos/iess_box_ljung_grupo.png}
-\caption*{\scriptsize \centering {\bf Elaborado:} DAIE}
-\end{center}
-\end{figure}
-\end{landscape}
-
-
 Por lo que cualquier correlación observada en los datos resulta de la aleatoriedad del proceso de
 muestreo).  Esencialmente, es una prueba de falta de ajuste: si las autocorrelaciones de los
 residuos son muy pequeñas, decimos que el modelo no muestra una "falta de ajuste significativa".
@@ -854,6 +841,18 @@ $H_1$: Los datos no se distribuyen de forma independiente; exhiben correlación 
 \end{center}
 
 Un valor p significativo en esta prueba rechaza la hipótesis nula de que la serie temporal no está autocorrelacionada. Al utilizar el software estadístico R, se estiman los p – valores de los estadísticos para las 5 dimensiones del modelo propuesto. Se concluye que para los residuos del modelo para $\nabla$ PIB no se rechaza la hipótesis nula para todo retardo mayor a 10. Para los residuos del modelo para $\nabla$ Salarios Promedio, no se rechaza la hipótesis nula para todo retardo menor a 10, excepto para 2 y 8; los residuos para el modelo $\nabla$ SBU no se rechaza la hipótesis nula para cualquier retardo menor a 20. En los residuos del modelo para $\nabla$ Tasa pasiva, no se rechaza la hipótesis nula para todo rechazo mayor a 5; y finalmente para los residuos del modelo para $\nabla$ IPC, no se rechaza la hipótesis nula para todo retardo menor o igual a 11.
+
+\begin{landscape}
+\begin{figure}[H]
+\begin{center}
+\caption{Gráfica de los p - valores para las estadísticas $Q_k(m)$ para las 5 dimensiones del
+modelo, la línea discontinua indica un error de tipo I del 5\%}
+\label{fig:iess_box_ljung}
+\includegraphics[scale=1]{graficos/iess_box_ljung_grupo.png}
+\caption*{\scriptsize \centering {\bf Elaborado:} DAIE}
+\end{center}
+\end{figure}
+\end{landscape}
 
 %---------------------------------------------------------------------------------------------------
 \subsubsection{Pruebas de homocedasticidad}
@@ -913,7 +912,7 @@ presente estudio.
 
  
 {\setlength{\tabcolsep}{7pt}
-{\fontsize{11}{12}\selectfont
+{\fontsize{11}{16}\selectfont
 \begin{longtable}[H]{crccrrc}
   \caption{Proyecciones de las variables macroeconómicas}
 \label{tab:iess_tasas_macro_pred} \\
@@ -980,7 +979,6 @@ presente estudio.
 }
 
 Las figuras \ref{fig:plt_var_macro_a},  \ref{fig:plt_var_macro_b} y \ref{fig:plt_var_macro_c} describen las proyecciones realizadas utilizando el modelo antes mencionado.
-\pagebreak
 
 \begin{landscape}
 
@@ -989,7 +987,7 @@ Las figuras \ref{fig:plt_var_macro_a},  \ref{fig:plt_var_macro_b} y \ref{fig:plt
 \begin{center}
 \caption{Predicciones del PIB nominal (en millones de dólares) y salario anual promedio}
 \label{fig:plt_var_macro_a}
-\includegraphics[scale=1]{graficos/plt_var_macro_a.png}
+\includegraphics[scale=0.95]{graficos/plt_var_macro_a.png}
 \caption*{\scriptsize  {\bf Elaborado:} DAIE}
 \end{center}
 \end{figure}
@@ -999,7 +997,7 @@ Las figuras \ref{fig:plt_var_macro_a},  \ref{fig:plt_var_macro_b} y \ref{fig:plt
 \begin{center}
 \caption{Predicciones del salario básico unificado (en dólares) y tasa pasiva referencial}
 \label{fig:plt_var_macro_b}
-\includegraphics[scale=1]{graficos/plt_var_macro_b.png}
+\includegraphics[scale=0.95]{graficos/plt_var_macro_b.png}
 \caption*{\scriptsize {\bf Elaborado:} DAIE}
 \end{center}
 \end{figure}
@@ -1009,7 +1007,7 @@ Las figuras \ref{fig:plt_var_macro_a},  \ref{fig:plt_var_macro_b} y \ref{fig:plt
 \begin{center}
 \caption{Predicciones del IPC e inflación acumulada promedio}
 \label{fig:plt_var_macro_c}
-\includegraphics[scale=1]{graficos/plt_var_macro_c.png}
+\includegraphics[scale=0.95]{graficos/plt_var_macro_c.png}
 \caption*{\scriptsize {\bf Elaborado:} DAIE}
 \end{center}
 \end{figure}
@@ -1101,7 +1099,7 @@ obtuvo de la diferencia entre la tasa activa y la tasa pasiva.
 \centering
 \caption{Evolución de las tasas referenciales activa y pasiva}
 \label{fig:iess_tasas_interes}
-\includegraphics[scale=1]{graficos/iess_tasas_interes.png}
+\includegraphics[scale=1.1]{graficos/iess_tasas_interes.png}
 \caption*{\scriptsize Fuente: Banco Central del Ecuador \\
   Elaborado: DAIE}
 \end{figure}
@@ -1136,13 +1134,6 @@ obtenidos por una entidad en un período económico en relación con sus recurso
 (capital) o con sus activos. El ROA mide la rentabilidad de los activos; mayores valores de esta
 ratio representan una mejor condición de la empresa; en cambio, el ROE mide la rentabilidad del
 patrimonio, mayores valores de esta ratio representan una mejor condición.
-
-Los índices ROA y ROE, para bancos privados, mutualistas, sociedades financieras e instituciones
-públicas, se obtuvieron de la
-página\footnote{\url{https://www.superbancos.gob.ec/estadisticas/portalestudios/boletines-financieros-mensuales/}}
-de la Superintendencia de Bancos (SB). Los índices fueron publicados en los boletines mensuales que
-la SB publica en su página, especialmente, se utilizan los estados de pérdidas y ganancias a
-diciembre para obtener los rendimientos del período, y las cuentas de los activos y patrimonios.
 
 {\fontsize{11}{14}\selectfont
 \begin{longtable}[H]{crrrrr}
@@ -1191,7 +1182,12 @@ diciembre para obtener los rendimientos del período, y las cuentas de los activ
 \end{longtable}
 }
 
-
+Los índices ROA y ROE, para bancos privados, mutualistas, sociedades financieras e instituciones
+públicas, se obtuvieron de la
+página\footnote{\url{https://www.superbancos.gob.ec/estadisticas/portalestudios/boletines-financieros-mensuales/}}
+de la Superintendencia de Bancos (SB). Los índices fueron publicados en los boletines mensuales que
+la SB publica en su página, especialmente, se utilizan los estados de pérdidas y ganancias a
+diciembre para obtener los rendimientos del período, y las cuentas de los activos y patrimonios.
 
 {\fontsize{11}{14}\selectfont
 \begin{longtable}[H]{crrrrr}
@@ -1318,10 +1314,6 @@ la tabla \ref{tab:iess_rendimiento_biess}, se presenta la tasa de rendimiento ne
 global del BIESS, la cual es el cociente entre los ingresos por inversiones, menos los gastos
 operativos y administrativos, sobre el fondo administrado promedio de los últimos doce (12) meses.
 
-\newpage 
-
-\vspace*{\fill}
-
 {\setlength{\tabcolsep}{5pt}
 {\fontsize{8.5}{14}\selectfont
 \begin{longtable}[H]{crrrrrrc}
@@ -1401,7 +1393,7 @@ operativos y administrativos, sobre el fondo administrado promedio de los últim
 \centering
 \caption{Evolución del rendimiento neto del portafolio global de inversiones del BIESS}
 \label{fig:iess_portaf_hist}
- \includegraphics[scale=1]{graficos/biess_rendimiento.png}
+ \includegraphics[scale=1.1]{graficos/biess_rendimiento.png}
  \caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS y Dirección de Tesorería - BIESS \\
 Elaborado: DAIE}
 \end{figure}
