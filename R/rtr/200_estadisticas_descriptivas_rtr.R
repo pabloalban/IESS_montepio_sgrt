@@ -690,11 +690,7 @@ aux <- subsidios_rtr %>%
   dplyr::select(  sexo, edad_prom ) %>%
   left_join(  ., aux, by = 'sexo'  )
 
-aux <- aux %>%
-  mutate_if( is.numeric, round, digits = 2 ) %>%
-  mutate_at(  c( 2:ncol( . ) ), as.character )
-
-( aux )
+dem_sub <- aux
 
 ## 9.2 Indemnizaciones-------------------------------------------------------------------------------
 message( "\tEstadísticas Indemnizaciones" )
@@ -720,11 +716,7 @@ aux <- indemnizaciones_rt_2022 %>%
   dplyr::select(  sexo, edad_prom ) %>%
   left_join(  ., aux, by = 'sexo'  )
 
-aux <- aux %>%
-  mutate_if( is.numeric, round, digits = 2 ) %>%
-  mutate_at(  c( 2:ncol( . ) ), as.character )
-
-( aux )
+dem_ind <- aux
 
 ##Función para pensiones----------------------------------------------------------------------------
 estadisticas_fun <- function( .data22 ) {
@@ -821,49 +813,27 @@ estadisticas_fun <- function( .data22 ) {
 ## 9.2 Pensiones Incapacidad Permanente Parcial-----------------------------------------------------
 message( "\tEstadísticas Incapacidad Permanente Parcial" )
 
-aux <- estadisticas_fun( prestaciones_pp ) %>%
-  mutate_if( is.numeric, round, digits = 2 ) %>%
-  mutate_at(  c( 2:ncol( . ) ), as.character )
-
-( aux )
+dem_pp <- estadisticas_fun( prestaciones_pp )
 
 ## 9.3 Pensiones Incapacidad Permanente Total-------------------------------------------------------
 message( "\tEstadísticas Incapacidad Permanente Total" )
 
-aux <- estadisticas_fun( prestaciones_pt  ) %>%
-  mutate_if( is.numeric, round, digits = 2 ) %>%
-  mutate_at(  c( 2:ncol( . ) ), as.character )
-
-( aux )
+dem_pt <- estadisticas_fun( prestaciones_pt  )
 
 ## 9.4 Pensiones Incapacidad Permanente Absoluta----------------------------------------------------
 message( "\tEstadísticas Incapacidad Permanente Absoluta" )
 
-aux <- estadisticas_fun( prestaciones_pa  ) %>%
-  mutate_if( is.numeric, round, digits = 2 ) %>%
-  mutate_at(  c( 2:ncol( . ) ), as.character )
-
-( aux )
-
+dem_pa <- estadisticas_fun( prestaciones_pa  )
 
 ## 9.5 Pensiones viudez-----------------------------------------------------------------------------
 message( "\tEstadísticas viudez" )
 
-aux <- estadisticas_fun( prestaciones_viudez  ) %>%
-  mutate_if( is.numeric, round, digits = 2 ) %>%
-  mutate_at(  c( 2:ncol( . ) ), as.character )
-
-( aux )
+dem_vo <- estadisticas_fun( prestaciones_viudez  )
 
 ## 9.5 Pensiones orfandad---------------------------------------------------------------------------
 message( "\tEstadísticas orfandad" )
 
-aux <- estadisticas_fun( prestaciones_orfandad %>% filter( )  ) %>%
-  mutate_if( is.numeric, round, digits = 2 ) %>%
-  mutate_at(  c( 2:ncol( . ) ), as.character )
-
-( aux )
-
+dem_orf <- estadisticas_fun( prestaciones_orfandad )
 #10 . Estadísticas de cotizantes--------------------------------------------------------------------
 
 aux <- sgo_act_tran_anio %>% 
@@ -875,7 +845,7 @@ aux <- sgo_act_tran_anio %>%
   distinct( anio, sexo, .keep_all = TRUE ) %>% 
   dplyr::select( anio, sexo, ERx, masa_sal )
 
-##6.1. Evolución de cotizantes-----------------------------------------------------------------------
+##10.1. Evolución de cotizantes-----------------------------------------------------------------------
 
 evo_er_sgo <- aux %>%
   dplyr::select( anio, sexo, ERx ) %>% 
@@ -884,7 +854,7 @@ evo_er_sgo <- aux %>%
   mutate( incremento = total - lag( total ) ) %>% 
   mutate( porc = incremento / lag( total ) )
 
-##6.2. Evolución de masa salarial--------------------------------------------------------------------
+##10.2. Evolución de masa salarial--------------------------------------------------------------------
 
 evo_masa_sgo <- aux %>%
   dplyr::select( anio, sexo, masa_sal ) %>% 
@@ -893,7 +863,7 @@ evo_masa_sgo <- aux %>%
   mutate( incremento = total - lag( total ) ) %>% 
   mutate( porc = incremento / lag( total ) )
 
-##6.3 Distribución de salarios----------------------------------------------------------------------
+##10.3 Distribución de salarios----------------------------------------------------------------------
 
 dist_sal_edad_sexo <- sgo_act_tran_anio %>% 
   filter( anio == 2022 ) %>% 
@@ -948,6 +918,13 @@ save(  tab_evo_ben_pt,
        evo_er_sgo,
        evo_masa_sgo,
        dist_sal_edad_sexo,
+       dem_sub,
+       dem_ind,
+       dem_pp,
+       dem_pt,
+       dem_pa,
+       dem_vo,
+       dem_orf,
        file = paste0(  parametros$RData_seg, 'IESS_RTR_tablas_demografia.RData'  )  )
 #Limpiar Ram----------------------------------------------------------------------------------------
 message(  paste(  rep( '-', 100  ), collapse = ''  )  )

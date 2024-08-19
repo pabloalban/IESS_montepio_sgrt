@@ -6,7 +6,7 @@ El artículo 7 del CAPÍTULO II:``REQUISITOS TÉCNICOS PARA LA ELABORACIÓN, PRE
 
 ``\textit{iv. Evolución y tendencia económica de al menos los últimos cinco (5) años: inflación, tasa de interés financiero, incremento de salarios y pensiones, entre otros}''.
 
-En concordancia a la normativa antes señalada, en el presente capítulo se presenta un análisis del contexto económico del Ecuador, en el cual se abordarán: la evolución histórica desde la dolarización, predicciones en futuro de la condición económica del país, un breve análisis de la situación actual y prevista del mercado de inversiones en el Ecuador.
+En concordancia a la normativa antes señalada, en el presente capítulo se presenta un análisis del contexto económico del Ecuador, en el cual se abordarán: la evolución histórica desde la dolarización, predicciones en futuro de la condición económica del país, un breve análisis de la situación actual y prevista del mercado de inversiones en el Ecuador y un análisis de las tendencias demográficas de la población total del Ecuador y su población económicamente activa para dentro de 20 y 40 años.
 
 \section{Análisis de las tasas históricas relevantes para el estudio}
 % 
@@ -69,7 +69,7 @@ Elaborado: DAIE}
 }
 }
 
-El Ecuador registró la inflación acumulada más alta de su historia en el año 2000 (91\%). A partir de la implementación de la dolarización, la inflación se redujo paulatinamente, considerando que la inflación está ligada a la política monetaria y fiscal de una economía. La inflación acumulada anual se redujo desde 22,4\% en el 2001 al -0,93\% en el 2020, siendo el menor registro desde la adopción del sistema monetario “dolarización”. 
+El Ecuador registró la inflación acumulada más alta de su historia en el año 2000 (\Sexpr{REP$macro_inf_2000}\%). A partir de la implementación de la dolarización, la inflación se redujo paulatinamente, considerando que la inflación está ligada a la política monetaria y fiscal de una economía. La inflación acumulada anual se redujo desde \Sexpr{REP$macro_inf_acu_2001}\% en el 2001 al \Sexpr{REP$macro_inf_acu_2020}\% en el 2020, siendo el menor registro desde la adopción del sistema monetario “dolarización”. 
 
 \begin{figure}[H]
 \centering
@@ -80,24 +80,24 @@ El Ecuador registró la inflación acumulada más alta de su historia en el año
             {\bf Elaborado:} DAIE}
 \end{figure}
 
-Los años con mayor inflación interanual fueron 2000, 2001, 2002 y 2008 con valores superiores al 8\%; por el contrario, la deflación se dio en los años 2017, 2019 y 2020 con valores de -0,20\%, -0,07\% y -0,93\% respectivamente. Para el año 2022, la inflación anual acumulada fue igual a 3,74\% y la inflación acumulada promedio fue igual a 3,46\%. El promedio de la inflación acumulada anual de los últimos diez (10) años es 1,56\%; en cambio, la media de la inflación promedio de los últimos diez (10) años es 1,57\%.
+Los años con mayor inflación interanual fueron 2000, 2001, 2002 y 2008 con valores superiores al 8\%; por el contrario, la deflación se dio en los años 2017, 2019 y 2020 con valores de \Sexpr{REP$macro_inf_acu_2017}\%, \Sexpr{REP$macro_inf_acu_2019}\% y \Sexpr{REP$macro_inf_acu_2020}\% respectivamente. Para el año 2022, la inflación anual acumulada fue igual a \Sexpr{REP$macro_inf_acu_2022}\% y la inflación acumulada promedio fue igual a \Sexpr{REP$macro_inf_acu_prom_2022}\%. Además, el promedio de la inflación acumulada anual de los últimos diez (10) años es \Sexpr{REP$macro_inf_acu_prom_13_22}\%.
 
 \subsection{Evolución histórica del desempleo}
 
-Según la información levantada por el INEC\footnote{\url{https://www.ecuadorencifras.gob.ec/estadisticas-laborales-febrero-2023-2/}}, mediante la Encuesta Nacional de Empleo, Desempleo y Subempleo (ENEMDU), el Ecuador es un país con bajo porcentaje de empleo pleno o adecuado \footnote{ Empleo adecuado pleno: Personas con empleo que, durante la semana de referencia, perciben ingresos laborales iguales o superiores al salario mínimo, trabajan igual o más de 40 horas a la semana, independientemente del deseo y disponibilidad de trabajar horas adicionales.}, con 36,04\% de la población económicamente activa en 2021, y que antes de la pandemia de la COVID-19, se registraba al 31 de diciembre de 2019 el 38,85\%. Históricamente el empleo pleno tiene una tendencia a la baja; puesto que, a diciembre de 2007, se registró el 43,20\% de empleo pleno en la población económicamente activa del Ecuador. Por otro lado, las mujeres ecuatorianas son las que registran menor empleo pleno (28,81\%), que los hombres con el 41,12\% a diciembre de 2022.
+Según la información levantada por el INEC\footnote{\url{https://www.ecuadorencifras.gob.ec/estadisticas-laborales-febrero-2023-2/}}, mediante la Encuesta Nacional de Empleo, Desempleo y Subempleo (ENEMDU), el Ecuador es un país con bajo porcentaje de empleo pleno o adecuado \footnote{ Empleo adecuadoo pleno: Personas con empleo que, durante la semana de referencia, perciben ingresos laborales iguales o superiores al salario mínimo, trabajan igual o más de 40 horas a la semana, independientemente del deseo y disponibilidad de trabajar horas adicionales.}, con 36,04\% de la población económicamente activa en 2021, y que antes de la pandemia de la COVID-19, se registraba al 31 de diciembre de 2019 el 38,85\%. Históricamente el empleo pleno tiene una tendencia a la baja; puesto que a diciembre de 2007, se registró el 43,20\% de empleo pleno en la población económicamente activa del Ecuador. Por otro lado, las mujeres ecuatorianas son las que registran menor empleo pleno (28,81\%), que los hombres con el 41,12\% a diciembre de 2022.
 
-Por otro lado, la evolución histórica del subempleo \footnote{Subempleados: Personas con empleo que, durante la semana de referencia, percibieron ingresos inferiores al salario mínimo y/o trabajaron menos de la jornada legal y tienen el deseo y disponibilidad de trabajar horas adicionales.} en el Ecuador se registró en 19,37\% a diciembre de 2022, con el 23,43\% en los hombres y 19,05\% en las mujeres. Cabe señalar que el subempleo aumentó del 17,79\% a diciembre de 2019 a 22,85\% a diciembre de 2020, debido a la pandemia. Y el año que se registró menor tasa de subempleo fue en diciembre de 2012, con 9,01\%.
+Por otro lado, la evolución histórica del subempleo \footnote{Subempleados: Personas con empleo que, durante la semana de referencia, percibieron ingresos inferiores al salario mínimo y/o trabajaron menos de la jornada legal y tienen el deseo y disponibilidad de trabajar horas adicionales.} en el Ecuador se registró en \Sexpr{REP$macro_subempleo_2022}\% a diciembre de 2022, con el \Sexpr{REP$macro_subempleo_h_2022}\% en los hombres y \Sexpr{REP$macro_subempleo_m_2022}\% en las mujeres. Cabe señalar que el subempleo aumentó del \Sexpr{REP$macro_subempleo_2019}\% a diciembre de 2019 a \Sexpr{REP$macro_subempleo_2020}\% a diciembre de 2020, debido a la pandemia. Y el año que se registró menor tasa de subempleo fue en diciembre de 2012, con \Sexpr{REP$macro_subempleo_2012}\%.
 
 \begin{figure}[H]
 \centering
-\caption{Serie histórica de la tasa de desempleo y empleo pleno nacional}
+\caption{Serie histórica del Salario Básico Unificado}
 \label{fig:iess_desempleo}
 \includegraphics[scale=1.2]{graficos/iess_desempleo.png}
 \caption*{\scriptsize Fuente: INEC \\
   Elaborado: DAIE}
 \end{figure}
 
-La tasa de desempleo se ha reducido la activación económica después de la pandemia de la COVID – 19; para diciembre de 2020, la tasa desempleo fue igual a 4,90\%, para diciembre de 2021, se había reducido a 4,15\%; y a diciembre de 2022, se registró a 3,19\%. La mayor tasa de desempleo se registró a diciembre de 2009, con 6,47\%; y la menor a diciembre de 2019 (3,84\%), justo antes de la pandemia. En la tabla \ref{tab:iess_desempleo} y figura \ref{fig:iess_desempleo}, se presenta la evolución histórica de la tasa de desempleo.
+La tasa de desempleo se ha reducido por la activación económica después de la pandemia COVID – 19; para diciembre de 2020, la tasa desempleo fue igual a \Sexpr{REP$macro_desempleo_2020}\%, para diciembre de 2021, se había reducido a \Sexpr{REP$macro_desempleo_2021}\%; y a diciembre de 2022, se registró a \Sexpr{REP$macro_desempleo_2022}\%. La mayor tasa de desempleo se registró a diciembre de 2009, con \Sexpr{REP$macro_desempleo_2009}\%; y la menor a diciembre de 2019 (\Sexpr{REP$macro_desempleo_2019}\%), justo antes de la pandemia. En la tabla \ref{tab:iess_desempleo} y figura \ref{fig:iess_desempleo}, se presenta la evolución histórica de la tasa de desempleo.
 
 {\setlength{\tabcolsep}{5pt}
 {\fontsize{11}{14}\selectfont
@@ -147,10 +147,10 @@ Elaborado: DAIE}
 
 \subsection{Evolución histórica del salario básico unificado}
 
-Otra de las hipótesis a considerarse en los modelos matemáticos – actuariales es el comportamiento del salario básico unificado (SBU), debido a que las pensiones máximas y mínimas dependen de un porcentaje del SBU y del número de aportaciones. El Salario Básico Unificado en el Ecuador presenta un crecimiento lineal desde la dolarización en el 2000, año el cual el SBU era igual a USD 48,17.
+Otra de las hipótesis a considerarse en los modelos matemáticos – actuariales es el comportamiento del salario básico unificado (SBU), debido a que las pensiones máximas y mínimas dependen de un porcentaje del SBU y del número de aportaciones. El Salario Básico Unificado en el Ecuador presenta un crecimiento lineal desde la dolarización en el 2000, año el cual el SBU era igual a USD \Sexpr{REP$macro_sbu_2000}.
 
 {\setlength{\tabcolsep}{16pt}
-{\fontsize{11}{16}\selectfont
+{\fontsize{11}{14}\selectfont
 \begin{longtable}[H]{crrr}
   \caption{Evolución histórica del Salario Básico Unificado}
 \label{tab:iess_sbu} \\
@@ -198,7 +198,7 @@ Elaborado: DAIE}
   {\bf Elaborado:} DAIE}
 \end{figure}
 
-En términos monetarios, los años con mayores incrementos fueron el año 2003, con incremento en USD 33,12; y, el año 2008, con incremento igual a USD 30, en términos porcentuales fue el año 2001 con el 51,19\%. En cambio, los años con menor incremento fue el 2020 (0\%). En los últimos siete (7) años, el SBU creció en promedio 2,66\%. Calculado en dólares estadounidenses (USD) al 2022, es el más alto en Sudamérica, con USD 425, seguido por el salario mínimo chileno 350.000 pesos chilenos (USD 412). A continuación, se muestra la evolución del salario básico unificado en la tabla \ref{tab:iess_sbu} y la figura \ref{fig:iess_sbu}.
+En términos monetarios, los años con mayores incrementos fueron el año 2003, con incremento en USD \Sexpr{REP$macro_sbu_incremento_2003}; y, el año 2008, con incremento igual a USD \Sexpr{REP$macro_sbu_incremento_2008}, en términos porcentuales fue el año 2001 con el \Sexpr{REP$macro_sbu_tasa_cre_2001}\%. En cambio, los años con menor incremento fue el 2021 (\Sexpr{REP$macro_sbu_tasa_cre_2021}\%). En los últimos siete (7) años, el SBU creció en promedio \Sexpr{REP$macro_sub_promedio_7anios}\%. Calculado en dólares estadounidenses (USD) al 2022, es el más alto en Sudamérica, con USD \Sexpr{REP$macro_sbu_2022}, seguido por el salario mínimo chileno 350.000 pesos chilenos (USD 412). A continuación, se muestra la evolución del salario básico unificado en la tabla \ref{tab:iess_sbu} y la figura \ref{fig:iess_sbu}.
 % % ------------------------------------------------------------------------------------------------
 \subsection{Evolución histórica de los salarios}
 
@@ -214,7 +214,7 @@ Los ingresos por aportes que recibe el IESS es un porcentaje fijo de la materia 
 \end{figure}
 
 {\setlength{\tabcolsep}{7pt}
-{\fontsize{11}{16}\selectfont
+{\fontsize{11}{14}\selectfont
 \begin{longtable}[H]{crrr}
   \caption{Evolución histórica del salario promedio de los cotizantes al SGO}
 \label{tab:iess_salarios} \\
@@ -253,7 +253,7 @@ Elaborado: DAIE}
 }
 }
 
-A diciembre de 2022, los cotizantes del Seguro General Obligatorio registraron un salario promedio igual a USD 801,26 (USD 22,75 más que en diciembre de 2019), lo representa un crecimiento, con respeto a diciembre de 2021, igual a 2,92\%. En el año 2008, se registró el mayor crecimiento del salario promedio (18,62\%); mientras que en el año 2020, se redujo en 0,11\% debido al impacto de la pandemia de la COVID – 19. En los últimos 10 años, el salario creció en promedio 2,45\%.
+A diciembre de 2022, los cotizantes del Seguro General Obligatorio registraron un salario promedio igual a USD \Sexpr{REP$macro_salarios_prom_2022} (USD \Sexpr{REP$macro_increm_2022 } más que en diciembre de 2019), lo representa un crecimiento, con respeto a diciembre de 2021, igual a \Sexpr{REP$macro_increm_tasa_incre_2022} \%. En el año 2008, se registró el mayor crecimiento del salario promedio (\Sexpr{REP$macro_increm_tasa_incre_2008}\%); mientras que en el año 2020, se redujo en \Sexpr{REP$macro_increm_tasa_incre_2020}\% debido al impacto de la pandemia de la COVID – 19. En los últimos 10 años, el salario creció en promedio \Sexpr{REP$macro_increm_promedio_10_anios}\%.
 
 % % % % --------------------------------------------------------------------------------------------
 \subsection{Evolución histórica de la tasa de crecimiento real del PIB del Ecuador}
@@ -262,7 +262,7 @@ La información referente al Producto Interno Bruto del Ecuador se obtuvo de la 
 
 
 {\setlength{\tabcolsep}{5pt}
-{\fontsize{10}{16}\selectfont
+{\fontsize{10}{12}\selectfont
 \begin{longtable}[H]{crrc}
   \caption{Evolución histórica del PIB del Ecuador}
 \label{tab:iess_pib_real} \\
@@ -310,9 +310,9 @@ Elaborado: DAIE}
   Elaborado: DAIE}
 \end{figure}
 
-Desde la recesión atribuida a la caída del precio del petróleo en diciembre de 2014, la cual afectó directamente en la inversión pública y austeridad por parte del Estado, se observó una contracción del PIB igual a 1,23\% en 2016 y bajas tasas de crecimiento. En promedio, la tasa de crecimiento del PIB en términos constantes es igual 1,67\% (período 2015 a 2022).
+Desde la recesión atribuida a la caída del precio del petróleo en diciembre de 2014, la cual afectó directamente en la inversión pública y austeridad por parte del Estado, se observó una contracción del PIB igual a \Sexpr{REP$macro_pib_real_crecimiento_2016}\% en 2016 y bajas tasas de crecimiento. En promedio, la tasa de crecimiento del PIB en términos constantes es igual \Sexpr{REP$macro_pib_real_prom_crec_7_anios}\% (período 2015 a 2022).
 
-Por último, la crisis económica provocada por la pandemia de la COVID - 19 condujo a la saturación del sistema de salud público y varios confinamientos, lo cual conllevó a la reducción del PIB en 7,75\% en 2020; y, en recuperación de la pandemia de la COVID – 19, se creció en 4,24\% en 2021 y 2,95\% en 2022.
+Por último, la crisis económica provocada por la pandemia COVID - 19 condujo a la saturación del sistema de salud público y varios confinamientos, lo cual conllevó a la reducción del PIB en \Sexpr{REP$macro_pib_real_crecimiento_2020}\% en 2020; y, en recuperación de la pandemia, se creció en \Sexpr{REP$macro_pib_real_crecimiento_2021}\% en 2021 y \Sexpr{REP$macro_pib_real_crecimiento_2022}\% en 2022.
 
 % % % ---------------------------------------------------------------------------------------------
 \subsection{Evolución histórica de la tasa de crecimiento de las pensiones}
@@ -325,7 +325,7 @@ A partir del año 2016, con la expedición de la \legalcite{Leyjlab}; la cual en
 
 
 {\setlength{\tabcolsep}{5pt}
-{\fontsize{11}{14}\selectfont
+{\fontsize{11}{13}\selectfont
 \begin{longtable}[H]{lrrrrrrrr}
   \caption{Crecimiento de las pensiones en el IESS}
 \label{tab:iess_incre_pensiones} \\
@@ -389,7 +389,7 @@ Elaborado: DAIE}
 Mediante el artículo 234 de la \legalcite{LeySS}, se establecen las pensiones mínimas en porcentajes del SBU entregadas mensualmente por el IESS, en función de los años aportados (ver tabla \ref{tab:iess_pension_min}). En cambio, el artículo 5 de la\legalcite{ResIESS_CD300} establece las pensiones máximas en porcentajes del SBU (ver tabla \ref{tab:iess_pension_max}).
 
 {\setlength{\tabcolsep}{5pt}
-{\fontsize{11}{14}\selectfont
+{\fontsize{11}{13}\selectfont
 \begin{longtable}[H]{lcrrrrrr}
   \caption{Evolución histórica de las pensiones mínimas}
 \label{tab:iess_pension_min} \\
@@ -474,7 +474,7 @@ Elaborado: DAIE}
 
 
 {\setlength{\tabcolsep}{5pt}
-{\fontsize{11}{14}\selectfont
+{\fontsize{11}{13}\selectfont
 \begin{longtable}[H]{lcrrrrrrr}
   \caption{Evolución histórica de las pensiones máximas}
 \label{tab:iess_pension_max} \\
@@ -558,12 +558,15 @@ Elaborado: DAIE}
 \end{longtable}
 }
 }
+
 %---------------------------------------------------------------------------------------------------
 \section{Proyección de las tasas utilizadas en el estudio}
 \label{chp_contexto:modelo_macro}
 %---------------------------------------------------------------------------------------------------
-\subsection{Descripción del modelo macroeconómico}
 
+%---------------------------------------------------------------------------------------------------
+\subsection{Descripción del modelo macroeconómico}
+%---------------------------------------------------------------------------------------------------
 El análisis multivariado de series de tiempo considera simultáneamente múltiples series de tiempo;
 pero que se ocupa específicamente de datos dependientes. En la vida real las decisiones a menudo
 involucran múltiples factores o variables interrelacionados, comprender las relaciones dinámicas
@@ -594,12 +597,11 @@ $\Sigma_a$ es no singular.
 En la anterior ecuación se asumió que las series son estacionarias; pero en el caso de no serlo, se
 pude realizar $d$ diferenciaciones para garantizar la estacionariedad, de la siguiente manera:
 
-	\[ \varphi(B) z_{t} = \phi(B) \left(1-B\right)^{d} z_{t}, \]
+\[ \varphi(B) z_{t} = \phi(B) \left(1-B\right)^{d} z_{t}, \]
 
 donde: $\varphi(B) = I_k - \varphi_{1} B - \cdots \varphi_{p} B^p $ y $\phi(B) = I_k - \phi_{1} B -
 \cdots \phi_{p} B^p $. Para denotar diferenciación, se utilizará el operador $\nabla$, el cual se
 define por $\nabla z_{t} = z_t - z_{t-1}$.
-
 
 Se realiza una diferenciación para garantizar la estacionariedad de las series. Además, las series
 cuentan con datos mensuales desde 2002 hasta la fecha de corte, debido a que, en la época del Sucre,
@@ -619,16 +621,14 @@ Después de un análisis de multicolinealidad y Causalidad de Granger, se ha ele
 variables ( el PIB en términos actuales, la tasa pasiva referencial, salario promedio anual, salario
 básico unificado y los índices de precio al consumidor). Para la imputación de datos perdidos y para
 transformar la serie trimestral del PIB a mensual se ha utilizado el Suavizamiento de Kalman con la
-función \texttt{na.kalman} del paquete de R \texttt{imputeTS}. Por último, se realizó un análisis de
+función \texttt{na.kalman} del paquete de R \textcite[imputeTS]{imputeTS}. Por último, se realizó un análisis de
 datos atípicos usando diagramas de cajas, y se remplazaron los valores atípicos con la función
 \texttt{na.kalman}. A continuación, se presenta la estimación de los coeficientes de la serie
 multivariante, con una diferenciación en la tabla \ref{tab:iess_modelo_macro_coef}.
 
-
-{\setlength{\tabcolsep}{9pt}
-{\fontsize{11}{15}\selectfont
+{\fontsize{10}{12}\selectfont
 \begin{longtable}[H]{crrrc}
-  \caption{Coeficientes del modelo macroeconómico}
+\caption{Coeficientes del modelo macroeconómico}
 \label{tab:iess_modelo_macro_coef} \\
 \toprule
 \multicolumn{1}{c}{Variable:} &
@@ -658,26 +658,26 @@ multivariante, con una diferenciación en la tabla \ref{tab:iess_modelo_macro_co
 \multicolumn{1}{c}{} &
 \multicolumn{1}{c}{}  \\
 \hline
-% \multicolumn{5}{c}{\textbf{Ecuación para $\nabla \text{Pib}$}} \\
-% \midrule
+
 \endhead
 
-\bottomrule \multicolumn{5}{c}{continúa...} \\
+\bottomrule 
+\multicolumn{5}{c}{continúa...}
 \endfoot
-%\hline
+
 \caption*{ \scriptsize Elaborado: DAIE}
 \endlastfoot
-  \input{tablas/iess_modelo_macro_coef.tex}
+\input{tablas/iess_modelo_macro_coef.tex}
 \end{longtable}
-}
 }
 
 %---------------------------------------------------------------------------------------------------
 \subsection{Pruebas estadísticas de validación de supuestos del modelo macroeconómico}
+%---------------------------------------------------------------------------------------------------
 
 %---------------------------------------------------------------------------------------------------
 \subsubsection{Prueba de multicolinealidad}
-
+%---------------------------------------------------------------------------------------------------
 La multicolinealidad (también colinealidad) es un fenómeno en el que una variable predictora en un
 modelo de regresión múltiple puede predecirse linealmente a partir de las demás con un grado
 sustancial de precisión. En esta situación, las estimaciones de los coeficientes de la regresión
@@ -689,95 +689,88 @@ indicar qué tan bien predice el paquete completo de predictores la variable de 
 posible que no proporcione resultados válidos sobre ningún predictor individual o sobre qué
 predictores son redundantes con respecto a otros.
 
-
 Utilizando la función pcor del paquete PPCOR del software estadístico R, se comprueba la existencia
 de una fuerte correlación entre los valores históricos de las variables explicativas del modelo
 utilizando la matriz de covarianzas de Pearson y los p valores para contrarrestar la existencia de
 una baja correlación, como hipótesis nula.
 
-{\setlength{\tabcolsep}{5pt}
 {\fontsize{10}{12}\selectfont
 \begin{longtable}[H]{lrrrrr}
-  \caption{Matriz de correlaciones entre variables}
+\caption{Matriz de correlaciones entre variables}
 \label{tab:iess_ma_correlaciones} \\
 \toprule
- \multicolumn{1}{c}{Variables:} &
- \multicolumn{1}{c}{$\nabla$ PIB} &
- \multicolumn{1}{c}{$\nabla$ Tasa pasiva} &
- \multicolumn{1}{c}{$\nabla$ Salario promedio} &
- \multicolumn{1}{c}{$\nabla$ SBU} &
- \multicolumn{1}{c}{$\nabla$ Inflación}\\
+\multicolumn{1}{c}{Variables:} &
+\multicolumn{1}{c}{$\nabla$ PIB} &
+\multicolumn{1}{c}{$\nabla$ Tasa pasiva} &
+\multicolumn{1}{c}{$\nabla$ Salario promedio} &
+\multicolumn{1}{c}{$\nabla$ SBU} &
+\multicolumn{1}{c}{$\nabla$ Inflación}\\
 \midrule
 \endfirsthead
 
 \toprule
- \multicolumn{1}{c}{Variables:} &
- \multicolumn{1}{c}{$\nabla$ PIB} &
- \multicolumn{1}{c}{$\nabla$ Tasa pasiva} &
- \multicolumn{1}{c}{$\nabla$ Salario promedio} &
- \multicolumn{1}{c}{$\nabla$ SBU} &
- \multicolumn{1}{c}{$\nabla$ Inflación}\\
-	\midrule
+\multicolumn{1}{c}{Variables:} &
+\multicolumn{1}{c}{$\nabla$ PIB} &
+\multicolumn{1}{c}{$\nabla$ Tasa pasiva} &
+\multicolumn{1}{c}{$\nabla$ Salario promedio} &
+\multicolumn{1}{c}{$\nabla$ SBU} &
+\multicolumn{1}{c}{$\nabla$ Inflación}\\
+\midrule
 \endhead
 
-\bottomrule \multicolumn{6}{c}{continúa...} \\
+\bottomrule 
+\multicolumn{6}{c}{continúa...}
 \endfoot
-%\hline
+
 \caption*{\scriptsize Elaborado: DAIE}
 \endlastfoot
-  \input{tablas/iess_ma_correlaciones.tex}
+\input{tablas/iess_ma_correlaciones.tex}
 \end{longtable}
 }
-}
 
-
-{\setlength{\tabcolsep}{5pt}
 {\fontsize{10}{12}\selectfont
 \begin{longtable}[H]{lrrrrr}
-  \caption{Matriz con los p-valores de la prueba de hipótesis de variables no correlacionadas}
+\caption{Matriz con los p-valores de la prueba de hipótesis de variables no correlacionadas}
 \label{tab:iess_ma_multi_p_valores} \\
 \toprule
- \multicolumn{1}{c}{Variables:} &
- \multicolumn{1}{c}{$\nabla$ PIB} &
- \multicolumn{1}{c}{$\nabla$ Tasa pasiva} &
- \multicolumn{1}{c}{$\nabla$ Salario promedio} &
- \multicolumn{1}{c}{$\nabla$ SBU} &
- \multicolumn{1}{c}{$\nabla$ IPC}\\
+\multicolumn{1}{c}{Variables:} &
+\multicolumn{1}{c}{$\nabla$ PIB} &
+\multicolumn{1}{c}{$\nabla$ Tasa pasiva} &
+\multicolumn{1}{c}{$\nabla$ Salario promedio} &
+\multicolumn{1}{c}{$\nabla$ SBU} &
+\multicolumn{1}{c}{$\nabla$ IPC}\\
 \midrule
 \endfirsthead
 
 \toprule
- \multicolumn{1}{c}{Variables:} &
- \multicolumn{1}{c}{$\nabla$ PIB} &
- \multicolumn{1}{c}{$\nabla$ Tasa pasiva} &
- \multicolumn{1}{c}{$\nabla$ Salario promedio} &
- \multicolumn{1}{c}{$\nabla$ SBU} &
- \multicolumn{1}{c}{$\nabla$ IPC}\\
-	\midrule
+\multicolumn{1}{c}{Variables:} &
+\multicolumn{1}{c}{$\nabla$ PIB} &
+\multicolumn{1}{c}{$\nabla$ Tasa pasiva} &
+\multicolumn{1}{c}{$\nabla$ Salario promedio} &
+\multicolumn{1}{c}{$\nabla$ SBU} &
+\multicolumn{1}{c}{$\nabla$ IPC}\\
+\midrule
 \endhead
 
-\bottomrule \multicolumn{6}{c}{continúa...} \\
+\bottomrule 
+\multicolumn{6}{c}{continúa...}
 \endfoot
-%\hline
+
 \caption*{\scriptsize Elaborado: DAIE}
 \endlastfoot
-  \input{tablas/iess_ma_multi_p_valores.tex}
+\input{tablas/iess_ma_multi_p_valores.tex}
 \end{longtable}
 }
-}
 
-
-De los resultados obtenidos se obtuvieron bajas correlaciones entre 0,07 y -0,07, con p-valores
-mayores a 0,1089. Por lo tanto, no se rechaza la hipótesis nula de variables no correlacionadas, con
-un nivel de significacia igual a $5\%$; y, se concluye que  no existe evidencias de
-multicolinealidad entre las variables del modelo propuesto.
+Se obtuvieron bajas correlaciones entre 0,07 y -0,07, con p-valores mayores a 0,1089. Por lo tanto,
+no se rechaza la hipótesis nula de variables no correlacionadas, con un nivel igual a $5\%$; y, se 
+concluye que  no existe evidencias de multicolinealidad entre las variables del modelo propuesto.
 
 %---------------------------------------------------------------------------------------------------
 \subsubsection{Pruebas de normalidad de los errores}
-
-El Test de Jarque-Bera se usa para contrastar la normalidad de un conjunto de datos. Se considera
-uno de los test más potentes para el contraste de normalidad. Las hipótesis estadísticas son las
-siguientes:
+%---------------------------------------------------------------------------------------------------
+El Test de Jarque-Bera se usa para contrastar la normalidad de un conjunto de datos. Las hipótesis 
+estadísticas son las siguientes:
 
 \begin{center}
 $H_0$ : $\mbox{La variable presenta una distribución normal.}$\\
@@ -790,44 +783,56 @@ excepto para los residuos del modelo $\nabla IPC$, el cual es significativo al 3
 hipótesis nula. En la tabla \ref{tab:iess_jb_test} se muestran el estadístico $JB$ y su nivel de
 significancia. 
 
-{\setlength{\tabcolsep}{5pt}
 {\fontsize{10}{12}\selectfont
 \begin{longtable}[H]{lrr}
-  \caption{Prueba de normalidad de Jarque-Bera}
+\caption{Prueba de normalidad de Jarque-Bera}
 \label{tab:iess_jb_test} \\
 \toprule
- \multicolumn{1}{c}{Variables:} &
- \multicolumn{1}{c}{Estadístico - $JB$} &
- \multicolumn{1}{c}{p-valor}\\
+\multicolumn{1}{c}{Variables:} &
+\multicolumn{1}{c}{Estadístico - $JB$} &
+\multicolumn{1}{c}{p-valor}\\
 \midrule
 \endfirsthead
 
 \toprule
- \multicolumn{1}{c}{Variables:} &
- \multicolumn{1}{c}{Estadístico - $JB$} &
- \multicolumn{1}{c}{p-valor}\\
-	\midrule
+\multicolumn{1}{c}{Variables:} &
+\multicolumn{1}{c}{Estadístico - $JB$} &
+\multicolumn{1}{c}{p-valor}\\
+\midrule
 \endhead
 
-\bottomrule \multicolumn{3}{c}{continúa...} \\
+\bottomrule 
+\multicolumn{3}{c}{continúa...}
 \endfoot
-%\hline
+
 \caption*{\scriptsize Elaborado: DAIE}
 \endlastfoot
-  \input{tablas/iess_jb_test.tex}
+\input{tablas/iess_jb_test.tex}
 \end{longtable}
-}
 }
 
 %---------------------------------------------------------------------------------------------------
 \subsubsection{Pruebas de independencia de errores}
-
+%---------------------------------------------------------------------------------------------------
 La prueba de Box - Ljung (a veces llamada Box-Pierce modificada, o simplemente prueba de caja) es
 una forma de probar la ausencia de autocorrelación serial, hasta un retraso $k$ especificado. La
 prueba determina si los errores son o no independientes idénticamente distribuidos (es decir, ruido
 blanco) o si hay algo más detrás de ellos; si las autocorrelaciones para los errores o residuos son
 distintas de cero o no (es decir, las correlaciones en la población de la que se toma la muestra son
 cero (0).
+
+\begin{landscape}
+\vspace*{\fill}
+\begin{figure}[H]
+\caption{Gráfica de los p - valores para las estadísticas $Q_k(m)$ para las 5 dimensiones del
+modelo, la línea discontinua indica un error de tipo I del 5\%}
+\label{fig:iess_box_ljung}
+\centering
+\includegraphics[scale=0.95]{graficos/iess_box_ljung_grupo.png}
+\caption*{\scriptsize \centering Elaborado: DAIE}
+\end{figure}
+\vspace*{\fill}
+\end{landscape}
 
 Por lo que cualquier correlación observada en los datos resulta de la aleatoriedad del proceso de
 muestreo).  Esencialmente, es una prueba de falta de ajuste: si las autocorrelaciones de los
@@ -840,23 +845,19 @@ $H_0$: Los residuos del modelo se distribuyen de forma independiente.\\
 $H_1$: Los datos no se distribuyen de forma independiente; exhiben correlación serial.
 \end{center}
 
-Un valor p significativo en esta prueba rechaza la hipótesis nula de que la serie temporal no está autocorrelacionada. Al utilizar el software estadístico R, se estiman los p – valores de los estadísticos para las 5 dimensiones del modelo propuesto. Se concluye que para los residuos del modelo para $\nabla$ PIB no se rechaza la hipótesis nula para todo retardo mayor a 10. Para los residuos del modelo para $\nabla$ Salarios Promedio, no se rechaza la hipótesis nula para todo retardo menor a 10, excepto para 2 y 8; los residuos para el modelo $\nabla$ SBU no se rechaza la hipótesis nula para cualquier retardo menor a 20. En los residuos del modelo para $\nabla$ Tasa pasiva, no se rechaza la hipótesis nula para todo rechazo mayor a 5; y finalmente para los residuos del modelo para $\nabla$ IPC, no se rechaza la hipótesis nula para todo retardo menor o igual a 11.
-
-\begin{landscape}
-\begin{figure}[H]
-\begin{center}
-\caption{Gráfica de los p - valores para las estadísticas $Q_k(m)$ para las 5 dimensiones del
-modelo, la línea discontinua indica un error de tipo I del 5\%}
-\label{fig:iess_box_ljung}
-\includegraphics[scale=1]{graficos/iess_box_ljung_grupo.png}
-\caption*{\scriptsize \centering {\bf Elaborado:} DAIE}
-\end{center}
-\end{figure}
-\end{landscape}
+Un valor p significativo en esta prueba rechaza la hipótesis nula de que la serie temporal no está
+autocorrelacionada. Al utilizar el software estadístico R, se estiman los p – valores de los
+estadísticos para las 5 dimensiones del modelo propuesto. Se concluye que para los residuos del
+modelo para $\nabla$ PIB no se rechaza la hipótesis nula para todo retardo mayor a 10. Para los
+residuos del modelo para $\nabla$ Salarios Promedio, no se rechaza la hipótesis nula para todo
+retardo menor a 10, excepto para 2 y 8; los residuos para el modelo $\nabla$ SBU no se rechaza la
+hipótesis nula para cualquier retardo menor a 20. En los residuos del modelo para $\nabla$ Tasa
+pasiva, no se rechaza la hipótesis nula para todo rechazo mayor a 5; y finalmente para los residuos
+del modelo para $\nabla$ IPC, no se rechaza la hipótesis nula para todo retardo menor o igual a 11.
 
 %---------------------------------------------------------------------------------------------------
 \subsubsection{Pruebas de homocedasticidad}
-
+%---------------------------------------------------------------------------------------------------
 Una de las principales suposiciones del modelo de series de tiempo VARMA es la heterocedasticidad de
 los errores; es decir, los errores deben seguir una distribución con una varianza constante a través
 del tiempo. Para desarrollar esta prueba, se utiliza la función MarchTest del paquete MTS del
@@ -871,33 +872,32 @@ es el estadístico Ljung-Box multivariante aplicado a la serie recortada al 5\% 
 transformada $r_t$. La hipótesis nula es idéntica para todas estas pruebas, la varianza de los
 residuos del modelo es constante.
 
-{\setlength{\tabcolsep}{5pt}
-{\fontsize{11}{12}\selectfont
+{\fontsize{10}{12}\selectfont
 \begin{longtable}[H]{lrc}
-  \caption{Pruebas de homocedasticidad}
+\caption{Pruebas de homocedasticidad}
 \label{tab:iess_homocedasticidad} \\
 \toprule
- \multicolumn{1}{c}{Prueba:} &
- \multicolumn{1}{c}{Estadístico} &
-  \multicolumn{1}{c}{p-valor} \\
+\multicolumn{1}{c}{Prueba:} &
+\multicolumn{1}{c}{Estadístico} &
+\multicolumn{1}{c}{p-valor} \\
 \midrule
 \endfirsthead
 
 \toprule
- \multicolumn{1}{c}{Prueba:} &
- \multicolumn{1}{c}{Estadístico} &
-  \multicolumn{1}{c}{p-valor} \\
-	\midrule
+\multicolumn{1}{c}{Prueba:} &
+\multicolumn{1}{c}{Estadístico} &
+\multicolumn{1}{c}{p-valor} \\
+\midrule
 \endhead
 
-\bottomrule \multicolumn{3}{c}{continúa...} \\
+\bottomrule 
+\multicolumn{3}{c}{continúa...}
 \endfoot
-%\hline
+
 \caption*{\scriptsize Elaborado: DAIE}
 \endlastfoot
-  \input{tablas/iess_homocedasticidad.tex}
+\input{tablas/iess_homocedasticidad.tex}
 \end{longtable}
-}
 }
 
 Realizadas las cuatro pruebas de homocedasticidad, se tienen p valores mayores al nivel de
@@ -905,138 +905,114 @@ significancia igual a 5\%. Por lo tanto, no se rechaza la hipótesis nula.
 
 %---------------------------------------------------------------------------------------------------
 \subsection{Resultados del modelo macroeconómico}
-
+%---------------------------------------------------------------------------------------------------
 La tabla \ref{tab:iess_tasas_macro_pred} presenta los resultados del modelo multivariante de series
 temporales utilizado para obtener una proyección de las variables económicas utilizadas en el
 presente estudio.
 
- 
-{\setlength{\tabcolsep}{7pt}
-{\fontsize{11}{16}\selectfont
+{\fontsize{8}{10}\selectfont
 \begin{longtable}[H]{crccrrc}
-  \caption{Proyecciones de las variables macroeconómicas}
+\caption{Proyecciones de las variables macroeconómicas}
 \label{tab:iess_tasas_macro_pred} \\
 \toprule
- &
- \multicolumn{1}{c}{PIB a precios} &
- \multicolumn{1}{c}{Tasa} &
- \multicolumn{1}{c}{Tasa} &
- \multicolumn{1}{c}{} & 
-  \multicolumn{1}{c}{IPC} & 
- \multicolumn{1}{c}{Inflación} \\
- 
+&
+\multicolumn{1}{c}{PIB a precios} &
+\multicolumn{1}{c}{Tasa} &
+\multicolumn{1}{c}{Tasa} &
+\multicolumn{1}{c}{} & 
+\multicolumn{1}{c}{IPC} & 
+\multicolumn{1}{c}{Inflación} \\
+
 \multicolumn{1}{c}{Año:}&
- \multicolumn{1}{c}{actuales} &
- \multicolumn{1}{c}{Pasiva} &
- \multicolumn{1}{c}{Crecimiento} &
- \multicolumn{1}{c}{SBU} & 
-  \multicolumn{1}{c}{ a } & 
- \multicolumn{1}{c}{Promedio} \\
-   &
- \multicolumn{1}{c}{(millones USD)} &
- \multicolumn{1}{c}{(\%)} &
- \multicolumn{1}{c}{Salarial (\%)} &
- \multicolumn{1}{c}{(USD)} & 
-  \multicolumn{1}{c}{diciembre} & 
- \multicolumn{1}{c}{Acumulada (\%)}\\
+\multicolumn{1}{c}{actuales} &
+\multicolumn{1}{c}{Pasiva} &
+\multicolumn{1}{c}{Crecimiento} &
+\multicolumn{1}{c}{SBU} & 
+\multicolumn{1}{c}{ a } & 
+\multicolumn{1}{c}{Promedio} \\
+&
+\multicolumn{1}{c}{(millones USD)} &
+\multicolumn{1}{c}{(\%)} &
+\multicolumn{1}{c}{Salarial (\%)} &
+\multicolumn{1}{c}{(USD)} & 
+\multicolumn{1}{c}{diciembre} & 
+\multicolumn{1}{c}{Acumulada (\%)}\\
 \midrule
 \endfirsthead
 
 \toprule
- &
- \multicolumn{1}{c}{PIB a precios} &
- \multicolumn{1}{c}{Tasa} &
- \multicolumn{1}{c}{Tasa} &
- \multicolumn{1}{c}{} & 
-  \multicolumn{1}{c}{IPC} & 
- \multicolumn{1}{c}{Inflación} \\
- 
+&
+\multicolumn{1}{c}{PIB a precios} &
+\multicolumn{1}{c}{Tasa} &
+\multicolumn{1}{c}{Tasa} &
+\multicolumn{1}{c}{} & 
+\multicolumn{1}{c}{IPC} & 
+\multicolumn{1}{c}{Inflación} \\
+
 \multicolumn{1}{c}{Año:}&
- \multicolumn{1}{c}{actuales} &
- \multicolumn{1}{c}{Pasiva} &
- \multicolumn{1}{c}{Crecimiento} &
- \multicolumn{1}{c}{SBU} & 
-  \multicolumn{1}{c}{ a } & 
- \multicolumn{1}{c}{Promedio} \\
-   &
- \multicolumn{1}{c}{(millones USD)} &
- \multicolumn{1}{c}{(\%)} &
- \multicolumn{1}{c}{Salarial (\%)} &
- \multicolumn{1}{c}{(USD)} & 
-  \multicolumn{1}{c}{diciembre} & 
- \multicolumn{1}{c}{Acumulada (\%)}\\
-	\midrule
+\multicolumn{1}{c}{actuales} &
+\multicolumn{1}{c}{Pasiva} &
+\multicolumn{1}{c}{Crecimiento} &
+\multicolumn{1}{c}{SBU} & 
+\multicolumn{1}{c}{ a } & 
+\multicolumn{1}{c}{Promedio} \\
+&
+\multicolumn{1}{c}{(millones USD)} &
+\multicolumn{1}{c}{(\%)} &
+\multicolumn{1}{c}{Salarial (\%)} &
+\multicolumn{1}{c}{(USD)} & 
+\multicolumn{1}{c}{diciembre} & 
+\multicolumn{1}{c}{Acumulada (\%)}\\
+\midrule
 \endhead
 
-\bottomrule \multicolumn{7}{c}{continúa...} \\
+\bottomrule 
+\multicolumn{7}{c}{continúa...}
 \endfoot
-%\hline
+
 \caption*{\scriptsize Elaborado: DAIE}
 \endlastfoot
-  \input{tablas/iess_tasas_macro_pred.tex}
+\input{tablas/iess_tasas_macro_pred.tex}
 \end{longtable}
 }
-}
 
-Las figuras \ref{fig:plt_var_macro_a},  \ref{fig:plt_var_macro_b} y \ref{fig:plt_var_macro_c} describen las proyecciones realizadas utilizando el modelo antes mencionado.
+Las figuras \ref{fig:plt_var_macro_a},  \ref{fig:plt_var_macro_b} y \ref{fig:plt_var_macro_c} 
+describen las proyecciones realizadas utilizando el modelo antes mencionado.
+\pagebreak
 
 \begin{landscape}
-
+\vspace*{\fill}
 \begin{figure}[H]
-\captionsetup{justification=centering}
-\begin{center}
 \caption{Predicciones del PIB nominal (en millones de dólares) y salario anual promedio}
 \label{fig:plt_var_macro_a}
-\includegraphics[scale=0.95]{graficos/plt_var_macro_a.png}
-\caption*{\scriptsize  {\bf Elaborado:} DAIE}
-\end{center}
+\centering
+\includegraphics[scale=0.9]{graficos/plt_var_macro_a.png}
+\caption*{\scriptsize  Elaborado: DAIE}
 \end{figure}
 
+\vspace*{\fill}
 \begin{figure}[H]
-\captionsetup{justification=centering}
-\begin{center}
 \caption{Predicciones del salario básico unificado (en dólares) y tasa pasiva referencial}
 \label{fig:plt_var_macro_b}
-\includegraphics[scale=0.95]{graficos/plt_var_macro_b.png}
-\caption*{\scriptsize {\bf Elaborado:} DAIE}
-\end{center}
+\centering
+\includegraphics[scale=0.9]{graficos/plt_var_macro_b.png}
+\caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
+\vspace*{\fill}
 \begin{figure}[H]
-\captionsetup{justification=centering}
-\begin{center}
 \caption{Predicciones del IPC e inflación acumulada promedio}
 \label{fig:plt_var_macro_c}
-\includegraphics[scale=0.95]{graficos/plt_var_macro_c.png}
-\caption*{\scriptsize {\bf Elaborado:} DAIE}
-\end{center}
+\centering
+\includegraphics[scale=0.9]{graficos/plt_var_macro_c.png}
+\caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
+\vspace*{\fill}
 \end{landscape}
-
-% En la siguiente tabla se resumen las tasas de crecimiento del PIB, salario promedio, SBU, y la
-% tasa pasiva e inflación acumulada anual promedio, durante el período 2021 a 2060.
-% 
-%  \begin{table}[H]
-%  \centering
-%  \captionsetup{justification=centering}
-%  \caption{Tasas utilizadas en el estudio período 2021 a 2060}
-%  \label{tab:iess_hip_macro}
-%  {\fontsize{10}{12}\selectfont
-%  \begin{tabular}{lr}
-%  \toprule
-%  Ítem & Tasa (\%)\\
-%  \midrule
-%  \input{tablas/iess_hip_macro}
-%  %\bottomrule
-%  \end{tabular}
-%  }
-% \caption*{{\bf Elaborado:} DAIE}
-%  \end{table}
-
-\newpage
 
 %---------------------------------------------------------------------------------------------------
 \section{Estudio de la situación actual y prevista del mercado de inversiones}
+%---------------------------------------------------------------------------------------------------
 En primer lugar, se analizará el comportamiento de las tasas activa, pasiva y spread, las cuales son
 determinadas por la Junta de Política y Regulación Monetaria y Financiera.
 
@@ -1048,6 +1024,7 @@ fondos).
 
 %---------------------------------------------------------------------------------------------------
 \subsection{Comportamiento de las tasas de interés}
+%---------------------------------------------------------------------------------------------------
 Los numerales 1, 2 y 23 del artículo 14 del Código Orgánico Monetario y Financiero, respectivamente
 y en su orden, establecen como funciones de la Junta de Política y  Regulación Monetaria y
 Financiera formular y dirigir las políticas monetarias, crediticia, cambiaria y financiera, y
@@ -1064,63 +1041,63 @@ tasas de interés aprobadas por la Junta.
 
 Los datos expuestos en la figura \ref{fig:iess_tasas_interes} y tabla \ref{tab:iess_tasas_interes}
 fueron extraídos de la página oficial del
-BCE\footnote{\url{https://contenido.bce.fin.ec/documentos/Administracion/bi_menuTasas.html}}  y
+BCE\footnote{\small{\url{https://contenido.bce.fin.ec/documentos/Administracion/bi_menuTasas.html}}}  y
 representan las tasas correspondientes al mes de diciembre de cada año. Además, la tasa Spread se la
 obtuvo de la diferencia entre la tasa activa y la tasa pasiva. 
 
 {\fontsize{10}{12}\selectfont
 \begin{longtable}[H]{crrr}
-\caption{Evolución histórica de las tasas de interés referenciales}\\
-\label{tab:iess_tasas_interes}\\
+\caption{Evolución histórica de las tasas de interés referenciales}
+\label{tab:iess_tasas_interes} \\
 \toprule
-\multicolumn{1}{c}{Fecha} & \multicolumn{1}{c}{Tasa activa (\%)} & \multicolumn{1}{c}{Tasa pasiva
-(\%)} & \multicolumn{1}{c}{Tasa spread  (\%)}\\
+\multicolumn{1}{c}{Fecha} 
+& \multicolumn{1}{c}{Tasa activa (\%)} 
+& \multicolumn{1}{c}{Tasa pasiva (\%)} 
+& \multicolumn{1}{c}{Tasa spread (\%)}\\
 \midrule
 \endfirsthead
 
 \toprule
-\multicolumn{1}{c}{Fecha} & \multicolumn{1}{c}{Tasa activa (\%)} & \multicolumn{1}{c}{Tasa pasiva
-(\%)} & \multicolumn{1}{c}{Tasa spread  (\%)}\\
+\multicolumn{1}{c}{Fecha} 
+& \multicolumn{1}{c}{Tasa activa (\%)} 
+& \multicolumn{1}{c}{Tasa pasiva (\%)} 
+& \multicolumn{1}{c}{Tasa spread (\%)}\\
 \midrule
 \endhead
 
-\bottomrule \multicolumn{3}{r}{continúa en la siguiente página...} \\
+\bottomrule 
+\multicolumn{4}{r}{continúa...} 
 \endfoot
-%\bottomrule
-\caption*{\scriptsize Fuente: Banco Central del Ecuador \\
-  Elaborado: DAIE}
+
+\bottomrule 
+\caption*{\scriptsize Fuente: Banco Central del Ecuador \\ Elaborado: DAIE}
 \endlastfoot
-  \input{tablas/iess_tasas_interes.tex}
+
+\input{tablas/iess_tasas_interes.tex}
 
 \end{longtable}
 }
 
 \begin{figure}[H]
-\centering
 \caption{Evolución de las tasas referenciales activa y pasiva}
 \label{fig:iess_tasas_interes}
-\includegraphics[scale=1.1]{graficos/iess_tasas_interes.png}
-\caption*{\scriptsize Fuente: Banco Central del Ecuador \\
-  Elaborado: DAIE}
+\centering
+\includegraphics[scale=1.0]{graficos/iess_tasas_interes.png}
+\caption*{\scriptsize Fuente: Banco Central del Ecuador \\ Elaborado: DAIE}
 \end{figure}
 
 La tasa activa sufrió un descenso a principios de la década pasada, decreció del 2000 hasta el 2004,
-en 6,5\%, y desde el año 2005 hasta el año 2016 decreció en 0,3\% del 9\% al 8,7\%, respectivamente.
-Más recientemente, la tasa activa alcanzó 9,12\% en julio de 2020. La menor tasa activa registrada
-fue en mayo de 2018 (6,67\%) y la máxima registrada fue en agosto de 2000 (16,74\%).
+en \Sexpr{REP$macro_tasas_interes_tasa_act_2000_2004}\%, y desde el año 2005 hasta el año 2016 decreció en  \Sexpr{REP$macro_tasas_interes_tasa_act_2005_2016}\% del \Sexpr{REP$macro_tasas_interes_tasa_act_2005}\% al \Sexpr{REP$macro_tasas_interes_tasa_act_2016}\%, respectivamente.
+Más recientemente, la tasa activa alcanzó \Sexpr{REP$macro_tasas_interes_tasa_act_2020_7}\% en julio de 2020. La menor tasa activa registrada
+fue en mayo de 2018 (\Sexpr{REP$macro_tasas_interes_tasa_act_2018_5 }\%) y la máxima registrada fue en agosto de 2000 (\Sexpr{REP$macro_tasas_interes_tasa_act_2000_8 }\%).
 
-De igual manera, la tasa pasiva decreció entre el año 2000 y 2004 del 7,7\% al 4,1\%,
-respectivamente, pero solo registró un crecimiento del 1,7\% desde el año 2004 al 2016, aunque, se
-registró su máximo en 2008 (5,5\%). Desde octubre de 2017, la tasa pasiva referencial creció de
-4,8\% a 7,24\% en abril de 2020. La menor tasa pasiva registrada fue en enero de 2005 (3,48\%) y la
-máxima registrada fue en abril de 2000 (8,79 \%).
-
-La máxima diferencia entre tasa activa y pasiva fue en febrero de 2002, con 11,05\%. Y, en promedio,
-la tasa spread es 3,11\% durante el período 2011 a 2020.
-
+De igual manera, la tasa pasiva decreció entre el año 2000 y 2004 del \Sexpr{REP$macro_tasas_interes_tasa_pas_2000}\% al \Sexpr{REP$macro_tasas_interes_tasa_pas_2004}\%,
+respectivamente, pero solo registró un crecimiento del \Sexpr{REP$macro_tasas_interes_tasa_pas_2004_2016 }\% desde el año 2004 al 2016. Además, se
+registró su máximo en abril de 2000 (\Sexpr{REP$macro_tasas_interes_tasa_pas_max}\%) y la menor tasa pasiva registrada fue en enero de 2005 (\Sexpr{REP$macro_tasas_interes_tasa_pas_max }\%). Por otro lado, durante el período 2015 a 2022 el promedio de la tasa spread en el mes de diciembre es de \Sexpr{REP$macro_tasas_interes_spread}\%.
 
 %--------------------------------------------------------------------------------------------------
 \subsection{Rentabilidad sobre activos y sobre capital invertido en el ámbito nacional}
+%---------------------------------------------------------------------------------------------------
 En el análisis del comportamiento de las tasas de rendimiento de las inversiones en el ámbito
 nacional, se toman en cuenta: bancos privados, mutualistas, sociedades financieras e instituciones
 públicas (CFN, BanEcuador y Banco del Estado). Para el análisis de estas instituciones, se utiliza
@@ -1135,9 +1112,16 @@ obtenidos por una entidad en un período económico en relación con sus recurso
 ratio representan una mejor condición de la empresa; en cambio, el ROE mide la rentabilidad del
 patrimonio, mayores valores de esta ratio representan una mejor condición.
 
-{\fontsize{11}{14}\selectfont
+Los índices ROA y ROE, para bancos privados, mutualistas, sociedades financieras e instituciones
+públicas, se obtuvieron de la
+página\footnote{\small{\url{https://www.superbancos.gob.ec/estadisticas/portalestudios/boletines-financieros-mensuales/}}}
+de la Superintendencia de Bancos (SB). Los índices fueron publicados en los boletines mensuales que
+la SB publica en su página, especialmente, se utilizan los estados de pérdidas y ganancias a
+diciembre para obtener los rendimientos del período, y las cuentas de los activos y patrimonios.
+
+{\fontsize{10}{12}\selectfont
 \begin{longtable}[H]{crrrrr}
-\caption{Evolución histórica del indicador ROA}\\
+\caption{Evolución histórica del indicador ROA}
 \label{tab:iess_roa}\\
 \toprule
 \multicolumn{1}{c}{\multirow{2}[2]{*}{Año:}}  &
@@ -1171,27 +1155,21 @@ patrimonio, mayores valores de esta ratio representan una mejor condición.
 \midrule
 \endhead
 
-\bottomrule \multicolumn{6}{r}{continúa en la siguiente página...} \\
+\bottomrule 
+\multicolumn{6}{r}{continúa...}
 \endfoot
-%\bottomrule
-\caption*{\scriptsize Fuente: Superintendencia de Bancos del Ecuador \\
-  Elaborado: DAIE}
+
+\caption*{\scriptsize Fuente: Superintendencia de Bancos del Ecuador \\ Elaborado: DAIE}
 \endlastfoot
-  \input{tablas/iess_roa.tex}
+
+\input{tablas/iess_roa.tex}
 
 \end{longtable}
 }
 
-Los índices ROA y ROE, para bancos privados, mutualistas, sociedades financieras e instituciones
-públicas, se obtuvieron de la
-página\footnote{\url{https://www.superbancos.gob.ec/estadisticas/portalestudios/boletines-financieros-mensuales/}}
-de la Superintendencia de Bancos (SB). Los índices fueron publicados en los boletines mensuales que
-la SB publica en su página, especialmente, se utilizan los estados de pérdidas y ganancias a
-diciembre para obtener los rendimientos del período, y las cuentas de los activos y patrimonios.
-
-{\fontsize{11}{14}\selectfont
+{\fontsize{10}{12}\selectfont
 \begin{longtable}[H]{crrrrr}
-\caption{Evolución histórica del indicador ROE}\\
+\caption{Evolución histórica del indicador ROE}
 \label{tab:iess_roe}\\
 \toprule
 \multicolumn{1}{c}{\multirow{2}[2]{*}{Año:}}  &
@@ -1225,33 +1203,33 @@ diciembre para obtener los rendimientos del período, y las cuentas de los activ
 \midrule
 \endhead
 
-\bottomrule \multicolumn{6}{r}{continúa en la siguiente página...} \\
+\bottomrule
+\multicolumn{6}{r}{continúa...}
 \endfoot
-%\bottomrule
-\caption*{\scriptsize Fuente: Superintendencia de Bancos del Ecuador \\
-  Elaborado: DAIE}
+
+\caption*{\scriptsize Fuente: Superintendencia de Bancos del Ecuador \\ 
+Elaborado: DAIE}
 \endlastfoot
-  \input{tablas/iess_roe.tex}
+
+\input{tablas/iess_roe.tex}
 
 \end{longtable}
 }
 
-Utilizando el indicador ROA, calculado por la SB, el Banco del Estado registró el mejor ROA por
-ejercicio del año 2020 (1,58\%). En segundo lugar, se encuentra los bancos privados con un índice
-ROA igual a 0,48\% para el 2020 En cambio, la CFN registró un ROA igual a -3,54\% en el 2020 en el
-2020.
+Utilizando el indicador ROA, calculado por la SB, el Banco del Estado registró el mejor ROA por el año 2020 (\Sexpr{REP$macro_roa_ban_est_2020}\%). En segundo lugar, se encuentra los bancos privados con un índice
+ROA igual a \Sexpr{REP$macro_roa_ban_priv_2020}\% para el 2020. En cambio, la CFN registró un ROA igual a \Sexpr{REP$macro_roa_cfn_2020}\% en el 2020.
 
-Por otro lado, al utilizar el índice financiero ROE, el Banco del Estado alcanzó 5,76\% en el 2020,
-seguido de los Bancos Privados, con 4,80\%; en cambio, BanEcuador obtuvo el peor resultado durante
-el 2020, con un ROE igual a -12,41\%. En promedio, las Instituciones Públicas tienen un índice
-financiero ROE igual a -5,33\% durante el 2020, debido al impacto de la Pandemia.
+Por otro lado, al utilizar el índice financiero ROE, el Banco del Estado alcanzó \Sexpr{REP$macro_roe_ban_est_2020}\% en el 2020,
+seguido de los Bancos Privados, con \Sexpr{REP$macro_roe_ban_priv_2020}\%; en cambio, BanEcuador obtuvo el peor resultado durante
+el 2020, con un ROE igual a \Sexpr{REP$macro_roe_banecu_2020}\%. En promedio, las Instituciones Públicas tienen un índice
+financiero ROE igual a \Sexpr{REP$macro_roe_int_pub_2020}\% durante el 2020, debido al impacto de la Pandemia.
 
 En la siguiente sección, se presenta un análisis de los rendimientos financieros del BIESS durante
 enero de 2012 a diciembre de 2020.
 
-
 %---------------------------------------------------------------------------------------------------
 \subsection{Comportamiento de las tasas de rendimiento del portafolio de inversiones del BIESS}
+%---------------------------------------------------------------------------------------------------
 El BIESS se crea mediante la Ley del Banco del Instituto Ecuatoriano de Seguridad Social, publicada
 en el Suplemento del Registro Oficial No. 587 del 11 de mayo de 2009, como una institución
 financiera pública con autonomía técnica, administrativa y financiera, con finalidad social y de
@@ -1276,7 +1254,6 @@ acuerdo con el CUC vigente en esos años.
 al BIESS en febrero del 2013, lo que originó que para el año 2012 en la contabilidad de los fondos
 se registren ingresos sin mantener la administración de dicha cartera, originando que el fondo
 administrado sea menor y genere resultados superiores con respecto a los años subsiguientes.
-
 
 \item De igual manera, el IESS mantenía en su administración títulos valores correspondientes a
 Bonos del Estado del 40\% de aporte del Estado, estos fueron transferidos al BIESS en los años 2015
@@ -1314,10 +1291,13 @@ la tabla \ref{tab:iess_rendimiento_biess}, se presenta la tasa de rendimiento ne
 global del BIESS, la cual es el cociente entre los ingresos por inversiones, menos los gastos
 operativos y administrativos, sobre el fondo administrado promedio de los últimos doce (12) meses.
 
-{\setlength{\tabcolsep}{5pt}
-{\fontsize{8.5}{14}\selectfont
+\newpage 
+
+\vspace*{\fill}
+
+{\fontsize{8}{10}\selectfont
 \begin{longtable}[H]{crrrrrrc}
-\caption{Evolución del rendimiento neto del portafolio global de inversiones del BIESS}\\
+\caption{Evolución del rendimiento neto del portafolio global de inversiones del BIESS}
 \label{tab:iess_rendimiento_biess}\\
 \toprule
 \multicolumn{1}{c}{\multirow{2}[2]{*}{Fecha:}}  &
@@ -1375,26 +1355,26 @@ operativos y administrativos, sobre el fondo administrado promedio de los últim
 \midrule
 \endhead
 
-\bottomrule \multicolumn{8}{r}{continúa en la siguiente página...} \\
+\bottomrule 
+\multicolumn{8}{r}{continúa...}
 \endfoot
-%\bottomrule
 \caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS y Dirección de Tesorería - BIESS \\
-  Elaborado: DAIE}
+Elaborado: DAIE}
 \endlastfoot
-  \input{tablas/iess_rendimiento_biess.tex}
+\input{tablas/iess_rendimiento_biess.tex}
 
 \end{longtable}
-}
 }
 
 \vspace*{\fill}
 
 \begin{figure}[H]
-\centering
 \caption{Evolución del rendimiento neto del portafolio global de inversiones del BIESS}
 \label{fig:iess_portaf_hist}
- \includegraphics[scale=1.1]{graficos/biess_rendimiento.png}
- \caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS y Dirección de Tesorería - BIESS \\
+\centering
+\includegraphics[scale=1.0]{graficos/biess_rendimiento.png}
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS y Dirección de 
+Tesorería - BIESS \\ 
 Elaborado: DAIE}
 \end{figure}
 
@@ -1403,7 +1383,7 @@ Elaborado: DAIE}
 
 %---------------------------------------------------------------------------------------------------
 \subsubsection{Proyección de la tasa de rendimiento del portafolio de inversiones del BIESS}
-
+%---------------------------------------------------------------------------------------------------
 Para determinar los retornos futuros por ingresos financieros de las inversiones, se modela la serie
 de tiempo del rendimiento netos mensuales de las inversiones del portafolio global de inversiones
 del BIESS, desde el mes de enero de 2012, hasta la fecha de corte. Con este fin, se emplea la
@@ -1414,10 +1394,9 @@ realiza la prueba de Dickey-Fuller Aumentada, con resultado obteniendo el estad�
 -10,46, y un p-valor menor a 0,01. Después, se ajusta la serie con el modelo $ARMA(2,0)$, presentado
 en la tabla \ref{tab:iess_modelo_biess_coef}.
 
-{\setlength{\tabcolsep}{9pt}
-{\fontsize{11}{15}\selectfont
+{\fontsize{10}{12}\selectfont
 \begin{longtable}[H]{crrrc}
-  \caption{Coeficientes del modelo de series temporales de la tasa de rendimiento neto del BIESS}
+\caption{Coeficientes del modelo de series temporales de la tasa de rendimiento neto del BIESS}
 \label{tab:iess_modelo_biess_coef} \\
 \toprule
 \multicolumn{1}{c}{Variable:} &
@@ -1447,24 +1426,23 @@ en la tabla \ref{tab:iess_modelo_biess_coef}.
 \midrule
 \endhead
 
-\bottomrule \multicolumn{5}{c}{continúa...} \\
+\bottomrule
+\multicolumn{5}{c}{continúa...}
 \endfoot
-%\hline
+
 \caption*{ \scriptsize Elaborado: DAIE}
 \endlastfoot
-  \input{tablas/iess_modelo_biess_coef.tex}
+\input{tablas/iess_modelo_biess_coef.tex}
 \end{longtable}
 }
-}
-
 
 \begin{figure}[H]
-\centering
 \caption{Gráfica de los p - valores para las estadísticas $Q_k(m)$ para los residuos del modelo para
 la tasa de rendimiento del BIESS, la línea discontinua indica un error de tipo I del 5\%}
 \label{fig:biess_box_ljung}
- \includegraphics[scale=1]{graficos/biess_box_ljung.png}
- \caption*{\scriptsize Elaborado: DAIE}
+\centering
+\includegraphics[scale=1.0]{graficos/biess_box_ljung.png}
+\caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
 Una vez estimado el modelo de series de tiempo, se procede a realizar las pruebas de diagnóstico de
@@ -1478,12 +1456,12 @@ presentan en la figura \ref{fig:biess_box_ljung}. Se concluye que para todo reta
 se rechaza la hipótesis nula (independencia de los errores) a un nivel de significancia igual a 5\%.
 
 \begin{figure}[H]
-\centering
 \caption{Prueba de Box-Ljung de los residuos al cuadrado del modelo para la tasa de rendimiento del
 BIESS}
 \label{fig:biess_portmanteau}
- \includegraphics[scale=1]{graficos/biess_portmanteau.png}
- \caption*{\scriptsize Elaborado: DAIE}
+\centering
+\includegraphics[scale=1.0]{graficos/biess_portmanteau.png}
+\caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
 
 Por último, se realiza la prueba de independencia de los errores cuadráticos de homocedasticidad de
@@ -1500,94 +1478,9 @@ siendo conservador se puede esperar retornos de las inversiones iguales a 6,25\%
 horizonte de predicciones de la valuación actuarial.
 
 \begin{figure}[H]
-\centering
 \caption{Predicciones de la tasa de rendimiento neto del portafolio global de inversiones del BIESS}
 \label{fig:biess_rendimiento_pred}
- \includegraphics[scale=1]{graficos/biess_rendimiento_pred.png}
- \caption*{\scriptsize Elaborado: DAIE}
+\centering
+\includegraphics[scale=1.0]{graficos/biess_rendimiento_pred.png}
+\caption*{\scriptsize Elaborado: DAIE}
 \end{figure}
-
-
-
-%---------------------------------------------------------------------------------------------------
-% \section{Análisis de tendencias demográficas actuales y proyectadas}
-% 
-% Las pirámides poblacionales del Ecuador para los años 2022, 2042 y 2062 de las proyecciones realizadas por el CELADE\footnote{Centro Latinoamericano y Caribeño de Demografía}. El CELADE es la división de población de la CEPAL\footnote{Comisión Económica para América Latina y el Caribe} y las estimaciones y proyecciones de la población que se presentan  en las figuras \ref{fig:iess_pir_poblacion2022}; \ref{fig:iess_pir_poblacion2042} y \ref{fig:iess_pir_poblacion2062} fueron tomadas de su página web \footnote{\url{https://www.cepal.org/es/temas/proyecciones-demograficas/estimaciones-proyecciones-poblacion-total-urbana-rural-economicamente-activa}}.
-% 
-% La pirámide de la población ecuatoriana en el año 2022 (ver figura \ref{fig:iess_pir_poblacion2022}) presenta una forma triangular, típica de un país en vías de desarrollo, describe a una población joven con una tasa de natalidad alta, pero con tendencia a la reducción, y una tasa de mortalidad que también se está disminuyendo; esto hace presagiar un crecimiento de la esperanza de vida de los ecuatorianos en los próximos años.
-% 
-% \begin{figure}[H]
-% \caption{Pirámides poblacionales nacionales para el año 2022}
-% \label{fig:iess_pir_poblacion2022}
-% \centering
-% \includegraphics[scale=1]{graficos/iess_pir_poblacion_2022.png}
-%   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
-%   Elaborado: DAIE}
-% \end{figure}
-% 
-% \begin{figure}[h]
-% \caption{Pirámides poblacionales nacionales para el año 2042}
-% \label{fig:iess_pir_poblacion2042}
-% \centering
-% \includegraphics[scale=1]{graficos/iess_pir_poblacion_2042.png}
-%   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
-%   Elaborado: DAIE}
-% \end{figure}
-% 
-% Para el año 2042 (ver figura \ref{fig:iess_pir_poblacion2042}), la CELADE proyecta la pirámide poblacional del Ecuador en forma estancada, iniciando una tendencia regresiva. Las proyecciones muestran que la tasa de natalidad decrecerá en comparación al 2022, pero la tasa de mortalidad se reducirá, lo cual conllevará a un aumento en la esperanza de vida.
-% 
-% \begin{figure}[H]
-% \caption{Pirámides poblacionales nacionales para el año 2062}
-% \label{fig:iess_pir_poblacion2062}
-% \centering
-% \includegraphics[scale=1]{graficos/iess_pir_poblacion_2062.png}
-%   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
-%   Elaborado: DAIE}
-% \end{figure}
-% 
-% Para el último año de la valuación (año 2062) (ver figura \ref{fig:iess_pir_poblacion2062}), la CELADE proyecta la una pirámide poblacional del Ecuador en forma regresiva. Las proyecciones muestran que la tasa tanto de natalidad como de mortalidad bajan, esto demuestra el crecimiento de la  esperanza de vida y que la mayoría de la población será adulta.
-% 
-% La población económicamente activa (PEA) comprende a las personas en edad de trabajar (15-60 años y más) y que cumplen al menos una de las siguientes condiciones:
-% 
-% \begin{enumerate}[label=\alph*.,topsep=0pt,itemsep=1ex,parsep=1ex,partopsep=1ex]
-% \item Trabajar al menos una hora durante el período de referencia de la medición (por lo general, la semana anterior) en tareas con o sin remuneración, incluyendo la ayuda a otro miembro de la familia en alguna actividad productiva o en un negocio o finca del hogar;
-% 
-% \item Si bien no trabajaron, tenían algún empleo o negocio del cual estuvieron ausentes por enfermedad, huelga, licencia, vacaciones u otras causas; y
-% 
-% \item No comprendidas en los dos grupos anteriores, que estaban en disponibilidad de trabajar.
-% \end{enumerate}
-% 
-% Se excluyen las personas que se dedican solo a quehaceres domésticos o a estudiar exclusivamente, a los que son pensionistas y a los impedidos de trabajar, sea por invalidez, jubilación, etc.
-% 
-% La pirámide de la población económicamente activa se presenta en las siguientes figuras:
-% 
-% \begin{figure}[H]
-% \caption{Pirámides poblacionales de la PEA para el año 2022}
-% \label{fig:iess_pir_pea2022}
-% \centering
-% \includegraphics[scale=1]{graficos/iess_pir_pea_2022.png}
-%   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
-%   Elaborado: DAIE}
-% \end{figure}
-% 
-% Las pirámides \ref{fig:iess_pir_pea2022}, \ref{fig:iess_pir_pea2042} y \ref{fig:iess_pir_pea2062} muestran el envejecimiento de la PEA, pasando de una población joven en el año 2022 a una más adulta en el año 2062, debido a la reducción de la tasa de natalidad del Ecuador y a una alta esperanza de vida.
-% 
-% 
-% \begin{figure}[H]
-% \caption{Pirámides poblacionales de la PEA para el año 2042}
-% \label{fig:iess_pir_pea2042}
-% \centering
-% \includegraphics[scale=1]{graficos/iess_pir_pea_2042.png}
-%   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
-%   Elaborado: DAIE}
-% \end{figure}
-% 
-% \begin{figure}[H]
-% \caption{Pirámides poblacionales de la PEA para el año 2062}
-% \label{fig:iess_pir_pea2062}
-% \centering
-% \includegraphics[scale=1]{graficos/iess_pir_pea_2058.png}
-%   \caption*{\scriptsize Fuente: CELADE - CEPAL \\
-%   Elaborado: DAIE}
-% \end{figure}
-% 

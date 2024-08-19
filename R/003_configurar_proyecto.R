@@ -81,7 +81,7 @@ message( '\tEstableciendo directorios globales' )
 parametros$empresa <- 'IESS'
 
 parametros$edad_max <- 105
-parametros$anio_ini <- 2020
+parametros$anio_ini <- 2022
 parametros$anio <- 2021 # Año del estudio
 
 # Direcciones globales

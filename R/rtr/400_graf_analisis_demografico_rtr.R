@@ -227,7 +227,9 @@ aux <- pir_ben_subsidios %>%
 salto_y <- 10
 salto_x <- 0.005
 brks_y <- seq( -0.04, 0.04, salto_x )
-lbls_y <- paste0( as.character( c( seq( 0.04, 0, -salto_x )*100, seq( salto_x, 0.04, salto_x )*100 ) ), '%')
+lbls_y <- paste0( formatC( c( seq( 0.04, 0, -salto_x )*100,
+                                            seq( salto_x, 0.04, salto_x )*100 ),
+                           digits = 1, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
 brks_x <- seq( 15, 100, salto_y )
 lbls_x <- paste0( as.character( brks_x ) )
 
@@ -266,9 +268,11 @@ aux <- pir_ben_indemnizaciones %>%
   arrange( sexo, edad )
 
 salto_y <- 10
-salto_x <- 0.01
+salto_x <- 0.005
 brks_y <- seq(-0.06,0.04,salto_x)
-lbls_y <- paste0( as.character( c( seq( 0.06, 0, -salto_x )*100, seq( salto_x, 0.04, salto_x )*100 ) ), '%')
+lbls_y <- paste0( formatC( c( seq( 0.06, 0, -salto_x )*100,
+                              seq( salto_x, 0.04, salto_x )*100 ),
+                           digits = 1, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
 brks_x <- seq( 20, 100, salto_y)
 lbls_x <- paste0(as.character(brks_x))
 
@@ -308,8 +312,10 @@ aux <- pir_ben_pp  %>%
 
 salto_y <- 10
 salto_x <- 0.005
-brks_y <- seq( -0.04, 0.04, salto_x)
-lbls_y <- paste0(as.character(c(seq(0.04, 0, -salto_x)*100, seq(salto_x, 0.04, salto_x)*100 )), '%')
+brks_y <- seq( -0.04, 0.04, salto_x )
+lbls_y <- paste0( formatC( c( seq( 0.04, 0, -salto_x )*100,
+                              seq( salto_x, 0.04, salto_x )*100 ),
+                           digits = 1, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
 brks_x <- seq(15, 105,salto_y)
 lbls_x <- paste0(as.character(brks_x))
 
@@ -346,8 +352,10 @@ aux <- pir_ben_pt  %>%
 
 salto_y <- 10
 salto_x <- 0.005
-brks_y <- seq( -0.04, 0.04, salto_x)
-lbls_y <- paste0(as.character(c(seq(0.04, 0, -salto_x)*100, seq(salto_x, 0.04, salto_x)*100 )), '%')
+brks_y <- seq( -0.04, 0.04, salto_x )
+lbls_y <- paste0( formatC( c( seq( 0.04, 0, -salto_x )*100,
+                              seq( salto_x, 0.04, salto_x )*100 ),
+                           digits = 1, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
 brks_x <- seq(20, 100,salto_y)
 lbls_x <- paste0(as.character(brks_x))
 
@@ -384,10 +392,12 @@ aux <- pir_ben_pa  %>%
 
 salto_y <- 10
 salto_x <- 0.01
-brks_y <- seq( -0.06, 0.04, salto_x)
-lbls_y <- paste0(as.character(c(seq(0.06, 0, -salto_x)*100, seq(salto_x, 0.04, salto_x)*100 )), '%')
-brks_x <- seq(25, 85,salto_y)
-lbls_x <- paste0(as.character(brks_x))
+brks_y <- seq( -0.06, 0.04, salto_x )
+lbls_y <- paste0( formatC( c( seq( 0.06, 0, -salto_x )*100,
+                              seq( salto_x, 0.04, salto_x )*100 ),
+                           digits = 1, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
+brks_x <- seq( 25, 85,salto_y)
+lbls_x <- paste0( as.character( brks_x ) )
 
 iess_pir_ben_pa <- ggplot( aux, aes( x = edad, y = fdp, fill = sexo ) ) +
   xlab( 'Edad' ) +
@@ -420,9 +430,12 @@ aux <- pir_ben_vo  %>%
   arrange( sexo, edad )
 
 salto_y <- 10
-salto_x <- 0.0025
+salto_x <- 0.005
 brks_y <- seq( -0.04, 0.04, salto_x)
-lbls_y <- paste0( as.character( c( seq (0.04, 0, -salto_x )*100, seq( salto_x, 0.04, salto_x )*100 ) ), '%' )
+lbls_y <- paste0( formatC( c( seq( 0.04, 0, -salto_x )*100,
+                              seq( salto_x, 0.04, salto_x )*100 ),
+                           digits = 1, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
+
 brks_x <- seq( 20, 110, salto_y)
 lbls_x <- paste0( as.character( brks_x ) )
 
@@ -457,8 +470,10 @@ aux <- pir_ben_of  %>%
 
 salto_y <- 10
 salto_x <- 0.01
-brks_y <- seq( -0.04, 0.04, salto_x)
-lbls_y <- paste0( as.character( c( seq (0.04, 0, -salto_x )*100, seq( salto_x, 0.04, salto_x )*100 ) ), '%' )
+brks_y <- seq( -0.04, 0.04, salto_x )
+lbls_y <- paste0( formatC( c( seq( 0.04, 0, -salto_x )*100,
+                              seq( salto_x, 0.04, salto_x )*100 ),
+                           digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' ), '%')
 brks_x <- seq( 0, 100, salto_y)
 lbls_x <- paste0( as.character( brks_x ) )
 
@@ -493,10 +508,11 @@ aux <- pir_montos_subsidios %>%
                          pen_promedio ) ) %>%
   filter( edad >= 15,
           edad <= 90 ) %>%
-  arrange( sexo, edad )
+  arrange( sexo, edad ) %>% 
+  filter( pen_promedio < 1800 )
 
 salto_y <- 10
-brks_y <- round( c( seq( min(aux$fdp), 0, length.out = 3), seq( 0, max(aux$fdp), length.out = 8 )[-1] ) )
+brks_y <- round( c( seq( min(aux$fdp), 0, length.out = 4), seq( 0, max(aux$fdp), length.out = 4 )[-1] ) )
 lbls_y <- paste0( '$', formatC( abs( brks_y ), digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' ) )
 brks_x <- seq( 15, 100, salto_y )
 lbls_x <- paste0( as.character( brks_x ) )
