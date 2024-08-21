@@ -38,7 +38,7 @@ x_lbl <- paste0( formatC( x_brk,
                           big.mark = '.', 
                           decimal.mark = ',' ), "%" )
 
-iess_porc_a <- ggplot( ) + 
+iess_porc_a_of <- ggplot( ) + 
   geom_histogram( data = muestreo_of, 
                   aes( x = porc_a, y = after_stat( density ) ),   
                   binwidth = .45,
@@ -62,7 +62,7 @@ iess_porc_a <- ggplot( ) +
                       labels = x_lbl,
                       breaks = x_brk ) 
   
-ggsave( plot = iess_porc_a, 
+ggsave( plot = iess_porc_a_of, 
         filename = paste0( parametros$resultado_graficos, 'iess_bootstrap_of_porc_a_rtr', 
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
@@ -96,7 +96,7 @@ x_lbl <- paste0( formatC( x_brk,
                           big.mark = '.', 
                           decimal.mark = ',' ), "%" )
 
-iess_porc_j <- ggplot( ) + 
+iess_porc_j_of <- ggplot( ) + 
   geom_histogram( data = muestreo_of, 
                   aes( x = porc_j, y = after_stat( density ) ),   
                   binwidth = .45,
@@ -120,7 +120,131 @@ iess_porc_j <- ggplot( ) +
                       labels = x_lbl,
                       breaks = x_brk ) 
 
-ggsave( plot = iess_porc_j, 
+ggsave( plot = iess_porc_j_of, 
+        filename = paste0( parametros$resultado_graficos, 'iess_bootstrap_of_porc_j_rtr', 
+                           parametros$graf_ext ),
+        width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
+
+
+
+
+
+
+#2.Gráfico Bootstrap de viudas-------------------------------------------------------------------
+message( '\tGraficando porcentaje Bootstrap de viudas' )
+
+## 2.1. Gráfico de afiliado-------------------------------------------------------------------------
+
+probs <- c( 0.025, 0.975 )
+quantiles <- quantile(muestreo_vo$porc_a, prob=probs)
+dent <- density(  adjust = 4,
+                  muestreo_vo$porc_a )
+dent <- data.frame( x = dent$x, y = dent$y ) %>% 
+  mutate( quant = if_else( x < quantiles[1],
+                           '0',
+                           if_else( x < quantiles[2],
+                                    '1',
+                                    '2' ) ) )
+
+
+y_brk <- seq( 0, 1, 0.2 )
+y_lbl <- paste0( formatC( y_brk * 100,
+                          digits = 0, 
+                          format = 'f', 
+                          big.mark = '.', 
+                          decimal.mark = ',' ), "%" )
+
+
+x_brk <- seq( 76, 85, 1 )
+x_lbl <- paste0( formatC( x_brk, 
+                          digits = 0, 
+                          format = 'f', 
+                          big.mark = '.', 
+                          decimal.mark = ',' ), "%" )
+
+iess_porc_a_vo <- ggplot( ) + 
+  geom_histogram( data = muestreo_vo, 
+                  aes( x = porc_a, y = after_stat( density ) ),   
+                  binwidth = .45,
+                  colour = "black",
+                  fill = "white" ) +
+  geom_line( data = dent, aes( x = x, y = y ) ) +
+  geom_ribbon( data = dent, aes( x = x, y = y, ymin = 0, ymax = y, fill = quant, alpha = 0.3 ) ) + 
+  scale_fill_manual( values = c( "red",
+                                 "gray90",
+                                 "red" ) ) +
+  theme_bw( ) +
+  plt_theme +
+  geom_vline( data = muestreo_vo,
+              aes( xintercept = mean( porc_a ),
+                   color = "red" ),
+              linetype = "dashed" )  +
+  scale_y_continuous( name = 'densidad de probabilidades',
+                      labels = y_lbl,
+                      breaks = y_brk ) +
+  scale_x_continuous( name = 'Porcentaje de montepíos de orfandad causados por afiliado fallecido',
+                      labels = x_lbl,
+                      breaks = x_brk ) 
+
+ggsave( plot = iess_porc_a_vo, 
+        filename = paste0( parametros$resultado_graficos, 'iess_bootstrap_of_porc_a_rtr', 
+                           parametros$graf_ext ),
+        width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
+
+## 2.2. Gráfico Bootstrap jubilado------------------------------------------------------------------
+
+probs <- c( 0.025, 0.975 )
+quantiles <- quantile(muestreo_vo$porc_j, prob=probs)
+dent <- density(  adjust = 4,
+                  muestreo_vo$porc_j )
+dent <- data.frame( x = dent$x, y = dent$y ) %>% 
+  mutate( quant = if_else( x < quantiles[1],
+                           '0',
+                           if_else( x < quantiles[2],
+                                    '1',
+                                    '2' ) ) )
+
+
+y_brk <- seq( 0, 1, 0.2 )
+y_lbl <- paste0( formatC( y_brk * 100,
+                          digits = 0, 
+                          format = 'f', 
+                          big.mark = '.', 
+                          decimal.mark = ',' ), "%" )
+
+
+x_brk <- seq( 13, 25, 1 )
+x_lbl <- paste0( formatC( x_brk, 
+                          digits = 0, 
+                          format = 'f', 
+                          big.mark = '.', 
+                          decimal.mark = ',' ), "%" )
+
+iess_porc_j_vo <- ggplot( ) + 
+  geom_histogram( data = muestreo_vo, 
+                  aes( x = porc_j, y = after_stat( density ) ),   
+                  binwidth = .45,
+                  colour = "black",
+                  fill = "white" ) +
+  geom_line( data = dent, aes( x = x, y = y ) ) +
+  geom_ribbon( data = dent, aes( x = x, y = y, ymin = 0, ymax = y, fill = quant, alpha = 0.3 ) ) + 
+  scale_fill_manual( values = c( "red",
+                                 "gray90",
+                                 "red" ) ) +
+  theme_bw( ) +
+  plt_theme +
+  geom_vline( data = muestreo_vo,
+              aes( xintercept = mean( porc_j ),
+                   color = "red" ),
+              linetype = "dashed" )  +
+  scale_y_continuous( name = 'densidad de probabilidades',
+                      labels = y_lbl,
+                      breaks = y_brk ) +
+  scale_x_continuous( name = 'Porcentaje de montepíos de orfandad causados por jubilado fallecido',
+                      labels = x_lbl,
+                      breaks = x_brk ) 
+
+ggsave( plot = iess_porc_j_vo, 
         filename = paste0( parametros$resultado_graficos, 'iess_bootstrap_of_porc_j_rtr', 
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
