@@ -1,18 +1,20 @@
 message( paste( rep('-', 100 ), collapse = '' ) )
 
-# Carga de datos -----------------------------------------------------------------------------------
+#0. Carga de datos ---------------------------------------------------------------------------------
 load( file = paste0( parametros$RData_seg, 'IESS_RTR_bootstrap.RData' ) )
 
-# Plantilla gráfica --------------------------------------------------------------------------------
+##0.1 Plantilla gráfica ----------------------------------------------------------------------------
 source( 'R/401_graf_plantilla.R', encoding = 'UTF-8', echo = FALSE )
 
-#Gráfico Bootstrap----------------------------------------------------------------------------------
-message( '\tGraficando porcentaje Bootstrap afiliado' )
+#1.Gráfico Bootstrap de huerfanos-------------------------------------------------------------------
+message( '\tGraficando porcentaje Bootstrap de huerfanos' )
+
+## 1.1. Gráfico de afiliado-------------------------------------------------------------------------
 
 probs <- c( 0.025, 0.975 )
-quantiles <- quantile(muestreo$porc_A, prob=probs)
+quantiles <- quantile(muestreo_of$porc_a, prob=probs)
 dent <- density(  adjust = 4,
-                  muestreo$porc_A )
+                  muestreo_of$porc_a )
 dent <- data.frame( x = dent$x, y = dent$y ) %>% 
   mutate( quant = if_else( x < quantiles[1],
                            '0',
@@ -37,8 +39,8 @@ x_lbl <- paste0( formatC( x_brk,
                           decimal.mark = ',' ), "%" )
 
 iess_porc_a <- ggplot( ) + 
-  geom_histogram( data = muestreo, 
-                  aes( x = porc_A, y = after_stat( density ) ),   
+  geom_histogram( data = muestreo_of, 
+                  aes( x = porc_a, y = after_stat( density ) ),   
                   binwidth = .45,
                   colour = "black",
                   fill = "white" ) +
@@ -49,29 +51,28 @@ iess_porc_a <- ggplot( ) +
                                  "red" ) ) +
   theme_bw( ) +
   plt_theme +
-  geom_vline( data = muestreo,
-              aes( xintercept = mean( porc_A ),
+  geom_vline( data = muestreo_of,
+              aes( xintercept = mean( porc_a ),
                    color = "red" ),
               linetype = "dashed" )  +
   scale_y_continuous( name = 'densidad de probabilidades',
                       labels = y_lbl,
                       breaks = y_brk ) +
-  scale_x_continuous( name = 'Porcentaje de montepío causados por afiliado fallecido',
+  scale_x_continuous( name = 'Porcentaje de montepíos de orfandad causados por afiliado fallecido',
                       labels = x_lbl,
                       breaks = x_brk ) 
   
 ggsave( plot = iess_porc_a, 
-        filename = paste0( parametros$resultado_graficos, 'iess_porc_a_rtr', 
+        filename = paste0( parametros$resultado_graficos, 'iess_bootstrap_of_porc_a_rtr', 
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-#Gráfico Bootstrap jubilado-------------------------------------------------------------------------
-message( '\tGraficando porcentaje Bootstrap jubilado' )
+## 1.2. Gráfico Bootstrap jubilado------------------------------------------------------------------
 
 probs <- c( 0.025, 0.975 )
-quantiles <- quantile(muestreo$porc_J, prob=probs)
+quantiles <- quantile(muestreo_of$porc_j, prob=probs)
 dent <- density(  adjust = 4,
-                  muestreo$porc_J )
+                  muestreo_of$porc_j )
 dent <- data.frame( x = dent$x, y = dent$y ) %>% 
   mutate( quant = if_else( x < quantiles[1],
                            '0',
@@ -96,8 +97,8 @@ x_lbl <- paste0( formatC( x_brk,
                           decimal.mark = ',' ), "%" )
 
 iess_porc_j <- ggplot( ) + 
-  geom_histogram( data = muestreo, 
-                  aes( x = porc_J, y = after_stat( density ) ),   
+  geom_histogram( data = muestreo_of, 
+                  aes( x = porc_j, y = after_stat( density ) ),   
                   binwidth = .45,
                   colour = "black",
                   fill = "white" ) +
@@ -108,19 +109,19 @@ iess_porc_j <- ggplot( ) +
                                  "red" ) ) +
   theme_bw( ) +
   plt_theme +
-  geom_vline( data = muestreo,
-              aes( xintercept = mean( porc_J ),
+  geom_vline( data = muestreo_of,
+              aes( xintercept = mean( porc_j ),
                    color = "red" ),
               linetype = "dashed" )  +
   scale_y_continuous( name = 'densidad de probabilidades',
                       labels = y_lbl,
                       breaks = y_brk ) +
-  scale_x_continuous( name = 'Porcentaje de montepío causados por jubilado fallecido',
+  scale_x_continuous( name = 'Porcentaje de montepíos de orfandad causados por jubilado fallecido',
                       labels = x_lbl,
                       breaks = x_brk ) 
 
 ggsave( plot = iess_porc_j, 
-        filename = paste0( parametros$resultado_graficos, 'iess_porc_j_rtr', 
+        filename = paste0( parametros$resultado_graficos, 'iess_bootstrap_of_porc_j_rtr', 
                            parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 

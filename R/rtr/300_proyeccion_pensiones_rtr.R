@@ -49,8 +49,10 @@ rm( list = ls()[ !( ls() %in% c( parametros_lista,
                                  "nup_dat",
                                  "cen_iess_hij_alis",
                                  "cen_iess_cony_alis",
-                                 'porc_A', 
-                                 'porc_J',
+                                 'porc_a_of', 
+                                 'porc_j_of',
+                                 'porc_a_vo', 
+                                 'porc_j_vo',
                                  'cal_pen_orf_nue',
                                  'cal_pen_orf_ant', 
                                  'cal_pen_viu_nue',
@@ -197,12 +199,12 @@ for ( g in c( 1, 2 ) ) {
       b12[ t + 1, x + 1, g ] <- ( l12[ t, x, g ] * b12[ t, x, g ] * ( 1 + i_p[ t + 1, x + 1, g ] ) + l2_12[ t + 1, x + 1, g ] * sal_prom[ t + 1, x + 1, g ] * coef_incap_12[ x + 1, g ] ) / (  l12[ t, x, g ] + l2_12[ t + 1, x + 1, g ] + 0.00001 )
      
        b15[ t + 1, x + 1, g ] <- ( l15[ t, x, g ] * b15[ t, x, g ] * ( 1 + i_p[ t + 1, x + 1, g ] ) +
-                                     ( porc_J  * coef_orfandad * l0_15[ t + 1, x + 1, g ] * sal_prom_padres[ t + 1, x + 1, g ] * coef_incap_15[ x + 1, g ] +
-                                      porc_A  * coef_orfandad * cal_pen_orf_nue * l0_15[ t + 1, x + 1, g ] * sal_prom_padres[ t + 1, x + 1, g ] / hijos_prom_por_mujer ) ) / ( l15[ t, x, g ]  + l0_15[ t + 1, x + 1, g ] + 0.00001 )
+                                     ( porc_j_of  * coef_orfandad * l0_15[ t + 1, x + 1, g ] * sal_prom_padres[ t + 1, x + 1, g ] * coef_incap_15[ x + 1, g ] +
+                                      porc_a_of  * coef_orfandad * cal_pen_orf_nue * l0_15[ t + 1, x + 1, g ] * sal_prom_padres[ t + 1, x + 1, g ] / hijos_prom_por_mujer ) ) / ( l15[ t, x, g ]  + l0_15[ t + 1, x + 1, g ] + 0.00001 )
       
        b16[ t + 1, x + 1, g ] <- ( l16[ t, x, g ] * b16[ t, x, g ] * ( 1 + i_p[ t + 1, x + 1, g ] ) +
-                                     ( porc_J * coef_viudedad * cal_pen_viu_nue * l0_16[ t + 1, x + 1, g ] * sal_prom[ t + 1, x + 1, g ] * coef_incap_16[ x + 1, g ] +
-                                         porc_A  * coef_viudedad * cal_pen_viu_nue * l0_16[ t + 1, x + 1, g ] * sal_prom[ t + 1, x + 1, g ] ) ) / (  l16[ t, x, g ] + l0_16[ t + 1, x + 1, g ] + 0.00001 )
+                                     ( porc_j_vo * coef_viudedad * cal_pen_viu_nue * l0_16[ t + 1, x + 1, g ] * sal_prom[ t + 1, x + 1, g ] * coef_incap_16[ x + 1, g ] +
+                                         porc_a_vo  * coef_viudedad * cal_pen_viu_nue * l0_16[ t + 1, x + 1, g ] * sal_prom[ t + 1, x + 1, g ] ) ) / (  l16[ t, x, g ] + l0_16[ t + 1, x + 1, g ] + 0.00001 )
 
     }
   }
