@@ -1585,7 +1585,1312 @@ Elaborado: DAIE}
 % La diferencia de aporte entre las dos resoluciones considerando la masa salarial y los ingresos recibidos por aportaciones al \Sexpr{REP_seg} para los diferentes años en análisis se presenta en la tabla \ref{tab:iess_RTR_Desfi_CD501}. El fondo dejó de percibir por aportes USD 294.352.148,00, lo que produjo un lucro cesante de USD 49.500.328,12 a 31 de diciembre de 2018, obteniéndose un perjuicio total de USD 343.852.476,12.
 
 %---------------------------------------------------------------------------------------------------
-\section{Desinversiones del portafolio de inversiones del Fondo del \Sexpr{REP_seg}}
+\section{Descripción del portafolio de inversiones}
+\label{chp_infofinan:rentablidad}
+
+El artículo 372 de la Constitución de la República del Ecuador establece:\\
+\\``\textit{Los fondos y reservas del seguro universal obligatorio serán propios y distintos de los del fisco, y servirán para cumplir
+de forma adecuada los fines de su creación y sus funciones. Ninguna institución del Estado podrá
+intervenir o disponer de sus fondos y reservas, ni menoscabar su patrimonio. Los fondos
+provisionales (sic) públicos y sus inversiones se canalizarán a través de una institución financiera
+de propiedad del Instituto Ecuatoriano de Seguridad Social; su gestión se sujetará a los principios
+de seguridad, solvencia, eficiencia, rentabilidad y al control del órgano competente}''.
+
+Mediante la expedición de la Ley del Banco del Instituto Ecuatoriano de Seguridad Social, publicada en el suplemento del Registro Oficial No. 587, de fecha 11 de mayo de 2009, se crea el Banco del Instituto Ecuatoriano de Seguridad Social (BIESS).En su artículo 2, se establece el Objeto Social del Banco, el cual será: ``\textit{(…) la prestación de servicios financieros bajo criterios de banca de inversión, para la administración de los fondos previsionales públicos del Instituto Ecuatoriano de Seguridad Social IESS; y, la prestación de servicios financieros, para atender los requerimientos de sus afiliados activos y jubilados}''. Y, en el artículo 4, se establece: ``\textit{La Junta Bancaria expedirá las normas de carácter general para regular las operaciones del Banco, preservando en forma permanente los principios de seguridad, solvencia, diversificación del riesgo y liquidez}''.
+
+En concordancia con artículo 4 de la Ley del BIESS, La Junta de Política y Regulación Monetaria y Financiera emite la Resolución No. 385-2017-A: Codificación de Resoluciones Monetarias, Financieras, de Valores y Seguros, publicado en el Segundo Suplemento del Registro Oficial No.22, de fecha 26 de Junio 2017. En su artículo 54 de la Sección X: DEL BANCO DEL INSTITUTO ECUATORIANO DE SEGURIDAD SOCIAL, se establece que las inversiones del Fondo del \Sexpr{REP_seg} se invertirán a mediano plazo; es decir, a plazos de tres (3) a cinco (5) años, en inversiones: privativas (préstamos prendarios y quirografarios), no privativas en renta fija (bonos, bonos locales, CETES \footnote{Certificados de tesorería}, certificados de depósito, papel comercial, obligaciones, titularizaciones y pólizas de acumulación) y no privativas en renta variable (fideicomisos mercantiles: inversión, inmobiliarios y administración).
+
+
+Para medir la rentabilidad de las inversiones, se utilizarán dos indicadores: el rendimiento
+promedio ponderado y el rendimiento neto. El rendimiento promedio ponderado para cada instrumento
+financiero, con pesos iguales a los saldos en valor nominal, se calcula según el artículo 5.4.1.3
+del Capítulo III ``Manual operativo para valoración a precios de mercado de valores de contenido
+crediticio y de participación y procedimiento'' del Título III ``De las operaciones del Instituto
+Ecuatoriano de Seguridad Social, del Instituto de Seguridad Social de las Fuerzas Armadas, del
+Instituto de Seguridad Social de la Policía Nacional, del Servicio de Cesantía de la Policía
+Nacional'' del  Libro II ``Normas de control para las entidades del sistema de seguridad
+social''\footnote{La normativa citada se encuentra derogada, pero se encontraba vigente en la
+mayoría del período de valuación.}, en el cual manifiesta que la fórmula para calcular el
+rendimiento efectivo promedio ponderado, $\overline{TIR}$, es:
+\begin{equation}
+\overline{TIR}=\frac{\sum^{K}_{1} TIR_{i}\cdot VP_{i}}{\sum^{k}_{1}VP_{i}},
+\end{equation}
+
+donde: $TIR_{i}$ es el rendimiento efectivo de la operación de contado $i$, $VP_{i}$ es el valor
+nominal residual o valor parcial de la inversión y $k$ es el número de operaciones a tener en
+cuenta.
+
+El rendimiento neto de cada fondo se calcula según la metodología expuesta en el informe ``Cálculo
+de rendimientos financieros de los Fondos Previsionales administrados por el Banco del Instituto
+Ecuatoriano de Seguridad Social''. El rendimiento neto, $R_{i}$, del fondo $i$, se estiman a través
+de la siguiente fórmula:
+\begin{equation}
+R_{i}=\frac{\left(I_{i}-Gop_{i}-GAdm_{i}\right)\cdot \left(12/j\right)}{\overline{FA_{i}}}, \qquad
+para\; \; i=1,2,3,\ldots,9,
+\end{equation}
+
+donde: $I_{t}$ es el ingreso acumulado del fondo $i$, $Gop_{t}$ es el gasto operativo acumulado del
+fondo $i$, $GAdm_{i}$ es el Gasto administrativo acumulado del fondo $i$ y $\overline{FA_{i}}$ es el
+fondo administrativo promedio del fondo $i$.
+
+$\overline{FA_{i}}$ hace referencia al promedio del saldo del fondo registrado el último día de cada
+mes, desde el 31 de diciembre del año anterior hasta el último día del mes considerando para el
+cálculo. Específicamente, la fórmula  de cálculo es la siguiente:
+\begin{equation}
+\label{eq:rendimiento_neto}
+\overline{FA_{i}}=\frac{FA_{i,dic}+FA_{i,ene}+FA_{i,feb}+FA_{i,mar}+\cdots+FA_{i,actual}}{j+1},
+\end{equation}
+donde: $j+1$ es el número total de observaciones para ser consideradas en el promedio móvil del
+fondo administrado.
+
+Además, de los indicadores de rendimiento descritos anteriormente, se utiliza la tasa real de los rendimientos, la cual es la tasa de rendimiento descontada de la inflación y se calcula utilizando la ecuación de Fisher, la cual se expresa en términos matemáticos, a continuación:
+\begin{equation}
+r = \frac{\left(1+i\right)}{\left(1+\pi\right)}-1,
+\end{equation}
+donde: $r$ es la tasa de interés real, $i$ es igual a la tasa de interés nominal y $\pi$ es igual a la tasa de inflación.
+
+A partir de la información entregada por el Mgs. Carlos Julio Arosemena Duran, Gerente General del BIESS, mediante oficio Nro. BIESS-GGEN-2023-0508-OF, de fecha 20 de abril de 2023, se presenta la siguiente descripción del portafolio de inversiones del Fondo del \Sexpr{REP_seg}. A continuación, se presenta la evolución histórica del valor nominal y su respectivo rendimiento del
+portafolio de inversiones del \Sexpr{REP_seg}, en la tabla
+\ref{tab:iess_total_inv} y la figura \ref{fig:iess_inversiones_rnd_neto}.
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{9}{13}\selectfont
+\begin{longtable}[H]{rrrrcrrc}
+  \caption{Evolución de los Fondos del \Sexpr{REP_seg} administrados por el BIESS}
+\label{tab:iess_total_inv} \\
+\toprule
+ \multicolumn{1}{l}{\multirow{2}{*}{Año:}} & 
+\multicolumn{1}{c}{Inversiones} &
+\multicolumn{1}{c}{Caja} & 
+\multicolumn{1}{c}{Total Fondos} &
+\multicolumn{1}{c}{Rendimiento Promedio} & 
+\multicolumn{1}{c}{Rendimiento} &
+\multicolumn{1}{c}{Rendimiento} &
+\multicolumn{1}{c}{Plazo Promedio} \\
+& 
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} & 
+\multicolumn{1}{c}{Administrados (USD)} &
+\multicolumn{1}{c}{Ponderado (\%)} & 
+\multicolumn{1}{c}{Neto (\%)} &
+\multicolumn{1}{c}{Neto Real (\%)} &
+\multicolumn{1}{c}{Promedio (días)} \\
+\midrule
+\endfirsthead
+
+\toprule
+ \multicolumn{1}{l}{\multirow{2}{*}{Año:}} & 
+\multicolumn{1}{c}{Inversiones} &
+\multicolumn{1}{c}{Caja} & 
+\multicolumn{1}{c}{Total Fondos} &
+\multicolumn{1}{c}{Rendimiento Promedio} & 
+\multicolumn{1}{c}{Rendimiento} &
+\multicolumn{1}{c}{Rendimiento} &
+\multicolumn{1}{c}{Plazo Promedio} \\
+& 
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} & 
+\multicolumn{1}{c}{Administrados (USD)} &
+\multicolumn{1}{c}{Ponderado (\%)} & 
+\multicolumn{1}{c}{Neto (\%)} &
+\multicolumn{1}{c}{Neto Real (\%)} &
+\multicolumn{1}{c}{Promedio (días)} \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{8}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Balance Financiero del SGRT - DNGF y Dirección de Tesorería - BIESS  \\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_total_inv.tex}
+\end{longtable}
+}
+}
+
+\begin{figure}[H]
+\captionsetup{justification=centering}
+\centering
+\caption{Evolución histórica del portafolio total de inversiones del Seguro General de Riesgos del
+Trabajo con su rendimiento neto}
+\label{fig:iess_inversiones_rnd_neto}
+\includegraphics[scale=1.2]{graficos/iess_inversiones_rnd_neto.pdf}
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS \\
+Elaborado: DAIE}
+\end{figure}
+
+A 31 de diciembre de 2022, los Fondos Administrados por el BIESS \Sexpr{REP_seg} es USD \Sexpr{REP$inver_recurs_adm_bies_total_2022}, de los cuales USD \Sexpr{REP$inver_recurs_adm_bies_inver_2022} se encuentran invertidos y USD \Sexpr{REP$inver_recurs_adm_bies_caja_2022} se encuentran en la caja para libre disponibilidad. La tasa de rendimiento promedio ponderada del portafolio de inversiones del \Sexpr{REP_seg} es \Sexpr{REP$inver_recurs_adm_bies_rendi_pond_2022}\%; pero tomado en cuenta gastos operativos y administrativos, la tasa de rendimiento neto del portafolio es \Sexpr{REP$inver_recurs_adm_bies_rendi_neto_2022}\% y; descontando la inflación, la tasa de rendimiento neto real es \Sexpr{REP$inver_recurs_adm_bies_rendi_real_2022}\%, invertidos a un plazo promedio ponderado de \Sexpr{REP$inver_recurs_adm_bies_plazo_2022} días.
+
+Históricamente, la tasa de rendimiento neto alcanzó su mínimo en enero de 2012 (\Sexpr{REP$inver_rend_historico_min_rendi_neto}\%) y alcanzó su máximo en mayo de 2017 (\Sexpr{REP$inver_rendi_historico_bies_max_rendi_neto}\%). Tomando en cuenta los rendimientos anuales, el año 2012 registró la tasa de rendimiento neto más alta con \Sexpr{REP$inver_recurs_adm_bies_rendi_neto_max}\%; mientras que el año 2013 registro el peor año con \Sexpr{REP$inver_recurs_adm_bies_rendi_neto_min}\%. En cambio, utilizando el indicador de la tasa de rendimiento promedio, el mejor año es 2018, con una tasa igual \Sexpr{REP$inver_recurs_adm_bies_rendi_pond_max}\%; y, el peor año fue 2015, con \Sexpr{REP$inver_recurs_adm_bies_rendi_pond_min}\% de rendimiento promedio ponderado. La diferencia se establece porque la tasa de rendimiento promedio ponderado es solo un promedio y no toma en cuenta los gastos operativos y administrativos.
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{9}{12}\selectfont
+\begin{longtable}[H]{lrccrc}
+  \caption{Fondos Administrados por el BIESS del \Sexpr{REP_seg} a 31 de diciembre de 2022}
+\label{tab:iess_inv_corte} \\
+\toprule
+ \multicolumn{1}{l}{\multirow{2}{*}{Instrumento:}} &  
+ \multicolumn{1}{c}{Saldo Valor} &
+ \multicolumn{1}{c}{Rendimiento Promedio} &
+ \multicolumn{1}{c}{Rendimiento Promedio} &
+ \multicolumn{1}{c}{Plazo Promedio}  &
+ \multicolumn{1}{c}{Paticipación} \\
+ & 
+ \multicolumn{1}{c}{Nominal (USD)} &
+ \multicolumn{1}{c}{Ponderado (\%)} &
+ \multicolumn{1}{c}{Ponderado Real (\%)}&
+ \multicolumn{1}{c}{Remanente (días)} &
+  \multicolumn{1}{c}{(\%)} \\
+\midrule
+\endfirsthead
+
+\toprule
+ \multicolumn{1}{l}{\multirow{2}{*}{Instrumento:}} &  
+ \multicolumn{1}{c}{Saldo Valor} &
+ \multicolumn{1}{c}{Rendimiento Promedio} &
+ \multicolumn{1}{c}{Rendimiento Promedio} &
+ \multicolumn{1}{c}{Plazo Promedio}  &
+ \multicolumn{1}{c}{Paticipación} \\
+ & 
+ \multicolumn{1}{c}{Nominal (USD)} &
+ \multicolumn{1}{c}{Ponderado (\%)} &
+ \multicolumn{1}{c}{Ponderado Real (\%)}&
+ \multicolumn{1}{c}{Remanente (días)} &
+  \multicolumn{1}{c}{(\%)} \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{6}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS y Dirección de Tesorería - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_inv_corte.tex}
+\end{longtable}
+}
+}
+
+A la fecha de corte del estudio, el portafolio de inversiones del Fondo del \Sexpr{REP_seg} se compone con las siguientes inversiones, ordenadas de mayor a menor: en primer lugar, con el \Sexpr{REP$inver_inver_corte_participacion_cred_quiro}\% del portafolio se encuentran USD \Sexpr{REP$inver_inver_corte_valor_nominal_cred_quiro} invertidos en créditos quirografarios a una tasa de rendimiento promedio igual a \Sexpr{REP$inver_inver_corte_rend_prom_cred_quiro}\% a un plazo promedio de \Sexpr{REP$inver_inver_corte_plazo_prom_cred_quiro} días. En segundo lugar, los bonos del Estado representan el \Sexpr{REP$inver_inver_corte_participacion_bonos_esta}\% de las inversiones del Seguro por USD \Sexpr{REP$inver_inver_corte_valor_nominal_bonos_esta} a una tasa de rendimiento promedio igual a \Sexpr{REP$inver_inver_corte_rend_prom_bonos_esta}\% a un plazo promedio remanente de \Sexpr{REP$inver_inver_corte_plazo_prom_bonos_esta} días. En tercer lugar, los Certificados de Tesorería (CETES) representan el \Sexpr{REP$inver_inver_corte_participacion_cetes}\% (USD \Sexpr{REP$inver_inver_corte_valor_nominal_cetes}) del portafolio, con una tasa de rendimiento promedio ponderado igual a \Sexpr{REP$inver_inver_corte_rend_prom_cetes}\% a un plazo de \Sexpr{REP$inver_inver_corte_plazo_prom_cetes} días. En cuarto lugar, las inversiones en Certificados Depósito representan el \Sexpr{REP$inver_inver_corte_participacion_cert_depo}\% (USD \Sexpr{REP$inver_inver_corte_valor_nominal_cert_depo}) a una tasa de rendimiento promedio igual a \Sexpr{REP$inver_inver_corte_rend_prom_cert_depo}\% a \Sexpr{REP$inver_inver_corte_plazo_prom_cert_depo} días. En quito lugar, los papeles comerciales representan el \Sexpr{REP$inver_inver_corte_participacion_papel_comer}\% del portafolio con USD \Sexpr{REP$inver_inver_corte_valor_nominal_papel_comer} invertidos a una tasa de rendimiento promedio ponderado igual a \Sexpr{REP$inver_inver_corte_rend_prom_papel_comer}\% a \Sexpr{REP$inver_inver_corte_plazo_prom_papel_comer} días. A continuación, le siguen los Certificados de Inversión con valores invertidos por USD \Sexpr{REP$inver_inver_corte_valor_nominal_cert_inver} (\Sexpr{REP$inver_inver_corte_participacion_cert_inver}\%) a una tasa de rendimiento igual a \Sexpr{REP$inver_inver_corte_rend_prom_cert_inver}\% a \Sexpr{REP$inver_inver_corte_plazo_prom_cert_inver} días. Las Obligaciones en renta fija en el sector privado alcanzan USD \Sexpr{REP$inver_inver_corte_valor_nominal_obligaciones}, lo que representa el \Sexpr{REP$inver_inver_corte_participacion_obligaciones}\% de las inversiones, con tasa de rendimiento igual a \Sexpr{REP$inver_inver_corte_rend_prom_obligaciones}\% a un plazo de \Sexpr{REP$inver_inver_corte_plazo_prom_obligaciones} días; y , por último, inversiones por USD \Sexpr{REP$inver_inver_corte_valor_nominal_titula} en Titularizaciones, con un rendimiento igual a \Sexpr{REP$inver_inver_corte_rend_prom_titula}\% a \Sexpr{REP$inver_inver_corte_plazo_prom_titula} días de plazo remanente. Además, existen USD \Sexpr{REP$inver_inver_corte_valor_nominal_caja} en caja, lo que representan el \Sexpr{REP$inver_inver_corte_participacion_caja}\% de los fondos administrados por el BIESS del \Sexpr{REP_seg}.
+
+% --------------------------------------------------------------------------------------------------
+\subsection{Rendimiento neto de las inversiones del fondo}
+
+Con fecha 18 de abril de 2017, el directorio del Banco del Instituto Ecuatoriano de Seguridad Social aprueban la Metodología: Calculo de rendimiento Financieros de los Fondos Previsionales Administrados por el Banco del Instituto Ecuatoriano de Seguridad Social. La descripción de la fórmula para el cálculo de los rendimientos netos se encuentra en la ecuación \ref{eq:rendimiento_neto}.
+
+Para el cálculo de los rendimientos netos, se utilizaron: los ingresos, gastos operativos y gastos administrativos, el fondo administrado promedio (desde diciembre del año anterior). Además, en la tabla \ref{tab:iess_rend_inv}, se presentan la tasa de rendimiento bruto antes de gastos y la tasa de rendimiento neta, la cual es el rendimiento después de gastos. Los ingresos se detallan más tarde en la tabla \ref{tab:iess_ingre_inv} y los egresos en la tabla \ref{tab:iess_gastos_inv}.
+
+Durante los últimos diez (10) años, el promedio de la tasa de rendimiento neto del portafolio de inversiones del \Sexpr{REP_seg} es \Sexpr{REP$inver_rendi_netos_prom_rend_neto}\%; en cambio, el promedio de la tasa de rendimiento bruto alcanza \Sexpr{REP$inver_rendi_netos_prom_rend_bruto}\%. En el año 2022, el portafolio de inversiones del Fondo administró en promedio USD \Sexpr{REP$inver_rendi_netos_fondo_adm_prom_2022} que generaron USD \Sexpr{REP$inver_rendi_netos_ingresos_2022} por ingresos y egresos operativos por USD \Sexpr{REP$inver_rendi_netos_egresos_2022}, y gastos administrativos por USD \Sexpr{REP$inver_rendi_netos_gastos_adm_2022}, que representó un rendimiento bruto igual a \Sexpr{REP$inver_rendi_netos_rendi_bruto_2022}\% y un rendimiento neto igual \Sexpr{REP$inver_rendi_netos_rendi_neto_2022}\%, después de descontar gastos de operación y administrativos.
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{9.5}{14}\selectfont
+\begin{longtable}[H]{rrrrrrrr}
+  \caption{Evolución de los ingresos, gastos operativos, gastos administrativos, rendimiento bruto y rendimiento neto del portafolio de inversiones del Fondo del \Sexpr{REP_seg}}
+\label{tab:iess_rend_inv} \\
+\toprule
+ \multicolumn{1}{l}{\multirow{2}{*}{Corte a:}} & 
+\multicolumn{1}{c}{Ingresos} &
+\multicolumn{1}{c}{Gastos} & 
+\multicolumn{1}{c}{Gastos} &
+\multicolumn{1}{c}{Fondo Administrado} & 
+\multicolumn{1}{c}{Rendimiento} &
+\multicolumn{1}{c}{Rendimiento} \\
+& 
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{Operativos (USD)} & 
+\multicolumn{1}{c}{Administrativos (USD)} &
+\multicolumn{1}{c}{Promedio (\%)} & 
+\multicolumn{1}{c}{Bruto (\%)} &
+\multicolumn{1}{c}{Neto (\%)} \\
+\midrule
+\endfirsthead
+
+\toprule
+ \multicolumn{1}{l}{\multirow{2}{*}{Corte a:}} & 
+\multicolumn{1}{c}{Ingresos} &
+\multicolumn{1}{c}{Gastos} & 
+\multicolumn{1}{c}{Gastos} &
+\multicolumn{1}{c}{Fondo Administrado} & 
+\multicolumn{1}{c}{Rendimiento} &
+\multicolumn{1}{c}{Rendimiento} \\
+& 
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{Operativos (USD)} & 
+\multicolumn{1}{c}{Administrativos (USD)} &
+\multicolumn{1}{c}{Promedio (\%)} & 
+\multicolumn{1}{c}{Bruto (\%)} &
+\multicolumn{1}{c}{Neto (\%)} \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{7}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Dirección de Tesorería - BIESS \\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_rend_inv.tex}
+\end{longtable}
+}
+}
+
+\begin{landscape}
+\vspace*{\fill}
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{9}{16}\selectfont
+\begin{longtable}[H]{lrrrrrrrrrr}
+  \caption{Evolución de los ingresos financieros generados por las inversiones del Fondo del \Sexpr{REP_seg}}
+\label{tab:iess_ingre_inv} \\
+\toprule
+ \multicolumn{1}{l}{\multirow{2}{*}{Ingresos:}} & 
+\multicolumn{1}{c}{2013} & 
+\multicolumn{1}{c}{2014} &
+\multicolumn{1}{c}{2015} & 
+\multicolumn{1}{c}{2016} & 
+\multicolumn{1}{c}{2017} & 
+\multicolumn{1}{c}{2018} & 
+\multicolumn{1}{c}{2019} & 
+\multicolumn{1}{c}{2020} & 
+\multicolumn{1}{c}{2021} & 
+\multicolumn{1}{c}{2022} \\
+& 
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)}\\
+\midrule
+\endfirsthead
+
+\toprule
+ \multicolumn{1}{l}{\multirow{2}{*}{Ingresos:}} & 
+\multicolumn{1}{c}{2013} & 
+\multicolumn{1}{c}{2014} &
+\multicolumn{1}{c}{2015} & 
+\multicolumn{1}{c}{2016} & 
+\multicolumn{1}{c}{2017} & 
+\multicolumn{1}{c}{2018} & 
+\multicolumn{1}{c}{2019} & 
+\multicolumn{1}{c}{2020} & 
+\multicolumn{1}{c}{2021} & 
+\multicolumn{1}{c}{2022} \\
+& 
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)}\\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{11}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Dirección de Tesorería - BIESS \\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_ingre_inv.tex}
+\end{longtable}
+}
+}
+\vspace*{\fill}
+\end{landscape}
+
+\begin{landscape}
+\vspace*{\fill}
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{9}{15}\selectfont
+\begin{longtable}[H]{lrrrrrrrrrr}
+  \caption{Evolución de los gastos financieros generados por las inversiones del Fondo del \Sexpr{REP_seg}}
+\label{tab:iess_gastos_inv} \\
+\toprule
+ \multicolumn{1}{l}{\multirow{2}{*}{Gastos:}} & 
+\multicolumn{1}{c}{2013} & 
+\multicolumn{1}{c}{2014} &
+\multicolumn{1}{c}{2015} & 
+\multicolumn{1}{c}{2016} & 
+\multicolumn{1}{c}{2017} & 
+\multicolumn{1}{c}{2018} & 
+\multicolumn{1}{c}{2019} & 
+\multicolumn{1}{c}{2020} & 
+\multicolumn{1}{c}{2021} & 
+\multicolumn{1}{c}{2022} \\
+& 
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)}\\
+\midrule
+\endfirsthead
+
+\toprule
+ \multicolumn{1}{l}{\multirow{2}{*}{Gastos:}} & 
+\multicolumn{1}{c}{2013} & 
+\multicolumn{1}{c}{2014} &
+\multicolumn{1}{c}{2015} & 
+\multicolumn{1}{c}{2016} & 
+\multicolumn{1}{c}{2017} & 
+\multicolumn{1}{c}{2018} & 
+\multicolumn{1}{c}{2019} & 
+\multicolumn{1}{c}{2020} & 
+\multicolumn{1}{c}{2021} & 
+\multicolumn{1}{c}{2022} \\
+& 
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)} &
+\multicolumn{1}{c}{(USD)}\\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{11}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Dirección de Tesorería - BIESS \\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_gastos_inv.tex}
+\end{longtable}
+}
+}
+\vspace*{\fill}
+\end{landscape}
+
+
+Durante el año 2022, se obtuvieron ingresos por USD \Sexpr{REP$inver_ingresos_total_2022}, los cuales se componen de la siguiente manera: USD \Sexpr{REP$inver_ingresos_cred_quiro_2022} en ingresos por créditos quirografarios, lo que representa el \Sexpr{REP$inver_ingresos_cred_quiro_repre_2022}\% de los ingresos. En segundo lugar, los ingresos por deuda en renta fija del sector público con USD \Sexpr{REP$inver_ingresos_renta_publ_2022} (\Sexpr{REP$inver_ingresos_renta_publ_repre_2022}\%); en cuarto lugar, los ingresos de deuda renta fija en el sector privado (Obligaciones, Titularizaciones, Certificados de inversión y depósito), con USD \Sexpr{REP$inver_ingresos_renta_priv_2022} (\Sexpr{REP$inver_ingresos_renta_priv_repre_2022}\%). Otros ingresos por reversión de provisiones por USD \Sexpr{REP$inver_ingresos_otros_2022} (\Sexpr{REP$inver_ingresos_otros_repre_2022}\%) y, por último, USD \Sexpr{REP$inver_ingresos_valu_inver_2022} (\Sexpr{REP$inver_ingresos_valu_inver_repre_2022}\%) en valuación de inversiones (ver la tabla \ref{tab:iess_ingre_inv} el detalle de los ingresos operativos históricos).
+
+Por otro lado, durante el año 2022, se registraron gastos operativos por USD \Sexpr{REP$inver_gastos_ope_total_general_2022}, los cuales se componen mayoritariamente (\Sexpr{REP$inver_gastos_ope_inte_acum_repre_2022}\%) por USD \Sexpr{REP$inver_gastos_ope_inte_acum_2022} en intereses acumulados en ejercicios anteriores; en segundo lugar, representado el \Sexpr{REP$inver_gastos_ope_cred_inco_repre_2022}\% de los egresos, se gastó USD \Sexpr{REP$inver_gastos_ope_cred_inco_2022} por provisión para créditos incobrables; de igual manera, se provisionaron USD \Sexpr{REP$inver_gastos_ope_mora_patro_2022} (\Sexpr{REP$inver_gastos_ope_mora_patro_repre_2022}\%) por mora patronal en préstamos quirografarios. Por valuaciones de inversiones se registró USD \Sexpr{REP$inver_gastos_ope_valu_inver_2022} (\Sexpr{REP$inver_gastos_ope_valu_inver_repre_2022}\%). Por otros gastos, se registró USD \Sexpr{REP$inver_gastos_ope_otros_202} (\Sexpr{REP$inver_gastos_ope_otros_repre_2022}\%), y, por último, por comisión en la bolsa de valores se gastó USD \Sexpr{REP$inver_gastos_ope_comision_bolsa_val_2022} (\Sexpr{REP$inver_gastos_ope_comision_bolsa_val_repre_2022}\%) y USD \Sexpr{REP$inver_gastos_ope_comisiones_2022} (\Sexpr{REP$inver_gastos_ope_comisiones_repre_2022}\%) por otras comisiones. Cabe señalar que históricamente desde el inicio del Banco existió en primer lugar la cuenta “Reversos de Intereses” que en el 2019 alcanzó los USD \Sexpr{REP$inver_gastos_ope_rever_inte_2019}; para después pasar a llamarse “Intereses acumulados en ejercicios anteriores” que para el 2022 representan la mayoría del gasto operativo (ver la tabla \ref{tab:iess_gastos_inv} el detalle del gasto operativo histórico).
+
+% --------------------------------------------------------------------------------------------------
+\subsection{Inversiones privativas (préstamos)}
+El artículo 54 de la Sección X: DEL BANCO DEL INSTITUTO ECUATORIANO DE SEGURIDAD SOCIAL, se establece que las inversiones del Fondo del Seguro General de Riesgos del Trabajo se invertirán a mediano plazo; es decir, a plazos de tres (3) a cinco (5) años, en inversiones: privativas (préstamos prendarios, quirografarios e hipotecarios). En la tabla \ref{tab:iess_creditos_inv} y figura \ref{fig:ess_prestamos_quirografarios_rtr}, se presenta la evolución histórica de las inversiones en préstamos quirografarios en valor nominal con su respectivo rendimiento y plazo promedio ponderado.
+
+El portafolio de inversiones del \Sexpr{REP_seg} no registra inversiones en préstamos prendarios e hipotecarios. La totalidad de sus inversiones privativas es en préstamos quirografarios y representan el \Sexpr{REP$inver_inver_corte_participacion_cred_quiro}\% del portafolio del Fondo a la fecha de corte. La evolución del saldo remanente invertido en préstamos tuvo una tendencia creciente entre el año 2015 a 2022, años en los que su cartera creció de USD \Sexpr{REP$inver_inv_pres_quiro_valor_nom_2015} a USD \Sexpr{REP$inver_inv_pres_quiro_valor_nom_2022}, respectivamente; es decir, un crecimiento en \Sexpr{REP$inver_inv_pres_quiro_valor_nom_2015_2022}\% en siete (7) años.
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{11}{12}\selectfont
+\begin{longtable}[H]{crrrccc}
+  \caption{Evolución histórica de las inversiones del Fondo del \Sexpr{REP_seg} en préstamos quirografarios}
+\label{tab:iess_creditos_inv} \\
+\toprule
+  \multicolumn{1}{c}{Año} & 
+  \multicolumn{1}{c}{Saldo} &
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Plazo} \\
+  &
+  \multicolumn{1}{c}{Valor Nominal (USD)} & 
+  \multicolumn{1}{c}{Ponderado (\%)} &
+  \multicolumn{1}{c}{Ponderado Real (\%)} & 
+  \multicolumn{1}{c}{(días)}   \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{c}{Año} & 
+  \multicolumn{1}{c}{Saldo} &
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Plazo} \\
+  &
+  \multicolumn{1}{c}{Valor Nominal (USD)} & 
+  \multicolumn{1}{c}{Ponderado (\%)} &
+  \multicolumn{1}{c}{Ponderado Real (\%)} & 
+  \multicolumn{1}{c}{(días)}   \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{5}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_creditos_inv.tex}
+\end{longtable}
+}
+}
+
+\begin{figure}[H]
+\captionsetup{justification=centering}
+\centering
+\caption{Evolución histórica de las inversiones en préstamos quirografarios del Seguro General de
+Riesgos del Trabajo y su rendimiento promedio ponderado}
+\label{fig:ess_prestamos_quirografarios_rtr}
+\includegraphics[scale=1]{graficos/iess_prestamos_quirografarios_rtr.pdf}
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
+\\Elaborado: DAIE}
+\end{figure}
+
+En cambio, su tasa de rendimiento ponderada registró su máximo en 2019 (\Sexpr{REP$inver_inv_pres_quiro_max_rendi_pond}\%) y su mínimo en 2014 (\Sexpr{REP$inver_inv_pres_quiro_min_rendi_pond}\%) y su promedio de los últimos diez (10) años es \Sexpr{REP$inver_inv_pres_quiro_prom_rendi_pond}\%. Cabe mencionar que este rendimiento es un promedio ponderado por tanto no considera los gastos por provisiones que estipulan la autoridad de control para este tipo de inversión como se pueden apreciar en la tabla \ref{tab:iess_gastos_inv}; por consiguiente, es necesario establecer una metodología para calcular los rendimientos netos de las inversiones en créditos.
+
+% --------------------------------------------------------------------------------------------------
+\subsection{Inversiones no privativas con renta fija en el sector público}
+
+% --------------------------------------------------------------------------------------------------
+\subsubsection{Inversiones en bonos del Estado}
+
+A 31 de diciembre de 2022, el portafolio de inversiones dispone en inversiones en bonos del Estado por un saldo en valor nominal por USD \Sexpr{REP$inver_inv_bonos_estado_valor_nominal_2022} (sin contar cupones de intereses), con una tasa de rendimiento promedio ponderado igual a \Sexpr{REP$inver_inv_bonos_estado_rend_pond_2022}\% y a un plazo promedio ponderado igual a \Sexpr{REP$inver_inv_bonos_estado_plazo_2022} días. Históricamente, las inversiones en bonos del Estado crecieron de USD \Sexpr{REP$inver_inv_bonos_estado_valor_nominal_2014} a diciembre de 2014 a USD \Sexpr{REP$inver_inv_bonos_estado_valor_nominal_2015} a diciembre de 2015; es decir, un crecimiento igual a \Sexpr{REP$inver_inv_bonos_estado_valor_nominal_crec_2014_2015}\% en un año.
+
+A pesar de que el Fondo del \Sexpr{REP_seg} recibió USD 46.587.710,42 a una tasa de rendimiento igual a 7,50\% a doce (12) años, entre noviembre de 2012 a abril de 2015, por pago del Estado por su aporte del 40\% de las pensiones, el BIESS invirtió en más bonos del Estado. En la tabla \ref{tab:iess_bonos_hist_inv} y figura \ref{fig:iess_inversiones_bonos_rtr}, se presenta la evolución histórica de las inversiones del fondo en bonos del Estado a 31 de diciembre de cada año. En cambio, en la tabla \ref{tab:iess_bonos_detalle_inv} se detalla el saldo, valor de compra, fecha de compra y vencimiento, con su tasa y plazo de los bonos que pertenecen al Fondo a la fecha de corte.
+
+\begin{figure}[H]
+\captionsetup{justification=centering}
+\centering
+\caption{Evolución histórica de las inversiones del Seguro General de Riesgos del Trabajo en Bonos del Estado y su rendimiento promedio ponderado}
+\label{fig:iess_inversiones_bonos_rtr}
+\includegraphics[scale=1]{graficos/iess_inversiones_bonos_rtr.pdf}
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
+\\Elaborado: DAIE}
+\end{figure}
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{11}{12}\selectfont
+\begin{longtable}[H]{crccr}
+  \caption{Evolución histórica del saldo de los bonos del Estado en el portafolio de inversiones del Fondo del \Sexpr{REP_seg} }
+\label{tab:iess_bonos_hist_inv} \\
+\toprule
+  \multicolumn{1}{c}{Año} & 
+  \multicolumn{1}{c}{Saldo} &
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Plazo} \\
+  &
+  \multicolumn{1}{c}{Valor Nominal (USD)} & 
+  \multicolumn{1}{c}{Ponderado (\%)} &
+  \multicolumn{1}{c}{Ponderado Real (\%)} & 
+  \multicolumn{1}{c}{(días)}   \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{c}{Año} & 
+  \multicolumn{1}{c}{Saldo} &
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Plazo} \\
+  &
+  \multicolumn{1}{c}{Valor Nominal (USD)} & 
+  \multicolumn{1}{c}{Ponderado (\%)} &
+  \multicolumn{1}{c}{Ponderado Real (\%)} & 
+  \multicolumn{1}{c}{(días)}   \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{5}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_bonos_hist_inv.tex}
+\end{longtable}
+}
+}
+
+A 31 de diciembre de 2022, el Fondo dispone de un saldo en valor nominal por USD \Sexpr{REP$inver_inv_bonos_estado_valor_nominal_2022} por la colocación de bonos por USD 823.381.457,94, de los cuales USD 352.689.198,48 ya se han recuperado. El mayor año de colocación de los bonos que se poseen a la fecha de corte es 2020, año que se colocó USD 305.015.815,97 a una tasa igual a 7,50\% y la menor cuantía fue en 2013 por USD 4.451.281,20, con una tasa igual 7,50\%. Por otro lado, a la fecha de corte el Fondo posee bonos que recibieron por USD 156.244.439,50, a solo 5,59\% a un plazo de 1.817,04 días en el año 2019.
+
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{10}{13}\selectfont
+\begin{longtable}[H]{lcccrrrl}
+  \caption{Detalle de las inversiones del Fondo del \Sexpr{REP_seg} en Bonos del Estado Ecuatoriano a 31 de diciembre de 2022}
+\label{tab:iess_bonos_detalle_inv} \\
+\toprule
+  \multicolumn{1}{c}{Referencia} & 
+  \multicolumn{1}{c}{Fecha de} &
+  \multicolumn{1}{c}{Fecha de} & 
+  \multicolumn{1}{c}{Tasa} & 
+  \multicolumn{1}{c}{Valor Nominal} &
+  \multicolumn{1}{c}{Saldo Valor} &
+  \multicolumn{1}{c}{Plazo por} &
+   \multicolumn{1}{l}{\multirow{2}{*}{Amortización}} \\
+  \multicolumn{1}{c}{del Título} & 
+  \multicolumn{1}{c}{Compra} &
+  \multicolumn{1}{c}{Vencimiento} & 
+  \multicolumn{1}{c}{Cupón (\%)} & 
+  \multicolumn{1}{c}{de Compra (USD)} &
+  \multicolumn{1}{c}{Nominal (USD)} &
+  \multicolumn{1}{c}{Vencer (días)} & \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{c}{Referencia} & 
+  \multicolumn{1}{c}{Fecha de} &
+  \multicolumn{1}{c}{Fecha de} & 
+  \multicolumn{1}{c}{Tasa} & 
+  \multicolumn{1}{c}{Valor Nominal} &
+  \multicolumn{1}{c}{Saldo Valor} &
+  \multicolumn{1}{c}{Plazo por} &
+   \multicolumn{1}{l}{\multirow{2}{*}{Amortización}} \\
+  \multicolumn{1}{c}{del Título} & 
+  \multicolumn{1}{c}{Compra} &
+  \multicolumn{1}{c}{Vencimiento} & 
+  \multicolumn{1}{c}{Cupón (\%)} & 
+  \multicolumn{1}{c}{de Compra (USD)} &
+  \multicolumn{1}{c}{Nominal (USD)} &
+  \multicolumn{1}{c}{Vencer (días)} & \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{8}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_bonos_detalle_inv.tex}
+\end{longtable}
+}
+}
+
+
+{\setlength{\tabcolsep}{6pt}
+{\fontsize{11}{13}\selectfont
+\begin{longtable}[H]{crrr}
+  \caption{Colocación de los bonos del Estado en el portafolio del \Sexpr{REP_seg} con saldo restante al corte}
+\label{tab:iess_bonos_recuperacion_inv} \\
+\toprule
+  \multicolumn{1}{l}{\multirow{2}{*}{Año:}} &
+  \multicolumn{1}{c}{Valor de Colocación} &
+  \multicolumn{1}{c}{Tasa promedio} & 
+  \multicolumn{1}{c}{Plazo promedio}\\
+  & 
+  \multicolumn{1}{c}{(USD)} &
+  \multicolumn{1}{c}{ponderado (\%)} & 
+  \multicolumn{1}{c}{ponderado (días)} \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{l}{\multirow{2}{*}{Año:}} &
+  \multicolumn{1}{c}{Valor de Colocación} &
+  \multicolumn{1}{c}{Tasa promedio} & 
+  \multicolumn{1}{c}{Plazo promedio}\\
+  & 
+  \multicolumn{1}{c}{(USD)} &
+  \multicolumn{1}{c}{ponderado (\%)} & 
+  \multicolumn{1}{c}{ponderado (días)} \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{4}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_bonos_colocacion_inv.tex}
+\end{longtable}
+}
+}
+
+A la fecha de corte, del saldo en inversiones en bonos del Estado por USD \Sexpr{REP$inver_inv_bonos_estado_valor_nominal_2022}, se entregarán cupones de intereses por USD 69.843.342,80 hasta el 04 de mayo de 2027, última fecha de vencimiento de los papeles. Se proyecta que por capital e intereses en el año 2023 se repararán USD 187.414.765,07; en el año 2024 se recupera USD 183.527.042,81; en el 2025, USD 64.004.730,17; en 2026, USD 42.581.633,14; y, por último, en 2027 se recupera 63.007.431,07. En total el Fondo del \Sexpr{REP_seg} proyecta ingresos por USD 540.535.602,26 hasta mayo de 2027 por las inversiones en bonos del Estado.
+
+{\setlength{\tabcolsep}{6pt}
+{\fontsize{11}{13}\selectfont
+\begin{longtable}[H]{crrr}
+  \caption{Proyección de la recuperación de las inversiones del Fondo del \Sexpr{REP_seg} en Bonos del Estado Ecuatoriano}
+\label{tab:iess_bonos_recuperacion_inv} \\
+\toprule
+  \multicolumn{1}{l}{\multirow{2}{*}{Año:}} &
+  \multicolumn{1}{c}{Capital Recuperado} &
+  \multicolumn{1}{c}{Interés} & 
+  \multicolumn{1}{c}{Total Recuperado}\\
+  & 
+  \multicolumn{1}{c}{(USD)} &
+  \multicolumn{1}{c}{(USD)} & 
+  \multicolumn{1}{c}{(USD)} \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{l}{\multirow{2}{*}{Año:}} &
+  \multicolumn{1}{c}{Capital Recuperado} &
+  \multicolumn{1}{c}{Interés} & 
+  \multicolumn{1}{c}{Total Recuperado}\\
+  & 
+  \multicolumn{1}{c}{(USD)} &
+  \multicolumn{1}{c}{(USD)} & 
+  \multicolumn{1}{c}{(USD)} \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{4}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_bonos_recuperacion_inv.tex}
+\end{longtable}
+}
+}
+
+\subsubsection{Inversiones en CETES}
+
+El portafolio del \Sexpr{REP_seg} registró inversiones en Certificado de Tesorería (CETES) durante los años 2015, 2016, 2020 y 2022. Especialmente, en el año 2022, las inversiones en CETES fueron de USD \Sexpr{REP$inver_inv_cetes_val_nom_2022}, su máximo histórico, después que a diciembre de 2021 no había valores invertidos en CETES y es un crecimiento igual a \Sexpr{REP$inver_inv_cetes_val_nom_crec_2020_2022}\% respecto al 2020, cuando había un saldo igual a USD \Sexpr{REP$inver_inv_cetes_val_nom_2020} a diciembre. La tasa de rendimiento de los CETES a diciembre de 2022 es igual a \Sexpr{REP$inver_inv_cetes_rend_pond_2022}\% a un plazo de \Sexpr{REP$inver_inv_cetes_plazo_prom_pond_2022} días. Históricamente, los CETES no registran mayor rendimiento que en el 2017 con \Sexpr{REP$inver_inv_cetes_rend_pond_2017}\% a un plazo de \Sexpr{REP$inver_inv_cetes_plazo_prom_pond_2017} días; y su menor rendimiento fue en 2020 con el  \Sexpr{REP$inver_inv_cetes_rend_pond_2020}\% a un plazo de solo \Sexpr{REP$inver_inv_cetes_plazo_prom_pond_2020} días. En la tabla \ref{tab:iess_bonos_hist_inv} y figura \ref{fig:iess_inversiones_bonos_rtr}, se muestra la evolución histórica del saldo de las inversiones del Fondo en CETES a 31 de diciembre de cada año y tasa de rendimiento promedio ponderado y plazo promedio ponderado.
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{11}{12}\selectfont
+\begin{longtable}[H]{crrrccc}
+  \caption{Evolución histórica de las inversiones del Fondo del \Sexpr{REP_seg} en bonos del Estado}
+\label{tab:iess_bonos_hist_inv} \\
+\toprule
+  \multicolumn{1}{c}{Año} & 
+  \multicolumn{1}{c}{Saldo} &
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Plazo} \\
+  &
+  \multicolumn{1}{c}{Valor Nominal (USD)} & 
+  \multicolumn{1}{c}{Ponderado (\%)} &
+  \multicolumn{1}{c}{Ponderado Real (\%)} & 
+  \multicolumn{1}{c}{(días)}   \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{c}{Año} & 
+  \multicolumn{1}{c}{Saldo} &
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Plazo} \\
+  &
+  \multicolumn{1}{c}{Valor Nominal (USD)} & 
+  \multicolumn{1}{c}{Ponderado (\%)} &
+  \multicolumn{1}{c}{Ponderado Real (\%)} & 
+  \multicolumn{1}{c}{(días)}   \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{5}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_cetes_hist_inv.tex}
+\end{longtable}
+}
+}
+
+\begin{figure}[H]
+\captionsetup{justification=centering}
+\centering
+\caption{Evolución histórica de las inversiones del \Sexpr{REP_seg} en Certificados de Tesorería y su rendimiento promedio ponderado}
+\label{fig:iess_inversiones_bonos_rtr}
+\includegraphics[scale=1]{graficos/iess_inversiones_cetes_rtr.pdf}
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
+\\Elaborado: DAIE}
+\end{figure}
+
+Todas los CETES que posee el portafolio de inversiones fueron recibidos en los meses de octubre, noviembre y diciembre de 2022, por montos iguales a USD \Sexpr{REP$inver_detalle_bonos_cetes_oct_2022}, USD \Sexpr{REP$inver_detalle_bonos_cetes_nov_2022} y USD \Sexpr{REP$inver_detalle_bonos_cetes_diciem_2022}, respectivamente, a una tasa de cupón cero (0\%) y fecha de vencimiento abril, mayo y junio de 2023, respectivamente (ver tabla \ref{tab:iess_cetes_detalle_inv}).
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{10}{13}\selectfont
+\begin{longtable}[H]{lcccrrrc}
+  \caption{Detalle de las inversiones del Fondo del \Sexpr{REP_seg} en Certificados de Tesorería a 31 de diciembre de 2022}
+\label{tab:iess_cetes_detalle_inv} \\
+\toprule
+  \multicolumn{1}{c}{Referencia} & 
+  \multicolumn{1}{c}{Fecha de} &
+  \multicolumn{1}{c}{Fecha de} & 
+  \multicolumn{1}{c}{Tasa} & 
+  \multicolumn{1}{c}{Valor Nominal} &
+  \multicolumn{1}{c}{Saldo Valor} &
+  \multicolumn{1}{c}{Plazo por} &
+   \multicolumn{1}{l}{\multirow{2}{*}{Amortización}} \\
+  \multicolumn{1}{c}{del Título} & 
+  \multicolumn{1}{c}{Compra} &
+  \multicolumn{1}{c}{Vencimiento} & 
+  \multicolumn{1}{c}{Cupón (\%)} & 
+  \multicolumn{1}{c}{de Compra (USD)} &
+  \multicolumn{1}{c}{Nominal (USD)} &
+  \multicolumn{1}{c}{Vencer (días)} & \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{c}{Referencia} & 
+  \multicolumn{1}{c}{Fecha de} &
+  \multicolumn{1}{c}{Fecha de} & 
+  \multicolumn{1}{c}{Tasa} & 
+  \multicolumn{1}{c}{Valor Nominal} &
+  \multicolumn{1}{c}{Saldo Valor} &
+  \multicolumn{1}{c}{Plazo por} &
+   \multicolumn{1}{l}{\multirow{2}{*}{Amortización}} \\
+  \multicolumn{1}{c}{del Título} & 
+  \multicolumn{1}{c}{Compra} &
+  \multicolumn{1}{c}{Vencimiento} & 
+  \multicolumn{1}{c}{Cupón (\%)} & 
+  \multicolumn{1}{c}{de Compra (USD)} &
+  \multicolumn{1}{c}{Nominal (USD)} &
+  \multicolumn{1}{c}{Vencer (días)} & \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{8}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_cetes_detalle_inv.tex}
+\end{longtable}
+}
+}
+
+
+
+
+% --------------------------------------------------------------------------------------------------
+\subsection{Inversiones no privativas con renta fija en el sector privado}
+
+% --------------------------------------------------------------------------------------------------
+\subsubsection{Inversiones en obligaciones en renta fija}
+
+Las inversiones del portafolio de inversiones del \Sexpr{REP_seg} en obligaciones registraron un crecimiento de \Sexpr{REP$inver_inv_obli_crec_val_nom_2021_2022}\% respecto al año anterior (2021). Históricamente, el año 2015 registró el máximo valor invertido en obligaciones por USD \Sexpr{REP$inver_inv_obli_max_val_nom}; en cambio el año 2017 tuvo el menor valor con USD \Sexpr{REP$inver_inv_obli_min_val_nom}. Por otro lado, el año 2021 alcanzó una tasa de rendimiento promedio ponderado igual \Sexpr{REP$inver_inv_obli_rend_pond_2021}\%; mientras que el año 2018 solo el \Sexpr{REP$inver_inv_obli_rend_pond_2018}\%. En la tabla \ref{tab:iess_obligaciones_hist_inv} y figura \ref{fig:iess_inversiones_obligaciones_rtr}, se presenta la evolución histórica de las inversiones en obligaciones y su tasa de rendimiento promedio ponderado a 31 de diciembre de cada año.
+
+\begin{figure}[H]
+\captionsetup{justification=centering}
+\centering
+\caption{Evolución histórica de las inversiones del Seguro General de Riesgos del Trabajo en Obligaciones y su rendimiento promedio ponderado}
+\label{fig:iess_inversiones_obligaciones_rtr}
+\includegraphics[scale=1]{graficos/iess_inversiones_obligaciones_rtr.pdf}
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
+\\Elaborado: DAIE}
+\end{figure}
+
+{\setlength{\tabcolsep}{4pt}
+{\fontsize{11}{12}\selectfont
+\begin{longtable}[H]{crrrccc}
+  \caption{Evolución histórica de las inversiones del Fondo del \Sexpr{REP_seg} en Obligaciones en renta fija}
+\label{tab:iess_obligaciones_hist_inv} \\
+\toprule
+  \multicolumn{1}{c}{Año} & 
+  \multicolumn{1}{c}{Saldo} &
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Plazo} \\
+  &
+  \multicolumn{1}{c}{Valor Nominal (USD)} & 
+  \multicolumn{1}{c}{Ponderado (\%)} &
+  \multicolumn{1}{c}{Ponderado Real (\%)} & 
+  \multicolumn{1}{c}{(días)}   \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{c}{Año} & 
+  \multicolumn{1}{c}{Saldo} &
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Plazo} \\
+  &
+  \multicolumn{1}{c}{Valor Nominal (USD)} & 
+  \multicolumn{1}{c}{Ponderado (\%)} &
+  \multicolumn{1}{c}{Ponderado Real (\%)} & 
+  \multicolumn{1}{c}{(días)}   \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{5}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_obligaciones_hist_inv.tex}
+\end{longtable}
+}
+}
+
+A 31 de diciembre de 2022, el Fondo dispone de inversiones en obligaciones por USD \Sexpr{REP$inver_inv_obli_val_nomi_2022} a una tasa de rendimiento promedio ponderada igual a \Sexpr{REP$inver_inv_obli_rend_pond_2022}\% a un plazo promedio ponderado igual a \Sexpr{REP$inver_inv_obli_plazo_2022} días a una amortización trimestral. En la lista de inversiones se encuentran obligaciones de veinte (20) empresas privadas, en las que destacan empresas como TIA S.A., Corporación el Rosado, COMANDATO, PRONOBIS S.A., entre otras. Por saldo nominal, la mayor inversión en obligaciones del Fondo tiene de emisor a la empresa AUDIOELEC S.A. por USD \Sexpr{REP$inver_det_oblig_max_val_nom} a una tasa igual a \Sexpr{REP$inver_det_obli_tasa_audioelec}\% a un plazo de \Sexpr{REP$inver_det_obli_plazo_audioelec} días; por otro lado, la obligación que entrega mayor rendimiento es de la empresa DANIELCOM S.A. con saldo igual a USD \Sexpr{REP$inver_det_oblig_val_nom_danielsa} a una tasa igual a \Sexpr{REP$inver_det_oblig_max_rend}\% a un plazo de \Sexpr{REP$inver_det_obli_plazo_danielsa} días. En la tabla \ref{tab:iess_oblig_detalle_inv}, se detalla el portafolio de inversiones del Fondo del \Sexpr{REP_seg} en obligaciones a la fecha de corte.
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{8.5}{13}\selectfont
+\begin{longtable}[H]{lcccrrrc}
+  \caption{Detalle de las inversiones del Fondo del \Sexpr{REP_seg} en Obligaciones}
+\label{tab:iess_oblig_detalle_inv} \\
+\toprule
+  \multicolumn{1}{l}{\multirow{2}{*}{Emisor:}} &
+  \multicolumn{1}{c}{Fecha de} &
+  \multicolumn{1}{c}{Fecha de} & 
+  \multicolumn{1}{c}{Tasa} & 
+  \multicolumn{1}{c}{Valor Nominal} &
+  \multicolumn{1}{c}{Saldo Valor} &
+  \multicolumn{1}{c}{Plazo por} &
+   \multicolumn{1}{l}{\multirow{2}{*}{Amortización}} \\
+   
+  & 
+  \multicolumn{1}{c}{Compra} &
+  \multicolumn{1}{c}{Vencimiento} & 
+  \multicolumn{1}{c}{Cupón (\%)} & 
+  \multicolumn{1}{c}{de Compra (USD)} &
+  \multicolumn{1}{c}{Nominal (USD)} &
+  \multicolumn{1}{c}{Vencer (días)} & \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{l}{\multirow{2}{*}{Emisor:}} &
+  \multicolumn{1}{c}{Fecha de} &
+  \multicolumn{1}{c}{Fecha de} & 
+  \multicolumn{1}{c}{Tasa} & 
+  \multicolumn{1}{c}{Valor Nominal} &
+  \multicolumn{1}{c}{Saldo Valor} &
+  \multicolumn{1}{c}{Plazo por} &
+   \multicolumn{1}{l}{\multirow{2}{*}{Amortización}} \\
+   
+  & 
+  \multicolumn{1}{c}{Compra} &
+  \multicolumn{1}{c}{Vencimiento} & 
+  \multicolumn{1}{c}{Cupón (\%)} & 
+  \multicolumn{1}{c}{de Compra (USD)} &
+  \multicolumn{1}{c}{Nominal (USD)} &
+  \multicolumn{1}{c}{Vencer (días)} & \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{8}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_oblig_detalle_inv.tex}
+\end{longtable}
+}
+}
+% --------------------------------------------------------------------------------------------------
+\subsubsection{Inversiones en titularizaciones}
+
+Las inversiones en titularizaciones en el portafolio de inversiones del Fondo \Sexpr{REP_seg} alcanzaron su máximo en el año 2014 (USD \Sexpr{REP$inver_titu_valor_nom_max}), y, más tarde, decrecieron a solo USD \Sexpr{REP$inver_titu_valor_nom_2019} en 2019, lo que representa una reducción igual a \Sexpr{REP$inver_titu_valor_nom_2014_2019}\% en cinco (5) años. Más recientemente, el saldo de las inversiones en titularizaciones creció a USD \Sexpr{REP$inver_titu_valor_nom_2020} en el 2020; luego en el 2021 se situó en \Sexpr{REP$inver_titu_valor_nom_2021}; y, finalmente, para el 2022 creció a USD \Sexpr{REP$inver_titu_valor_nom_2022}, lo que representa un crecimiento igual \Sexpr{REP$inver_titu_valor_nom_2021_2022}\% durante el último año. En la figura \ref{fig:iess_inversiones_titulos_financieros_rtr} y la tabla \ref{tab:iess_titularizaciones_hist_inv}, se muestra la evolución histórica del saldo, en valor nominal, de las inversiones del Fondo del \Sexpr{REP_seg} en titularizaciones a 31 diciembre de cada año y su rendimiento promedio ponderado.
+
+{\setlength{\tabcolsep}{4pt}
+{\fontsize{11}{12}\selectfont
+\begin{longtable}[H]{crrrccc}
+  \caption{Evolución histórica de las inversiones del Fondo del \Sexpr{REP_seg} en titularizaciones en renta fija}
+\label{tab:iess_titularizaciones_hist_inv} \\
+\toprule
+  \multicolumn{1}{c}{Año} & 
+  \multicolumn{1}{c}{Saldo} &
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Plazo} \\
+  &
+  \multicolumn{1}{c}{Valor Nominal (USD)} & 
+  \multicolumn{1}{c}{Ponderado (\%)} &
+  \multicolumn{1}{c}{Ponderado Real (\%)} & 
+  \multicolumn{1}{c}{(días)}   \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{c}{Año} & 
+  \multicolumn{1}{c}{Saldo} &
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Plazo} \\
+  &
+  \multicolumn{1}{c}{Valor Nominal (USD)} & 
+  \multicolumn{1}{c}{Ponderado (\%)} &
+  \multicolumn{1}{c}{Ponderado Real (\%)} & 
+  \multicolumn{1}{c}{(días)}   \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{5}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_titularizaciones_hist_inv.tex}
+\end{longtable}
+}
+}
+
+\begin{figure}[H]
+\captionsetup{justification=centering}
+\centering
+\caption{Evolución histórica de las inversiones del Seguro General de Riesgos del Trabajo en títulos
+financieros y su rendimiento promedio ponderado}
+\label{fig:iess_inversiones_titulos_financieros_rtr}
+\includegraphics[scale=1]{graficos/iess_inversiones_titularizaciones_rtr.pdf}
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
+\\Elaborado: DAIE}
+\end{figure}
+
+El saldo de las inversiones en titularizaciones del Fondo del \Sexpr{REP_seg} a la fecha de corte se encuentran distribuidas en títulos de dos (2) empresas privadas. El primero es el “FIDEICOMISO TITULARIZACIÓN CARTERA AUTOMOTRIZ. MUTUALISTA PICHINCHA 1”, con un valor de compra de USD \Sexpr{REP$inver_det_titu_valor_compra_mut_pichi} y un saldo a la fecha por USD \Sexpr{REP$inver_det_titu_saldo_nomi_mut_pichi} con una tasa igual a \Sexpr{REP$inver_det_titu_tasa_mut_pichi}\% con amortización trimestral a un plazo remanente de \Sexpr{REP$inver_det_titu_plazo_mut_pichi} días. El Segundo pertenece al emisor UTE , con un valor de compra de USD \Sexpr{REP$inver_det_titu_valor_compra_ute} y un saldo al corte de USD \Sexpr{REP$inver_det_titu_saldo_nomi_ute} a una tasa igual a \Sexpr{REP$inver_det_titu_tasa_ute}\% con amortización semestral a un plazo remanente de \Sexpr{REP$inver_det_titu_plazo_ute} días. En la tabla \ref{tab:iess_titul_detalle_inv}, se enumera las inversiones del Fondo en titularizaciones a la fecha de corte.
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{8}{13}\selectfont
+\begin{longtable}[H]{lcccrrrc}
+  \caption{Detalle de las inversiones del Fondo del \Sexpr{REP_seg} en Titularizaciones}
+\label{tab:iess_titul_detalle_inv} \\
+\toprule
+  \multicolumn{1}{l}{\multirow{2}{*}{Emisor:}} &
+  \multicolumn{1}{c}{Fecha de} &
+  \multicolumn{1}{c}{Fecha de} & 
+  \multicolumn{1}{c}{Tasa} & 
+  \multicolumn{1}{c}{Valor Nominal} &
+  \multicolumn{1}{c}{Saldo Valor} &
+  \multicolumn{1}{c}{Plazo por} &
+   \multicolumn{1}{l}{\multirow{2}{*}{Amortización}} \\
+   
+  & 
+  \multicolumn{1}{c}{Compra} &
+  \multicolumn{1}{c}{Vencimiento} & 
+  \multicolumn{1}{c}{Cupón (\%)} & 
+  \multicolumn{1}{c}{de Compra (USD)} &
+  \multicolumn{1}{c}{Nominal (USD)} &
+  \multicolumn{1}{c}{Vencer (días)} & \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{l}{\multirow{2}{*}{Emisor:}} &
+  \multicolumn{1}{c}{Fecha de} &
+  \multicolumn{1}{c}{Fecha de} & 
+  \multicolumn{1}{c}{Tasa} & 
+  \multicolumn{1}{c}{Valor Nominal} &
+  \multicolumn{1}{c}{Saldo Valor} &
+  \multicolumn{1}{c}{Plazo por} &
+   \multicolumn{1}{l}{\multirow{2}{*}{Amortización}} \\
+   
+  & 
+  \multicolumn{1}{c}{Compra} &
+  \multicolumn{1}{c}{Vencimiento} & 
+  \multicolumn{1}{c}{Cupón (\%)} & 
+  \multicolumn{1}{c}{de Compra (USD)} &
+  \multicolumn{1}{c}{Nominal (USD)} &
+  \multicolumn{1}{c}{Vencer (días)} & \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{8}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_titul_detalle_inv.tex}
+\end{longtable}
+}
+}
+
+\subsubsection{Inversiones en certificados de depósitos}
+
+En cumplimiento del artículo 54 de la Sección X: DEL BANCO DEL INSTITUTO ECUATORIANO DE SEGURIDAD SOCIAL de la CODIFICACIÓN DE RESOLUCIONES MONETARIAS, FINANCIERAS, DE VALORES Y SEGUROS, el Fondo del \Sexpr{REP_seg} puede adquirir inversiones no privativas en renta fija en certificados de depósitos. Desde el 20 de julio de 2022, el Fondo ha invertido en USD \Sexpr{REP$inver_cert_deposi_total_valor_compra} en certificados de depósitos a una tasa promedio ponderado que va desde \Sexpr{REP$inver_cert_deposi_tasa_min}\% a \Sexpr{REP$inver_cert_deposi_tasa_max}\% con un plazo promedio ponderado desde \Sexpr{REP$inver_cert_deposi_plazo_min} hasta \Sexpr{REP$inver_cert_deposi_plazo_max} días; todos los certificados de depósito se recuperan a su vencimiento; y se encuentran invertidos en tres (3) bancos y dos (2) cooperativas. La mayoría de los depósitos se encuentran en el Banco del Pacífico en dos (2) certificados; el primero por USD \Sexpr{REP$inver_cert_deposi_pacifico_dic_val_nom} a una tasa igual a \Sexpr{REP$inver_cert_deposi_pacifico_dic_tasa}\% a un plazo remanente de \Sexpr{REP$inver_cert_deposi_pacifico_dic_plazo} días; y, el segundo, por USD \Sexpr{REP$inver_cert_deposi_pacifico_julio_val_nom} a una tasa igual a \Sexpr{REP$inver_cert_deposi_pacifico_julio_tasa}\% a un plazo remanente de \Sexpr{REP$inver_cert_deposi_pacifico_julio_plazo} días. Se proyecta recuperar la totalidad de todos los certificados de depósito hasta el 01 de junio de 2023.
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{8}{13}\selectfont
+\begin{longtable}[H]{lcccrrrc}
+  \caption{Detalle de las inversiones del Fondo del \Sexpr{REP_seg} en Certificados de Depósitos}
+\label{tab:iess_cdp_detalle_inv} \\
+\toprule
+  \multicolumn{1}{l}{\multirow{2}{*}{Emisor:}} &
+  \multicolumn{1}{c}{Fecha de} &
+  \multicolumn{1}{c}{Fecha de} & 
+  \multicolumn{1}{c}{Tasa} & 
+  \multicolumn{1}{c}{Valor Nominal} &
+  \multicolumn{1}{c}{Saldo Valor} &
+  \multicolumn{1}{c}{Plazo por} &
+   \multicolumn{1}{l}{\multirow{2}{*}{Amortización}} \\
+   
+  & 
+  \multicolumn{1}{c}{Compra} &
+  \multicolumn{1}{c}{Vencimiento} & 
+  \multicolumn{1}{c}{Cupón (\%)} & 
+  \multicolumn{1}{c}{de Compra (USD)} &
+  \multicolumn{1}{c}{Nominal (USD)} &
+  \multicolumn{1}{c}{Vencer (días)} & \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{l}{\multirow{2}{*}{Emisor:}} &
+  \multicolumn{1}{c}{Fecha de} &
+  \multicolumn{1}{c}{Fecha de} & 
+  \multicolumn{1}{c}{Tasa} & 
+  \multicolumn{1}{c}{Valor Nominal} &
+  \multicolumn{1}{c}{Saldo Valor} &
+  \multicolumn{1}{c}{Plazo por} &
+   \multicolumn{1}{l}{\multirow{2}{*}{Amortización}} \\
+   
+  & 
+  \multicolumn{1}{c}{Compra} &
+  \multicolumn{1}{c}{Vencimiento} & 
+  \multicolumn{1}{c}{Cupón (\%)} & 
+  \multicolumn{1}{c}{de Compra (USD)} &
+  \multicolumn{1}{c}{Nominal (USD)} &
+  \multicolumn{1}{c}{Vencer (días)} & \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{8}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_cdp_detalle_inv.tex}
+\end{longtable}
+}
+}
+
+
+\subsubsection{Inversiones en certificados de inversión}
+
+Desde el 04 de agosto de 2022, el Fondo ha invertido en USD \Sexpr{REP$inver_det_cert_inv_total_val_nominal} en certificados de inversión; todos los certificados de inversiones se recuperan a su vencimiento; y se encuentran invertidos en dos (2) bancos privados. Los valores invertidos se encuentran en el Banco DINERS CLUB por USD \Sexpr{REP$inver_det_cert_inv_diners_val_nom} a una tasa igual a \Sexpr{REP$inver_det_cert_inv_diners_tasa}\% a un plazo remanente de \Sexpr{REP$inver_det_cert_inv_diners_plazo} días; y, el segundo lugar, por USD \Sexpr{REP$inver_det_cert_inv_bolivariano_val_nom} en el banco BOLIVARIANO a una tasa igual a \Sexpr{REP$inver_det_cert_inv_bolivariano_tasa}\% a un plazo remanente de \Sexpr{REP$inver_det_cert_inv_bolivariano_plazo} días. Se proyecta recuperar la totalidad de todos los certificados de inversión hasta el 23 de mayo de 2023. En la tabla \ref{tab:iess_cid_hist_inv}, se enumera las inversiones del Fondo en certificados de inversión a la fecha de corte.
+
+{\setlength{\tabcolsep}{4pt}
+{\fontsize{11}{12}\selectfont
+\begin{longtable}[H]{crrrccc}
+  \caption{Evolución histórica de las inversiones del Fondo del \Sexpr{REP_seg} en Certificados de Inversión en renta fija}
+\label{tab:iess_cid_hist_inv} \\
+\toprule
+  \multicolumn{1}{c}{Año} & 
+  \multicolumn{1}{c}{Saldo} &
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Plazo} \\
+  &
+  \multicolumn{1}{c}{Valor Nominal (USD)} & 
+  \multicolumn{1}{c}{Ponderado (\%)} &
+  \multicolumn{1}{c}{Ponderado Real (\%)} & 
+  \multicolumn{1}{c}{(días)}   \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{c}{Año} & 
+  \multicolumn{1}{c}{Saldo} &
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Plazo} \\
+  &
+  \multicolumn{1}{c}{Valor Nominal (USD)} & 
+  \multicolumn{1}{c}{Ponderado (\%)} &
+  \multicolumn{1}{c}{Ponderado Real (\%)} & 
+  \multicolumn{1}{c}{(días)}   \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{5}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_cid_hist_inv.tex}
+\end{longtable}
+}
+}
+
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{8}{13}\selectfont
+\begin{longtable}[H]{lcccrrrc}
+  \caption{Detalle de las inversiones del Fondo del \Sexpr{REP_seg} en Certificados de Inversión}
+\label{tab:iess_cid_detalle_inv} \\
+\toprule
+  \multicolumn{1}{l}{\multirow{2}{*}{Emisor:}} &
+  \multicolumn{1}{c}{Fecha de} &
+  \multicolumn{1}{c}{Fecha de} & 
+  \multicolumn{1}{c}{Tasa} & 
+  \multicolumn{1}{c}{Valor Nominal} &
+  \multicolumn{1}{c}{Saldo Valor} &
+  \multicolumn{1}{c}{Plazo por} &
+   \multicolumn{1}{l}{\multirow{2}{*}{Amortización}} \\
+   
+  & 
+  \multicolumn{1}{c}{Compra} &
+  \multicolumn{1}{c}{Vencimiento} & 
+  \multicolumn{1}{c}{Cupón (\%)} & 
+  \multicolumn{1}{c}{de Compra (USD)} &
+  \multicolumn{1}{c}{Nominal (USD)} &
+  \multicolumn{1}{c}{Vencer (días)} & \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{l}{\multirow{2}{*}{Emisor:}} &
+  \multicolumn{1}{c}{Fecha de} &
+  \multicolumn{1}{c}{Fecha de} & 
+  \multicolumn{1}{c}{Tasa} & 
+  \multicolumn{1}{c}{Valor Nominal} &
+  \multicolumn{1}{c}{Saldo Valor} &
+  \multicolumn{1}{c}{Plazo por} &
+   \multicolumn{1}{l}{\multirow{2}{*}{Amortización}} \\
+   
+  & 
+  \multicolumn{1}{c}{Compra} &
+  \multicolumn{1}{c}{Vencimiento} & 
+  \multicolumn{1}{c}{Cupón (\%)} & 
+  \multicolumn{1}{c}{de Compra (USD)} &
+  \multicolumn{1}{c}{Nominal (USD)} &
+  \multicolumn{1}{c}{Vencer (días)} & \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{8}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_cid_detalle_inv.tex}
+\end{longtable}
+}
+}
+
+
+\subsubsection{Inversiones en papel comercial}
+
+Las inversiones en papel comercial del Fondo del \Sexpr{REP_seg} ascienden a USD \Sexpr{REP$inver_inv_papel_comer_val_nom_2022} a la fecha de corte, lo que sígnica un crecimiento igual a \Sexpr{REP$inver_inv_papel_comer_val_nom_cre_2020_2022}\%, con respecto a 2020 (USD \Sexpr{REP$inver_inv_papel_comer_val_nom_2020}). También se registraron inversiones en papel comercial en el año 2015 por USD \Sexpr{REP$inver_inv_papel_comer_val_nom_2015}, y USD \Sexpr{REP$inver_inv_papel_comer_val_nom_2014} en el año 2014. La tasa de rendimiento promedio ponderado real de las inversiones en papel comercial es \Sexpr{REP$inver_inv_papel_comer_ren_prom_real_2022}\% a 2022 y \Sexpr{REP$inver_inv_papel_comer_ren_prom_real_2020}\% a 2020; en cambio, que a 2015 y 2014, se registró tasa de rendimiento real iguales a \Sexpr{REP$inver_inv_papel_comer_ren_prom_real_2015}\% y \Sexpr{REP$inver_inv_papel_comer_ren_prom_real_2014}\%, respectivamente. En la tabla \ref{tab:iess_pc_hist_inv} y figura \ref{fig:iess_inversiones_papel_comercial_rtr}, se presenta la evolución de las inversiones del Fondo del \Sexpr{REP_seg} en papel comercial, a 31 de diciembre de cada año.
+
+{\setlength{\tabcolsep}{4pt}
+{\fontsize{11}{12}\selectfont
+\begin{longtable}[H]{crrrccc}
+  \caption{Evolución histórica de las inversiones del Fondo del \Sexpr{REP_seg} en Papel Comercial}
+\label{tab:iess_pc_hist_inv} \\
+\toprule
+  \multicolumn{1}{c}{Año} & 
+  \multicolumn{1}{c}{Saldo} &
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Plazo} \\
+  &
+  \multicolumn{1}{c}{Valor Nominal (USD)} & 
+  \multicolumn{1}{c}{Ponderado (\%)} &
+  \multicolumn{1}{c}{Ponderado Real (\%)} & 
+  \multicolumn{1}{c}{(días)}   \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{c}{Año} & 
+  \multicolumn{1}{c}{Saldo} &
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Rendimiento Promedio} & 
+  \multicolumn{1}{c}{Plazo} \\
+  &
+  \multicolumn{1}{c}{Valor Nominal (USD)} & 
+  \multicolumn{1}{c}{Ponderado (\%)} &
+  \multicolumn{1}{c}{Ponderado Real (\%)} & 
+  \multicolumn{1}{c}{(días)}   \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{5}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_pc_hist_inv.tex}
+\end{longtable}
+}
+}
+
+\begin{figure}[H]
+\captionsetup{justification=centering}
+\centering
+\caption{Evolución histórica de las inversiones del \Sexpr{REP_seg} en Papel Comercial y su rendimiento promedio ponderado}
+\label{fig:iess_inversiones_papel_comercial_rtr}
+\includegraphics[scale=1]{graficos/iess_inversiones_papel_comercial_rtr.pdf}
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
+\\Elaborado: DAIE}
+\end{figure}
+
+Al 31 de diciembre de 2022, las inversiones en papel comercial se distribuyen en dos (2) empresas privadas, en tres (3) papeles comerciales, todas son cupón cero y con amortización a fecha de vencimiento. El primer papel comercial tiene de emisor a CONTINENTAL TIRE ANDINA S.A. por un valor de USD \Sexpr{REP$inver_det_papel_comer_val_compra_continental}, con un plazo remanente igual a \Sexpr{REP$inver_det_papel_comer_plazo_continental} días. En segundo es emitido por PRONACA por USD  \Sexpr{REP$inver_det_papel_comer_val_compra_pronaca_oct} a un plazo remanente de \Sexpr{REP$inver_det_papel_comer_plazo_pronaca_oct} días e, igualmente, el papel comercial de PRONACA por USD \Sexpr{REP$inver_det_papel_comer_val_compra_pronaca_may} a un plazo remanente igual a \Sexpr{REP$inver_det_papel_comer_plazo_pronaca_may} días. En la tabla \ref{tab:iess_pc_detalle_inv}, se detalla el portafolio de inversiones del Fondo en papeles comerciales a la fecha de corte.
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{8}{13}\selectfont
+\begin{longtable}[H]{lcccrrrc}
+  \caption{Detalle de las inversiones del Fondo del \Sexpr{REP_seg} en Papel Comercial}
+\label{tab:iess_pc_detalle_inv} \\
+\toprule
+  \multicolumn{1}{l}{\multirow{2}{*}{Emisor:}} &
+  \multicolumn{1}{c}{Fecha de} &
+  \multicolumn{1}{c}{Fecha de} & 
+  \multicolumn{1}{c}{Tasa} & 
+  \multicolumn{1}{c}{Valor Nominal} &
+  \multicolumn{1}{c}{Saldo Valor} &
+  \multicolumn{1}{c}{Plazo por} &
+   \multicolumn{1}{l}{\multirow{2}{*}{Amortización}} \\
+   
+  & 
+  \multicolumn{1}{c}{Compra} &
+  \multicolumn{1}{c}{Vencimiento} & 
+  \multicolumn{1}{c}{Cupón (\%)} & 
+  \multicolumn{1}{c}{de Compra (USD)} &
+  \multicolumn{1}{c}{Nominal (USD)} &
+  \multicolumn{1}{c}{Vencer (días)} & \\
+\midrule
+\endfirsthead
+
+\toprule
+  \multicolumn{1}{l}{\multirow{2}{*}{Emisor:}} &
+  \multicolumn{1}{c}{Fecha de} &
+  \multicolumn{1}{c}{Fecha de} & 
+  \multicolumn{1}{c}{Tasa} & 
+  \multicolumn{1}{c}{Valor Nominal} &
+  \multicolumn{1}{c}{Saldo Valor} &
+  \multicolumn{1}{c}{Plazo por} &
+   \multicolumn{1}{l}{\multirow{2}{*}{Amortización}} \\
+   
+  & 
+  \multicolumn{1}{c}{Compra} &
+  \multicolumn{1}{c}{Vencimiento} & 
+  \multicolumn{1}{c}{Cupón (\%)} & 
+  \multicolumn{1}{c}{de Compra (USD)} &
+  \multicolumn{1}{c}{Nominal (USD)} &
+  \multicolumn{1}{c}{Vencer (días)} & \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{8}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/iess_pc_detalle_inv.tex}
+\end{longtable}
+}
+}
+
+
+%---------------------------------------------------------------------------------------------------
+\subsection{Desinversiones del portafolio de inversiones del Fondo del \Sexpr{REP_seg}}
 \label{tab:iess_RTR_desinvertido_anual}
 
 Para el cálculo del lucro cesante (ingresos financieros dejados de percibir por las desinversiones), se emplearon las tasas de rendimiento neto según la metodología ``Cálculo de rendimientos financieros de los Fondos Previsionales administrados por el Banco del Instituto Ecuatoriano de Seguridad Social´´ de la tabla \ref{tab:iess_rend_inv}. En primer lugar, se utiliza una tasa equivalente mensual, puesto que las tasas de rendimiento netas $i_t$ son anuales al momento $t$ de la inversión.
@@ -1648,7 +2953,7 @@ Donde $L_t$ es el lucro cesante de la desinversión/inversión correspondiente t
 \end{longtable}
 }
 
-Aplicando las suposiciones y metodología expuesta, se concluye que el monto desinvertido entre junio de 2017 a diciembre de 2018 es USD 25.000.000,00 , por lo cual el IESS dejó de percibir USD 1.035.057,65 por lucro cesante por las desinversiones; es decir, que el perjuicio al Fondo del \Sexpr{REP_seg} por desinversiones es USD 26.035.057,65 en total. En la siguiente tabla, se registra el capital desinvertido, lucro cesante y su total desinvertido para los años 2017 y 2018 (ver tabla \ref{tab:iess_RTR_desinvertido_anual}).
+Aplicando las suposiciones y metodología expuesta, se concluye que el monto desinvertido hasta diciembre de 2022 es USD 35.500.000,00, por lo cual el IESS dejó de percibir USD 15.492.842,33 por lucro cesante por las desinversiones; es decir, que el perjuicio al Fondo del \Sexpr{REP_seg} por desinversiones es USD 50.992.842,33 en total. En la siguiente tabla, se registra el capital desinvertido, lucro cesante y su total desinvertido por año (ver tabla \ref{tab:iess_RTR_desinvertido_anual}).
 
 {\fontsize{11}{12}\selectfont
 \begin{longtable}[H]{crrr}
