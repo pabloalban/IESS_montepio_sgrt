@@ -773,7 +773,7 @@ aux[ nrow( aux ), 1 ] <- 'Total'
 
 aux_xtable <- xtable( aux, digits = c( 0, 0, 2, 2, 3, 2, 2 ) )
 print( aux_xtable,
-       file = paste0( parametros$resultado_tablas, 'iess_RTR_desinversiones_anual', '.tex' ),
+       file = paste0( parametros$resultado_tablas, 'iess_RTR_desinversiones', '.tex' ),
        type = 'latex',
        include.colnames = FALSE,
        include.rownames = FALSE,

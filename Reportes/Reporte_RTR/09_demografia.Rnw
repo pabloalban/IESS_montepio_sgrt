@@ -1961,7 +1961,7 @@ Durante el año \Sexpr{REP$corte}, el 50\% de los beneficiarios por pensiones de
 \centering
 \caption{Simulaciones Bootstrap del porcentaje montepios causados por afiliados fallecidos por accidentes laborales}
 \label{fig:iess_evo_ben_vo_rtr}
-\includegraphics[scale=1]{graficos/iess_porc_a_rtr.png}
+\includegraphics[scale=1]{graficos/iess_bootstrap_of_porc_a_rtr.png}
 \caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
 \\Elaborado: DAIE}
 \end{figure}
@@ -1971,7 +1971,7 @@ Durante el año \Sexpr{REP$corte}, el 50\% de los beneficiarios por pensiones de
 \centering
 \caption{Simulaciones Bootstrap del porcentaje montepios causados por afiliados fallecidos por accidentes laborales}
 \label{fig:iess_evo_ben_vo_rtr}
-\includegraphics[scale=1]{graficos/iess_porc_j_rtr.png}
+\includegraphics[scale=1]{graficos/iess_bootstrap_of_porc_j_rtr.png}
 \caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
 \\Elaborado: DAIE}
 \end{figure}
