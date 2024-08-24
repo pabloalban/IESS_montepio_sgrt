@@ -207,4 +207,4 @@ save(
 # Borrando data.frames-------------------------------------------------------------------------------
 message( paste( rep( "-", 100 ), collapse = "" ) )
 rm( list = ls(  )[!( ls(  ) %in% "parametros" )] )
-gc(  )
+gc( )

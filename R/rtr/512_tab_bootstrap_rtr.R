@@ -42,6 +42,22 @@ print( aux_xtab,
        hline.after = nrow( aux ),
        sanitize.text.function = identity )
 
+## 1.3 Tabla de ingresos de nuevos montepíos--------------------------------------------------------
+aux <- tab_ing_of
+
+aux_xtab <- xtable( aux, digits = c( 0, 0, 0, 2, 0, 2, 0, 2, 0 ) )
+
+print( aux_xtab,
+       file = paste0( parametros$resultado_tablas, 'tab_ingresos_of_rtr', '.tex' ),
+       type = 'latex',
+       include.colnames = FALSE, include.rownames = FALSE,
+       format.args = list( decimal.mark = ',', big.mark = '.' ),
+       only.contents = TRUE,
+       hline.after = c( nrow( aux ),
+                        nrow( aux ) - 1 ),
+       sanitize.text.function = identity )
+
+  
 #2.Bootstrap de viudas------------------------------------------------------------------------------
 message( '\tTablas estimación bootstrap viudas' )
 
@@ -74,6 +90,21 @@ print( aux_xtab,
        format.args = list( decimal.mark = ',', big.mark = '.' ),
        only.contents = TRUE,
        hline.after = nrow( aux ),
+       sanitize.text.function = identity )
+
+## 2.3 Tabla de ingresos de nuevos montepíos--------------------------------------------------------
+aux <- tab_ing_vo
+
+aux_xtab <- xtable( aux, digits = c( 0, 0, 0, 2, 0, 2, 0, 2, 0 ) )
+
+print( aux_xtab,
+       file = paste0( parametros$resultado_tablas, 'tab_ingresos_vo_rtr', '.tex' ),
+       type = 'latex',
+       include.colnames = FALSE, include.rownames = FALSE,
+       format.args = list( decimal.mark = ',', big.mark = '.' ),
+       only.contents = TRUE,
+       hline.after = c( nrow( aux ),
+                        nrow( aux ) - 1 ),
        sanitize.text.function = identity )
 
 #Limpiar RAM----------------------------------------------------------------------------------------

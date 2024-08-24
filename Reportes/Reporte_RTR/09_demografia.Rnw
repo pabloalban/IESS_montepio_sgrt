@@ -1953,34 +1953,86 @@ Durante el año \Sexpr{REP$corte}, el 50\% de los beneficiarios por pensiones de
 }
 
 %---------------------------------------------------------------------------------------------------
-\subsection{Estimación de fallecidos por accidentes laborales}
+\subsection{Estimación de montepíos causados por accidentes laborales fatales}
 
+
+\subsubsection{Estimación de montepíos de orfandad causados por accidentes laborales fatales}
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{11}{14}\selectfont
+\begin{longtable}[H]{lrrrrrrr}
+ \caption{Ingreso anuales de nuevos pensionistas de orfandad por su causal}
+\label{tab:tab_ingresos_of_rtr} \\
+\toprule
+\multicolumn{1}{l}{\multirow{2}{*}{Año:}} & 
+\multicolumn{2}{c}{Accidente laboral faltal} &
+\multicolumn{2}{c}{Fallecimiento del jubilado} &
+\multicolumn{2}{c}{Datos perdidos} &
+\multicolumn{1}{l}{\multirow{2}{*}{Total}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+& 
+\multicolumn{1}{c}{Pensionistas} &
+\multicolumn{1}{c}{Porcentaje (\%)} &
+\multicolumn{1}{c}{Pensionistas} &
+\multicolumn{1}{c}{Porcentaje (\%)} &
+\multicolumn{1}{c}{Pensionistas} &
+\multicolumn{1}{c}{Porcentaje (\%)} & \\
+\midrule
+\endfirsthead
+
+\toprule
+\multicolumn{1}{l}{\multirow{2}{*}{Año:}} & 
+\multicolumn{2}{c}{Accidente laboral faltal} &
+\multicolumn{2}{c}{Fallecimiento del jubilado} &
+\multicolumn{2}{c}{Datos perdidos} &
+\multicolumn{1}{l}{\multirow{2}{*}{Total}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+& 
+\multicolumn{1}{c}{Pensionistas} &
+\multicolumn{1}{c}{Porcentaje (\%)} &
+\multicolumn{1}{c}{Pensionistas} &
+\multicolumn{1}{c}{Porcentaje (\%)} &
+\multicolumn{1}{c}{Pensionistas} &
+\multicolumn{1}{c}{Porcentaje (\%)} & \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{8}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: DSGRT - IESS \\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/tab_ingresos_of_rtr.tex}
+\end{longtable}
+}
+}
 
 
 \begin{figure}[H]
 \centering
-\caption{Simulaciones Bootstrap del porcentaje montepios causados por afiliados fallecidos por accidentes laborales}
-\label{fig:iess_evo_ben_vo_rtr}
+\caption{Simulaciones Bootstrap del porcentaje montepios de orfandad causados por afiliados fallecidos por accidentes laborales}
+\label{fig:iess_evo_ben_of_rtr}
 \includegraphics[scale=1]{graficos/iess_bootstrap_of_porc_a_rtr.png}
-\caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
-\\Elaborado: DAIE}
+\caption*{\scriptsize Fuente: DSGRT - IESS \\
+Elaborado: DAIE}
 \end{figure}
 
 
 \begin{figure}[H]
 \centering
-\caption{Simulaciones Bootstrap del porcentaje montepios causados por afiliados fallecidos por accidentes laborales}
-\label{fig:iess_evo_ben_vo_rtr}
+\caption{Simulaciones Bootstrap del porcentaje montepios de orfandad causados por afiliados fallecidos por accidentes laborales}
+\label{fig:iess_evo_ben_of_rtr}
 \includegraphics[scale=1]{graficos/iess_bootstrap_of_porc_j_rtr.png}
-\caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
-\\Elaborado: DAIE}
+\caption*{\scriptsize Fuente: DSGRT - IESS \\
+Elaborado: DAIE}}
 \end{figure}
 
 
 \begin{table}[H]
 \centering
-\caption{Estimación del número de montepios entregados entre 2012 a 2022 por tipo de causante}
-\label{tab:iess_resultados_resumen_ejec}
+\caption{Estimación del número de montepios de orfandad entregados entre 2014 a 2022 por tipo de causante}
+\label{tab:tab_est_ben_bootstrap_of_rtr}
 {\fontsize{9}{11}\selectfont
 \begin{tabular}{lrrrrr}
 \toprule
@@ -1991,7 +2043,7 @@ Durante el año \Sexpr{REP$corte}, el 50\% de los beneficiarios por pensiones de
 \multicolumn{1}{c}{Percentil 2,5\%}  &
 \multicolumn{1}{c}{Percentil 97,5\%} \\
 \midrule
-\input{tablas/tab_est_ben_bootstrap_rtr.tex}
+\input{tablas/tab_est_ben_bootstrap_of_rtr.tex}
 %\bottomrule
 \end{tabular}
 }
@@ -2001,8 +2053,8 @@ Durante el año \Sexpr{REP$corte}, el 50\% de los beneficiarios por pensiones de
 
 \begin{table}[H]
 \centering
-\caption{Estimación del porcentaje de montepios entregados entre 2012 a 2022 por tipo de causante}
-\label{tab:iess_resultados_resumen_ejec}
+\caption{Estimación del porcentaje de montepios de orfandad entregados entre 2014 a 2022 por tipo de causante}
+\label{tab:tab_porc_ben_bootstrap_of_rtr}
 {\fontsize{9}{11}\selectfont
 \begin{tabular}{lrrrrr}
 \toprule
@@ -2013,7 +2065,124 @@ Durante el año \Sexpr{REP$corte}, el 50\% de los beneficiarios por pensiones de
 \multicolumn{1}{c}{Percentil 2,5\%}  &
 \multicolumn{1}{c}{Percentil 97,5\%} \\
 \midrule
-\input{tablas/tab_porc_ben_bootstrap_rtr.tex}
+\input{tablas/tab_porc_ben_bootstrap_of_rtr.tex}
+%\bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize Elaborado: DAIE}
+\end{table}
+
+
+\subsubsection{Estimación de montepíos de viudedad causados por accidentes laborales fatales}
+
+{\setlength{\tabcolsep}{3pt}
+{\fontsize{11}{14}\selectfont
+\begin{longtable}[H]{lrrrrrrr}
+ \caption{Ingreso anuales de nuevos pensionistas de viudedad por su causal}
+\label{tab:tab_ingresos_vo_rtr} \\
+\toprule
+\multicolumn{1}{l}{\multirow{2}{*}{Año:}} & 
+\multicolumn{2}{c}{Accidente laboral faltal} &
+\multicolumn{2}{c}{Fallecimiento del jubilado} &
+\multicolumn{2}{c}{Datos perdidos} &
+\multicolumn{1}{l}{\multirow{2}{*}{Total}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+& 
+\multicolumn{1}{c}{Pensionistas} &
+\multicolumn{1}{c}{Porcentaje (\%)} &
+\multicolumn{1}{c}{Pensionistas} &
+\multicolumn{1}{c}{Porcentaje (\%)} &
+\multicolumn{1}{c}{Pensionistas} &
+\multicolumn{1}{c}{Porcentaje (\%)} & \\
+\midrule
+\endfirsthead
+
+\toprule
+\multicolumn{1}{l}{\multirow{2}{*}{Año:}} & 
+\multicolumn{2}{c}{Accidente laboral faltal} &
+\multicolumn{2}{c}{Fallecimiento del jubilado} &
+\multicolumn{2}{c}{Datos perdidos} &
+\multicolumn{1}{l}{\multirow{2}{*}{Total}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+& 
+\multicolumn{1}{c}{Pensionistas} &
+\multicolumn{1}{c}{Porcentaje (\%)} &
+\multicolumn{1}{c}{Pensionistas} &
+\multicolumn{1}{c}{Porcentaje (\%)} &
+\multicolumn{1}{c}{Pensionistas} &
+\multicolumn{1}{c}{Porcentaje (\%)} & \\
+	\midrule
+\endhead
+
+\bottomrule \multicolumn{8}{c}{continúa...} \\
+\endfoot
+%\hline
+\caption*{\scriptsize Fuente: DSGRT - IESS \\
+Elaborado: DAIE}
+\endlastfoot
+  \input{tablas/tab_ingresos_vo_rtr.tex}
+\end{longtable}
+}
+}
+
+
+\begin{figure}[H]
+\centering
+\caption{Simulaciones Bootstrap del porcentaje montepios de viudedad causados por afiliados fallecidos por accidentes laborales}
+\label{fig:iess_evo_ben_vo_rtr}
+\includegraphics[scale=1]{graficos/iess_bootstrap_vo_porc_a_rtr.png}
+\caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
+\\Elaborado: DAIE}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\caption{Simulaciones Bootstrap del porcentaje montepios de viudedad causados por afiliados fallecidos por accidentes laborales}
+\label{fig:iess_evo_ben_vo_rtr}
+\includegraphics[scale=1]{graficos/iess_bootstrap_vo_porc_j_rtr.png}
+\caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
+\\Elaborado: DAIE}
+\end{figure}
+
+
+\begin{table}[H]
+\centering
+\caption{Estimación del número de montepios de viudedad entregados entre 2014 a 2022 por tipo de causante}
+\label{tab:tab_est_ben_bootstrap_vo_rtr}
+{\fontsize{9}{11}\selectfont
+\begin{tabular}{lrrrrr}
+\toprule
+\multicolumn{1}{l}{Causante Montepío} &
+\multicolumn{1}{c}{Muestra} &
+\multicolumn{1}{c}{Media}  &
+\multicolumn{1}{c}{Desviación Estándar}  &
+\multicolumn{1}{c}{Percentil 2,5\%}  &
+\multicolumn{1}{c}{Percentil 97,5\%} \\
+\midrule
+\input{tablas/tab_est_ben_bootstrap_vo_rtr.tex}
+%\bottomrule
+\end{tabular}
+}
+\caption*{\scriptsize Elaborado: DAIE}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Estimación del porcentaje de montepios de viudedad entregados entre 2014 a 2022 por tipo de causante}
+\label{tab:tab_porc_ben_bootstrap_vo_rtr}
+{\fontsize{9}{11}\selectfont
+\begin{tabular}{lrrrrr}
+\toprule
+\multicolumn{1}{l}{Causante Montepío} &
+\multicolumn{1}{c}{Muestra} &
+\multicolumn{1}{c}{Media}  &
+\multicolumn{1}{c}{Desviación Estándar}  &
+\multicolumn{1}{c}{Percentil 2,5\%}  &
+\multicolumn{1}{c}{Percentil 97,5\%} \\
+\midrule
+\input{tablas/tab_porc_ben_bootstrap_vo_rtr.tex}
 %\bottomrule
 \end{tabular}
 }
