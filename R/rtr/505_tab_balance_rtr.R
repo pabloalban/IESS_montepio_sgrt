@@ -55,7 +55,7 @@ for ( i in 1:length( escenarios_lista ) ) {
          sanitize.text.function = identity )
   
   # Beneficios -------------------------------------------------------------------------------------
-  aux <- balance_anual[ , list( t = t + 2022, B12, B13, B13, B15, B16, B_sal, B ) ]
+  aux <- balance_anual[ , list( t = t + 2022, B12, B13, B14, B15, B16, B_sal, B ) ]
   aux <- aux[ t > 2022 ]
   aux[ , t := as.character( t ) ]
   xtb_aux <- xtable( aux, digits = c( 0, 0, rep( 2, 7 ) ) )

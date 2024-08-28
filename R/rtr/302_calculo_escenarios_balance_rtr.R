@@ -22,7 +22,8 @@ parametros_lista <- c( 'parametros', 'parametros_lista', 'predicciones_anuales',
                        'pob_proy_ts', 'coef_decima_tercera_pen_12', 'coef_decima_cuarta_pen_12',
                        'coef_decima_tercera_pen_15', 'coef_decima_cuarta_pen_15',
                        'coef_decima_tercera_pen_16', 'coef_decima_cuarta_pen_16', 'apo_sal',
-                       'porc_A', 'porc_J', 'cal_pen_orf_nue', 'cal_pen_orf_ant', 'cal_pen_viu_nue', 'cal_pen_viu_ant'  )
+                       'porc_A', 'porc_J',
+                       'cal_pen_orf_nue', 'cal_pen_orf_ant', 'cal_pen_viu_nue', 'cal_pen_viu_ant'  )
 
 # Descripción de factores de calibración------------------------------------------------------------
 # Incluimos los factores de calibración siguientes en cada escenario:
@@ -64,13 +65,13 @@ esc$apo_act <- tasas_macro_anuales[
         por_gast = 0.03 / 100,
         por_gast_per = 4125019.20 / 25829157448,
         apo_sal = 0,
-        cal_mas = 0.883559128 * c( 0.8287, seq( 0.83, 0.98, length.out = 13 ), rep( 1, 27 ) ),
-        cal_pen_incap = 0.94000714 * 1.0430098,
-        cal_pen_indem = 0.94000714 * 1.001987,
-        cal_pen_sub = 0.94000714 * 1.001628,
-        cal_pen_orf = 0.94000714 * 1.07853344,
-        cal_pen_viu = 0.94000714 * 1.125673385,
-        cal_gast = 1.0 ) ]
+        cal_mas = 1 * c( seq( 0.83, 0.98, length.out = 13 ), rep( 1, 28 ) ),
+        cal_pen_incap = 0.934777821,
+        cal_pen_indem = 0.527382352,
+        cal_pen_sub = 0.79258275,
+        cal_pen_orf = 0.967145631,
+        cal_pen_viu = 1.044324426,
+        cal_gast = 1 ) ]
 
 esc$rtr_rdata_icomp_proy_benef <- paste0( parametros$rtr_rdata_icomp_proy_benef, esc$nombre, '.RData' )
 esc$rtr_rdata_icomp_balance <- paste0( parametros$rtr_rdata_icomp_balance, esc$nombre, '.RData' )
@@ -111,13 +112,13 @@ esc$apo_act <- tasas_macro_anuales[
         por_gast = 0.03 / 100,
         por_gast_per = 4125019.20 / 25829157448,
         apo_sal = 0,
-        cal_mas = 0.883559128 * c( 0.8287, seq( 0.83, 0.98, length.out = 13 ), rep( 1, 27 ) ),
-        cal_pen_incap = 0.94000714 * 1.0430098,
-        cal_pen_indem = 0.94000714 * 1.001987,
-        cal_pen_sub = 0.94000714 * 1.001628,
-        cal_pen_orf = 0.94000714 * 1.07853344,
-        cal_pen_viu = 0.94000714 * 1.125673385,
-        cal_gast = 1.0 ) ]
+        cal_mas = 1 * c( seq( 0.83, 0.98, length.out = 13 ), rep( 1, 28 ) ),
+        cal_pen_incap = 0.934777821,
+        cal_pen_indem = 0.527382352,
+        cal_pen_sub = 0.79258275,
+        cal_pen_orf = 0.967145631,
+        cal_pen_viu = 1.044324426,
+        cal_gast = 1 ) ]
 
 esc$rtr_rdata_icomp_proy_benef <- paste0( parametros$rtr_rdata_icomp_proy_benef, esc$nombre, '.RData' )
 esc$rtr_rdata_icomp_balance <- paste0( parametros$rtr_rdata_icomp_balance, esc$nombre, '.RData' )
@@ -159,13 +160,13 @@ esc$apo_act <- tasas_macro_anuales[
         por_gast = 0.03 / 100,
         por_gast_per = 4125019.20 / 25829157448,
         apo_sal = 0,
-        cal_mas = 0.883559128 * c( 0.8287, seq( 0.83, 0.98, length.out = 13 ), rep( 1, 27 ) ),
-        cal_pen_incap = 0.94000714 * 1.0430098,
-        cal_pen_indem = 0.94000714 * 1.001987,
-        cal_pen_sub = 0.94000714 * 1.001628,
-        cal_pen_orf = 0.94000714 * 1.07853344,
-        cal_pen_viu = 0.94000714 * 1.125673385,
-        cal_gast = 1.0 ) ]
+        cal_mas = 1 * c( seq( 0.83, 0.98, length.out = 13 ), rep( 1, 28 ) ),
+        cal_pen_incap = 0.934777821,
+        cal_pen_indem = 0.527382352,
+        cal_pen_sub = 0.79258275,
+        cal_pen_orf = 0.967145631,
+        cal_pen_viu = 1.044324426,
+        cal_gast = 1 ) ]
 
 esc$rtr_rdata_icomp_proy_benef <- paste0( parametros$rtr_rdata_icomp_proy_benef, esc$nombre, '.RData' )
 esc$rtr_rdata_icomp_balance <- paste0( parametros$rtr_rdata_icomp_balance, esc$nombre, '.RData' )
@@ -208,13 +209,13 @@ esc$apo_act <- tasas_macro_anuales[
         por_gast = 0.03 / 100,
         por_gast_per = 4125019.20 / 25829157448,
         apo_sal = 0,
-        cal_mas = 0.883559128 * c( 0.8287, seq( 0.83, 0.98, length.out = 13 ), rep( 1, 27 ) ),
-        cal_pen_incap = 0.94000714 * 1.0430098,
-        cal_pen_indem = 0.94000714 * 1.001987,
-        cal_pen_sub = 0.94000714 * 1.001628,
-        cal_pen_orf = 0.94000714 * 1.07853344,
-        cal_pen_viu = 0.94000714 * 1.125673385,
-        cal_gast = 1.0 ) ]
+        cal_mas = 1 * c( seq( 0.83, 0.98, length.out = 13 ), rep( 1, 28 ) ),
+        cal_pen_incap = 0.934777821,
+        cal_pen_indem = 0.527382352,
+        cal_pen_sub = 0.79258275,
+        cal_pen_orf = 0.967145631,
+        cal_pen_viu = 1.044324426,
+        cal_gast = 1 ) ]
 
 esc$rtr_rdata_icomp_proy_benef <- paste0( parametros$rtr_rdata_icomp_proy_benef, esc$nombre, '.RData' )
 esc$rtr_rdata_icomp_balance <- paste0( parametros$rtr_rdata_icomp_balance, esc$nombre, '.RData' )
@@ -256,13 +257,13 @@ esc$apo_act <- tasas_macro_anuales[
         por_gast = 0.03 / 100,
         por_gast_per = 4125019.20 / 25829157448,
         apo_sal = 0,
-        cal_mas = 0.883559128 * c( 0.8287, seq( 0.83, 0.98, length.out = 13 ), rep( 1, 27 ) ),
-        cal_pen_incap = 0.94000714 * 1.0430098,
-        cal_pen_indem = 0.94000714 * 1.001987,
-        cal_pen_sub = 0.94000714 * 1.001628,
-        cal_pen_orf = 0.94000714 * 1.07853344,
-        cal_pen_viu = 0.94000714 * 1.125673385,
-        cal_gast = 1.0 ) ]
+        cal_mas = 1 * c( seq( 0.83, 0.98, length.out = 13 ), rep( 1, 28 ) ),
+        cal_pen_incap = 0.934777821,
+        cal_pen_indem = 0.527382352,
+        cal_pen_sub = 0.79258275,
+        cal_pen_orf = 0.967145631,
+        cal_pen_viu = 1.044324426,
+        cal_gast = 1 ) ]
 
 esc$rtr_rdata_icomp_proy_benef <- paste0( parametros$rtr_rdata_icomp_proy_benef, esc$nombre, '.RData' )
 esc$rtr_rdata_icomp_balance <- paste0( parametros$rtr_rdata_icomp_balance, esc$nombre, '.RData' )
@@ -304,13 +305,13 @@ esc$apo_act <- tasas_macro_anuales[
         por_gast = 0.03 / 100,
         por_gast_per = 4125019.20 / 25829157448,
         apo_sal = 0,
-        cal_mas = 0.883559128 * c( 0.8287, seq( 0.83, 0.98, length.out = 13 ), rep( 1, 27 ) ),
-        cal_pen_incap = 0.94000714 * 1.0430098,
-        cal_pen_indem = 0.94000714 * 1.001987,
-        cal_pen_sub = 0.94000714 * 1.001628,
-        cal_pen_orf = 0.94000714 * 1.07853344,
-        cal_pen_viu = 0.94000714 * 1.125673385,
-        cal_gast = 1.0 ) ]
+        cal_mas = 1 * c( seq( 0.83, 0.98, length.out = 13 ), rep( 1, 28 ) ),
+        cal_pen_incap = 0.934777821,
+        cal_pen_indem = 0.527382352,
+        cal_pen_sub = 0.79258275,
+        cal_pen_orf = 0.967145631,
+        cal_pen_viu = 1.044324426,
+        cal_gast = 1 ) ]
 
 esc$rtr_rdata_icomp_proy_benef <- paste0( parametros$rtr_rdata_icomp_proy_benef, esc$nombre, '.RData' )
 esc$rtr_rdata_icomp_balance <- paste0( parametros$rtr_rdata_icomp_balance, esc$nombre, '.RData' )
@@ -351,13 +352,13 @@ esc$apo_act <- tasas_macro_anuales[
         por_gast = 0.03 / 100,
         por_gast_per = 4125019.20 / 25829157448,
         apo_sal = 0,
-        cal_mas = 0.883559128 * c( 0.8287, seq( 0.83, 0.98, length.out = 13 ), rep( 1, 27 ) ),
-        cal_pen_incap = 0.94000714 * 1.0430098,
-        cal_pen_indem = 0.94000714 * 1.001987,
-        cal_pen_sub = 0.94000714 * 1.001628,
-        cal_pen_orf = 0.94000714 * 1.07853344,
-        cal_pen_viu = 0.94000714 * 1.125673385,
-        cal_gast = 1.0 ) ]
+        cal_mas = 1 * c( seq( 0.83, 0.98, length.out = 13 ), rep( 1, 28 ) ),
+        cal_pen_incap = 0.934777821,
+        cal_pen_indem = 0.527382352,
+        cal_pen_sub = 0.79258275,
+        cal_pen_orf = 0.967145631,
+        cal_pen_viu = 1.044324426,
+        cal_gast = 1 ) ]
 
 esc$rtr_rdata_icomp_proy_benef <- paste0( parametros$rtr_rdata_icomp_proy_benef, esc$nombre, '.RData' )
 esc$rtr_rdata_icomp_balance <- paste0( parametros$rtr_rdata_icomp_balance, esc$nombre, '.RData' )
@@ -398,13 +399,13 @@ esc$apo_act <- tasas_macro_anuales[
         por_gast = 0.03 / 100,
         por_gast_per = 4125019.20 / 25829157448,
         apo_sal = 0,
-        cal_mas = 0.883559128 * c( 0.8287, seq( 0.83, 0.98, length.out = 13 ), rep( 1, 27 ) ),
-        cal_pen_incap = 0.94000714 * 1.0430098,
-        cal_pen_indem = 0.94000714 * 1.001987,
-        cal_pen_sub = 0.94000714 * 1.001628,
-        cal_pen_orf = 0.94000714 * 1.07853344,
-        cal_pen_viu = 0.94000714 * 1.125673385,
-        cal_gast = 1.0 ) ]
+        cal_mas = 1 * c( seq( 0.83, 0.98, length.out = 13 ), rep( 1, 28 ) ),
+        cal_pen_incap = 0.934777821,
+        cal_pen_indem = 0.527382352,
+        cal_pen_sub = 0.79258275,
+        cal_pen_orf = 0.967145631,
+        cal_pen_viu = 1.044324426,
+        cal_gast = 1 ) ]
 
 esc$rtr_rdata_icomp_proy_benef <- paste0( parametros$rtr_rdata_icomp_proy_benef, esc$nombre, '.RData' )
 esc$rtr_rdata_icomp_balance <- paste0( parametros$rtr_rdata_icomp_balance, esc$nombre, '.RData' )
@@ -445,13 +446,13 @@ esc$apo_act <- tasas_macro_anuales[
         por_gast = 0.03 / 100,
         por_gast_per = 4125019.20 / 25829157448,
         apo_sal = 0,
-        cal_mas = 0.883559128 * c( 0.8287, seq( 0.83, 0.98, length.out = 13 ), rep( 1, 27 ) ),
-        cal_pen_incap = 0.94000714 * 1.0430098,
-        cal_pen_indem = 0.94000714 * 1.001987,
-        cal_pen_sub = 0.94000714 * 1.001628,
-        cal_pen_orf = 0.94000714 * 1.07853344,
-        cal_pen_viu = 0.94000714 * 1.125673385,
-        cal_gast = 1.0 ) ]
+        cal_mas = 1 * c( seq( 0.83, 0.98, length.out = 13 ), rep( 1, 28 ) ),
+        cal_pen_incap = 0.934777821,
+        cal_pen_indem = 0.527382352,
+        cal_pen_sub = 0.79258275,
+        cal_pen_orf = 0.967145631,
+        cal_pen_viu = 1.044324426,
+        cal_gast = 1 ) ]
 
 esc$rtr_rdata_icomp_proy_benef <- paste0( parametros$rtr_rdata_icomp_proy_benef, esc$nombre, '.RData' )
 esc$rtr_rdata_icomp_balance <- paste0( parametros$rtr_rdata_icomp_balance, esc$nombre, '.RData' )
