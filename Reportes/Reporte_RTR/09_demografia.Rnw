@@ -1955,8 +1955,15 @@ Durante el año \Sexpr{REP$corte}, el 50\% de los beneficiarios por pensiones de
 %---------------------------------------------------------------------------------------------------
 \subsection{Estimación de montepíos causados por accidentes laborales fatales}
 
+Con el fin de que la Dirección Actuarial, de Investigación y Estadística estime el impacto en prima y valores de la propuesta de mejora para la entrega de pensiones de montepío causadas por fallecimiento por un accidente laboral o enfermedad profesional de pasar a calcularse sobre una pensión de incapacidad permanente total (80\% del salario promedio mensual) a calcularse sobre una pensión de incapacidad permanente absoluta (100\% del salario promedio mensual), se elaboran tablas de entrada de nuevos pensionistas de orfandad y viudedad, donde esta Dirección se encontró en la nómina de pensionistas de montepío del SGRT no se disponía de la totalidad de los cedulas de ciudanía de los causantes de la prestación; es decir, del afiliado fallecido por un accidente laboral o enfermedad profesional o jubilado del incapacidad permanente total y absoluta.
+
+Para solucionar la presencia de datos perdidos en la muestra de nuevas entradas de pensionistas de montepío de SGRT y asumiendo que la mejora solo aplicaría a los nuevos pensionistas, se aplica el método de remuestreo Bootstrap con datos perdidos.
+
+La metodología de remuestreo Bootstrap para el manejo de datos perdidos es una herramienta estadística ampliamente utilizada, el cual consiste en remplazar los registros con datos perdidos en este caso, la cédula de ciudadanía del causante del montepío, con un muestreo aleatorio con remplazo con los datos disponibles. Gracias a esta técnica nos permite conocer la distribución, en este caso, de la proporción de montepíos causados por fallecimiento por accidentes laborales o enfermedades profesionales, y fallecimiento de jubilados de incapacidad total o absoluta; y, con ello, se puede estimar su valor esperado de la proporción y sus intervalos de confianza. Para más detalles de los métodos Bootstrap aquí utilizados ver \textcite{EfroTibs93} y \textcite{Davison_Hinkley_1997}.
 
 \subsubsection{Estimación de pensionistas de montepío de orfandad causados por accidentes laborales fatales}
+
+Durante el período 2014 a 2022, se registra el ingresos de 1.936 nuevos pensionistas de orfandad del \Sexpr{REP_seg}, de los cuales 1.613 (83,32\%) pensionistas obtuvieron su derecho a causa del fallecimiento inmediato del afiliado en un accidente laboral o enfermedad profesional, 19 (0,98\%) pensionistas de orfandad por el fallecimiento del pensionista de incapacidad absoluta o total; y no se dispone de la cédula de ciudadanía del causante de 304 (15,70\%) pensionistas de orfandad, por lo que no se puede determinar la causal de la entrega de estos pensionistas.
 
 {\setlength{\tabcolsep}{3pt}
 {\fontsize{11}{14}\selectfont
@@ -2008,48 +2015,9 @@ Elaborado: DAIE}
 }
 }
 
+Al realizar el remuestreo Bootstrap con la estimación de la proporción de los pensionistas de orfandad causados por el fallecimiento inmediato de un afiliado por accidente laboral o enfermedad profesionales con \Sexpr{REP$n_bootstrap} repeticiones se obtienen la distribución presentada en la figura \ref{fig:iess_bootstrap_of_porc_a_rtr} y sus estadísticos en la tabla \ref{tab:tab_porc_ben_bootstrap_of_rtr}.
 
-\begin{figure}[H]
-\centering
-\caption{Simulaciones Bootstrap del porcentaje pensionistas de orfandad causados por afiliados fallecidos por accidentes laborales}
-\label{fig:iess_evo_ben_of_rtr}
-\includegraphics[scale=1]{graficos/iess_bootstrap_of_porc_a_rtr.png}
-\caption*{\scriptsize Fuente: DSGRT - IESS \\
-Elaborado: DAIE}
-\end{figure}
-
-
-\begin{figure}[H]
-\centering
-\caption{Simulaciones Bootstrap del porcentaje pensionistas de orfandad causados por afiliados fallecidos por accidentes laborales}
-\label{fig:iess_evo_ben_of_rtr}
-\includegraphics[scale=1]{graficos/iess_bootstrap_of_porc_j_rtr.png}
-\caption*{\scriptsize Fuente: DSGRT - IESS \\
-Elaborado: DAIE}
-\end{figure}
-
-
-\begin{table}[H]
-\centering
-\caption{Estimación del número de pensionistas de orfandad entregados entre 2014 a 2022 por tipo de causante}
-\label{tab:tab_est_ben_bootstrap_of_rtr}
-{\fontsize{9}{11}\selectfont
-\begin{tabular}{lrrrrr}
-\toprule
-\multicolumn{1}{l}{Causante Montepío} &
-\multicolumn{1}{c}{Muestra} &
-\multicolumn{1}{c}{Media}  &
-\multicolumn{1}{c}{Desviación Estándar}  &
-\multicolumn{1}{c}{Percentil 2,5\%}  &
-\multicolumn{1}{c}{Percentil 97,5\%} \\
-\midrule
-\input{tablas/tab_est_ben_bootstrap_of_rtr.tex}
-%\bottomrule
-\end{tabular}
-}
-\caption*{\scriptsize Elaborado: DAIE}
-\end{table}
-
+El resultado de la aplicación del remuestreo Bootstrap con datos perdido estima la proporción de pensionistas de orfandad del \Sexpr{REP_seg} causados por el fallecimiento inmediato del afiliado en un accidente laboral en \Sexpr{REP$dem_porc_a_of}\%, con intervalo de confianza, al 95\% de certeza, entre \Sexpr{REP$dem_porc_a_of_ic_inf} y \Sexpr{REP$dem_porc_a_of_ic_sup}. Y, además, el porcentaje estimado de pensionistas de orfandad causado por el fallecimiento de un jubilado del \Sexpr{REP_seg} es \Sexpr{REP$dem_porc_j_of}, con un intervalo de confianza al 95\% de certeza, entre \Sexpr{REP$dem_porc_j_of_ic_inf}\% y \Sexpr{REP$dem_porc_j_of_ic_sup}\%.
 
 \begin{table}[H]
 \centering
@@ -2072,8 +2040,28 @@ Elaborado: DAIE}
 \caption*{\scriptsize Elaborado: DAIE}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\caption{Simulaciones Bootstrap del porcentaje pensionistas de orfandad causados por afiliados fallecidos por accidentes laborales}
+\label{fig:iess_bootstrap_of_porc_a_rtr}
+\includegraphics[scale=1]{graficos/iess_bootstrap_of_porc_a_rtr.png}
+\caption*{\scriptsize Fuente: DSGRT - IESS \\
+Elaborado: DAIE}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\caption{Simulaciones Bootstrap del porcentaje pensionistas de orfandad causados por afiliados fallecidos por accidentes laborales}
+\label{fig:iess_bootstrap_of_porc_j_rtr}
+\includegraphics[scale=1]{graficos/iess_bootstrap_of_porc_j_rtr.png}
+\caption*{\scriptsize Fuente: DSGRT - IESS \\
+Elaborado: DAIE}
+\end{figure}
 
 \subsubsection{Estimación de pensionistas de viudedad causados por accidentes laborales fatales}
+
+Durante el período 2014 a 2022, se registra el ingresos de 1.184 nuevos pensionistas de viudedad del \Sexpr{REP_seg}, de los cuales 758 (64,02\%) pensionistas obtuvieron su derecho a causa del fallecimiento inmediato del afiliado en un accidente laboral, 88 ( 7,43\%) pensionistas de viudedad por el fallecimiento del pensionista de incapacidad absoluta o total; y no se dispone de la cédula de ciudadanía del causante de 338 (28,55\%) pensionistas de viudedad, por lo que no se puede determinar la causal de la entrega de estos pensionistas.
 
 {\setlength{\tabcolsep}{3pt}
 {\fontsize{11}{14}\selectfont
@@ -2125,48 +2113,9 @@ Elaborado: DAIE}
 }
 }
 
+Al realizar el remuestreo Bootstrap con la estimación de la proporción de los pensionistas de orfandad causados por el fallecimiento inmediato de un afiliado por accidente laboral o enfermedad profesionales con \Sexpr{REP$n_bootstrap} repeticiones se obtienen la distribución presentada en la figura \ref{fig:iess_bootstrap_vo_porc_a_rtr} y sus estadísticos en la tabla \ref{tab:tab_porc_ben_bootstrap_vo_rtr}.
 
-\begin{figure}[H]
-\centering
-\caption{Simulaciones Bootstrap del porcentaje de pensionistas de viudedad causados por afiliados fallecidos por accidentes laborales}
-\label{fig:iess_evo_ben_vo_rtr}
-\includegraphics[scale=1]{graficos/iess_bootstrap_vo_porc_a_rtr.png}
-\caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
-\\Elaborado: DAIE}
-\end{figure}
-
-
-\begin{figure}[H]
-\centering
-\caption{Simulaciones Bootstrap del porcentaje de pensionistas de viudedad causados por afiliados fallecidos por accidentes laborales}
-\label{fig:iess_evo_ben_vo_rtr}
-\includegraphics[scale=1]{graficos/iess_bootstrap_vo_porc_j_rtr.png}
-\caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
-\\Elaborado: DAIE}
-\end{figure}
-
-
-\begin{table}[H]
-\centering
-\caption{Estimación del número de pensionistas de viudedad entregados entre 2014 a 2022 por tipo de causante}
-\label{tab:tab_est_ben_bootstrap_vo_rtr}
-{\fontsize{9}{11}\selectfont
-\begin{tabular}{lrrrrr}
-\toprule
-\multicolumn{1}{l}{Causante Montepío} &
-\multicolumn{1}{c}{Muestra} &
-\multicolumn{1}{c}{Media}  &
-\multicolumn{1}{c}{Desviación Estándar}  &
-\multicolumn{1}{c}{Percentil 2,5\%}  &
-\multicolumn{1}{c}{Percentil 97,5\%} \\
-\midrule
-\input{tablas/tab_est_ben_bootstrap_vo_rtr.tex}
-%\bottomrule
-\end{tabular}
-}
-\caption*{\scriptsize Elaborado: DAIE}
-\end{table}
-
+El resultado de la aplicación del remuestreo Bootstrap con datos perdido estima la proporción de pensionistas de viudedad del \Sexpr{REP_seg} causados por el fallecimiento inmediato del afiliado en un accidente laboral en \Sexpr{REP$dem_porc_a_vo}\%, con intervalo de confianza, al 95\% de certeza, entre \Sexpr{REP$dem_porc_a_vo_ic_inf} y \Sexpr{REP$dem_porc_a_vo_ic_sup}. Y, además, el porcentaje estimado de pensionistas de viudedad causado por el fallecimiento de un jubilado del \Sexpr{REP_seg} es \Sexpr{REP$dem_porc_j_vo}, con un intervalo de confianza al 95\% de certeza, entre \Sexpr{REP$dem_porc_j_vo_ic_inf}\% y \Sexpr{REP$dem_porc_j_vo_ic_sup}\%.
 
 \begin{table}[H]
 \centering
@@ -2188,3 +2137,21 @@ Elaborado: DAIE}
 }
 \caption*{\scriptsize Elaborado: DAIE}
 \end{table}
+
+\begin{figure}[H]
+\centering
+\caption{Simulaciones Bootstrap del porcentaje de pensionistas de viudedad causados por afiliados fallecidos por accidentes laborales}
+\label{fig:iess_bootstrap_vo_porc_a_rtr}
+\includegraphics[scale=1]{graficos/iess_bootstrap_vo_porc_a_rtr.png}
+\caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
+\\Elaborado: DAIE}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\caption{Simulaciones Bootstrap del porcentaje de pensionistas de viudedad causados por afiliados fallecidos por accidentes laborales}
+\label{fig:iess_bootstrap_vo_porc_j_rtr}
+\includegraphics[scale=1]{graficos/iess_bootstrap_vo_porc_j_rtr.png}
+\caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
+\\Elaborado: DAIE}
+\end{figure}

@@ -17,7 +17,7 @@ Se presenta el siguiente estudio actuarial.
 
 
 %---------------------------------------------------------------------------------------------------
-\section{Descripción concisa de las características regulatorias del fondo o seguro}
+\section{Descripción concisa de las características regulatorias del Fondo o Seguro}
 \label{chp_res_ejec:descripcion}
 
 El Seguro General de Riesgos del Trabajo es un fondo de capitalización colectiva, con beneficio 
@@ -49,18 +49,21 @@ del servicio exterior residentes en el extranjero, trabajadores autónomos y sin
 dependencia y de los afiliados voluntarios. Los patronos de trabajadores temporales de la industria azucarera aportan el 1,01\% referido a la 
 remuneración mensual de los trabajadores.
 
-El 13 de noviembre de 2015, se emite la \legalcite{ResIESS_CD501} que modifica los porcentajes de aportación, de 0,5\% constantes en la \legalcite{LeySS} y la \legalcite{ResIESS_CD261} (0,55\%), y pasa a 0,20\% por aportación patronal, a partir del mes de noviembre de 2015, 
-extendiéndose este aporte hasta el 31 de diciembre del año 2020. 
+El 13 de noviembre de 2015, se emite la \legalcite{ResIESS_CD501} que modifica los porcentajes de aportación, de 0,5\% constantes en la \legalcite{LeySS} y la \legalcite{ResIESS_CD261} (0,55\%), y pasa a 0,20\% por aportación patronal, a partir del mes de noviembre de 2015, extendiéndose este aporte hasta el 31 de diciembre del año 2020.  A partir de 2021, se estableció en 0,38\% la prima de aporte patronal para financiar el \Sexpr{REP_seg}.
 
-El porcentaje de aportación personal para el Seguro General de Riesgos del Trabajo es 0,00\%; a excepción de los afiliados por inter-ciclos (industria azucarera) que cancelan el 0,40\% es decir de forma doble por la zafra e inter-zafra; y, de los trabajadores autónomos, sin relación de dependencia, voluntarios residentes en el Ecuador y en el exterior, pasantes becarios, internos rotativos que por su modalidad de trabajo su aporte del 0,20\% proviene del mismo afiliado.
+% El porcentaje de aportación personal para el Seguro General de Riesgos del Trabajo es 0,00\%; a excepción de los afiliados por inter-ciclos (industria azucarera) que cancelan el 0,40\% es decir de forma doble por la zafra e inter-zafra; y, de los trabajadores autónomos, sin relación de dependencia, voluntarios residentes en el Ecuador y en el exterior, pasantes becarios, internos rotativos que por su modalidad de trabajo su aporte del 0,20\% proviene del mismo afiliado.
+% 
+% La referida norma es reformada por la \legalcite{ResIESS_CD516}, de 30 de marzo de 2016, que establece 
+% que a partir del año 2021 en adelante el aporte personal es 0,00\% y el aporte patronal cambia al 
+% 0,38\%, a excepción de los afiliados por inter-ciclos (industria azucarera) que cancelan el 0,76\%. 
+% 
+% Los trabajadores autónomos, sin relación de dependencia, los afiliados voluntarios residentes en el 
+% Ecuador, pasantes, becarios, internos rotativos y afiliados voluntarios ecuatorianos residentes en 
+% el exterior contribuyen con el aporte personal (0,20\% del sueldo a salario).
 
-La referida norma es reformada por la \legalcite{ResIESS_CD516}, de 30 de marzo de 2016, que establece 
-que a partir del año 2021 en adelante el aporte personal es 0,00\% y el aporte patronal cambia al 
-0,38\%, a excepción de los afiliados por inter-ciclos (industria azucarera) que cancelan el 0,76\%. 
+El artículo 41 del REGLAMENTO DEL SEGURO GENERAL DE RIESGOS DEL TRABAJO, expedido mediante \legalcite{ResIESS_CD513} de 4 de marzo de 2016, establece:
+`` \textit{Derecho a Pensión de Montepío.- Por la muerte del asegurado las pensiones de viudedad y orfandad se concederán con sujeción a los porcentajes fijados en la Ley de Seguridad Social y en la normativa interna del IESS se calcularán sobre la pensión de incapacidad permanente total que le habría correspondido al causante al momento de su muerte, aun cuando no hubiera recibido dicha pensión}''.
 
-Los trabajadores autónomos, sin relación de dependencia, los afiliados voluntarios residentes en el 
-Ecuador, pasantes, becarios, internos rotativos y afiliados voluntarios ecuatorianos residentes en 
-el exterior contribuyen con el aporte personal (0,20\% del sueldo a salario).
 
 %---------------------------------------------------------------------------------------------------
 \section{Resumen de prestaciones}

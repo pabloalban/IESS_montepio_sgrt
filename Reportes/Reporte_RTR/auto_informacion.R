@@ -15,6 +15,7 @@ load( parametros$macro_rdata_info )
 load( paste0( parametros$RData_seg, 'IESS_RTR_analisis_financiero.RData' ) )
 load( paste0( parametros$RData_seg, 'BIESS_RTR_inversiones.RData' ) )
 load( paste0(  parametros$RData_seg, 'IESS_RTR_tablas_demografia.RData' ) )
+load( paste0( parametros$RData_seg, 'IESS_RTR_bootstrap.RData' ) )
 
 # Afiliados ----------------------------------------------------------------------------------------
 
@@ -718,6 +719,94 @@ REP$dem_vo_prom_h <- format( filter( dem_vo, sexo == 'M' )$prom_tot_ingr,
 
 REP$dem_vo_prom_m <- format( filter( dem_vo, sexo == 'F' )$prom_tot_ingr,
                              nsmall = 2, digits = 2, big.mark = '.', decimal.mark = ',', format = 'f' )
+
+#Remuestreo Bootstrap-------------------------------------------------------------------------------
+
+REP$dem_porc_a_of <- format( 100 * porc_a_of,
+                             nsmall = 2, digits = 2, big.mark = '.', decimal.mark = ',', format = 'f' )
+
+REP$dem_porc_a_of_ic_inf <- format( filter( tab_est_porcentaje_of, 
+                                            causante == 'Fallecido recientemente')$ic_inf,
+                                    nsmall = 2, 
+                                    digits = 2, 
+                                    big.mark = '.', 
+                                    decimal.mark = ',',
+                                    format = 'f' )
+
+REP$dem_porc_a_of_ic_sup <- format( filter( tab_est_porcentaje_of, 
+                                            causante == 'Fallecido recientemente')$ic_sup,
+                                    nsmall = 2, 
+                                    digits = 2, 
+                                    big.mark = '.', 
+                                    decimal.mark = ',',
+                                    format = 'f' )
+
+
+REP$dem_porc_j_of <- format( 100 * porc_j_of,
+                             nsmall = 2, digits = 2, big.mark = '.', decimal.mark = ',', format = 'f' )
+
+
+REP$dem_porc_j_of_ic_inf <- format( filter( tab_est_porcentaje_of, 
+                                            causante == 'Fallecido Jubilado')$ic_inf,
+                                    nsmall = 2, 
+                                    digits = 2, 
+                                    big.mark = '.', 
+                                    decimal.mark = ',',
+                                    format = 'f' )
+
+REP$dem_porc_j_of_ic_sup <- format( filter( tab_est_porcentaje_of, 
+                                            causante == 'Fallecido Jubilado')$ic_sup,
+                                    nsmall = 2, 
+                                    digits = 2, 
+                                    big.mark = '.', 
+                                    decimal.mark = ',',
+                                    format = 'f' )
+
+
+REP$dem_porc_a_vo <- format( 100 * porc_a_vo,
+                             nsmall = 2, digits = 2, big.mark = '.', decimal.mark = ',', format = 'f' )
+
+REP$dem_porc_a_vo_ic_inf <- format( filter( tab_est_porcentaje_vo, 
+                                            causante == 'Fallecido recientemente')$ic_inf,
+                                    nsmall = 2, 
+                                    digits = 2, 
+                                    big.mark = '.', 
+                                    decimal.mark = ',',
+                                    format = 'f' )
+
+REP$dem_porc_a_vo_ic_sup <- format( filter( tab_est_porcentaje_vo, 
+                                            causante == 'Fallecido recientemente')$ic_sup,
+                                    nsmall = 2, 
+                                    digits = 2, 
+                                    big.mark = '.', 
+                                    decimal.mark = ',',
+                                    format = 'f' )
+
+REP$dem_porc_j_vo <- format( 100 * porc_j_vo,
+                             nsmall = 2, digits = 2, big.mark = '.', decimal.mark = ',', format = 'f' )
+
+REP$dem_porc_j_vo_ic_inf <- format( filter( tab_est_porcentaje_vo, 
+                                            causante == 'Fallecido Jubilado')$ic_inf,
+                                    nsmall = 2, 
+                                    digits = 2, 
+                                    big.mark = '.', 
+                                    decimal.mark = ',',
+                                    format = 'f' )
+
+REP$dem_porc_j_vo_ic_sup <- format( filter( tab_est_porcentaje_vo, 
+                                            causante == 'Fallecido Jubilado')$ic_sup,
+                                    nsmall = 2, 
+                                    digits = 2, 
+                                    big.mark = '.', 
+                                    decimal.mark = ',',
+                                    format = 'f' )
+
+REP$n_bootstrap <- format( n_bootstrap,
+                           nsmall = 0, 
+                           digits = 2, 
+                           big.mark = '.', 
+                           decimal.mark = ',',
+                           format = 'f' )
 
 #Información contable-------------------------------------------------------------------------------
 
