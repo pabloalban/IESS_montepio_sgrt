@@ -1956,7 +1956,7 @@ Durante el año \Sexpr{REP$corte}, el 50\% de los beneficiarios por pensiones de
 \subsection{Estimación de montepíos causados por accidentes laborales fatales}
 
 
-\subsubsection{Estimación de montepíos de orfandad causados por accidentes laborales fatales}
+\subsubsection{Estimación de pensionistas de montepío de orfandad causados por accidentes laborales fatales}
 
 {\setlength{\tabcolsep}{3pt}
 {\fontsize{11}{14}\selectfont
@@ -2011,7 +2011,7 @@ Elaborado: DAIE}
 
 \begin{figure}[H]
 \centering
-\caption{Simulaciones Bootstrap del porcentaje montepios de orfandad causados por afiliados fallecidos por accidentes laborales}
+\caption{Simulaciones Bootstrap del porcentaje pensionistas de orfandad causados por afiliados fallecidos por accidentes laborales}
 \label{fig:iess_evo_ben_of_rtr}
 \includegraphics[scale=1]{graficos/iess_bootstrap_of_porc_a_rtr.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS \\
@@ -2021,17 +2021,17 @@ Elaborado: DAIE}
 
 \begin{figure}[H]
 \centering
-\caption{Simulaciones Bootstrap del porcentaje montepios de orfandad causados por afiliados fallecidos por accidentes laborales}
+\caption{Simulaciones Bootstrap del porcentaje pensionistas de orfandad causados por afiliados fallecidos por accidentes laborales}
 \label{fig:iess_evo_ben_of_rtr}
 \includegraphics[scale=1]{graficos/iess_bootstrap_of_porc_j_rtr.png}
 \caption*{\scriptsize Fuente: DSGRT - IESS \\
-Elaborado: DAIE}}
+Elaborado: DAIE}
 \end{figure}
 
 
 \begin{table}[H]
 \centering
-\caption{Estimación del número de montepios de orfandad entregados entre 2014 a 2022 por tipo de causante}
+\caption{Estimación del número de pensionistas de orfandad entregados entre 2014 a 2022 por tipo de causante}
 \label{tab:tab_est_ben_bootstrap_of_rtr}
 {\fontsize{9}{11}\selectfont
 \begin{tabular}{lrrrrr}
@@ -2053,7 +2053,7 @@ Elaborado: DAIE}}
 
 \begin{table}[H]
 \centering
-\caption{Estimación del porcentaje de montepios de orfandad entregados entre 2014 a 2022 por tipo de causante}
+\caption{Estimación del porcentaje de pensionistas de orfandad entregados entre 2014 a 2022 por tipo de causante}
 \label{tab:tab_porc_ben_bootstrap_of_rtr}
 {\fontsize{9}{11}\selectfont
 \begin{tabular}{lrrrrr}
@@ -2073,7 +2073,7 @@ Elaborado: DAIE}}
 \end{table}
 
 
-\subsubsection{Estimación de montepíos de viudedad causados por accidentes laborales fatales}
+\subsubsection{Estimación de pensionistas de viudedad causados por accidentes laborales fatales}
 
 {\setlength{\tabcolsep}{3pt}
 {\fontsize{11}{14}\selectfont
@@ -2128,7 +2128,7 @@ Elaborado: DAIE}
 
 \begin{figure}[H]
 \centering
-\caption{Simulaciones Bootstrap del porcentaje montepios de viudedad causados por afiliados fallecidos por accidentes laborales}
+\caption{Simulaciones Bootstrap del porcentaje de pensionistas de viudedad causados por afiliados fallecidos por accidentes laborales}
 \label{fig:iess_evo_ben_vo_rtr}
 \includegraphics[scale=1]{graficos/iess_bootstrap_vo_porc_a_rtr.png}
 \caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
@@ -2138,7 +2138,7 @@ Elaborado: DAIE}
 
 \begin{figure}[H]
 \centering
-\caption{Simulaciones Bootstrap del porcentaje montepios de viudedad causados por afiliados fallecidos por accidentes laborales}
+\caption{Simulaciones Bootstrap del porcentaje de pensionistas de viudedad causados por afiliados fallecidos por accidentes laborales}
 \label{fig:iess_evo_ben_vo_rtr}
 \includegraphics[scale=1]{graficos/iess_bootstrap_vo_porc_j_rtr.png}
 \caption*{\scriptsize Fuente: Base nómina de pensiones de Riesgos del Trabajo
@@ -2148,7 +2148,7 @@ Elaborado: DAIE}
 
 \begin{table}[H]
 \centering
-\caption{Estimación del número de montepios de viudedad entregados entre 2014 a 2022 por tipo de causante}
+\caption{Estimación del número de pensionistas de viudedad entregados entre 2014 a 2022 por tipo de causante}
 \label{tab:tab_est_ben_bootstrap_vo_rtr}
 {\fontsize{9}{11}\selectfont
 \begin{tabular}{lrrrrr}
@@ -2170,7 +2170,7 @@ Elaborado: DAIE}
 
 \begin{table}[H]
 \centering
-\caption{Estimación del porcentaje de montepios de viudedad entregados entre 2014 a 2022 por tipo de causante}
+\caption{Estimación del porcentaje de pensionistas de viudedad entregados entre 2014 a 2022 por tipo de causante}
 \label{tab:tab_porc_ben_bootstrap_vo_rtr}
 {\fontsize{9}{11}\selectfont
 \begin{tabular}{lrrrrr}

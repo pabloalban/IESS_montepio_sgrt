@@ -12,9 +12,9 @@ source( 'R/500_tildes_a_latex.R',
         echo = FALSE )
 
 # Tabla de la evolución del portafolio -------------------------------------------------------------
-message( '\tTabla de inversiones' )
+message( '\tTablas de inversiones' )
+
 aux <- recurs_adm_biess %>%
-  filter( ano >= 2013 ) %>%
   mutate( 
     ano = as.character( ano ),
     rendimiento_neto = rendimiento_neto * 100,
@@ -22,7 +22,7 @@ aux <- recurs_adm_biess %>%
     rendimiento_neto_real = rendimiento_neto_real * 100
   )
 
-aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, 6 ), 0 ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
 
 print( 
   aux_xtab,
@@ -44,7 +44,7 @@ aux <- inver_corte %>%
     participacion = participacion * 100
   )
 
-aux_xtab <- xtable( aux, digits = c( 0, 2, 2, 2, 2, 2, 2 ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
 aux_xtab <- tildes_a_latex( aux_xtab )
 
 print( 
@@ -71,8 +71,7 @@ aux <- rendimientos_netos %>%
   ) %>%
   mutate( corte_a = as.character( corte_a ) )
 
-
-aux_xtab <- xtable( aux, digits = c( 0, 2, 2, 2, 2, 2, 2, 2 ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
 
 print( 
   aux_xtab,
@@ -90,7 +89,7 @@ print(
 aux <- ingresos %>%
   replace( is.na( . ), 0 )
 
-aux_xtab <- xtable( aux, digits = c( 0, rep( 2, 11 ) ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
 aux_xtab <- tildes_a_latex( aux_xtab )
 
 print( 
@@ -111,7 +110,7 @@ print(
 aux <- gastos_opera %>%
   replace( is.na( . ), 0 )
 
-aux_xtab <- xtable( aux, digits = c( 0, rep( 2, 11 ) ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
 aux_xtab <- tildes_a_latex( aux_xtab )
 
 print( 
@@ -142,7 +141,7 @@ aux <- inv_instrumento %>%
   dplyr::select( -inflacion, -instrumento ) %>%
   arrange( ano )
 
-aux_xtab <- xtable( aux, digits = c( 0, 0, 2, 2, 2, 0 ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
 
 print( 
   aux_xtab,
@@ -170,7 +169,7 @@ aux <- inv_instrumento %>%
   arrange( ano )
 
 
-aux_xtab <- xtable( aux, digits = c( 0, 0, 2, 2, 2, 0 ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
 
 print( 
   aux_xtab,
@@ -364,7 +363,7 @@ aux <- inv_instrumento %>%
   arrange( ano )
 
 
-aux_xtab <- xtable( aux, digits = c( 0, 0, 2, 2, 2, 0 ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
 
 print( 
   aux_xtab,
@@ -479,7 +478,7 @@ aux <- inv_instrumento %>%
   dplyr::select( -inflacion,-instrumento ) %>%
   arrange( ano )
 
-aux_xtab <- xtable( aux, digits = c( 0, 0, 2, 2, 2, 0 ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
 
 print( 
   aux_xtab,
@@ -547,7 +546,7 @@ aux <- inv_instrumento %>%
   arrange( ano )
 
 
-aux_xtab <- xtable( aux, digits = c( 0, 0, 2, 2, 2, 0 ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
 
 print( 
   aux_xtab,
@@ -616,7 +615,7 @@ aux <- inv_instrumento %>%
   arrange( ano )
 
 
-aux_xtab <- xtable( aux, digits = c( 0, 0, 2, 2, 2, 0 ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
 
 print( 
   aux_xtab,
@@ -711,7 +710,7 @@ aux <- inv_instrumento %>%
   arrange( ano )
 
 
-aux_xtab <- xtable( aux, digits = c( 0, 0, 2, 2, 2, 0 ) )
+aux_xtab <- xtable( aux, digits = c( 0, 0, rep( 2, ncol( aux ) - 1 ) ) )
 
 print( 
   aux_xtab,

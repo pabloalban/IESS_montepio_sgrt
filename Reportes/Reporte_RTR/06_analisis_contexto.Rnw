@@ -198,7 +198,9 @@ Elaborado: DAIE}
   {\bf Elaborado:} DAIE}
 \end{figure}
 
-En términos monetarios, los años con mayores incrementos fueron el año 2003, con incremento en USD \Sexpr{REP$macro_sbu_incremento_2003}; y, el año 2008, con incremento igual a USD \Sexpr{REP$macro_sbu_incremento_2008}, en términos porcentuales fue el año 2001 con el \Sexpr{REP$macro_sbu_tasa_cre_2001}\%. En cambio, los años con menor incremento fue el 2021 (\Sexpr{REP$macro_sbu_tasa_cre_2021}\%). En los últimos siete (7) años, el SBU creció en promedio \Sexpr{REP$macro_sub_promedio_7anios}\%. Calculado en dólares estadounidenses (USD) al 2022, es el más alto en Sudamérica, con USD \Sexpr{REP$macro_sbu_2022}, seguido por el salario mínimo chileno 350.000 pesos chilenos (USD 412). A continuación, se muestra la evolución del salario básico unificado en la tabla \ref{tab:iess_sbu} y la figura \ref{fig:iess_sbu}.
+En términos monetarios, los años con mayores incrementos fueron el año 2003, con incremento en USD \Sexpr{REP$macro_sbu_incremento_2003}; y, el año 2008, con incremento igual a USD \Sexpr{REP$macro_sbu_incremento_2008}, en términos porcentuales fue el año 2001 con el \Sexpr{REP$macro_sbu_tasa_cre_2001}\%. En cambio, los años con menor incremento fue el 2021 (\Sexpr{REP$macro_sbu_tasa_cre_2021}\%). En los últimos siete (7) años, el SBU creció en promedio \Sexpr{REP$macro_sub_promedio_7anios}\%.
+
+Calculado en dólares estadounidenses (USD) al 2022, es el más alto en Sudamérica, con USD \Sexpr{REP$macro_sbu_2022}, seguido por el salario mínimo chileno 350.000 pesos chilenos (USD 412). A continuación, se muestra la evolución del salario básico unificado en la tabla \ref{tab:iess_sbu} y la figura \ref{fig:iess_sbu}.
 % % ------------------------------------------------------------------------------------------------
 \subsection{Evolución histórica de los salarios}
 
@@ -253,7 +255,7 @@ Elaborado: DAIE}
 }
 }
 
-A diciembre de 2022, los cotizantes del Seguro General Obligatorio registraron un salario promedio igual a USD \Sexpr{REP$macro_salarios_prom_2022} (USD \Sexpr{REP$macro_increm_2022 } más que en diciembre de 2019), lo representa un crecimiento, con respeto a diciembre de 2021, igual a \Sexpr{REP$macro_increm_tasa_incre_2022} \%. En el año 2008, se registró el mayor crecimiento del salario promedio (\Sexpr{REP$macro_increm_tasa_incre_2008}\%); mientras que en el año 2020, se redujo en \Sexpr{REP$macro_increm_tasa_incre_2020}\% debido al impacto de la pandemia de la COVID – 19. En los últimos 10 años, el salario creció en promedio \Sexpr{REP$macro_increm_promedio_10_anios}\%.
+A diciembre de 2022, los cotizantes del Seguro General Obligatorio registraron un salario promedio igual a USD \Sexpr{REP$macro_salarios_prom_2022} (USD \Sexpr{REP$macro_increm_2022} más que en diciembre de 2021), lo representa un crecimiento, con respeto a diciembre de 2021, igual a \Sexpr{REP$macro_increm_tasa_incre_2022} \%. En el año 2008, se registró el mayor crecimiento del salario promedio (\Sexpr{REP$macro_increm_tasa_incre_2008}\%); mientras que en el año 2020, se redujo en \Sexpr{REP$macro_increm_tasa_incre_2020}\% debido al impacto de la pandemia de la COVID – 19. En los últimos 10 años, el salario creció en promedio \Sexpr{REP$macro_increm_promedio_10_anios}\%.
 
 % % % % --------------------------------------------------------------------------------------------
 \subsection{Evolución histórica de la tasa de crecimiento real del PIB del Ecuador}
@@ -262,7 +264,7 @@ La información referente al Producto Interno Bruto del Ecuador se obtuvo de la 
 
 
 {\setlength{\tabcolsep}{5pt}
-{\fontsize{10}{12}\selectfont
+{\fontsize{11}{14}\selectfont
 \begin{longtable}[H]{crrc}
   \caption{Evolución histórica del PIB del Ecuador}
 \label{tab:iess_pib_real} \\
@@ -274,7 +276,7 @@ La información referente al Producto Interno Bruto del Ecuador se obtuvo de la 
 &
  \multicolumn{1}{c}{actuales (USD)} &
  \multicolumn{1}{c}{constantes 2007 (USD)} &
-\multicolumn{1}{c}{Crecimiento Real (\%) } \\
+\multicolumn{1}{c}{Crecimiento Real (\%)} \\
 \midrule
 \endfirsthead
 
@@ -282,11 +284,11 @@ La información referente al Producto Interno Bruto del Ecuador se obtuvo de la 
  \multicolumn{1}{c}{\multirow{2}[2]{*}{Año:}}  &
  \multicolumn{1}{c}{PIB a precios} &
 \multicolumn{1}{c}{PIB a precios} &
-\multicolumn{1}{c}{Tasa de } \\
+\multicolumn{1}{c}{Tasa de} \\
 &
  \multicolumn{1}{c}{actuales (USD)} &
  \multicolumn{1}{c}{constantes 2007 (USD)} &
-\multicolumn{1}{c}{Crecimiento Real (\%) } \\
+\multicolumn{1}{c}{Crecimiento Real (\%)} \\
 	\midrule
 \endhead
 
@@ -330,7 +332,7 @@ A partir del año 2016, con la expedición de la \legalcite{Leyjlab}; la cual en
   \caption{Crecimiento de las pensiones en el IESS}
 \label{tab:iess_incre_pensiones} \\
 \toprule
-\multicolumn{1}{c}{Pensiones en } &
+\multicolumn{1}{c}{Pensiones en} &
 \multicolumn{1}{c}{2010 a 2015} &
 \multicolumn{1}{c}{2016} &
 \multicolumn{1}{c}{2017} &
@@ -353,7 +355,7 @@ A partir del año 2016, con la expedición de la \legalcite{Leyjlab}; la cual en
 \endfirsthead
 
 \toprule
-\multicolumn{1}{c}{Pensiones en } &
+\multicolumn{1}{c}{Pensiones en} &
 \multicolumn{1}{c}{2010 a 2015} &
 \multicolumn{1}{c}{2016} &
 \multicolumn{1}{c}{2017} &
@@ -910,7 +912,7 @@ La tabla \ref{tab:iess_tasas_macro_pred} presenta los resultados del modelo mult
 temporales utilizado para obtener una proyección de las variables económicas utilizadas en el
 presente estudio.
 
-{\fontsize{8}{10}\selectfont
+{\fontsize{10}{12}\selectfont
 \begin{longtable}[H]{crccrrc}
 \caption{Proyecciones de las variables macroeconómicas}
 \label{tab:iess_tasas_macro_pred} \\
@@ -1089,11 +1091,11 @@ obtuvo de la diferencia entre la tasa activa y la tasa pasiva.
 La tasa activa sufrió un descenso a principios de la década pasada, decreció del 2000 hasta el 2004,
 en \Sexpr{REP$macro_tasas_interes_tasa_act_2000_2004}\%, y desde el año 2005 hasta el año 2016 decreció en  \Sexpr{REP$macro_tasas_interes_tasa_act_2005_2016}\% del \Sexpr{REP$macro_tasas_interes_tasa_act_2005}\% al \Sexpr{REP$macro_tasas_interes_tasa_act_2016}\%, respectivamente.
 Más recientemente, la tasa activa alcanzó \Sexpr{REP$macro_tasas_interes_tasa_act_2020_7}\% en julio de 2020. La menor tasa activa registrada
-fue en mayo de 2018 (\Sexpr{REP$macro_tasas_interes_tasa_act_2018_5 }\%) y la máxima registrada fue en agosto de 2000 (\Sexpr{REP$macro_tasas_interes_tasa_act_2000_8 }\%).
+fue en mayo de 2018 (\Sexpr{REP$macro_tasas_interes_tasa_act_2018_5}\%) y la máxima registrada fue en agosto de 2000 (\Sexpr{REP$macro_tasas_interes_tasa_act_2000_8}\%).
 
 De igual manera, la tasa pasiva decreció entre el año 2000 y 2004 del \Sexpr{REP$macro_tasas_interes_tasa_pas_2000}\% al \Sexpr{REP$macro_tasas_interes_tasa_pas_2004}\%,
-respectivamente, pero solo registró un crecimiento del \Sexpr{REP$macro_tasas_interes_tasa_pas_2004_2016 }\% desde el año 2004 al 2016. Además, se
-registró su máximo en abril de 2000 (\Sexpr{REP$macro_tasas_interes_tasa_pas_max}\%) y la menor tasa pasiva registrada fue en enero de 2005 (\Sexpr{REP$macro_tasas_interes_tasa_pas_max }\%). Por otro lado, durante el período 2015 a 2022 el promedio de la tasa spread en el mes de diciembre es de \Sexpr{REP$macro_tasas_interes_spread}\%.
+respectivamente, pero solo registró un crecimiento del \Sexpr{REP$macro_tasas_interes_tasa_pas_2004_2016}\% desde el año 2004 al 2016. Además, se
+registró su máximo en abril de 2000 (\Sexpr{REP$macro_tasas_interes_tasa_pas_max}\%) y la menor tasa pasiva registrada fue en enero de 2005 (\Sexpr{REP$macro_tasas_interes_tasa_pas_max}\%). Por otro lado, durante el período 2015 a 2022 el promedio de la tasa spread en el mes de diciembre es de \Sexpr{REP$macro_tasas_interes_spread}\%.
 
 %--------------------------------------------------------------------------------------------------
 \subsection{Rentabilidad sobre activos y sobre capital invertido en el ámbito nacional}

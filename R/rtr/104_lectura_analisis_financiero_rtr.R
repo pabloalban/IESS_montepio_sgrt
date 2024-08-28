@@ -4,9 +4,9 @@ message( '\t Activo Fondo' )
 
 #Parámetros de filtrado-----------------------------------------------------------------------------
 
-anio_max <- 2020
+anio_max <- 2022
 
-anio_min <- 2012
+anio_min <- 2014
 
 #Path del archivo-----------------------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ activo_del_fondo <-
     col_names = T
   )   %>%
   clean_names(  ) %>%
-  filter( ano <= anio_max )
+  filter( ano <= anio_max, ano >= anio_min )
 
 ##Análisis Componentes Activo-----------------------------------------------------------------------
 message( '\t Análisis Componentes Activo' )
@@ -38,7 +38,7 @@ analisis_componentes_activo <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021,-x2022 )
+  dplyr::select( -x2010,-x2011, -x2012, -x2013 )
 
 ##Análisis Horizontal del Activo--------------------------------------------------------------------
 message( '\t Análisis Horizontal del Activo' )
@@ -50,7 +50,7 @@ analisis_horizontal_activo <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021_2020,-x2022_2021 )
+  dplyr::select( -x2011_2010,-x2012_2011, -x2013_2012 )
 
 ##Análisis Vertical del Activo----------------------------------------------------------------------
 message( '\t Análisis Vertical del Activo' )
@@ -62,7 +62,7 @@ analisis_vertical_activo <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021,-x2022 )
+  dplyr::select( -x2010,-x2011, -x2012, -x2013 )
 
 ##Cuentas por Cobrar del Fondo RT-------------------------------------------------------------------
 message( '\t Cuentas por Cobrar del Activo' )
@@ -74,7 +74,7 @@ cuentas_cobrar_fondo <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  filter( ano <= anio_max )
+  filter( ano <= anio_max, ano >= anio_min )
 
 ##Componentes de las Cuentas por Cobrar del Fondo RT------------------------------------------------
 message( '\t Componentes de las Cuentas por Cobrar del Activo' )
@@ -86,7 +86,7 @@ analisis_componentes_cobrar_fondo <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021,-x2022 )
+  dplyr::select( -x2012, -x2013 )
 
 #2. Pasivo------------------------------------------------------------------------------------------
 ##Pasivos del Fondo---------------------------------------------------------------------------------
@@ -99,7 +99,7 @@ pasivos_fondo <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  filter( ano <= anio_max )
+  filter( ano <= anio_max, ano >= anio_min )
 
 
 ##Componentes del Pasivo del Fondo------------------------------------------------------------------
@@ -112,7 +112,7 @@ componentes_pasivos_fondo <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021,-x2022 ) %>%
+  dplyr::select( -x2010,-x2011, -x2012, -x2013 ) %>% 
   mutate_if( is.numeric, replace_na, 0 )
 
 
@@ -126,7 +126,7 @@ analisis_horizontal_pasivos <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021_2020,-x2022_2021 )
+  dplyr::select( -x2011_2010,-x2012_2011, -x2013_2012 )
 
 ##Análisis Vertical del Pasivo----------------------------------------------------------------------
 message( '\t Análisis Vertical del Pasivo' )
@@ -138,7 +138,7 @@ analisis_vertical_pasivos <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021,-x2022 ) %>%
+  dplyr::select( -x2010,-x2011, -x2012, -x2013 ) %>%
   mutate_if( is.numeric, replace_na, 0 )
 
 ##Cuentas por Pagar del Fondo-----------------------------------------------------------------------
@@ -162,7 +162,7 @@ patrimonio_fondo <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  filter( ano <= anio_max )
+  filter( ano <= anio_max, ano >= anio_min )
 
 
 ##Componentes del Patrimonio------------------------------------------------------------------------
@@ -175,7 +175,7 @@ componentes_patrimonio_fondo <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021,-x2022 ) %>%
+  dplyr::select( -x2010,-x2011, -x2012, -x2013 ) %>%
   mutate_if( is.numeric, replace_na, 0 )
 
 ##Análisis Horizontal del Patrimonio----------------------------------------------------------------
@@ -188,7 +188,7 @@ analisis_horizontal_patrimonio <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021_2020,-x2022_2021 )
+  dplyr::select( -x2011_2010,-x2012_2011, -x2013_2012 )
 
 ##Análisis Vertical del Patrimonio------------------------------------------------------------------
 message( '\t Análisis Vertical del Patrimonio' )
@@ -200,7 +200,7 @@ analisis_vertical_patrimonio <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021,-x2022 ) %>%
+  dplyr::select( -x2010,-x2011, -x2012, -x2013 ) %>%
   mutate_if( is.numeric, replace_na, 0 )
 
 #4. Ingresos----------------------------------------------------------------------------------------
@@ -214,7 +214,7 @@ ingresos_fondo <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  filter( ano <= anio_max )
+  filter( ano <= anio_max, ano >= anio_min )
 
 ##Componentes de los Ingresos-----------------------------------------------------------------------
 message( '\t Componentes de los Ingresos' )
@@ -226,7 +226,7 @@ componentes_ingresos <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021,-x2022 ) %>%
+  dplyr::select( -x2010,-x2011, -x2012, -x2013 ) %>%
   mutate_if( is.numeric, replace_na, 0 )
 
 ##Análisis Horizontal de los Ingresos---------------------------------------------------------------
@@ -239,7 +239,7 @@ analisis_horizontal_ingresos <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021_2020,-x2022_2021 )
+  dplyr::select( -x2011_2010,-x2012_2011, -x2013_2012 )
 
 ##Análisis Vertical de los Ingresos-----------------------------------------------------------------
 message( '\t Análisis Vertical de los Ingresos' )
@@ -251,7 +251,7 @@ analisis_vertical_ingresos <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021,-x2022 ) %>%
+  dplyr::select( -x2010,-x2011, -x2012, -x2013 ) %>%
   mutate_if( is.numeric, replace_na, 0 )
 
 ##Ingresos por Aportes------------------------------------------------------------------------------
@@ -264,7 +264,7 @@ ingresos_aportes <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  filter( ano <= anio_max )
+  filter( ano <= anio_max, ano >= anio_min )
 
 #5. Gastos------------------------------------------------------------------------------------------
 ##Gastos--------------------------------------------------------------------------------------------
@@ -276,7 +276,7 @@ gastos <- readxl::read_xlsx(
   col_names = T
 ) %>%
   clean_names(  ) %>%
-  filter( ano <= anio_max )
+  filter( ano <= anio_max, ano >= anio_min )
 
 ##Componentes del Gastos----------------------------------------------------------------------------
 message( '\t Componentes del Gastos' )
@@ -288,7 +288,7 @@ componentes_gastos <-
     col_names = T
   )  %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021,-x2022 ) %>%
+  dplyr::select( -x2010,-x2011, -x2012, -x2013 ) %>%
   mutate_if( is.numeric, replace_na, 0 )
 
 ##Análisis Horizontal del Gastos--------------------------------------------------------------------
@@ -301,7 +301,7 @@ analisis_horizontal_gastos <-
     col_names = T
   )  %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021_2020,-x2022_2021 )
+  dplyr::select( -x2011_2010,-x2012_2011, -x2013_2012 )
 
 ##Análisis Vertical del Gastos----------------------------------------------------------------------
 message( '\t Análisis Vertical del Gastos' )
@@ -313,7 +313,7 @@ analisis_vertical_gastos <-
     col_names = T
   )  %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021,-x2022 ) %>%
+  dplyr::select( -x2010,-x2011, -x2012, -x2013 ) %>%
   mutate_if( is.numeric, replace_na, 0 )
 
 ##Gastos Prestacionales-----------------------------------------------------------------------------
@@ -326,7 +326,7 @@ gastos_prestacionales <-
     col_names = T
   )  %>%
   clean_names(  ) %>%
-  dplyr::select( -x2021,-x2022 ) %>%
+  dplyr::select( -x2010, -x2011, -x2012, -x2013 ) %>%
   mutate_if( is.numeric, replace_na, 0 )
 
 ##Lectura de ingresos vs gastos totales-------------------------------------------------------------
@@ -339,7 +339,7 @@ ingresos_vs_gastos <-
     col_names = T
   ) %>%
   clean_names(  ) %>%
-  filter( ano <= anio_max )
+  filter( ano <= anio_max, ano >= anio_min )
 
 #Guardar RData--------------------------------------------------------------------------------------
 lista <- c( 

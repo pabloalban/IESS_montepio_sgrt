@@ -10,7 +10,7 @@ La DNGF ha elaborado los estados financieros de los fondos administrados del IES
 \section{Activo}
 \label{chp_infofinan:activos}
 
-La mayor tasa de crecimiento del activo se evidencia en el año 2012 con el 30,38\%, con un incremento respecto al 2011 de USD. 105,93 millones; en cambio, el año con menor crecimiento del activo es 2016 (6,16\%), debido que desde la expedición de la \legalcite{ResIESS_CD501}, de fecha 13 de noviembre de 2015, la cual redujo el aporte del \Sexpr{REP_seg} de 0,55\% a 0,20\%. A pesar de esta reducción de los ingresos por aportes patronales, los activos del \Sexpr{REP_seg} han seguido una tendencia creciente de USD 559.126.840,48 en 2013 a USD 1.598.710.845,37 en 2022; es decir, un crecimiento igual a 185,93\% en nueve (9) años. En promedio, la tasa de crecimiento de los activos durante los últimos diez (10) años es 13,54\%. En la figura \ref{fig:iess_activo_fondo_rtr} y tabla \ref{tab:iess_activo_del_fondo_rtr}, se presenta la evolución histórica del activo del Fondo del \Sexpr{REP_seg}.
+Durante el período 2014 a 2022 la mayor tasa de crecimiento del activo se evidencia en el año 2014 con el \Sexpr{REP$inf_cont_activo_inc_max}\%; en cambio, el año con menor crecimiento del activo es 2016 (\Sexpr{REP$inf_cont_activo_inc_2016}\%), debido que desde la expedición de la \legalcite{ResIESS_CD501}, de fecha 13 de noviembre de 2015, la cual redujo el aporte del \Sexpr{REP_seg} de 0,55\% a 0,20\%. A pesar de esta reducción de los ingresos por aportes patronales, los activos del \Sexpr{REP_seg} han seguido una tendencia creciente de USD \Sexpr{REP$inf_cont_activo_2014} en 2014 a USD \Sexpr{REP$inf_cont_activo_2022} en 2022; es decir, un crecimiento igual a \Sexpr{REP$inf_cont_incre_2014_2022}\% en nueve (9) años. En promedio, la tasa de crecimiento de los activos durante los últimos diez (9) años es \Sexpr{REP$inf_cont_incr_anual_9anios}\%. En la figura \ref{fig:iess_activo_fondo_rtr} y tabla \ref{tab:iess_activo_del_fondo_rtr}, se presenta la evolución histórica del activo del Fondo del \Sexpr{REP_seg}.
 
 {\fontsize{11}{13}\selectfont
 \begin{longtable}[H]{lrrr}
@@ -54,19 +54,18 @@ Elaborado: DAIE}
 
 Dentro de las principales cuentas del activo, en los estados financieros, se encuentran: Fondos disponibles, Recursos Administrados por el BIESS, Cuentas por cobrar, Propiedad planta y equipo, Intereses por cobrar y Otros activos (ver tabla \ref{tab:iess_analisis_componentes_activo_rtr}).
 
-La cuenta del activo compone casi en su totalidad por los “Recursos/Administrados por el BIESS”, la cual representa el 94,12\% del total de los activos en el año 2022. En segundo lugar, se encuentra “Cuentas por Cobrar” por USD 81.263.495,28, lo que representa el 5,08\% del activo en 2022, las cuentas por cobrar en el 2022 se componen en un 65,89\% de la Deuda con el Estado por los aportes del 40\% a las pensiones (USD 53.541.029,31) del SGRT, las cuentas por cobrar a las administradoras por USD 15.839.982,00 (19,49\%) y USD 11.008.886,87 en cuentas por cobrar por responsabilidad patronal y neteos, entre las más importantes cuentas por cobrar (ver tabla \ref{tab:analisis_componentes_cobrar_fondo} para el detalle histórico de la composición de las cuentas por cobrar). En tercer lugar, la cuenta “Propiedad planta y equipo” por USD 7.663.525,38, lo que representa el 0,48\% del activo en 2022; y, por último, la cuenta “Fondos Disponibles” por USD 5.102.232,35 (0,32\% del activo).
+La cuenta del activo compone casi en su totalidad por los “Recursos Administrados por el BIESS”, la cual representa el \Sexpr{REP$inf_cont_comp_acti_porcen_biess_2022}\% del total de los activos en el año 2022. En segundo lugar, se encuentra “Cuentas por Cobrar” por USD \Sexpr{REP$inf_cont_comp_acti_cuenta_cobrar_2022}, lo que representa el \Sexpr{REP$inf_cont_comp_acti_porcen_cuentas_cobrar_2022}\% del activo en 2022, las cuentas por cobrar en el 2022 se componen en un \Sexpr{REP$inf_cont_cobrar_fondo_porce_cc_2022}\% de la Deuda con el Estado por los aportes del 40\% a las pensiones (USD \Sexpr{REP$inf_cont_cobrar_fondo_deu_gobierno_2022}) del SGRT, las cuentas por cobrar a las administradoras por USD \Sexpr{REP$inf_cont_cobrar_fondo_cc_admin_2022} (\Sexpr{REP$inf_cont_cobrar_fondo_porce_cc_admin_2022}\%) y USD \Sexpr{REP$inf_cont_cobrar_fondo_neteos_2022} en cuentas por cobrar por responsabilidad patronal y neteos, entre las más importantes cuentas por cobrar (ver tabla \ref{tab:analisis_componentes_cobrar_fondo} para el detalle histórico de la composición de las cuentas por cobrar). En tercer lugar, la cuenta “Propiedad planta y equipo” por USD \Sexpr{REP$inf_cont_comp_acti_prop_planta_equ_2022}, lo que representa el \Sexpr{REP$inf_cont_cobrar_fondo_porce_prop_planta_equ_2022}\% del activo en 2022; y, por último, la cuenta “Fondos Disponibles” por USD \Sexpr{REP$inf_cont_comp_acti_fondos_disp_2022} (\Sexpr{REP$inf_cont_comp_acti_porce_fondos_disp_2022}\% del activo).
 
 
 \begin{landscape}
 \vspace*{\fill}
 {\setlength{\tabcolsep}{3pt}
 {\fontsize{9}{13}\selectfont
-\begin{longtable}[H]{lrrrrrrrrrr}
+\begin{longtable}[H]{lrrrrrrrrr}
 \caption{Análisis de los componentes del activo del Fondo del \Sexpr{REP_seg} a 31 de diciembre de cada año}
 \label{tab:iess_analisis_componentes_activo_rtr} \\
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -77,7 +76,6 @@ La cuenta del activo compone casi en su totalidad por los “Recursos/Administra
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022}\\
 & 
-\multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
 \multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
@@ -92,7 +90,6 @@ La cuenta del activo compone casi en su totalidad por los “Recursos/Administra
 
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -103,7 +100,6 @@ La cuenta del activo compone casi en su totalidad por los “Recursos/Administra
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022}\\
 & 
-\multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
 \multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
@@ -116,7 +112,7 @@ La cuenta del activo compone casi en su totalidad por los “Recursos/Administra
 	\midrule
 \endhead
 
-\bottomrule \multicolumn{11}{c}{continúa...} \\
+\bottomrule \multicolumn{10}{c}{continúa...} \\
 \endfoot
 %\hline
 \caption*{\scriptsize Fuente: Balance Financiero del SGRT - DNGF \\
@@ -130,12 +126,11 @@ Elaborado: DAIE}
 %\vspace*{\fill}
 {\setlength{\tabcolsep}{3pt}
 {\fontsize{10}{12}\selectfont
-\begin{longtable}[H]{lrrrrrrrrrr}
+\begin{longtable}[H]{lrrrrrrrrr}
 \caption{Componentes de las cuentas por cobrar del Fondo del \Sexpr{REP_seg} a 31 de diciembre de cada año}
 \label{tab:analisis_componentes_cobrar_fondo} \\
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -146,7 +141,6 @@ Elaborado: DAIE}
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022}\\
 & 
-\multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
 \multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
@@ -161,7 +155,6 @@ Elaborado: DAIE}
 
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -172,7 +165,6 @@ Elaborado: DAIE}
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022}\\
 & 
-\multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
 \multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
@@ -185,7 +177,7 @@ Elaborado: DAIE}
 	\midrule
 \endhead
 
-\bottomrule \multicolumn{11}{c}{continúa...} \\
+\bottomrule \multicolumn{10}{c}{continúa...} \\
 \endfoot
 %\hline
 \caption*{\scriptsize Fuente: Balance Financiero del SGRT - DNGF \\
@@ -268,18 +260,17 @@ Elaborado: DAIE}
 }
 }
 
-Desde el año 2013 a 2022, la cuenta “Recursos Administrados por el BIESS”, creció en promedio 14,05\%, siendo el 2012, el año con mayor crecimiento (45,62\%), debido a la reducción de la prima de este Seguro desde noviembre de 2015; en cambio, el año con menor crecimiento fue el 2016, con el 6,03\%. El promedio de crecimiento de esta cuenta después de la reducción de prima fue del 10,31\% entre el 2016 a 2022, mientras que el promedio de crecimiento desde 2011 a 2015 fue 26,97\%. Por otro lado, el promedio de la tasa de crecimiento de las cuentas por cobrar es igual a 16,67\%, pero para 2021 fue solo 2,97\% y 2,48\% 2022, debido al pago de las obligaciones del Estado con este Seguro. Por último, los activos del Fondo del \Sexpr{REP_seg} han crecido 13,64\% en promedio desde 2013 a 2022, debido a que los ingresos por aportes patronales son muy superiores a los egresos por pago de prestaciones.
+Desde el año 2014 a 2022, la cuenta “Recursos Administrados por el BIESS”, creció en promedio \Sexpr{REP$inf_cont_hori_activo_crecimiento_promedio_rec_adm_2014_2022 }\%, siendo el 2014, el año con mayor crecimiento (\Sexpr{REP$inf_cont_hori_activo_max_crecimiento_rec_adm}\%). Mientras que, debido a la reducción de la prima de este Seguro desde noviembre de 2015, el año con menor crecimiento fue el 2016, con el \Sexpr{REP$inf_cont_hori_activo_min_crecimiento_rec_adm}\%. Desde este año se observó un crecimiento gradual hasta 2022 con un promedio de crecimiento de \Sexpr{REP$inf_cont_hori_activo_crecimiento_promedio_rec_adm_2016_2022}\%. Por otro lado, el promedio de la tasa de crecimiento de las cuentas por cobrar es igual a \Sexpr{REP$inf_cont_hori_activo_crecimiento_promedio_cxc_2014_2022}\%, pero para 2021 fue solo \Sexpr{REP$inf_cont_hori_activo_crec_cxc_2021}\% y \Sexpr{REP$inf_cont_hori_activo_crec_cxc_2022}\% 2022, debido al pago de las obligaciones del Estado con este Seguro. Por último, los activos del Fondo del \Sexpr{REP_seg} experimentaron un gran aumento en el 2018 de \Sexpr{REP$inf_cont_hori_activo_max_crecimiento_fondos}\%, mientras que el menor crecimiento registrado fue de \Sexpr{REP$inf_cont_hori_activo_min_crecimiento_fondos}\% en 2015. Además, en el año posterior a la pandemia también se registró un decrecimiento del \Sexpr{REP$inf_cont_hori_activo_crec_fondos_2021}\%. 
 
-Desde el año 2013 a 2022, la cuenta “Recursos Administrados por el BIESS” representa en promedio el 93,43\% del activo; las “Cuentas por cobrar” representan en promedio el 5,12\%,  la cuenta “Propiedad planta y equipo” representa en promedio el 1,01\% y los “Fondos Disponibles” el 0,44\% y 
+En el análisis vertical del activo de Fondo \Sexpr{REP_seg} en el mismo período de tiempo del análisis horizontal, la cuenta “Recursos Administrados por el BIESS” representa en promedio el \Sexpr{REP$inf_cont_vert_activo_crecimiento_promedio_rec_adm_2014_2022}\% del activo; las “Cuentas por cobrar” representan en promedio el \Sexpr{REP$inf_cont_vert_activo_crecimiento_promedio_cxc_2014_2022}\%,  la cuenta “Propiedad planta y equipo” representa en promedio el \Sexpr{REP$inf_cont_vert_activo_crecimiento_promedio_planta_eq_2014_2022}\% y los “Fondos Disponibles” el \Sexpr{REP$inf_cont_vert_activo_crecimiento_promedio_fondos_2014_2022}\%.
 
 
 {\fontsize{9}{12}\selectfont
-\begin{longtable}[H]{lrrrrrrrrrr}
+\begin{longtable}[H]{lrrrrrrrrr}
 \caption{Análisis vertical del activo del Fondo del \Sexpr{REP_seg} a 31 de diciembre de cada año}
 \label{tab:iess_analisis_vertical_activo_rtr} \\
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -290,7 +281,6 @@ Desde el año 2013 a 2022, la cuenta “Recursos Administrados por el BIESS” r
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022}\\
 & 
-\multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
 \multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
@@ -305,7 +295,6 @@ Desde el año 2013 a 2022, la cuenta “Recursos Administrados por el BIESS” r
 
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -316,7 +305,6 @@ Desde el año 2013 a 2022, la cuenta “Recursos Administrados por el BIESS” r
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022} \\
 & 
-\multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
 \multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
@@ -329,7 +317,7 @@ Desde el año 2013 a 2022, la cuenta “Recursos Administrados por el BIESS” r
 	\midrule
 \endhead
 
-\bottomrule \multicolumn{11}{c}{continúa...} \\
+\bottomrule \multicolumn{10}{c}{continúa...} \\
 \endfoot
 %\hline
 \caption*{\scriptsize Fuente: Balance Financiero del SGRT - DNGF \\
@@ -342,9 +330,9 @@ Elaborado: DAIE}
 %---------------------------------------------------------------------------------------------------
 \section{Pasivo}
 
-A 31 de diciembre de 2022, el Fondo del \Sexpr{REP_seg}, registró un pasivo por USD 21.945.613,39, lo que significó un incremento de USD 462.779,99 (2,15\%), respecto a 2021. En promedio de los últimos 10 años, la tasa de crecimiento promedio del pasivo es 13,16\%. El mayor año de crecimiento del pasivo es el 2016 (208,08\%); en cambio, el menor fue 2015 (-43,28\%).
+A 31 de diciembre de 2022, el Fondo del \Sexpr{REP_seg}, registró un pasivo por USD \Sexpr{REP$inf_cont_pasivos_fondo_2022}, lo que significó un incremento de USD \Sexpr{REP$inf_cont_pasivos_fondo_incre_2022} (\Sexpr{REP$inf_cont_pasivos_fondo_incre_porcen_2022}\%), respecto a 2021. En promedio de los últimos 10 años, la tasa de crecimiento promedio del pasivo es \Sexpr{REP$inf_cont_pasivos_fondo_prom_incre_anual_2014_2022}\%. Además, se tiene que el mayor año de crecimiento del pasivo es el 2016 (\Sexpr{REP$inf_cont_pasivos_fondo_max_incre_anual}\%); en cambio, el menor fue 2015 (\Sexpr{REP$inf_cont_pasivos_fondo_min_incre_anual}\%).
 
-En términos monetarios, en el año 2015 el Fondo del \Sexpr{REP_seg} registró USD 38.498.805,53 en pasivos; mientras que tan solo dos (2) años antes los pasivos solo alcanzaban USD 10.190.725,57. A continuación, en la figura \ref{fig:iess_pasivo_fondo_rtr} y tabla \ref{tab:iess_pasivos_fondo_rtr}, se presenta la evolución del pasivo del Fondo del \Sexpr{REP_seg}.
+En términos monetarios, en el año 2017 el Fondo del \Sexpr{REP_seg} registró USD \Sexpr{REP$inf_cont_pasivos_fondo_pasivos_2017} en pasivos; mientras que tan solo dos (2) años antes los pasivos solo alcanzaban USD \Sexpr{REP$inf_cont_pasivos_fondo_pasivos_2015}. A continuación, en la figura \ref{fig:iess_pasivo_fondo_rtr} y tabla \ref{tab:iess_pasivos_fondo_rtr}, se presenta la evolución del pasivo del Fondo del \Sexpr{REP_seg}.
 
 \begin{figure}[H]
 \captionsetup{justification=centering}
@@ -388,13 +376,13 @@ Elaborado: DAIE}
 
 Los componentes del pasivo, dentro de los cuales se encuentran las siguientes subcuentas “Prestaciones y beneficios”, “Cuentas por pagar”, “Pasivo diferido”, “Deuda de Gobierno contra”, “Provisiones”, “Pasivos corrientes” y “Pasivos no corrientes” (ver tabla \ref{tab:iess_componentes_pasivos_fondo_rtr}).
 
-Para el año 2022, el pasivo se compone en pasivos corrientes por USD 11.752.482,30 (53,55\%) y pasivos no corrientes por USD 10.193.131,09 (46,47\%). Los pasivos corrientes se componen de las obligaciones prestacionales, Cuentas por pagar Intrainstitucional, Proveedores y Retenciones en Calidad de Agente de Retención. Por otra parte, los pasivos no corrientes se conforman de Pasivos por Provisiones Laborales y Depósitos no identificados.
+Para el año 2022, el pasivo se compone en pasivos corrientes por USD \Sexpr{REP$inf_cont_comp_pasivos_corrientes_2022} (\Sexpr{REP$inf_cont_comp_pasivos_porcen_pasivos_corr}\%) y pasivos no corrientes por USD \Sexpr{REP$inf_cont_comp_pasivos_no_corrientes_2022} (\Sexpr{REP$inf_cont_comp_pasivos_porcen_pas_no_corrientes}\%). Los pasivos corrientes se componen de las obligaciones prestacionales, Cuentas por pagar Intrainstitucional, Proveedores y Retenciones en Calidad de Agente de Retención. Por otra parte, los pasivos no corrientes se conforman de Pasivos por Provisiones Laborales y Depósitos no identificados.
 
-Los balances del IESS en el período comprendido 2012 al 2020 han sufrido cambios en su plan de cuentas; por lo tanto, se presenta la variación y optimización; un ejemplo de ello se evidencia en los componentes del activo, donde algunas cuentas fueron afectadas, como las siguientes:
+Los balances del IESS en el período comprendido 2012 al 2022 han sufrido cambios en su plan de cuentas; por lo tanto, se presenta la variación y optimización; un ejemplo de ello se evidencia en los componentes del activo, donde algunas cuentas fueron afectadas, como las siguientes:
 
 \begin{itemize}[itemsep=0mm, topsep=0pt]
-\item	En la cuenta “Inversiones” a partir del 2010 al 2012 en los balances se las denomina como: “Inversiones deuda renta fija sector privado” (7110) e “Inversiones deuda renta fija Sector Público” (7120); a partir del 2013 al 2014 es optimizada en una sola cuenta registrada en el plan de cuentas como “Inversiones” (12). Finalmente, a partir del 2015 al 2022 cambia su denominación a “Recursos/Administra por El BIESS” (714). 
-\item	La cuenta “Deuda del Gobierno” en el plan de cuentas del 2010 al 2012 se la reconoce como cuenta principal del activo; sin embargo, a partir del 2013 al 2022 dicha cuenta pasa a ser una subcuenta de “Cuentas por Cobrar”, es por ello que en la tabla \ref{tab:iess_componentes_pasivos_fondo_rtr} no registra valores desde el 2013.
+\item	En la cuenta “Inversiones” a partir del 2010 al 2012 en los balances se las denomina como: “Inversiones deuda renta fija sector privado” (7110) e “Inversiones deuda renta fija Sector Público” (7120); a partir del 2014 al 2014 es optimizada en una sola cuenta registrada en el plan de cuentas como “Inversiones” (12). Finalmente, a partir del 2015 al 2022 cambia su denominación a “Recursos Administrados por El BIESS” (714). 
+\item	La cuenta “Deuda del Gobierno” en el plan de cuentas del 2010 al 2012 se la reconoce como cuenta principal del activo; sin embargo, a partir del 2014 al 2022 dicha cuenta pasa a ser una subcuenta de “Cuentas por Cobrar”, es por ello que en la tabla \ref{tab:iess_componentes_pasivos_fondo_rtr} no registra valores desde el 2014.
 \end{itemize}
 
 \begin{landscape}
@@ -407,10 +395,9 @@ Los balances del IESS en el período comprendido 2012 al 2020 han sufrido cambio
 \caption{Análisis de los componentes del pasivo del Fondo del \Sexpr{REP_seg} a 31 de diciembre de cada año}
 \label{tab:iess_componentes_pasivos_fondo_rtr}
 {\fontsize{9}{14}\selectfont
-\begin{tabular}{lrrrrrrrrrr}
+\begin{tabular}{lrrrrrrrrr}
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -421,7 +408,6 @@ Los balances del IESS en el período comprendido 2012 al 2020 han sufrido cambio
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022} \\
 & 
-\multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
 \multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
@@ -447,7 +433,7 @@ Elaborado: DAIE}
 
 \subsection{Análisis horizontal y vertical del pasivo}
 
-Para el año 2022, los pasivos corrientes crecieron 1.413,26\%, en cambio los pasivos no corrientes decrecieron en 20,77\%. En promedio, durante el período 2016 a 2022, los pasivos del Fondo del \Sexpr{REP_seg} aumentaron en promedio 26,06\% cada año. Por otro lado, los pasivos corrientes crecieron 214,67\% anualmente, y los pasivos no corrientes crecieron en 19,42\%, para el mismo período. En las tablas \ref{tab:iess_analisis_horizontal_pasivos_rtr} y \ref{tab:iess_analisis_vertical_pasivos_rtr}, se presentan los análisis horizontal y vertical de los componentes del pasivo del Fondo del \Sexpr{REP_seg}.
+Para el año 2022, los pasivos corrientes crecieron \Sexpr{REP$inf_cont_pasivo_horizontal_corrientes_2022}\%, en cambio los pasivos no corrientes decrecieron en \Sexpr{REP$inf_cont_comp_pasivo_horizontal_no_corrientes_2022}\%. En promedio, durante el período 2016 a 2022, los pasivos del Fondo del \Sexpr{REP_seg} aumentaron en promedio \Sexpr{REP$inf_cont_pasivo_horizontal_prom_pasivos}\% cada año. Por otro lado, los pasivos corrientes crecieron \Sexpr{REP$inf_cont_pasivo_horizontal_prom_pasivos_corrientes}\% anualmente, y los pasivos no corrientes crecieron en \Sexpr{REP$inf_cont_pasivo_horizontal_prom_pasivos_no_corrientes}\%, para el mismo período. En las tablas \ref{tab:iess_analisis_horizontal_pasivos_rtr} y \ref{tab:iess_analisis_vertical_pasivos_rtr}, se presentan los análisis horizontal y vertical de los componentes del pasivo del Fondo del \Sexpr{REP_seg}.
 
 {\setlength{\tabcolsep}{3pt}
 {\fontsize{9}{12}\selectfont
@@ -513,15 +499,14 @@ Elaborado: DAIE}
 }
 }
 
-Para el año 2022, los pasivos corrientes componían el 53,55\% de los pasivos, en cambio, los pasivos no corrientes representaron solo el 46,45\%. En promedio, durante el período 2015 a 2022, los pasivos corrientes representaron el 9,45\%; en cambio, los pasivos no corrientes representaban el 90,55\% en promedio, durante el mismo período.
+Para el año 2022, los pasivos corrientes componían el \Sexpr{REP$inf_cont_pasivo_vert_pasivos_corrientes_2022}\% de los pasivos, en cambio, los pasivos no corrientes representaron solo el \Sexpr{REP$inf_cont_pasivo_vert_pasivos_no_corrientes_2022}\%. En promedio, durante el período 2015 a 2022, los pasivos corrientes representaron el \Sexpr{REP$inf_cont_pasivo_vert_prom_pasivos_corrientes_2015_2022}\%; en cambio, los pasivos no corrientes representaban el \Sexpr{REP$inf_cont_pasivo_vert_prom_pasivos_no_corrientes_2015_2022}\% en promedio, durante el mismo período.
 
 {\fontsize{9}{12}\selectfont
-\begin{longtable}[H]{lrrrrrrrrrr}
+\begin{longtable}[H]{lrrrrrrrrr}
 \caption{Análisis vertical del pasivo del Fondo del \Sexpr{REP_seg} a 31 de diciembre de cada año}
 \label{tab:iess_analisis_vertical_pasivos_rtr} \\
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -532,7 +517,6 @@ Para el año 2022, los pasivos corrientes componían el 53,55\% de los pasivos, 
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022} \\
 & 
-\multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
 \multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
@@ -547,7 +531,6 @@ Para el año 2022, los pasivos corrientes componían el 53,55\% de los pasivos, 
 
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -558,7 +541,6 @@ Para el año 2022, los pasivos corrientes componían el 53,55\% de los pasivos, 
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022} \\
 & 
-\multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
 \multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
@@ -571,7 +553,7 @@ Para el año 2022, los pasivos corrientes componían el 53,55\% de los pasivos, 
 	\midrule
 \endhead
 
-\bottomrule \multicolumn{11}{c}{continúa...} \\
+\bottomrule \multicolumn{10}{c}{continúa...} \\
 \endfoot
 %\hline
 \caption*{\scriptsize Fuente: Balance Financiero del SGRT - DNGF \\
@@ -581,11 +563,11 @@ Elaborado: DAIE}
 \end{longtable}
 }
 
-Los pasivos del Fondo del \Sexpr{REP_seg} se compone mayoritariamente de la cuenta de Pasivos no Corrientes para el periodo 2015 al 2020, alcanzado su máxima participación en el 2016 alcanza (98,02\%), y para el año 2020 alcanzó  el 97,27\% del pasivo; pero se redujo a 96,38\% en 2021 y, finalmente, 46,45\% en el año 2022.
+Los pasivos del Fondo del \Sexpr{REP_seg} se compone mayoritariamente de la cuenta de Pasivos no Corrientes para el periodo 2015 al 2020, alcanzado su máxima participación en el 2016 alcanza (\Sexpr{REP$inf_cont_pasivo_vert_max_no_corrientes}\%), pero se redujo en los años posteriores llegando a \Sexpr{REP$inf_cont_pasivo_vert_pasivos_no_corrientes_2022}\% en el año 2022.
 %---------------------------------------------------------------------------------------------------
 \section{Patrimonio}
 
-El patrimonio del \Sexpr{REP_seg} es USD 1.378.270.202,68 a 31 de diciembre de 2022, lo que representa un incremento de USD 171.130.370,64; es decir, un incremento igual a 14,18\%, con respecto al 2021. Durante los últimos diez (10) año, las reservas del Fondo creció de USD 541.739.460,20 en 2013 a USD 1.378.270.202,68 en 2022; es decir, un incremento de 154,42\%. En promedio, durante el período 2013 a 2022, el patrimonio del Fondo creció anualmente 12,63\%, debido a los bajos egresos prestaciones, en relación con los ingresos de este seguro, lo cual significó resultado del ejercicio por USD 198.495.029,30 y una utilización del 26,63\%. 
+El patrimonio del \Sexpr{REP_seg} es USD \Sexpr{REP$inf_cont_patrimonio_incre_2022} a 31 de diciembre de 2022, lo que representa un incremento de USD \Sexpr{REP$inf_cont_patrimonio_incre_2022}; es decir, un incremento igual a \Sexpr{REP$inf_cont_patrimonio_incre_porcen_2022}\%, con respecto al 2021. Durante los últimos diez (10) año, las reservas del Fondo creció de USD \Sexpr{REP$inf_cont_patrimonio_2014} en 2014 a USD \Sexpr{REP$inf_cont_patrimonio_2022} en 2022; es decir, un incremento de \Sexpr{REP$inf_cont_incre_patromonio_2014_2022}\%. En promedio, durante el período 2014 a 2022, el patrimonio del Fondo creció anualmente \Sexpr{REP$inf_cont_patrimonio_incre_prom_2014_2022}\%, debido a los bajos egresos prestaciones, en relación con los ingresos de este seguro.
 
 Desde el año 2021, el porcentaje de aportación al \Sexpr{REP_seg} creció de 0,20\% a 0,38\%, según lo estipulado en la \legalcite{ResIESS_CD515}. A continuación, en la tabla \ref{tab:iess_patrimonio_fondo_rtr} y figura \ref{fig:iess_patrimonio_fondo_rtr}, se presenta la evolución histórica del patrimonio del Fondo del \Sexpr{REP_seg}.
 
@@ -628,17 +610,17 @@ Elaborado: DAIE}
 \end{longtable}
 }
 
+Cabe mencionar que el patrimonio de este fondo disminuyó en el año 2016 con respecto al 2015 en \Sexpr{REP$inf_cont_patrimonio_dismin_2015_2016}\% por el impacto de la eliminación del 40\% de la contribución del Estado para el pago de las pensiones y la aplicación de la \legalcite{ResIESS_CD501}. Además, existe una desaceleración del patrimonio del \Sexpr{REP_seg} durante todo el período 2014 a 2018. Esta desaceleración se acentúa a partir del año 2014, decreciendo precipitadamente a partir del año 2015 con la aplicación de la \legalcite{ResIESS_CD501} y la eliminación de la contribución del 40\% del Estado, siendo el punto más bajo en este período el año 2016 (\Sexpr{REP$inf_cont_patrimonio_incre_por_2016}\%). En los siguientes tres años hubo un incremento anual mayor respecto al 2018. Sin embargo, en el año 2022 se registró el incremento porcentual más pequeño (\Sexpr{REP$inf_cont_patrimonio_min_incre_porcentual}).
 
-Cabe mencionar que el patrimonio de este fondo aumentó en 4,14 veces (812,14 millones de dólares) en el periodo 2010 al 2020; sin embargo, en el año 2015 con respecto al 2016 disminuyó 14,14\% por el impacto de la eliminación del 40\% de la contribución del Estado para el pago de las pensiones y la aplicación de la \legalcite{ResIESS_CD501}. Además, existe una desaceleración del patrimonio del \Sexpr{REP_seg} durante todo el período 2010 a 2018. Esta desaceleración se acentúa a partir del año 2014, decreciendo precipitadamente a partir del año 2015 con la aplicación de la \legalcite{ResIESS_CD501} y la eliminación de la contribución del 40\% del Estado, siendo el punto más bajo el año 2016.
 
 \subsection{Componentes del patrimonio}
 
 El patrimonio es la parte residual en los activos de los fondos administrados, una vez deducidos todos sus pasivos. El patrimonio puede subclasificarse para los efectos de su presentación en el balance general y depende de la capitalización, los aportes patrimoniales, las reservas y los resultados. En la tabla \ref{tab:iess_componentes_patrimonio_fondo_rtr}, se presenta los componentes del patrimonio del Fondo del \Sexpr{REP_seg}.
 
-Para el año 2022, el patrimonio del \Sexpr{REP_seg} haciende a USD 1.378.270.202,68. La cuenta patrimonio se compone de las cuentas hijas “Superávit Acumulado” por USD 1.379.319.364,15, el que registra los resultados acumulados del superávit de los fondos de beneficio definido o reparto, obtenidos en ejercicios anteriores. Además, registra los resultados transferidos de la administradora. Además, la cuenta patrimonio se compone de la subcuenta “Déficit Acumulado” por valores negativos de USD 1.049.161,47, el cual registra los resultados acumulados del déficit de los fondos de beneficio definido o reparto, obtenidos en ejercicios anteriores. Además, registra los resultados transferidos de la administradora.
+Para el año 2022, la cuenta patrimonio se compone de las cuentas hijas “Superávit Acumulado” por USD \Sexpr{REP$inf_cont_patrimonio_comp_patri_superavit_2022}, el que registra los resultados acumulados del superávit de los fondos de beneficio definido o reparto, obtenidos en ejercicios anteriores. Además, registra los resultados transferidos de la administradora. Luego, la cuenta patrimonio se compone de la subcuenta “Déficit Acumulado” por valores negativos de USD \Sexpr{REP$inf_cont_patrimonio_comp_patri_deficit_2022}, el cual registra los resultados acumulados del déficit de los fondos de beneficio definido o reparto, obtenidos en ejercicios anteriores. Además, registra los resultados transferidos de la administradora.
 
 
-Cabe mencionar que los balances del IESS en el periodo 2010 a 2022 ha sufrido cambios en los códigos de cuentas, creación de cuentas, signo negativo en la representación del pasivo, patrimonio e ingresos por las resoluciones emitidas por la Superintendencia de Bancos, en el año 2012 con la Resolución No. 0859 y en el año 2014 con la Resolución No. 0823, siendo este caso los años 2014, 2015, 2017, 2018, 2019 y 2020 que presentan números negativos en el patrimonio; sin embargo, por razones técnicas se estandarizó la presentación en tablas y gráficas con números positivos.
+Cabe mencionar que los balances del IESS en el período 2010 a 2022 ha sufrido cambios en los códigos de cuentas, creación de cuentas, signo negativo en la representación del pasivo, patrimonio e ingresos por las resoluciones emitidas por la Superintendencia de Bancos, en el año 2012 con la Resolución No. 0859 y en el año 2014 con la Resolución No. 0823, siendo este caso los años 2014, 2015, 2017, 2018, 2019 y 2020 que presentan números negativos en el patrimonio; sin embargo, por razones técnicas se estandarizó la presentación en tablas y gráficas con números positivos.
 
 \begin{landscape}
 
@@ -650,10 +632,9 @@ Cabe mencionar que los balances del IESS en el periodo 2010 a 2022 ha sufrido ca
 \caption{Análisis de los componentes del patrimonio del Fondo del \Sexpr{REP_seg} a 31 de diciembre de cada año}
 \label{tab:iess_componentes_patrimonio_fondo_rtr}
 {\fontsize{9.3}{16}\selectfont
-\begin{tabular}{lrrrrrrrrrr}
+\begin{tabular}{lrrrrrrrrr}
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -664,7 +645,6 @@ Cabe mencionar que los balances del IESS en el periodo 2010 a 2022 ha sufrido ca
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022} \\
 & 
-\multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
 \multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
@@ -759,12 +739,11 @@ Elaborado: DAIE}
 
 
 {\fontsize{9}{12}\selectfont
-\begin{longtable}[H]{lrrrrrrrrrr}
+\begin{longtable}[H]{lrrrrrrrrr}
 \caption{Análisis vertical del patrimonio del Fondo del \Sexpr{REP_seg} a 31 de diciembre de cada año}
 \label{tab:iess_analisis_vertical_patrimonio_rtr} \\
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -775,7 +754,6 @@ Elaborado: DAIE}
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022} \\
 & 
-\multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
 \multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
@@ -790,7 +768,6 @@ Elaborado: DAIE}
 
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -801,7 +778,6 @@ Elaborado: DAIE}
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022} \\
 & 
-\multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
 \multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
@@ -814,7 +790,7 @@ Elaborado: DAIE}
 	\midrule
 \endhead
 
-\bottomrule \multicolumn{11}{c}{continúa...} \\
+\bottomrule \multicolumn{10}{c}{continúa...} \\
 \endfoot
 %\hline
 \caption*{\scriptsize Fuente: Balance Financiero del SGRT - DNGF \\
@@ -824,9 +800,9 @@ Elaborado: DAIE}
 \end{longtable}
 }
 
-En promedio durante el período 2013 a 2022, la cuenta “Superávit acumulado” ha crecido 15,85\% cada año; mientras que el Déficit acumulado ha decrecido en promedio 27,73\%; pero desde el año 2017 a 2022, en esta cuenta se registra una perdida igual 1.049.161,47, la cual es el déficit acumulado por la Administradora del \Sexpr{REP_seg}. En total, las reservas del \Sexpr{REP_seg} registraron en el año 2014 el mayor crecimiento (23,61\%); mientras que, en el año 2022, se registró el menor crecimiento del patrimonio (0,39\%).
+En promedio durante el período 2014 a 2022, la cuenta “Superávit acumulado” ha crecido \Sexpr{REP$inf_cont_patrimonio_horizontal_superavit_2014_2022}\% cada año; mientras que el Déficit acumulado ha decrecido; pero desde el año 2017 a 2022, en esta cuenta se registra una pérdida igual a USD \Sexpr{REP$inf_cont_patrimonio_comp_patri_deficit_2017}, la cual es el déficit acumulado por la Administradora del \Sexpr{REP_seg}. En total, las reservas del \Sexpr{REP_seg} registraron en el año 2014 el mayor crecimiento (\Sexpr{ REP$inf_cont_patrimonio_horizontal_total_max}\%); mientras que, en el año 2022, se registró el menor crecimiento del patrimonio (\Sexpr{REP$inf_cont_patrimonio_horizontal_total_min}\%).
 
-La cuenta “Superávit acumulado” durante período 2013 a 2022, representó el 89,56\% del patrimonio, la cuenta “Déficit acumulado” representó el -0,55\% y la cuenta “Resultado del ejercicio” representó el 10,99\%. Cabe mencionar que para el año 2022, en el Balances Financiero del 2022, no se registran valores en la cuenta “Resultado del ejercicio” del patrimonio. A continuación, se procede al análisis de ingresos y egresos, que se encuentran en los Estados de Pérdidas y Ganancias a 31 de diciembre de cada año.
+En el análisis vertical la cuenta “Superávit acumulado” durante período 2014 a 2022, representó en promedio el \Sexpr{REP$inf_cont_patrimonio_vertical_superavit_prom_2014_2022}\% del patrimonio y la cuenta “Resultado del ejercicio” representó en promedio el \Sexpr{REP$inf_cont_patrimonio_vertical_res_ejer_prom_2014_2022}\%. Cabe mencionar que para el año 2022, en el Balances Financiero del 2022, no se registran valores en la cuenta “Resultado del ejercicio” del patrimonio. A continuación, se procede al análisis de ingresos y egresos, que se encuentran en los Estados de Pérdidas y Ganancias a 31 de diciembre de cada año.
 
 
 %---------------------------------------------------------------------------------------------------
@@ -834,7 +810,7 @@ La cuenta “Superávit acumulado” durante período 2013 a 2022, representó e
 
 \section{Ingresos}
 
-Durante el año 2022, el Fondo del \Sexpr{REP_seg} recibió por ingresos USD 270.542.823,99, lo cual representó un incremento de USD 37.415.179,07, respecto al año anterior; en términos porcentuales, representa un incremento igual a 16,05\%. Respeto al año 2013, los ingresos crecieron en 54,04\%. Debido a la expedición de la \legalcite{ResIESS_CD501}, los ingresos del Seguro cayeron en 44,57\ en el 2016, respecto al 2015; en términos monetarios significó que los ingresos del Seguro pasaron de USD 193.520.492,43 en 2015 a solo USD 107.276.670,49 en 2016. A continuación, en la figura \ref{fig:iess_ingresos_fondo_rtr} y tabla \ref{tab:iess_ingresos_fondo_rtr}, se presenta la evolución histórica de los ingresos del Fondo del \Sexpr{REP_seg}.
+Durante el año 2022, el Fondo del \Sexpr{REP_seg} recibió por ingresos USD \Sexpr{REP$inf_cont_ingresos_2022}, lo cual representó un incremento de USD \Sexpr{REP$inf_cont_ingresos_incremento_2022}, respecto al año anterior; en términos porcentuales, representa un incremento igual a \Sexpr{REP$inf_cont_ingresos_incremento_porc_2022}\%. Respeto al año 2014, los ingresos crecieron en \Sexpr{REP$inf_cont_ingresos_incremento_porc_2014}\%. Debido a la expedición de la \legalcite{ResIESS_CD501}, los ingresos del Seguro cayeron en \Sexpr{REP$inf_cont_ingresos_incremento_porc_2016}\% en el 2016, respecto al 2015; en términos monetarios significó que los ingresos del Seguro pasaron de USD \Sexpr{REP$inf_cont_ingresos_2015} en 2015 a solo USD \Sexpr{REP$inf_cont_ingresos_2016} en 2016. A continuación, en la figura \ref{fig:iess_ingresos_fondo_rtr} y tabla \ref{tab:iess_ingresos_fondo_rtr}, se presenta la evolución histórica de los ingresos del Fondo del \Sexpr{REP_seg}.
 
 \begin{figure}[H]
 \captionsetup{justification=centering}
@@ -881,12 +857,11 @@ Durante el año 2022, el Fondo del \Sexpr{REP_seg} recibió por ingresos USD 270
 
 {\setlength{\tabcolsep}{1.5pt}
 {\fontsize{9.3}{14}\selectfont
-\begin{longtable}[H]{lrrrrrrrrrr}
+\begin{longtable}[H]{lrrrrrrrrr}
 \caption{Análisis de los componentes de los ingresos del Fondo del \Sexpr{REP_seg} a 31 de diciembre de cada año}
 \label{tab:iess_componentes_ingresos_rtr} \\
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -897,7 +872,6 @@ Durante el año 2022, el Fondo del \Sexpr{REP_seg} recibió por ingresos USD 270
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022} \\
 & 
-\multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
 \multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
@@ -912,7 +886,6 @@ Durante el año 2022, el Fondo del \Sexpr{REP_seg} recibió por ingresos USD 270
 
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -923,7 +896,6 @@ Durante el año 2022, el Fondo del \Sexpr{REP_seg} recibió por ingresos USD 270
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022} \\
 & 
-\multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
 \multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
@@ -936,7 +908,7 @@ Durante el año 2022, el Fondo del \Sexpr{REP_seg} recibió por ingresos USD 270
 	\midrule
 \endhead
 
-\bottomrule \multicolumn{11}{c}{continúa...} \\
+\bottomrule \multicolumn{10}{c}{continúa...} \\
 \endfoot
 %\hline
 \caption*{\scriptsize Fuente: Balance Financiero del SGRT - DNGF \\
@@ -953,7 +925,7 @@ Elaborado: DAIE}
 
 A continuación, se desarrolla el análisis histórico de los componentes del ingreso, dentro de los cuales se encuentran las siguientes subcuentas: “Aportes de afiliados y patronales”, “Contribuciones del Estado”, “Ingresos complementarios a las operaciones”, “Ingresos financieros”, “Ingresos por arriendo y realizaciones”, “Ingresos extraordinarios (RP)”, “Intereses, tasas y contribución” y “Otros resultados integrales” (ver tabla \ref{tab:iess_componentes_ingresos_rtr}).
 
-En el año 2022, se registraron USD 270.542.823,99 por incrementos en los beneficios económicos producidos a lo largo del período contable, en forma de entradas o incrementos de valor de los activos, o bien, como disminuciones de las obligaciones que dan como resultado aumentos del patrimonio. Los ingresos del año 2022 provienen de mayor a menor valor, en primer lugar, de los ingresos financieros generados por las inversiones del Fondo (el BIESS administra USD 1.393.211.682,31, al corte) por USD 133.467.536,12. En segundo lugar, los aportes patronales por USD 104.092.173,56; en tercer lugar, la contribución del Estado por el 40\% de las pensiones del SGRT por USD 24.942.661,35. En cuarto lugar, los ingresos complementarios de operación por intereses y multas por USD 7.472.585,53 y; además, USD 566.674,03 por responsabilidad patronal; y, por último, USD 1.193,40 por arriendos de bienes inmuebles.
+En el año 2022, se registraron USD \Sexpr{REP$inf_cont_com_ingresos_total_2022} por incrementos en los beneficios económicos producidos a lo largo del período contable, en forma de entradas o incrementos de valor de los activos, o bien, como disminuciones de las obligaciones que dan como resultado aumentos del patrimonio. Los ingresos del año 2022 provienen de mayor a menor valor, en primer lugar, de los ingresos financieros generados por las inversiones del Fondo por \Sexpr{REP$inf_cont_com_ingresos_financieros_2022}. En segundo lugar, los aportes patronales por USD \Sexpr{REP$inf_cont_com_ingresos_patronales_2022}; en tercer lugar, la contribución del Estado por el 40\% de las pensiones del SGRT por USD \Sexpr{REP$inf_cont_com_ingresos_contr_estado_2022}. En cuarto lugar, los ingresos complementarios de operación por intereses y multas por USD \Sexpr{REP$inf_cont_com_ingresos_complemen_2022} y; además, USD \Sexpr{REP$inf_cont_com_ingresos_extraor_2022} por responsabilidad patronal; y, por último, USD \Sexpr{REP$inf_cont_com_ingresos_arriendo_2022} por arriendos de bienes inmuebles.
 
 \subsection{Análisis horizontal y vertical de los ingresos}
 
@@ -1023,20 +995,19 @@ Elaborado: DAIE}
 }
 }
 
-El crecimiento anual de los ingresos del Fondo del \Sexpr{REP_seg} para el 2014 alcanzó el 13,90\%; para el 2015 sufre un decrecimiento con respecto al 2014 en un -3,26\%; para el 2016 sufre un decrecimiento con respecto al 2015 del -44,57\%, para el año 2017 crece de manera aislada con un 20,24\%; el resultado para el año 2018 presenta un leve un crecimiento de 2,15\% con respecto al 2017; y siendo el año más alto del periodo en sus ingresos se lo puede observar el año 2019 (38,21\%). Debido a la pandemia de la COVID – 19, el crecimiento de los ingresos se redujo a 6,97\%; gracias a la recuperación y al aumento de la tasa de aportación a 0,38\%, en el 2021 los ingresos crecieron en 19,66\%. Finalmente, para el año 2022, los ingresos crecieron en 16,05\%.
+El crecimiento anual de los ingresos del Fondo del \Sexpr{REP_seg} para el 2014 alcanzó el \Sexpr{REP$inf_cont_ingresos_horizontal_total_2014}\%; para el 2015 sufre un decrecimiento con respecto al 2014 en un \Sexpr{REP$inf_cont_ingresos_horizontal_total_2015}\%; para el 2016 sufre un decrecimiento con respecto al 2015 del \Sexpr{REP$inf_cont_ingresos_horizontal_total_2016}\%, para el año 2017 crece de manera aislada con un \Sexpr{REP$inf_cont_ingresos_horizontal_total_2017}\%; el resultado para el año 2018 presenta un leve un crecimiento de \Sexpr{REP$inf_cont_ingresos_horizontal_total_2018}\% con respecto al 2017; y siendo el año más alto del periodo en sus ingresos se lo puede observar el año 2019 (\Sexpr{REP$inf_cont_ingresos_horizontal_max_total}\%). Debido a la pandemia de la COVID – 19, el crecimiento de los ingresos se redujo a \Sexpr{REP$inf_cont_ingresos_horizontal_total_2020}\%; gracias a la recuperación y al aumento de la tasa de aportación, en el 2021 los ingresos crecieron en \Sexpr{REP$inf_cont_ingresos_horizontal_total_2021}\%. Finalmente, para el año 2022, los ingresos crecieron en \Sexpr{REP$inf_cont_ingresos_horizontal_total_2022}\%.
 
-Los ingresos por aportes aumentaron entre los años 2010 hasta el 2015 con un porcentaje de 93,76\%; sin embargo, a partir del año 2015, se observa una tendencia a la baja, disminuyendo en 61,72\% (USD 79.055.118,84) del 2015 al 2016, siendo este problema la disminución de porcentaje de distribución perteneciente al SGRTR del 0,50\% al 0,20\% y el no pago del 40\% del aporte del Estado. El año 2014 presenta el punto más alto con un ingreso de USD 128.629.350,58. Entre 2019 y 2020, se redujeron los ingresos en 21,42\% (USD 13.421.698,06), pero para el 2021, los aportes crecieron en 86,40\%, debido al aumento de la tasa de aportación; por último, para el año de 2022, los aportes crecieron en 13,45\%.
+Los ingresos por aportes aumentaron en promedio entre los años 2014 y 2015 en \Sexpr{REP$inf_cont_ingresos_vertical_prom_aportes_2014_2015}\%; sin embargo, a partir del año 2015, se observa una tendencia a la baja, disminuyendo de \Sexpr{REP$inf_cont_ingresos_vertical_aporte_2015}\% en 2015 a \Sexpr{REP$inf_cont_ingresos_vertical_aporte_2016} en 2016, siendo este problema la disminución de porcentaje de distribución perteneciente al SGRTR y el no pago del 40\% del aporte del Estado. El año 2020 presenta el punto más bajo con \Sexpr{REP$inf_cont_com_ingresos_aporte_min}, pero para el 2021, los aportes crecieron en \Sexpr{REP$inf_cont_ingresos_vertical_aporte_2021}\%, debido al aumento de la tasa de aportación; por último, para el año de 2022, los aportes disminuyeron en \Sexpr{REP$inf_cont_ingresos_vertical_aporte_2022}\%.
 
 En el año 2015, la contribución del Estado del 40\% para el pago de las pensiones fue
 hasta el mes de marzo. Mediante la expedición de la Ley Orgánica para la Justicia Laboral y Reconocimiento del Trabajo en el Hogar, publicado en el Tercer Suplemento del Registro Oficial Nro. 483 de 20 de abril de 2015, el Estado deja de contribuir con el 40\% del valor de las pensiones.
 
 {\fontsize{9}{12}\selectfont
-\begin{longtable}[H]{lrrrrrrrrrr}
+\begin{longtable}[H]{lrrrrrrrrr}
 \caption{Análisis vertical de los ingresos del Fondo del \Sexpr{REP_seg} a 31 de diciembre de cada año}
 \label{tab:iess_analisis_vertical_ingresos_rtr} \\
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -1047,7 +1018,6 @@ hasta el mes de marzo. Mediante la expedición de la Ley Orgánica para la Justi
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022} \\
 & 
-\multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
 \multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
@@ -1062,7 +1032,6 @@ hasta el mes de marzo. Mediante la expedición de la Ley Orgánica para la Justi
 
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -1073,7 +1042,6 @@ hasta el mes de marzo. Mediante la expedición de la Ley Orgánica para la Justi
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022} \\
 & 
-\multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
 \multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
@@ -1086,7 +1054,7 @@ hasta el mes de marzo. Mediante la expedición de la Ley Orgánica para la Justi
 	\midrule
 \endhead
 
-\bottomrule \multicolumn{11}{c}{continúa...} \\
+\bottomrule \multicolumn{10}{c}{continúa...} \\
 \endfoot
 %\hline
 \caption*{\scriptsize Fuente: Balance Financiero del SGRT - DNGF \\
@@ -1096,7 +1064,7 @@ Elaborado: DAIE}
 \end{longtable}
 }
 
-Los aportes representaron el 66,69\% de los ingresos del Fondo; mientras que a 2020, solamente, significaron el 38,48\%, puesto a que el Fondo dispone su mayor fuente de ingresos las inversiones en el BIESS, que en el 2013 representaron el 19,45\% de los ingresos y para el 2022, representó el 49,33\%. Por otro lado, la contribución del Estado solo representa el 9,22\%, las multas e intereses el 2,76\% y los ingresos extraordinarios por responsabilidades patronales son el 0,21\%.
+Los aportes en 2014 representaron el \Sexpr{REP$inf_cont_ingresos_vertical_aporte_2014}\% de los ingresos del Fondo; mientras que a 2020, solamente, significaron el \Sexpr{REP$inf_cont_com_ingresos_aporte_min}\%, puesto a que el Fondo dispone su mayor fuente de ingresos las inversiones en el BIESS "Ingresos Financieros", que en el 2014 representaron el \Sexpr{REP$inf_cont_ingresos_vertical_finan_2014}\% de los ingresos y para el 2022, representó el \Sexpr{REP$inf_cont_ingresos_vertical_finan_2022}\%. Por otro lado, la contribución del Estado solo representa el \Sexpr{REP$inf_cont_ingresos_vertical_contr_estad_2022}\%, las multas e intereses el \Sexpr{REP$inf_cont_ingresos_vertical_complementarios_2022}\% y los ingresos extraordinarios por responsabilidades patronales son el \Sexpr{REP$inf_cont_ingresos_vertical_estraord_2022}\%.
 
 %---------------------------------------------------------------------------------------------------
 \section{Gastos}
@@ -1124,7 +1092,7 @@ Elaborado: DAIE}
 \end{center}
 \end{table}
 
-Para el año 2022, los gastos del Fondo alcanzaron los USD 72.047.794,69, un incremento de USD 4.698.131,82 respecto al año anterior, lo que representa un crecimiento igual a 6,98\% respecto al 2021. La buena salud del Fondo se debe a que durante los últimos diez (10) años, los ingresos del Fondo crecieron 35\%, mientras que sus gastos solo crecieron en 17,79\%, debido al bajo número de beneficiarios de prestaciones de este Seguro. En promedio del período 2013 a 2022, los gastos crecieron 2,67\% anualmente.
+Para el año 2022, los gastos del Fondo del \Sexpr{REP_seg} alcanzaron los USD \Sexpr{REP$inf_cont_gastos_2022}, un incremento de USD \Sexpr{REP$inf_cont_gastos_incremento_2022} respecto al año anterior, lo que representa un crecimiento igual a \Sexpr{REP$inf_cont_gastos_incremento_porce_2022}\% respecto al 2021. La buena salud del Fondo se debe al bajo número de beneficiarios de prestaciones de este Seguro. En promedio del período 2014 a 2022, los gastos crecieron \Sexpr{REP$inf_gastos_prom_incre_porcent_2014_2022}\% anualmente.
 
 
 \begin{figure}[H]
@@ -1148,10 +1116,9 @@ Para el año 2022, los gastos del Fondo alcanzaron los USD 72.047.794,69, un inc
 \caption{Análisis de los componentes del gasto del Fondo del \Sexpr{REP_seg} a 31 de diciembre de cada año}
 \label{tab:iess_componentes_gastos_rtr}
 {\fontsize{9.5}{16}\selectfont
-\begin{tabular}{lrrrrrrrrrr}
+\begin{tabular}{lrrrrrrrrr}
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -1162,7 +1129,6 @@ Para el año 2022, los gastos del Fondo alcanzaron los USD 72.047.794,69, un inc
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022} \\
 & 
-\multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
 \multicolumn{1}{c}{(USD)} &
 \multicolumn{1}{c}{(USD)} & 
@@ -1192,7 +1158,7 @@ Elaborado: DAIE}
 A continuación, se desarrolla el análisis histórico de los componentes del gasto, dentro de los cuales se encuentran las siguientes subcuentas: “Pensiones por Riesgos del Trabajo”, “Gastos prestacionales por Subsidios”, “Pensiones de Montepío”, “Gastos prestacionales por Subsidios”, “Incremento Ley”, “Costo de Vida entregado por el Estado”, “Programas de Prevención”, “Subsidio por Aportes RT”, “Medicinas-Material Curación”, “Gastos Prestacionales por Atenciones médicas”, “Gastos Directos de Personal”, “Otros Gastos Directos”, “Gastos de Administración”, “Gastos Financieros”, “Gastos de ejercicios anteriores”, “Depreciación de propiedades” y “Pérdida venta activos” (ver tabla \ref{tab:iess_componentes_gastos_rtr}).
 
 
-Para el año 2022, los egresos del Fondo se conformaron de la siguiente manera, de mayor a menor: en primer lugar, las pensiones por Riesgos del Trabajo por USD 38.257.652,22; en segundo lugar, pensiones por montepío por USD 22.827.963,06; en tercer lugar, los subsidios por USD 6.151.747,46; en cuarto lugar, gastos de personal directo por USD 3.931.675,74; en quinto lugar, los otros gastos directos, los cuales comprenden: servicios básicos y generales, suministros requeridos, y otros gastos por USD 521.348,21; en sexto lugar, los gastos de administración por USD 348.166,42; y, por último, gastos financieros, por USD 9.241,58.
+Para el año 2022, los egresos del Fondo se conformaron de la siguiente manera, de mayor a menor: en primer lugar, las pensiones por Riesgos del Trabajo por USD \Sexpr{REP$inf_cont_gastos_comp_rtr_2022}; en segundo lugar, pensiones por montepío por USD \Sexpr{REP$inf_cont_gastos_comp_montepio_2022}; en tercer lugar, los subsidios por USD \Sexpr{REP$inf_cont_gastos_comp_subsidios_2022}; en cuarto lugar, gastos de personal directo por USD \Sexpr{REP$inf_cont_gastos_comp_personal_2022}; en quinto lugar, los otros gastos directos, los cuales comprenden: servicios básicos y generales, suministros requeridos, y otros gastos por USD \Sexpr{REP$inf_cont_gastos_comp_directos_2022}; en sexto lugar, los gastos de administración por USD \Sexpr{REP$inf_cont_gastos_comp_administrativos_2022}; y, por último, gastos financieros, por USD \Sexpr{REP$inf_cont_gastos_comp_financieros_2022}.
 
 
 
@@ -1265,19 +1231,18 @@ Elaborado: DAIE}
 }
 }
 
-El crecimiento de los Gastos del Fondo del \Sexpr{REP_seg} respecto a los Gastos en el año 2010 el crecimiento anual en el 2011 fue de 16,42\%; para el 2012 el crecimiento es de 22,73\% respecto al 2011; el crecimiento en el 2013 fue de 7,51\%, en tanto que para el 2014, el crecimiento anual alcanzó el 13,20\%; para el 2015 con respecto al 2014 alcanzó un 14,36\%. Desde el 2016 al 2020 los egresos del Seguro decrecieron, comenzando en el 2016 con -3,45\%, para el año 2017 con un -6,79\%; para el año 2018 con un decrecimiento de -3,99\% con respecto al 2017, -1,99\% en el 2019 y -5,89\% en 2020: Nuevamente, en el año 2021 vuelven a crecer los gastos desde el 2015, con 6,72\%. Finalmente, en el año 2022, los egresos crecieron en 6,98\%. En el año 2012 que presenta el crecimiento más alto, y en el año 2017 punto más bajo en el periodo.
+El crecimiento de los Gastos del Fondo del \Sexpr{REP_seg} para el 2014, el crecimiento anual alcanzó el \Sexpr{REP$inf_cont_gastos_horizontal_total_2014}\%; para el 2015 con respecto al 2014 alcanzó un \Sexpr{REP$inf_cont_gastos_horizontal_total_2015}\%. Desde el 2016 al 2020 los egresos del Seguro decrecieron en promedio \Sexpr{REP$inf_cont_gastos_horizontal_total_prom_2016_2020}\%: Nuevamente, en el año 2021 vuelven a crecer los gastos desde el 2015, con \Sexpr{REP$inf_cont_gastos_horizontal_total_2021}\%. Finalmente, en el año 2022, los egresos crecieron en \Sexpr{REP$inf_cont_gastos_horizontal_total_2022}\%. En el año 2015 presenta el crecimiento más alto con \Sexpr{REP$inf_cont_gastos_horizontal_total_max}, y en el año 2017 el punto más bajo (\Sexpr{REP$inf_cont_gastos_horizontal_total_min}) dentro de los años 2014 y 2022.
 
-Durante los últimos diez (10) años, las pensiones por Riesgos del Trabajo crecieron anualmente 4,72\% en promedio y las pensiones de montepío crecieron 3,97\% en promedio en el mismo periodo; por otro lado, los montos entregados por subsidios crecieron 5,08\% en promedio. Los gastos de administración del Fondo alcanzaron los USD 348.166,42 y su crecimiento promedio, entre 2014 a 2022, es igual a 33,62\% anual, siendo el año de mayor registro de gastos administrativos el año 2019 con USD 1.246.183,42, lo que representó un crecimiento del 338,24\% respecto al año anterior.
+Durante los últimos nueve (9) años, las pensiones por Riesgos del Trabajo crecieron anualmente \Sexpr{REP$inf_cont_gastos_horizontal_prt_prom}\% en promedio y las pensiones de montepío crecieron \Sexpr{REP$inf_cont_gastos_horizontal_montepio_prom}\% en promedio en el mismo periodo; por otro lado, los montos entregados por subsidios alcanzó su mínimo con \Sexpr{REP$inf_cont_gastos_horizontal_subsidios_min}\% en 2017 y el máximo en 2022 con \Sexpr{REP$inf_cont_gastos_horizontal_subsidios_max}\%. Los gastos de administración del Fondo alcanzó un crecimiento de \Sexpr{REP$inf_cont_gastos_horizontal_admin_max}\% siendo el año de mayor registro de gastos administrativos en 2019 respecto al año anterior.
 
 
 {\setlength{\tabcolsep}{2pt}
 {\fontsize{9}{12}\selectfont
-\begin{longtable}[H]{lrrrrrrrrrr}
+\begin{longtable}[H]{lrrrrrrrrr}
 \caption{Análisis vertical de los gastos del Fondo del \Sexpr{REP_seg} a 31 de diciembre de cada año}
 \label{tab:iess_analisis_vertical_gastos_rtr} \\
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -1288,7 +1253,6 @@ Durante los últimos diez (10) años, las pensiones por Riesgos del Trabajo crec
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022} \\
 & 
-\multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
 \multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
@@ -1303,7 +1267,6 @@ Durante los últimos diez (10) años, las pensiones por Riesgos del Trabajo crec
 
 \toprule
 \multicolumn{1}{l}{\multirow{2}{*}{Cuentas: }} & 
-\multicolumn{1}{c}{2013} &
 \multicolumn{1}{c}{2014} & 
 \multicolumn{1}{c}{2015} & 
 \multicolumn{1}{c}{2016} & 
@@ -1314,7 +1277,6 @@ Durante los últimos diez (10) años, las pensiones por Riesgos del Trabajo crec
 \multicolumn{1}{c}{2021} &
 \multicolumn{1}{c}{2022} \\
 & 
-\multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
 \multicolumn{1}{c}{(\%)} &
 \multicolumn{1}{c}{(\%)} & 
@@ -1327,7 +1289,7 @@ Durante los últimos diez (10) años, las pensiones por Riesgos del Trabajo crec
 	\midrule
 \endhead
 
-\bottomrule \multicolumn{11}{c}{continúa...} \\
+\bottomrule \multicolumn{10}{c}{continúa...} \\
 \endfoot
 %\hline
 \caption*{\scriptsize Fuente: Balance Financiero del SGRT - DNGF \\
@@ -1338,7 +1300,7 @@ Elaborado: DAIE}
 }
 }
 
-La distribución de los egresos durante el 2022, en términos porcentuales, se compone de la siguiente manera: gastos por pensiones de Riesgos del Trabajo representan el 53,10\% de los egresos, seguido en segundo lugar, por las pensiones por montepío con el 31,68\%; en tercer lugar, los montos entregados por subsidios representaron el 8,54\%; en cuarto lugar, los gastos por personal con el 5,46\%; en quinto lugar, los gastos administrativos representaron el 0,72\%; en sexto lugar, los otros gastos con 0,48\%; y, finalmente, gastos financieros solo representa el 0,01\%.
+La distribución de los egresos durante el 2022, en términos porcentuales, se compone de la siguiente manera: gastos por pensiones de Riesgos del Trabajo representan el   \Sexpr{REP$inf_cont_gastos_vertical_prt_2022}\% de los egresos, seguido en segundo lugar, por las pensiones por montepío con el \Sexpr{REP$inf_cont_gastos_vertical_montepio_2022}\%; en tercer lugar, los montos entregados por subsidios representaron el \Sexpr{REP$inf_cont_gastos_vertical_subsidios_2022}\%; en cuarto lugar, los gastos por personal con el \Sexpr{REP$inf_cont_gastos_vertical_personal_2022}\%; en quinto lugar, los gastos administrativos representaron el \Sexpr{REP$inf_cont_gastos_vertical_admin_2022}\%; en sexto lugar, los otros gastos con 0,48\%; y, finalmente, gastos financieros solo representa el \Sexpr{REP$inf_cont_gastos_vertical_financieros_2022}\%.
 
 \section{Resultado del Ejercicio}
 
@@ -1389,7 +1351,7 @@ Elaborado: DAIE}
 }
 }
 
-El resultado del ejercicio del año 2022 arrojó un superávit o ingreso neto de USD 198.495.029,30, debido que el Fondo del \Sexpr{REP_seg} solo obtuvo egresos por USD 72.047.794,69, mientras que obtuvo ingresos por USD 270.542.823,99, de los cuales la mayoría (49,33\%) provienen de los rendimientos de sus inversiones administradas por el BIESS; es decir, durante el año 2022, solo se utilizó el 26,63\% de los ingresos. Además, los ingresos financieros (USD 133.467.536,10) fueron más que suficientes para pagar los gastos prestacionales, operativos de personal y administrativos del \Sexpr{REP_seg}; y esto se refleja en el crecimiento constante de las reservas de este Seguro.
+El resultado del ejercicio del año 2022 arrojó un superávit o ingreso neto de USD \Sexpr{REP$inf_cont_resul_ejer_2022}, debido que el Fondo del \Sexpr{REP_seg} solo obtuvo egresos por USD \Sexpr{REP$inf_cont_resul_ejer_gastos_2022}, mientras que obtuvo ingresos por USD \Sexpr{REP$inf_cont_resul_ejer_ingresos_2022}, de los cuales la mayoría provienen de los rendimientos de sus inversiones administradas por el BIESS; es decir, durante el año 2022, solo se utilizó el \Sexpr{REP$inf_cont_resul_ejer_utilizacion_2022}\% de los ingresos. Además, los ingresos financieros fueron más que suficientes para pagar los gastos prestacionales, operativos de personal y administrativos del \Sexpr{REP_seg}; y esto se refleja en el crecimiento constante de las reservas de este Seguro.
 
 \begin{figure}[H]
 \captionsetup{justification=centering}
@@ -1401,4 +1363,4 @@ El resultado del ejercicio del año 2022 arrojó un superávit o ingreso neto de
 \\ Elaborado: DAIE}
 \end{figure}
 
-En términos porcentuales, el resultado del ejercicio del año 2022 es 543,80\% mayor que en el año 2016; que términos monetarios es un crecimiento de USD 30.831.608,72 en 2016 a USD 198.495.029,30 en 2022. Durante los últimos 10 años, los egresos del Fondo del \Sexpr{REP_seg} han utilizado en promedio el 41,35\% de los ingresos.
+En términos porcentuales, el resultado del ejercicio del año 2022 es \Sexpr{REP$inf_cont_resul_ejer_2016_2022}\% mayor que en el año 2016; que términos monetarios es un crecimiento de USD \Sexpr{REP$inf_cont_resul_ejer_2016} en 2016 a \Sexpr{REP$inf_cont_resul_ejer_2022} en 2022. Durante los últimos 9 años, los egresos del Fondo del \Sexpr{REP_seg} han utilizado en promedio el \Sexpr{REP$inf_cont_resul_ejer_utilizacion_prom_2014_2022}\% de los ingresos.
