@@ -1228,8 +1228,7 @@ Por lo tanto, el sistema a considerarse está sujeto a las variaciones de la dem
 \label{chp_modelo:aport}
 
 Los aportes son tomados según los porcentajes de contribución previamente determinados para el
-primer segmento de la población establecidos en las tablas: \ref{tab:apo_2015_2022} y
-\ref{tab:apo_2021_adelante}. Cabe señalar desde la expedición de la Sentencia de la Corte Constitucional No. 23-18-IN/19, de fecha 18 de diciembre de 2019, se declaró la inconstitucionalidad del inciso primero del artículo 3 de la \legalcite{ResIESS_CD501}, de 13 de noviembre de 2015 y ordenó la suspensión de la retención del 2,76\% de las pensiones de los jubilados
+primer segmento de la población establecidos en las tabla \ref{tab:apo_2021_adelante}. Cabe señalar desde la expedición de la Sentencia de la Corte Constitucional No. 23-18-IN/19, de fecha 18 de diciembre de 2019, se declaró la inconstitucionalidad del inciso primero del artículo 3 de la \legalcite{ResIESS_CD501}, de 13 de noviembre de 2015 y ordenó la suspensión de la retención del 2,76\% de las pensiones de los jubilados
 para la financiación de décimos y fondo mortuorio. En la siguiente expresión se incluye los aportes de los afiliados
 activos.
 

@@ -7,23 +7,18 @@ Superintendencia de Bancos, respecto de los estudios actuariales, así como las 
 internacionales de presentación de estudios actuariales y convenios internacionales suscritos con la
 OIT.
 
-El estudio demuestra que al 31 de diciembre de 2022 el Fondo de Riesgos de Trabajo es solvente con la prima y el esquema actual de entrega de prestaciones. Y, es sostenible en el horizonte de estudio la propuesta de cambio de la pensión de montepío en caso de fallecimiento inmediato o posterior, que este cálculo debe realizarse sobre la pensión de incapacidad permanente absoluta (100\%), ya que en la actualidad la pensión de montepío en el Seguro General de Riesgos del Trabajo se calcula sobre la incapacidad permanente total (80\%).
+% El estudio demuestra que al 31 de diciembre de 2022 el Fondo de Riesgos de Trabajo es solvente con la prima y el esquema actual de entrega de prestaciones. Y, es sostenible en el horizonte de estudio la propuesta de cambio de la pensión de montepío en caso de fallecimiento inmediato o posterior, que este cálculo debe realizarse sobre la pensión de incapacidad permanente absoluta (100\%), ya que en la actualidad la pensión de montepío en el Seguro General de Riesgos del Trabajo se calcula sobre la incapacidad permanente total (80\%).
 
 %---------------------------------------------------------------------------------------------------
 \section{Calidad y suficiencia de los datos}
 \label{chp_opinion:calidad}
 
-Las fuentes de información demográficas utilizadas en este estudio son los registros institucionales
-analizados por esta Dirección, con suficientes niveles de confianza e integridad; y, las fuentes
-estadísticas oficiales nacionales.
+Las fuentes de información demográficas utilizadas en este estudio son los registros institucionales analizados por esta Dirección, con suficientes niveles de confianza e integridad; y, las fuentes estadísticas oficiales nacionales.
 
-La Dirección Actuarial, de Investigación y Estadística validó mediante métodos estadísticos
-normalmente reconocidos la información de las bases demográficas tanto de aportantes al IESS, como
-de beneficiarios del Seguro General de Riesgos del Trabajo.
+La Dirección Actuarial, de Investigación y Estadística validó mediante métodos estadísticos normalmente reconocidos la información de las bases demográficas tanto de aportantes al IESS, como de beneficiarios del Seguro General de Riesgos del Trabajo.
 
-En la formación de tablas biométricas y de mortalidad se consideró información histórica del
-comportamiento tanto: demográfico, siniestralidad, económico y financiero del fondo, observando este
-comportamiento durante los últimos ocho (8) años.
+En la formación de tablas biométricas y de mortalidad se consideró información histórica del comportamiento tanto: demográfico, siniestralidad, económico y financiero del fondo, observando este comportamiento durante los últimos ocho (8) años.
+
 
 % En lo que se refiere al registro de accidentes laborales que causan lesiones no fatales, en
 % comparación con los países de Latinoamérica, este seguro tiene un subregistro, lo que ocasiona que

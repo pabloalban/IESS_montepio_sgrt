@@ -169,15 +169,15 @@ Del estudio actuarial se concluyen los siguientes resultados:
 Entre las principales conclusiones, se tiene:
 \begin{enumerate}[itemsep=1mm, topsep=0pt]
 
+\item Se estima que el impacto en el horizonte de estudio (40 años) de establecer la pensión de montepío en caso de fallecimiento del afiliado por accidente del trabajo o enfermedad profesional igual a la pensión de incapacidad permanente absoluta (100\%) reducirá el superávit actuarial en USD \Sexpr{REP$impacto_bal_act}, de USD \Sexpr{REP$bal_act_esc_2} (superávit escenario intermedio) a USD \Sexpr{REP$bal_act_esc_3} (superávit escenario reforma). Y, subiría la prima suficiente del Seguro en \Sexpr{REP$impacto_pri_med_niv}\% de \Sexpr{REP$pri_med_niv_esc_2}\% (escenario intermedio) a \Sexpr{REP$pri_med_niv_esc_3}\% (escenario reforma), observándose que sus reservas y futuro superávit, no sufrirán mayormente alteraciones y no pondrá en peligro su solvencia, tampoco su liquidez.
+
 \item Bajo el escenario legal, que se da cumplimiento de acuerdo con la Ley y Resoluciones vigentes, el Estado cumple con el pago del \Sexpr{REP$apo_est_esc_1}\% para financiar la entrega de pensiones. Y, el superávit actuarial en el período de valuación 2023 a 2062, alcanza USD \Sexpr{REP$bal_act_esc_1}, su prima suficiente que mantiene el equilibrio financiero en el período anotado es \Sexpr{REP$pri_med_niv_esc_1}\%.
 
 \item Bajo el escenario intermedio, que es el más probable y que es igual que el escenario Legal, pero asume que el Estado únicamente contribuirá para el pago de beneficios de pensiones con el \Sexpr{REP$apo_est_esc_2}\%, el superávit actuarial durante el período de valuación alcanza USD \Sexpr{REP$bal_act_esc_2}. Por lo tanto, su prima suficiente que mantiene el equilibrio financiero en este período es \Sexpr{REP$pri_med_niv_esc_2}\%.
 
 \item Bajo el escenario reforma, que propone establecer la pensión de montepío en caso de fallecimiento del afiliado por accidente del trabajo o enfermedad profesional igual a la pensión de incapacidad permanente absoluta (100\%), el superávit actuarial en el período de valuación 2023 a 2062 alcanza USD \Sexpr{REP$bal_act_esc_3}, y su prima suficiente para mantener el equilibrio financiero en el citado período es \Sexpr{REP$pri_med_niv_esc_3}\%.
 
-\item Se estima que el impacto en el horizonte de estudio (40 años) de establecer la pensión de montepío en caso de fallecimiento del afiliado por accidente del trabajo o enfermedad profesional igual a la pensión de incapacidad permanente absoluta (100\%) reducirá el superávit actuarial en USD \Sexpr{REP$impacto_bal_act}, de USD \Sexpr{REP$bal_act_esc_2} (superávit escenario intermedio) a USD \Sexpr{REP$bal_act_esc_3} (superávit escenario reforma). Y, subiría la prima suficiente del Seguro en \Sexpr{REP$impacto_pri_med_niv}\% de \Sexpr{REP$pri_med_niv_esc_2}\% (escenario intermedio) a \Sexpr{REP$pri_med_niv_esc_3}\% (escenario reforma).
-
-\item No existe el registró adecuado del número de cédula de ciudadanía del afiliado o jubilado fallecido causante de 304 pensionistas de orfandad y de 338 pensionistas de viudedad, entre e período 2014 a 2022.
+\item No existe el registró adecuado del número de cédula de ciudadanía del afiliado o jubilado fallecido causante de 304 pensiones de orfandad y de 338 pensiones de viudedad, entre e período 2014 a 2022.
 
 \end{enumerate}
 % --------------------------------------------------------------------------------------------------
@@ -186,7 +186,7 @@ las siguientes recomendaciones, con la finalidad de que:
 
 \begin{enumerate}
 
-\item Se recomienda establecer la pensión de montepío en caso de fallecimiento del afiliado por accidente del trabajo o enfermedad profesional igual a la pensión de incapacidad permanente absoluta (100\%) en el cálculo de pensiones de los nuevos pensionistas de montepío del Seguro General de Riesgos del Trabajo, debido a que la prima vigente (0,38\%) garantiza el financiamiento y sostenibilidad de la reforma.
+\item Se recomienda instaurar la pensión de montepío en caso de fallecimiento del afiliado por accidente del trabajo o enfermedad profesional igual a la pensión de incapacidad permanente absoluta (100\%), en razón de que, debido a que la prima vigente (0,38\%) garantiza el financiamiento y sostenibilidad en el tiempo.
 
 \item El Director General disponga a la Dirección del Seguro General de Riesgos del Trabajo elaborar y presentar un proyecto de resolución para la reforma al REGLAMENTO DEL SEGURO GENERAL DE RIESGOS DEL TRABAJO, expedido mediante \legalcite{ResIESS_CD513}, que considere la entrega de la pensión de montepío en caso de fallecimiento del afiliado por accidente del trabajo o enfermedad profesional igual a la pensión de incapacidad permanente absoluta (100\%).
 
@@ -201,7 +201,7 @@ Del presente estudio es responsabilidad del Director Actuarial, de Investigació
 %Quito, 29 de enero de 2024 \\
 
 Atentamente,
-\vspace{3cm}
+\vspace{2cm}
 %--------------------------------------------------------------------------------------------------
 % \begin{figure}[H]
 % 	\centering

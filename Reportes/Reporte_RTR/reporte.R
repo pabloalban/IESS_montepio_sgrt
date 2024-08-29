@@ -67,15 +67,10 @@ REP$file_latex_org <- c(
   paste( parametros$work_dir, 'Reportes/bibliografia_articulos.bib', sep = '' ),
   paste( parametros$work_dir, 'Reportes/bibliografia_leyes.bib', sep = '' ),
   paste( parametros$work_dir, 'Reportes/style.tex', sep = '' ),
-  paste( parametros$Data, 'logo_iess_azul.png', sep = '' ),
-  paste( parametros$Data, 'caratula.png', sep = '' ),
-  paste( parametros$Data, 'caratula_v2.png', sep = '' ),
-  paste( parametros$work_dir, 'Reportes/sumilla_actuario.png', sep = '' ),
-  paste( parametros$work_dir, 'Reportes/firma_actuario.png', sep = '' ),
+  paste( parametros$work_dir, 'Reportes/logo_iess_azul.png', sep = '' ),
+  paste( parametros$work_dir, 'Reportes/logo_iess_azul_compress.png', sep = '' ),
   paste( parametros$work_dir, 'Reportes/comandosEPN.sty', sep = '' ),
-  paste( resul_tnrh, 'IESS_TNRH_estudio_actuarial.pdf', sep = '' ),
-  paste( parametros$work_dir, 'Reportes/modelo.pdf', sep = '' ),
-  paste( parametros$work_dir, 'Reportes/modelo_sal.pdf', sep = '' ) )
+  paste( resul_tnrh, 'IESS_TNRH_estudio_actuarial.pdf', sep = '' ) )
 
 REP$file_latex_des <- c( 
   paste( REP$rep_dir, 'bibliografia_libros.bib', sep = '' ), 
@@ -83,14 +78,9 @@ REP$file_latex_des <- c(
   paste( REP$rep_dir, 'bibliografia_leyes.bib', sep = '' ),
   paste( REP$rep_dir, 'style.tex', sep = '' ),
   paste( REP$rep_dir, 'graficos/logo_iess_azul.png', sep = '' ),
-  paste( REP$rep_dir, 'graficos/caratula.png', sep = '' ),
-  paste( REP$rep_dir, 'graficos/caratula_v2.png', sep = '' ),
-  paste( REP$rep_dir, 'graficos/sumilla_actuario.png', sep = '' ),
-  paste( REP$rep_dir, 'graficos/firma_actuario.png', sep = '' ),
+  paste( REP$rep_dir, 'graficos/logo_iess_azul_compress.png', sep = '' ),
   paste( REP$rep_dir, 'comandosEPN.sty', sep = '' ),
-  paste( REP$rep_dir, 'graficos/IESS_TNRH_estudio_actuarial.pdf', sep = '' ),
-  paste( REP$rep_dir, 'graficos/modelo.pdf', sep = '' ),
-  paste( REP$rep_dir, 'graficos/modelo_sal.pdf', sep = '' ) )
+  paste( REP$rep_dir, 'graficos/IESS_TNRH_estudio_actuarial.pdf', sep = '' ) )
 
 REP$file_latex_clean <- c( 
   paste( REP$rep_dir, 'bibliografia_libros.bib', sep = '' ), 
