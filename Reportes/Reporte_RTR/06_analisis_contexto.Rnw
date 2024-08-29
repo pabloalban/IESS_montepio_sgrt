@@ -813,15 +813,7 @@ significancia.
 \end{longtable}
 }
 
-%---------------------------------------------------------------------------------------------------
-\subsubsection{Pruebas de independencia de errores}
-%---------------------------------------------------------------------------------------------------
-La prueba de Box - Ljung (a veces llamada Box-Pierce modificada, o simplemente prueba de caja) es
-una forma de probar la ausencia de autocorrelación serial, hasta un retraso $k$ especificado. La
-prueba determina si los errores son o no independientes idénticamente distribuidos (es decir, ruido
-blanco) o si hay algo más detrás de ellos; si las autocorrelaciones para los errores o residuos son
-distintas de cero o no (es decir, las correlaciones en la población de la que se toma la muestra son
-cero (0).
+
 
 \begin{landscape}
 \vspace*{\fill}
@@ -836,7 +828,15 @@ modelo, la línea discontinua indica un error de tipo I del 5\%}
 \vspace*{\fill}
 \end{landscape}
 
-Por lo que cualquier correlación observada en los datos resulta de la aleatoriedad del proceso de
+%---------------------------------------------------------------------------------------------------
+\subsubsection{Pruebas de independencia de errores}
+%---------------------------------------------------------------------------------------------------
+La prueba de Box - Ljung (a veces llamada Box-Pierce modificada, o simplemente prueba de caja) es
+una forma de probar la ausencia de autocorrelación serial, hasta un retraso $k$ especificado. La
+prueba determina si los errores son o no independientes idénticamente distribuidos (es decir, ruido
+blanco) o si hay algo más detrás de ellos; si las autocorrelaciones para los errores o residuos son
+distintas de cero o no (es decir, las correlaciones en la población de la que se toma la muestra son
+cero (0). Por lo que cualquier correlación observada en los datos resulta de la aleatoriedad del proceso de
 muestreo).  Esencialmente, es una prueba de falta de ajuste: si las autocorrelaciones de los
 residuos son muy pequeñas, decimos que el modelo no muestra una "falta de ajuste significativa".
 
@@ -849,7 +849,7 @@ $H_1$: Los datos no se distribuyen de forma independiente; exhiben correlación 
 
 Un valor p significativo en esta prueba rechaza la hipótesis nula de que la serie temporal no está
 autocorrelacionada. Al utilizar el software estadístico R, se estiman los p – valores de los
-estadísticos para las 5 dimensiones del modelo propuesto. Se concluye que para los residuos del
+estadísticos para las 5 dimensiones del modelo propuesto. Al observar la figura \ref{fig:iess_box_ljung}, se concluye que para los residuos del
 modelo para $\nabla$ PIB no se rechaza la hipótesis nula para todo retardo mayor a 10. Para los
 residuos del modelo para $\nabla$ Salarios Promedio, no se rechaza la hipótesis nula para todo
 retardo menor a 10, excepto para 2 y 8; los residuos para el modelo $\nabla$ SBU no se rechaza la
@@ -873,6 +873,9 @@ estadística multivariante Ljung-Box para la serie de vectores al cuadrado $z_t^
 es el estadístico Ljung-Box multivariante aplicado a la serie recortada al 5\% de la serie
 transformada $r_t$. La hipótesis nula es idéntica para todas estas pruebas, la varianza de los
 residuos del modelo es constante.
+
+Realizadas las cuatro pruebas de homocedasticidad, se tienen p valores mayores al nivel de
+significancia igual a 5\%. Por lo tanto, no se rechaza la hipótesis nula.
 
 {\fontsize{10}{12}\selectfont
 \begin{longtable}[H]{lrc}
@@ -902,9 +905,6 @@ residuos del modelo es constante.
 \end{longtable}
 }
 
-Realizadas las cuatro pruebas de homocedasticidad, se tienen p valores mayores al nivel de
-significancia igual a 5\%. Por lo tanto, no se rechaza la hipótesis nula.
-
 %---------------------------------------------------------------------------------------------------
 \subsection{Resultados del modelo macroeconómico}
 %---------------------------------------------------------------------------------------------------
@@ -912,7 +912,7 @@ La tabla \ref{tab:iess_tasas_macro_pred} presenta los resultados del modelo mult
 temporales utilizado para obtener una proyección de las variables económicas utilizadas en el
 presente estudio.
 
-{\fontsize{10}{12}\selectfont
+{\fontsize{9}{10}\selectfont
 \begin{longtable}[H]{crccrrc}
 \caption{Proyecciones de las variables macroeconómicas}
 \label{tab:iess_tasas_macro_pred} \\
@@ -1071,7 +1071,7 @@ obtuvo de la diferencia entre la tasa activa y la tasa pasiva.
 \multicolumn{4}{r}{continúa...} 
 \endfoot
 
-\bottomrule 
+%\bottomrule 
 \caption*{\scriptsize Fuente: Banco Central del Ecuador \\ Elaborado: DAIE}
 \endlastfoot
 

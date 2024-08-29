@@ -2448,7 +2448,7 @@ REP$macro_increm_promedio_10_anios <- format(
   nsmall = 2, digits = 2, big.mark = '.', decimal.mark = ',', format = 'f' )
 
 REP$macro_pib_real_crecimiento_2016 <- format(
-  filter(pib_real, anio == 2016)$crecimiento_pib, 
+  abs( filter(pib_real, anio == 2016)$crecimiento_pib ), 
   nsmall = 2, digits = 2, big.mark = '.', decimal.mark = ',', format = 'f' )
 
 pib_real_7_anios <- pib_real %>% filter(anio > 2015, anio < 2023) %>% 
@@ -2459,7 +2459,7 @@ REP$macro_pib_real_prom_crec_7_anios <- format(
   nsmall = 2, digits = 2, big.mark = '.', decimal.mark = ',', format = 'f' )
 
 REP$macro_pib_real_crecimiento_2020 <- format(
-  filter(pib_real, anio == 2020)$crecimiento_pib, 
+  abs( filter(pib_real, anio == 2020)$crecimiento_pib ), 
   nsmall = 2, digits = 2, big.mark = '.', decimal.mark = ',', format = 'f' )
 
 REP$macro_pib_real_crecimiento_2021 <- format(
@@ -2579,6 +2579,8 @@ for ( i in 1:length( escenarios ) ) {
       balance_anual[ t == parametros$rtr_horizonte ]$V, 
       digits = 2, nsmall = 2, big.mark = '.', decimal.mark = ',', format = 'f' )
     
+    REP$bal_act_ESC_num <- balance_anual[ t == parametros$rtr_horizonte ]$V
+    
     REP$bal_cap_ESC <- format( 
       balance_anual[ t == parametros$rtr_horizonte ]$V_cap, 
       digits = 2, nsmall = 2, big.mark = '.', decimal.mark = ',', format = 'f' )
@@ -2590,8 +2592,10 @@ for ( i in 1:length( escenarios ) ) {
       digits = 2, nsmall = 2, big.mark = '.', decimal.mark = ',', format = 'f' )
     
     REP$pri_med_niv_ESC <- format( 
-      100 * prima[ t == parametros$rtr_horizonte ]$pri_med_niv_apo_est_pen,
+      round( 100 * prima[ t == parametros$rtr_horizonte ]$pri_med_niv_apo_est_pen, 2 ),
       digits = 4, nsmall = 2, big.mark = '.', decimal.mark = ',', format = 'f' )
+    
+    REP$pri_med_niv_ESC_num <- 100 * prima[ t == parametros$rtr_horizonte ]$pri_med_niv_apo_est_pen
     
     REP$apo_est_ESC <- format( 
       100 * mean( esc$apo_act$por_apo_est[-1] ),
@@ -2654,5 +2658,14 @@ for ( i in 1:length( escenarios ) ) {
   })
   expr <- gsub( '(ESC)', esc_nom[ i ], deparse( expr ) )
   eval( eval( parse( text = expr ) ), envir = .GlobalEnv )
-  
 }
+
+REP$impacto_bal_act <- format( 
+  REP$bal_act_esc_2_num - REP$bal_act_esc_3_num,
+  digits = 2, nsmall = 2, big.mark = '.', decimal.mark = ',', format = 'f' )
+
+REP$impacto_pri_med_niv <- format( 
+  round( REP$pri_med_niv_esc_3_num, 2 ) - round( REP$pri_med_niv_esc_2_num, 2 ),
+  digits = 1, nsmall = 1, big.mark = '.', decimal.mark = ',', format = 'f' )
+
+

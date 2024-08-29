@@ -49,8 +49,8 @@ Trabajo.
  \section{Objeto del estudio}
   \label{chap_Intro:objeto}
 
-El presente estudio actuarial abarca al \Sexpr{REP_seg} con fecha de corte al 31 de diciembre de 2020, con
-un horizonte de 40 años (Período de valuación 2020 – 2060), cuyo objeto es:
+El presente estudio actuarial abarca al \Sexpr{REP_seg} con fecha de corte al 31 de diciembre de 2022, con
+un horizonte de 40 años (Período de valuación 2023 – 2062), cuyo objeto es:
 \begin{enumerate}%[label=\alph*)]
 \item Determinar la capacidad del Fondo para que cumpla con las obligaciones futuras causadas por
 	las contingencias de accidentes de trabajo y enfermedades profesionales u ocupacionales en
@@ -76,7 +76,7 @@ un horizonte de 40 años (Período de valuación 2020 – 2060), cuyo objeto es:
 \end{enumerate}
 
 Para la realización del presente estudio se consideró la información histórica que registra el
-Instituto Ecuatoriano de Seguridad Social en el período 2010 - 2020, en la mayoría de los casos.
+Instituto Ecuatoriano de Seguridad Social en el período 2014 - 2022, en la mayoría de los casos.
 
 %---------------------------------------------------------------------------------------------------
 \section{Características del seguro}
@@ -756,7 +756,7 @@ En tal sentido, la recomendación de esta Dirección es que la Dirección Genera
 
 %---------------------------------------------------------------------------------------------------
 \section{Horizonte del estudio}
-El horizonte del presente estudio actuarial es de 40 años, desde el 2020-12-31 al 2060-12-31. 
+El horizonte del presente estudio actuarial es de 40 años, desde el 2022-12-31 al 2062-12-31. 
 
 Este estudio no considera un horizonte de 75 años utilizado comúnmente en valuaciones actuariales de
 sociedades más desarrolladas y estables; debido a que la dinámica económica y laboral en el Ecuador
@@ -787,6 +787,6 @@ Asociación Internacional de la Seguridad Social (ISSA).
 
 Las bases de datos para el presente estudio fueron obtenidas de la información proporcionada por la
 Dirección del Seguro General de Riesgos del Trabajo, así como la registrada en el Instituto
-Ecuatoriano de Seguridad Social con corte al 31 de diciembre de 2020
+Ecuatoriano de Seguridad Social con corte al 31 de diciembre de 2022
 
 

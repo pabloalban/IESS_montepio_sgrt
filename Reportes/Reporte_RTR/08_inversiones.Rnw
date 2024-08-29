@@ -659,7 +659,19 @@ Elaborado: DAIE}
 
 \subsubsection{Inversiones en CETES}
 
-El portafolio del \Sexpr{REP_seg} registró inversiones en Certificado de Tesorería (CETES) durante los años 2015, 2016, 2020 y 2022. Especialmente, en el año 2022, las inversiones en CETES fueron de USD \Sexpr{REP$inver_inv_cetes_val_nom_2022}, su máximo histórico, después que a diciembre de 2021 no había valores invertidos en CETES y es un crecimiento igual a \Sexpr{REP$inver_inv_cetes_val_nom_crec_2020_2022}\% respecto al 2020, cuando había un saldo igual a USD \Sexpr{REP$inver_inv_cetes_val_nom_2020} a diciembre. La tasa de rendimiento de los CETES a diciembre de 2022 es igual a \Sexpr{REP$inver_inv_cetes_rend_pond_2022}\% a un plazo de \Sexpr{REP$inver_inv_cetes_plazo_prom_pond_2022} días. Históricamente, los CETES no registran mayor rendimiento que en el 2017 con \Sexpr{REP$inver_inv_cetes_rend_pond_2017}\% a un plazo de \Sexpr{REP$inver_inv_cetes_plazo_prom_pond_2017} días; y su menor rendimiento fue en 2020 con el  \Sexpr{REP$inver_inv_cetes_rend_pond_2020}\% a un plazo de solo \Sexpr{REP$inver_inv_cetes_plazo_prom_pond_2020} días. En la tabla \ref{tab:iess_bonos_hist_inv} y figura \ref{fig:iess_inversiones_bonos_rtr}, se muestra la evolución histórica del saldo de las inversiones del Fondo en CETES a 31 de diciembre de cada año y tasa de rendimiento promedio ponderado y plazo promedio ponderado.
+El portafolio del \Sexpr{REP_seg} registró inversiones en Certificado de Tesorería (CETES) durante los años 2015, 2016, 2020 y 2022. Especialmente, en el año 2022, las inversiones en CETES fueron de USD \Sexpr{REP$inver_inv_cetes_val_nom_2022}, su máximo histórico, después que a diciembre de 2021 no había valores invertidos en CETES y es un crecimiento igual a \Sexpr{REP$inver_inv_cetes_val_nom_crec_2020_2022}\% respecto al 2020, cuando había un saldo igual a USD \Sexpr{REP$inver_inv_cetes_val_nom_2020} a diciembre.
+
+\begin{figure}[H]
+\captionsetup{justification=centering}
+\centering
+\caption{Evolución histórica de las inversiones del \Sexpr{REP_seg} en Certificados de Tesorería y su rendimiento promedio ponderado}
+\label{fig:iess_inversiones_bonos_rtr}
+\includegraphics[scale=1]{graficos/iess_inversiones_cetes_rtr.png}
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
+\\Elaborado: DAIE}
+\end{figure}
+
+La tasa de rendimiento de los CETES a diciembre de 2022 es igual a \Sexpr{REP$inver_inv_cetes_rend_pond_2022}\% a un plazo de \Sexpr{REP$inver_inv_cetes_plazo_prom_pond_2022} días. Históricamente, los CETES no registran mayor rendimiento que en el 2017 con \Sexpr{REP$inver_inv_cetes_rend_pond_2017}\% a un plazo de \Sexpr{REP$inver_inv_cetes_plazo_prom_pond_2017} días; y su menor rendimiento fue en 2020 con el  \Sexpr{REP$inver_inv_cetes_rend_pond_2020}\% a un plazo de solo \Sexpr{REP$inver_inv_cetes_plazo_prom_pond_2020} días. En la tabla \ref{tab:iess_bonos_hist_inv} y figura \ref{fig:iess_inversiones_bonos_rtr}, se muestra la evolución histórica del saldo de las inversiones del Fondo en CETES a 31 de diciembre de cada año y tasa de rendimiento promedio ponderado y plazo promedio ponderado.
 
 {\setlength{\tabcolsep}{3pt}
 {\fontsize{11}{12}\selectfont
@@ -704,16 +716,6 @@ Elaborado: DAIE}
 \end{longtable}
 }
 }
-
-\begin{figure}[H]
-\captionsetup{justification=centering}
-\centering
-\caption{Evolución histórica de las inversiones del \Sexpr{REP_seg} en Certificados de Tesorería y su rendimiento promedio ponderado}
-\label{fig:iess_inversiones_bonos_rtr}
-\includegraphics[scale=1]{graficos/iess_inversiones_cetes_rtr.png}
-\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
-\\Elaborado: DAIE}
-\end{figure}
 
 Todas los CETES que posee el portafolio de inversiones fueron recibidos en los meses de octubre, noviembre y diciembre de 2022, por montos iguales a USD \Sexpr{REP$inver_detalle_bonos_cetes_oct_2022}, USD \Sexpr{REP$inver_detalle_bonos_cetes_nov_2022} y USD \Sexpr{REP$inver_detalle_bonos_cetes_diciem_2022}, respectivamente, a una tasa de cupón cero (0\%) y fecha de vencimiento abril, mayo y junio de 2023, respectivamente (ver tabla \ref{tab:iess_cetes_detalle_inv}).
 
@@ -780,19 +782,8 @@ Elaborado: DAIE}
 % --------------------------------------------------------------------------------------------------
 \subsubsection{Inversiones en obligaciones en renta fija}
 
-Las inversiones del portafolio de inversiones del \Sexpr{REP_seg} en obligaciones registraron un crecimiento de \Sexpr{REP$inver_inv_obli_crec_val_nom_2021_2022}\% respecto al año anterior (2021). Históricamente, el año 2015 registró el máximo valor invertido en obligaciones por USD \Sexpr{REP$inver_inv_obli_max_val_nom}; en cambio el año 2017 tuvo el menor valor con USD \Sexpr{REP$inver_inv_obli_min_val_nom}. Por otro lado, el año 2021 alcanzó una tasa de rendimiento promedio ponderado igual \Sexpr{REP$inver_inv_obli_rend_pond_2021}\%; mientras que el año 2018 solo el \Sexpr{REP$inver_inv_obli_rend_pond_2018}\%. En la tabla \ref{tab:iess_obligaciones_hist_inv} y figura \ref{fig:iess_inversiones_obligaciones_rtr}, se presenta la evolución histórica de las inversiones en obligaciones y su tasa de rendimiento promedio ponderado a 31 de diciembre de cada año.
+Las inversiones del portafolio de inversiones del \Sexpr{REP_seg} en obligaciones registraron un crecimiento de \Sexpr{REP$inver_inv_obli_crec_val_nom_2021_2022}\% respecto al año anterior (2021). Históricamente, el año 2015 registró el máximo valor invertido en obligaciones por USD \Sexpr{REP$inver_inv_obli_max_val_nom}; en cambio el año 2017 tuvo el menor valor con USD \Sexpr{REP$inver_inv_obli_min_val_nom}.
 
-\begin{figure}[H]
-\captionsetup{justification=centering}
-\centering
-\caption{Evolución histórica de las inversiones del Seguro General de Riesgos del Trabajo en Obligaciones y su rendimiento promedio ponderado}
-\label{fig:iess_inversiones_obligaciones_rtr}
-\includegraphics[scale=1]{graficos/iess_inversiones_obligaciones_rtr.png}
-\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
-\\Elaborado: DAIE}
-\end{figure}
-
-{\setlength{\tabcolsep}{4pt}
 {\fontsize{11}{12}\selectfont
 \begin{longtable}[H]{crrrccc}
   \caption{Evolución histórica de las inversiones del Fondo del \Sexpr{REP_seg} en Obligaciones en renta fija}
@@ -822,19 +813,34 @@ Las inversiones del portafolio de inversiones del \Sexpr{REP_seg} en obligacione
   \multicolumn{1}{c}{Ponderado (\%)} &
   \multicolumn{1}{c}{Ponderado Real (\%)} & 
   \multicolumn{1}{c}{(días)}   \\
-	\midrule
+  \midrule
 \endhead
 
-\bottomrule \multicolumn{5}{c}{continúa...} \\
+\bottomrule 
+\multicolumn{5}{r}{continúa...}
 \endfoot
-%\hline
+
 \caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión - BIESS\\
 Elaborado: DAIE}
 \endlastfoot
+
   \input{tablas/iess_obligaciones_hist_inv.tex}
+
 \end{longtable}
 }
-}
+
+Por otro lado, el año 2021 alcanzó una tasa de rendimiento promedio ponderado igual \Sexpr{REP$inver_inv_obli_rend_pond_2021}\%; mientras que el año 2018 solo el \Sexpr{REP$inver_inv_obli_rend_pond_2018}\%. En la tabla \ref{tab:iess_obligaciones_hist_inv} y figura \ref{fig:iess_inversiones_obligaciones_rtr}, se presenta la evolución histórica de las inversiones en obligaciones y su tasa de rendimiento promedio ponderado a 31 de diciembre de cada año.
+
+  
+\begin{figure}[H]
+\captionsetup{justification=centering}
+\centering
+\caption{Evolución histórica de las inversiones del Seguro General de Riesgos del Trabajo en Obligaciones y su rendimiento promedio ponderado}
+\label{fig:iess_inversiones_obligaciones_rtr}
+\includegraphics[scale=1]{graficos/iess_inversiones_obligaciones_rtr.png}
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
+\\Elaborado: DAIE}
+\end{figure}
 
 A 31 de diciembre de 2022, el Fondo dispone de inversiones en obligaciones por USD \Sexpr{REP$inver_inv_obli_val_nomi_2022} a una tasa de rendimiento promedio ponderada igual a \Sexpr{REP$inver_inv_obli_rend_pond_2022}\% a un plazo promedio ponderado igual a \Sexpr{REP$inver_inv_obli_plazo_2022} días a una amortización trimestral. En la lista de inversiones se encuentran obligaciones de veinte (20) empresas privadas, en las que destacan empresas como TIA S.A., Corporación el Rosado, COMANDATO, PRONOBIS S.A., entre otras. Por saldo nominal, la mayor inversión en obligaciones del Fondo tiene de emisor a la empresa AUDIOELEC S.A. por USD \Sexpr{REP$inver_det_oblig_max_val_nom} a una tasa igual a \Sexpr{REP$inver_det_obli_tasa_audioelec}\% a un plazo de \Sexpr{REP$inver_det_obli_plazo_audioelec} días; por otro lado, la obligación que entrega mayor rendimiento es de la empresa DANIELCOM S.A. con saldo igual a USD \Sexpr{REP$inver_det_oblig_val_nom_danielsa} a una tasa igual a \Sexpr{REP$inver_det_oblig_max_rend}\% a un plazo de \Sexpr{REP$inver_det_obli_plazo_danielsa} días. En la tabla \ref{tab:iess_oblig_detalle_inv}, se detalla el portafolio de inversiones del Fondo del \Sexpr{REP_seg} en obligaciones a la fecha de corte.
 
@@ -953,8 +959,6 @@ financieros y su rendimiento promedio ponderado}
 \\Elaborado: DAIE}
 \end{figure}
 
-El saldo de las inversiones en titularizaciones del Fondo del \Sexpr{REP_seg} a la fecha de corte se encuentran distribuidas en títulos de dos (2) empresas privadas. El primero es el “FIDEICOMISO TITULARIZACIÓN CARTERA AUTOMOTRIZ. MUTUALISTA PICHINCHA 1”, con un valor de compra de USD \Sexpr{REP$inver_det_titu_valor_compra_mut_pichi} y un saldo a la fecha por USD \Sexpr{REP$inver_det_titu_saldo_nomi_mut_pichi} con una tasa igual a \Sexpr{REP$inver_det_titu_tasa_mut_pichi}\% con amortización trimestral a un plazo remanente de \Sexpr{REP$inver_det_titu_plazo_mut_pichi} días. El Segundo pertenece al emisor UTE , con un valor de compra de USD \Sexpr{REP$inver_det_titu_valor_compra_ute} y un saldo al corte de USD \Sexpr{REP$inver_det_titu_saldo_nomi_ute} a una tasa igual a \Sexpr{REP$inver_det_titu_tasa_ute}\% con amortización semestral a un plazo remanente de \Sexpr{REP$inver_det_titu_plazo_ute} días. En la tabla \ref{tab:iess_titul_detalle_inv}, se enumera las inversiones del Fondo en titularizaciones a la fecha de corte.
-
 {\setlength{\tabcolsep}{3pt}
 {\fontsize{8}{13}\selectfont
 \begin{longtable}[H]{lcccrrrc}
@@ -1011,9 +1015,13 @@ Elaborado: DAIE}
 }
 }
 
+El saldo de las inversiones en titularizaciones del Fondo del \Sexpr{REP_seg} a la fecha de corte se encuentran distribuidas en títulos de dos (2) empresas privadas. El primero es el “FIDEICOMISO TITULARIZACIÓN CARTERA AUTOMOTRIZ. MUTUALISTA PICHINCHA 1”, con un valor de compra de USD \Sexpr{REP$inver_det_titu_valor_compra_mut_pichi} y un saldo a la fecha por USD \Sexpr{REP$inver_det_titu_saldo_nomi_mut_pichi} con una tasa igual a \Sexpr{REP$inver_det_titu_tasa_mut_pichi}\% con amortización trimestral a un plazo remanente de \Sexpr{REP$inver_det_titu_plazo_mut_pichi} días. El Segundo pertenece al emisor UTE , con un valor de compra de USD \Sexpr{REP$inver_det_titu_valor_compra_ute} y un saldo al corte de USD \Sexpr{REP$inver_det_titu_saldo_nomi_ute} a una tasa igual a \Sexpr{REP$inver_det_titu_tasa_ute}\% con amortización semestral a un plazo remanente de \Sexpr{REP$inver_det_titu_plazo_ute} días. En la tabla \ref{tab:iess_titul_detalle_inv}, se enumera las inversiones del Fondo en titularizaciones a la fecha de corte.
+
 \subsubsection{Inversiones en certificados de depósitos}
 
-En cumplimiento del artículo 54 de la Sección X: DEL BANCO DEL INSTITUTO ECUATORIANO DE SEGURIDAD SOCIAL de la CODIFICACIÓN DE RESOLUCIONES MONETARIAS, FINANCIERAS, DE VALORES Y SEGUROS, el Fondo del \Sexpr{REP_seg} puede adquirir inversiones no privativas en renta fija en certificados de depósitos. Desde el 20 de julio de 2022, el Fondo ha invertido en USD \Sexpr{REP$inver_cert_deposi_total_valor_compra} en certificados de depósitos a una tasa promedio ponderado que va desde \Sexpr{REP$inver_cert_deposi_tasa_min}\% a \Sexpr{REP$inver_cert_deposi_tasa_max}\% con un plazo promedio ponderado desde \Sexpr{REP$inver_cert_deposi_plazo_min} hasta \Sexpr{REP$inver_cert_deposi_plazo_max} días; todos los certificados de depósito se recuperan a su vencimiento; y se encuentran invertidos en tres (3) bancos y dos (2) cooperativas. La mayoría de los depósitos se encuentran en el Banco del Pacífico en dos (2) certificados; el primero por USD \Sexpr{REP$inver_cert_deposi_pacifico_dic_val_nom} a una tasa igual a \Sexpr{REP$inver_cert_deposi_pacifico_dic_tasa}\% a un plazo remanente de \Sexpr{REP$inver_cert_deposi_pacifico_dic_plazo} días; y, el segundo, por USD \Sexpr{REP$inver_cert_deposi_pacifico_julio_val_nom} a una tasa igual a \Sexpr{REP$inver_cert_deposi_pacifico_julio_tasa}\% a un plazo remanente de \Sexpr{REP$inver_cert_deposi_pacifico_julio_plazo} días. Se proyecta recuperar la totalidad de todos los certificados de depósito hasta el 01 de junio de 2023.
+En cumplimiento del artículo 54 de la Sección X: DEL BANCO DEL INSTITUTO ECUATORIANO DE SEGURIDAD SOCIAL de la CODIFICACIÓN DE RESOLUCIONES MONETARIAS, FINANCIERAS, DE VALORES Y SEGUROS, el Fondo del \Sexpr{REP_seg} puede adquirir inversiones no privativas en renta fija en certificados de depósitos. 
+
+Desde el 20 de julio de 2022, el Fondo ha invertido en USD \Sexpr{REP$inver_cert_deposi_total_valor_compra} en certificados de depósitos a una tasa promedio ponderado que va desde \Sexpr{REP$inver_cert_deposi_tasa_min}\% a \Sexpr{REP$inver_cert_deposi_tasa_max}\% con un plazo promedio ponderado desde \Sexpr{REP$inver_cert_deposi_plazo_min} hasta \Sexpr{REP$inver_cert_deposi_plazo_max} días; todos los certificados de depósito se recuperan a su vencimiento; y se encuentran invertidos en tres (3) bancos y dos (2) cooperativas. La mayoría de los depósitos se encuentran en el Banco del Pacífico en dos (2) certificados; el primero por USD \Sexpr{REP$inver_cert_deposi_pacifico_dic_val_nom} a una tasa igual a \Sexpr{REP$inver_cert_deposi_pacifico_dic_tasa}\% a un plazo remanente de \Sexpr{REP$inver_cert_deposi_pacifico_dic_plazo} días; y, el segundo, por USD \Sexpr{REP$inver_cert_deposi_pacifico_julio_val_nom} a una tasa igual a \Sexpr{REP$inver_cert_deposi_pacifico_julio_tasa}\% a un plazo remanente de \Sexpr{REP$inver_cert_deposi_pacifico_julio_plazo} días. Se proyecta recuperar la totalidad de todos los certificados de depósito hasta el 01 de junio de 2023.
 
 {\setlength{\tabcolsep}{3pt}
 {\fontsize{8}{13}\selectfont
@@ -1180,7 +1188,19 @@ Elaborado: DAIE}
 
 \subsubsection{Inversiones en papel comercial}
 
-Las inversiones en papel comercial del Fondo del \Sexpr{REP_seg} ascienden a USD \Sexpr{REP$inver_inv_papel_comer_val_nom_2022} a la fecha de corte, lo que sígnica un crecimiento igual a \Sexpr{REP$inver_inv_papel_comer_val_nom_cre_2020_2022}\%, con respecto a 2020 (USD \Sexpr{REP$inver_inv_papel_comer_val_nom_2020}). También se registraron inversiones en papel comercial en el año 2015 por USD \Sexpr{REP$inver_inv_papel_comer_val_nom_2015}, y USD \Sexpr{REP$inver_inv_papel_comer_val_nom_2014} en el año 2014. La tasa de rendimiento promedio ponderado real de las inversiones en papel comercial es \Sexpr{REP$inver_inv_papel_comer_ren_prom_real_2022}\% a 2022 y \Sexpr{REP$inver_inv_papel_comer_ren_prom_real_2020}\% a 2020; en cambio, que a 2015 y 2014, se registró tasa de rendimiento real iguales a \Sexpr{REP$inver_inv_papel_comer_ren_prom_real_2015}\% y \Sexpr{REP$inver_inv_papel_comer_ren_prom_real_2014}\%, respectivamente. En la tabla \ref{tab:iess_pc_hist_inv} y figura \ref{fig:iess_inversiones_papel_comercial_rtr}, se presenta la evolución de las inversiones del Fondo del \Sexpr{REP_seg} en papel comercial, a 31 de diciembre de cada año.
+Las inversiones en papel comercial del Fondo del \Sexpr{REP_seg} ascienden a USD \Sexpr{REP$inver_inv_papel_comer_val_nom_2022} a la fecha de corte, lo que sígnica un crecimiento igual a \Sexpr{REP$inver_inv_papel_comer_val_nom_cre_2020_2022}\%, con respecto a 2020 (USD \Sexpr{REP$inver_inv_papel_comer_val_nom_2020}). También se registraron inversiones en papel comercial en el año 2015 por USD \Sexpr{REP$inver_inv_papel_comer_val_nom_2015}, y USD \Sexpr{REP$inver_inv_papel_comer_val_nom_2014} en el año 2014. La tasa de rendimiento promedio ponderado real de las inversiones en papel comercial es \Sexpr{REP$inver_inv_papel_comer_ren_prom_real_2022}\% a 2022 y \Sexpr{REP$inver_inv_papel_comer_ren_prom_real_2020}\% a 2020; en cambio, que a 2015 y 2014, se registró tasa de rendimiento real iguales a \Sexpr{REP$inver_inv_papel_comer_ren_prom_real_2015}\% y \Sexpr{REP$inver_inv_papel_comer_ren_prom_real_2014}\%, respectivamente.
+
+\begin{figure}[H]
+\captionsetup{justification=centering}
+\centering
+\caption{Evolución histórica de las inversiones del \Sexpr{REP_seg} en Papel Comercial y su rendimiento promedio ponderado}
+\label{fig:iess_inversiones_papel_comercial_rtr}
+\includegraphics[scale=0.9]{graficos/iess_inversiones_papel_comercial_rtr.png}
+\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
+\\Elaborado: DAIE}
+\end{figure}
+
+ En la tabla \ref{tab:iess_pc_hist_inv} y figura \ref{fig:iess_inversiones_papel_comercial_rtr}, se presenta la evolución de las inversiones del Fondo del \Sexpr{REP_seg} en papel comercial, a 31 de diciembre de cada año.
 
 {\setlength{\tabcolsep}{4pt}
 {\fontsize{11}{12}\selectfont
@@ -1226,15 +1246,7 @@ Elaborado: DAIE}
 }
 }
 
-\begin{figure}[H]
-\captionsetup{justification=centering}
-\centering
-\caption{Evolución histórica de las inversiones del \Sexpr{REP_seg} en Papel Comercial y su rendimiento promedio ponderado}
-\label{fig:iess_inversiones_papel_comercial_rtr}
-\includegraphics[scale=1]{graficos/iess_inversiones_papel_comercial_rtr.png}
-\caption*{\scriptsize Fuente: Subgerencia de Banca de Inversión del BIESS
-\\Elaborado: DAIE}
-\end{figure}
+
 
 Al 31 de diciembre de 2022, las inversiones en papel comercial se distribuyen en dos (2) empresas privadas, en tres (3) papeles comerciales, todas son cupón cero y con amortización a fecha de vencimiento. El primer papel comercial tiene de emisor a CONTINENTAL TIRE ANDINA S.A. por un valor de USD \Sexpr{REP$inver_det_papel_comer_val_compra_continental}, con un plazo remanente igual a \Sexpr{REP$inver_det_papel_comer_plazo_continental} días. En segundo es emitido por PRONACA por USD  \Sexpr{REP$inver_det_papel_comer_val_compra_pronaca_oct} a un plazo remanente de \Sexpr{REP$inver_det_papel_comer_plazo_pronaca_oct} días e, igualmente, el papel comercial de PRONACA por USD \Sexpr{REP$inver_det_papel_comer_val_compra_pronaca_may} a un plazo remanente igual a \Sexpr{REP$inver_det_papel_comer_plazo_pronaca_may} días. En la tabla \ref{tab:iess_pc_detalle_inv}, se detalla el portafolio de inversiones del Fondo en papeles comerciales a la fecha de corte.
 

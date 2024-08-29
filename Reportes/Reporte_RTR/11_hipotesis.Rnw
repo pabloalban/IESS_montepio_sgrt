@@ -48,7 +48,7 @@ muestran en la tabla \ref{tab:paramgen}.
 \toprule
 \multicolumn{1}{l}{\textbf{Parámetros}} & \multicolumn{1}{c}{\textbf{Escenario}} \\
 \midrule
-Fecha de corte & 2020-12-31 \\
+Fecha de corte & 2022-12-31 \\
 Horizonte de proyección & 40 años \\
 \bottomrule
  \end{tabular}
@@ -132,11 +132,11 @@ sistema de dolarización de la economía se mantendrá vigente en todo el horizo
 \label{chp_hipotesis:paramecfin:resumparam}
 
 En la tabla \ref{tab:iess_hip_macro} se presentan los promedios de los valores estimados de tasas de
-variación, período 2021 a 2060, el detalle de los cálculos se encuentra en el capítulo \ref{chp_contexto}. 
+variación, período 2023 a 2062, el detalle de los cálculos se encuentra en el capítulo \ref{chp_contexto}. 
 
  \begin{table}[H]
  \centering
- \caption{Promedio de los valores estimados de tasas de variación (período 2021 a 2060)}
+ \caption{Promedio de los valores estimados de tasas de variación (período 2023 a 2062)}
  \label{tab:iess_hip_macro}
  \begin{tabular}{lr}
  \toprule

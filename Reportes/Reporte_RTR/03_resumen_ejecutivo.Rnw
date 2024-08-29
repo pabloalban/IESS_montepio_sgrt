@@ -15,7 +15,7 @@ Y en concordancia del artículo 233 de la Ley de Seguridad Social, que establece
 \textit{``No se creará prestación alguna ni se mejorarán las existentes a cargo del Seguro Social Obligatorio aplicado por el IESS, si no se encontraren debidamente financiadas y respaldadas en los resultados de estudios actuariales que demuestren su solvencia y sostenibilidad”.}
 Se presenta el siguiente estudio actuarial.
 
-
+El presente estudio mide el impacto de la posible reforma al artículo 41 del ``REGLAMENTO DEL SEGURO GENERAL DE RIESGOS DEL TRABAJO”, emitido mediante \legalcite{ResIESS_CD513}, y determina si la prima vigente 0,38\% es suficiente para garantizar la sostenibilidad del Seguro.
 %---------------------------------------------------------------------------------------------------
 \section{Descripción concisa de las características regulatorias del Fondo o Seguro}
 \label{chp_res_ejec:descripcion}
@@ -74,7 +74,7 @@ riesgos derivados del trabajo, acciones de reparación de los daños derivados d
 trabajo y enfermedades profesionales u ocupacionales, incluida la rehabilitación física, mental y la 
 reinserción laboral, concediendo las siguientes prestaciones básicas: 
 
-\begin{itemize}[itemsep=4mm, topsep=1pt]
+\begin{itemize}[itemsep=1mm, topsep=1pt]
 \item Servicios de prevención de riesgos laborales;
 \item Servicios médico-asistenciales, incluidos los servicios de prótesis y ortopedia a través del 
 Seguro General de Salud Individual y Familiar;
@@ -96,7 +96,7 @@ A manera de resumen, se describen las principales hipótesis de este estudio:
 {\fontsize{11}{14}\selectfont
 %\begin{longtable}[H]{r*{5}{R{2.5cm}}}
 \begin{longtable}[H]{lc}
-\caption{Tasas utilizadas en el estudio (período 2021 a 2060)}
+\caption{Tasas utilizadas en el estudio (período 2023 a 2032)}
 \label{tab:iess_hip_macro_re} \\
 \toprule
 Ítem: & \multicolumn{1}{c}{Tasa}\\
@@ -129,16 +129,15 @@ A manera de resumen, se describen las principales hipótesis de este estudio:
 Para el análisis se han definido tres (3) escenarios: 
 \begin{enumerate}[itemsep=1mm, topsep=5pt]
 \item \textbf{Escenario Legal:} Constituye el escenario establecido de acuerdo con la Ley y Resoluciones vigentes, aplicando parámetros
-financieros conservadores y realistas, en base a valores proyectados promedio. En este escenario 
+financieros conservadores y realistas. En este escenario 
 se supone: tasa actuarial \Sexpr{REP$tasa_act_esc_1}\%, tasa de crecimiento salarial de \Sexpr{REP$tasa_sal_esc_1}\%
 y tasa de crecimiento de pensiones igual a \Sexpr{REP$tasa_pen_esc_1}\%. Además, supone que el aporte estatal
 promedio para los próximos años es igual a \Sexpr{REP$apo_est_esc_1}\% (el Estado alega que no existe base legal para su contribución del 40\% en las indemnizaciones por incapacidad permanente parcial y subsidios por incapacidad temporal) y toma en cuenta el cese del aporte del 2,76\% de los pensionistas.
 
 \item \textbf{Escenario Intermedio:} Constituye el escenario más probable, aplicando parámetros
-financieros conservadores y realistas, en base a valores proyectados promedio, utilizados en el Escenario Legal; pero supone que el aporte estatal promedio para los próximos años es igual a \Sexpr{REP$apo_est_esc_2}\% ( porcentaje de aporte del Estado en el período 2012 a 2020 ).
+financieros conservadores y realistas, utilizados en el Escenario Legal; pero supone que el aporte estatal promedio para los próximos años es igual a \Sexpr{REP$apo_est_esc_2}\% ( porcentaje del aporte del Estado período 2012 a 2022 ).
 
-\item \textbf{Escenario Pesimista:} Constituye el escenario en el cual el Estado cesa su aporte del 40\% de las pensiones, aplicando parámetros
-financieros conservadores y realistas, en base a valores proyectados utilizados en el Escenario Legal.
+\item \textbf{Escenario Reforma:} Este escenario propone establecer la pensión de montepío en caso de fallecimiento del afiliado por accidente del trabajo o enfermedad profesional igual a la pensión de incapacidad permanente absoluta (100\%). En caso de fallecimiento del pensionista por incapacidad permanente total o por incapacidad permanente absoluta se calculará sobre la última pensión recibida, según corresponda. Y, además, se aplican parámetros financieros conservadores y realistas, y el aporte del Estado recibido en los últimos años \Sexpr{REP$apo_est_esc_3}\%.
 
 \end{enumerate}
 %---------------------------------------------------------------------------------------------------
@@ -147,7 +146,7 @@ financieros conservadores y realistas, en base a valores proyectados utilizados 
 Del estudio actuarial se concluyen los siguientes resultados:
 \begin{table}[H]
 \centering
-\caption{Resultado de los escenarios de la valuación actuarial (2021 a 2060)}
+\caption{Resultado de los escenarios de la valuación actuarial (2023 a 2062)}
 \label{tab:iess_resultados_resumen_ejec}
 {\fontsize{9}{11}\selectfont
 \begin{tabular}{lrrr}
@@ -170,19 +169,15 @@ Del estudio actuarial se concluyen los siguientes resultados:
 Entre las principales conclusiones, se tiene:
 \begin{enumerate}[itemsep=1mm, topsep=0pt]
 
-\item Bajo el escenario legal, el superávit actuarial alcanza USD \Sexpr{REP$bal_act_esc_1}, su prima
-suficiente que mantiene el equilibrio financiero en el tiempo es \Sexpr{REP$pri_med_niv_esc_1}\%,
-resultado que se obtiene con aporte del Estado del \Sexpr{REP$apo_est_esc_1}\%.
+\item Bajo el escenario legal, que se da cumplimiento de acuerdo con la Ley y Resoluciones vigentes, el Estado cumple con el pago del \Sexpr{REP$apo_est_esc_1}\% para financiar la entrega de pensiones. Y, el superávit actuarial en el período de valuación 2023 a 2062, alcanza USD \Sexpr{REP$bal_act_esc_1}, su prima suficiente que mantiene el equilibrio financiero en el período anotado es \Sexpr{REP$pri_med_niv_esc_1}\%.
 
-\item Bajo el escenario intermedio, el superávit actuarial alcanza USD \Sexpr{REP$bal_act_esc_2}, su prima
-suficiente que mantiene el equilibrio financiero en el tiempo es \Sexpr{REP$pri_med_niv_esc_2}\%,
-resultado que se obtiene con aporte del Estado del \Sexpr{REP$apo_est_esc_2}\%.
+\item Bajo el escenario intermedio, que es el más probable y que es igual que el escenario Legal, pero asume que el Estado únicamente contribuirá para el pago de beneficios de pensiones con el \Sexpr{REP$apo_est_esc_2}\%, el superávit actuarial durante el período de valuación alcanza USD \Sexpr{REP$bal_act_esc_2}. Por lo tanto, su prima suficiente que mantiene el equilibrio financiero en este período es \Sexpr{REP$pri_med_niv_esc_2}\%.
 
-\item Bajo el escenario pesimista, el superávit actuarial alcanza USD \Sexpr{REP$bal_act_esc_3}, su prima
-suficiente que mantiene el equilibrio financiero en el tiempo es \Sexpr{REP$pri_med_niv_esc_3}\%,
-resultado que se obtiene con aporte del Estado del \Sexpr{REP$apo_est_esc_3}\%.
+\item Bajo el escenario reforma, que propone establecer la pensión de montepío en caso de fallecimiento del afiliado por accidente del trabajo o enfermedad profesional igual a la pensión de incapacidad permanente absoluta (100\%), el superávit actuarial en el período de valuación 2023 a 2062 alcanza USD \Sexpr{REP$bal_act_esc_3}, y su prima suficiente para mantener el equilibrio financiero en el citado período es \Sexpr{REP$pri_med_niv_esc_3}\%.
 
-\item No existe una adecuada metodología para registrar de accidentes laborales o enfermedades profesionales atendidas en las unidades médicas del IESS, es por ello, que no se pueda formar estadísticas de estos siniestros y tampoco se dispone de siniestralidad que sea la base de formación de tablas morbilidad pertenecientes a este Seguro.
+\item Se estima que el impacto en el horizonte de estudio (40 años) de establecer la pensión de montepío en caso de fallecimiento del afiliado por accidente del trabajo o enfermedad profesional igual a la pensión de incapacidad permanente absoluta (100\%) reducirá el superávit actuarial en USD \Sexpr{REP$impacto_bal_act}, de USD \Sexpr{REP$bal_act_esc_2} (superávit escenario intermedio) a USD \Sexpr{REP$bal_act_esc_3} (superávit escenario reforma). Y, subiría la prima suficiente del Seguro en \Sexpr{REP$impacto_pri_med_niv}\% de \Sexpr{REP$pri_med_niv_esc_2}\% (escenario intermedio) a \Sexpr{REP$pri_med_niv_esc_3}\% (escenario reforma).
+
+\item No existe el registró adecuado del número de cédula de ciudadanía del afiliado o jubilado fallecido causante de 304 pensionistas de orfandad y de 338 pensionistas de viudedad, entre e período 2014 a 2022.
 
 \end{enumerate}
 % --------------------------------------------------------------------------------------------------
@@ -191,9 +186,11 @@ las siguientes recomendaciones, con la finalidad de que:
 
 \begin{enumerate}
 
-\item El Director General disponga al Seguro General de Salud Individual y Familiar, en coordinación con la Dirección del Seguro General de Riesgos del Trabajo tomen las medidas necesarias para que se registre adecuadamente en los sistemas de las atenciones médico-asistenciales del Seguro General de Riesgos del Trabajo por enfermedades profesionales y accidentes laborales.
+\item Se recomienda establecer la pensión de montepío en caso de fallecimiento del afiliado por accidente del trabajo o enfermedad profesional igual a la pensión de incapacidad permanente absoluta (100\%) en el cálculo de pensiones de los nuevos pensionistas de montepío del Seguro General de Riesgos del Trabajo, debido a que la prima vigente (0,38\%) garantiza el financiamiento y sostenibilidad de la reforma.
 
-\item El Director General disponga a la Dirección Actuarial, de Investigación y Estadística la elaboración de un estudio actuarial que determine la prima suficiente de las atenciones médico-asistenciales del Seguro General de Riesgos del Trabajo; después que la Dirección del Seguro General de Riesgos del Trabajo haya identificado las atenciones médico-asistenciales de este seguro, mediante una metodología previamente aprobada por las autoridades del IESS.
+\item El Director General disponga a la Dirección del Seguro General de Riesgos del Trabajo elaborar y presentar un proyecto de resolución para la reforma al REGLAMENTO DEL SEGURO GENERAL DE RIESGOS DEL TRABAJO, expedido mediante \legalcite{ResIESS_CD513}, que considere la entrega de la pensión de montepío en caso de fallecimiento del afiliado por accidente del trabajo o enfermedad profesional igual a la pensión de incapacidad permanente absoluta (100\%).
+
+\item El Director General disponga a la Dirección del Seguro General de Riesgos del Trabajo realizar las gestiones necesarias para guardar los números de cédula de ciudadanía de los causantes de montepío del Seguro General de riesgos del Trabajo en sus bases de datos.
 \end{enumerate}
 
 \section*{Responsabilidad actuarial}
@@ -201,7 +198,7 @@ las siguientes recomendaciones, con la finalidad de que:
 Del presente estudio es responsabilidad del Director Actuarial, de Investigación y Estadística.
 %\newpage
 \section{Firma de responsabilidad}
-Quito, 29 de enero de 2024 \\
+%Quito, 29 de enero de 2024 \\
 
 Atentamente,
 \vspace{3cm}

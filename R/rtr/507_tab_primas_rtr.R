@@ -4,7 +4,7 @@ message( '\tGenerando tablas de primas por escenario' )
 escenarios <- paste0( 'escenario_', 1:9 )
 nom_esc <- c( 'Legal',
               'Intermedio',
-              'Pesimista',
+              'Reforma',
               'Escenario 4',
               'Escenario 5',
               'Escenario 6',
@@ -34,7 +34,7 @@ for ( escenario in escenarios ) {
 pri <- as.data.frame( cbind( nom_esc, pri ) ) %>% 
   mutate_at( c( 2:ncol( . ) ), as.numeric )
 
-xtb_pri <- xtable( pri, digits = c( 0, 0, rep( 4, 6 ), 2 ) )
+xtb_pri <- xtable( pri, digits = c( 0, 0, rep( 2, 6 ), 2 ) )
 
 print( xtb_pri,
        file = paste0( parametros$resultado_tablas, 'iess_tab_primas.tex' ),

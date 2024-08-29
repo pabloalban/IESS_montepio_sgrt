@@ -17,7 +17,7 @@ x_lim <- c( 20, 105 )
 x_brk <- seq( x_lim[1], x_lim[2], 10 )
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
-y_lim <- c( 0, 20 )
+y_lim <- c( 0, 40 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 11 )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
 
@@ -36,7 +36,7 @@ ggsave( plot = plt_l12_f,
         filename = paste0( parametros$resultado_graficos, 'iess_proy_l12_m', parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-y_lim <- c( 0, 200 )
+y_lim <- c( 0, 250 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 11 )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
 
@@ -85,7 +85,7 @@ ggsave( plot = plt_l13_f,
         filename = paste0( parametros$resultado_graficos, 'iess_proy_l13_m', parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-y_lim <- c( 0, 30 )
+y_lim <- c( 0, 60 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 6 )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
 
@@ -184,7 +184,7 @@ ggsave( plot = plt_l15_f,
         filename = paste0( parametros$resultado_graficos, 'iess_proy_l15_m', parametros$graf_ext ),
         width = graf_width, height = graf_height, units = graf_units, dpi = graf_dpi )
 
-y_lim <- c( 0, 120 )
+y_lim <- c( 0, 300 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 6 )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
 
@@ -214,7 +214,7 @@ x_lim <- c( 15, 105 )
 x_brk <- seq( x_lim[1], x_lim[2], 10 )
 x_lbl <- formatC( x_brk, digits = 0, format = 'f' )
 
-y_lim <- c( 0, 120 )
+y_lim <- c( 0, 300 )
 y_brk <- seq( y_lim[1], y_lim[2], length.out = 6 )
 y_lbl <- formatC( y_brk, digits = 0, format = 'f', big.mark = '.', decimal.mark = ',' )
 

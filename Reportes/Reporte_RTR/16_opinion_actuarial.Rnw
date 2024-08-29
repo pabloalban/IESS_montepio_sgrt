@@ -7,8 +7,7 @@ Superintendencia de Bancos, respecto de los estudios actuariales, así como las 
 internacionales de presentación de estudios actuariales y convenios internacionales suscritos con la
 OIT.
 
-El estudio demuestra que al 31 de diciembre de 2022 el Fondo de Riesgos de Trabajo es solvente con
-la prima y el esquema actual de entrega de prestaciones. Y, es sostenible en el horizonte de estudio la propuesta de cambio de la pensión de montepío en caso de fallecimiento inmediato o posterior, este Seguro plantea en el proyecto de reforma que este cálculo debe realizarse sobre la pensión de incapacidad permanente absoluta (100\%), ya que en la actualidad la pensión de montepío en el Seguro General de Riesgos del Trabajo se calcula sobre la incapacidad permanente total (80\%).
+El estudio demuestra que al 31 de diciembre de 2022 el Fondo de Riesgos de Trabajo es solvente con la prima y el esquema actual de entrega de prestaciones. Y, es sostenible en el horizonte de estudio la propuesta de cambio de la pensión de montepío en caso de fallecimiento inmediato o posterior, que este cálculo debe realizarse sobre la pensión de incapacidad permanente absoluta (100\%), ya que en la actualidad la pensión de montepío en el Seguro General de Riesgos del Trabajo se calcula sobre la incapacidad permanente total (80\%).
 
 %---------------------------------------------------------------------------------------------------
 \section{Calidad y suficiencia de los datos}
@@ -26,9 +25,9 @@ En la formación de tablas biométricas y de mortalidad se consideró informaci�
 comportamiento tanto: demográfico, siniestralidad, económico y financiero del fondo, observando este
 comportamiento durante los últimos ocho (8) años.
 
-En lo que se refiere al registro de accidentes laborales que causan lesiones no fatales, en
-comparación con los países de Latinoamérica, este seguro tiene un subregistro, lo que ocasiona que
-los gastos por atenciones médicas no sean registrados en su real valor.
+% En lo que se refiere al registro de accidentes laborales que causan lesiones no fatales, en
+% comparación con los países de Latinoamérica, este seguro tiene un subregistro, lo que ocasiona que
+% los gastos por atenciones médicas no sean registrados en su real valor.
 
 %---------------------------------------------------------------------------------------------------
 \section{Razonabilidad de las hipótesis}
@@ -54,8 +53,8 @@ asociaciones internacionales como la OIT y las asociaciones de actuarios.
 \section{Fecha de valuación}
 
 \begin{itemize}
-  \item La información de base para este estudio fue cortada al 2020-12-31. 
-  \item El período de proyección de este estudio es de 40 años, del 2020-12-31 al 2060-12-31.
+  \item La información de base para este estudio fue cortada al 20222-12-31. 
+  \item El período de proyección de este estudio es de 40 años, del 2022-12-31 al 2062-12-31.
 \end{itemize}
 
 %---------------------------------------------------------------------------------------------------
@@ -64,7 +63,7 @@ asociaciones internacionales como la OIT y las asociaciones de actuarios.
 Del presente estudio es responsabilidad del Director Actuarial, de Investigación y Estadística.
 
 \section{Firma de responsabilidad}
-Quito, 29 de enero de 2024 \\
+%Quito, 29 de enero de 2024 \\
 
 %\vspace{2cm}
 Atentamente,

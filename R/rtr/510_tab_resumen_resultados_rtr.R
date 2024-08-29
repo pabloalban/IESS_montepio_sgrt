@@ -3,7 +3,7 @@ message( '\tGenerando la tabla de resumen de resultados de la valuación' )
 
 #parametrización de los escenarios -----------------------------------------------------------------
 escenarios <- paste0( 'escenario_', 1:3 )
-nom_esc <- c( 'Legal', 'Intermedio', 'Pesimista')
+nom_esc <- c( 'Legal', 'Intermedio', 'Reforma')
 
 #Creación data.frame -------------------------------------------------------------------------------
 result_list <- vector(mode = "list", length = length( escenarios ) )
@@ -63,7 +63,7 @@ setorder(result, orden)
 result[, orden := NULL]
 
 #Guardar en latex-----------------------------------------------------------------------------------
-xtb_result <- xtable( result, digits = c( 0, 0, rep( 3, 3 ) ) )
+xtb_result <- xtable( result, digits = c( 0, 0, rep( 2, 3 ) ) )
 print( xtb_result,
        file = paste0( parametros$resultado_tablas, 'iess_resultados.tex' ),
        type = 'latex', 

@@ -20,8 +20,7 @@ promedio para los próximos años es igual a \Sexpr{REP$apo_est_esc_1}\% (el Est
 \item \textbf{Escenario Intermedio:} Constituye el escenario más probable, aplicando parámetros
 financieros conservadores y realistas, utilizados en el Escenario Legal; pero supone que el aporte estatal promedio para los próximos años es igual a \Sexpr{REP$apo_est_esc_2}\% ( porcentaje del aporte del Estado período 2012 a 2022 ).
 
-\item \textbf{Escenario Reforma:} Este escenario plantea el cambio del cálculo de la pensión de montepío en caso de fallecimiento del afiliado por accidente del trabajo o enfermedad profesional sobre la pensión de
-incapacidad permanente absoluta (100\%). En caso de fallecimiento del pensionista por incapacidad permanente total o por incapacidad permanente absoluta se calculará sobre la última pensión recibida, según corresponda, aplicando parámetros financieros conservadores y realistas, y el aporte del Estado recibido en los últimos años  \Sexpr{REP$apo_est_esc_3}\%.
+\item \textbf{Escenario Reforma:} Este escenario propone establecer la pensión de montepío en caso de fallecimiento del afiliado por accidente del trabajo o enfermedad profesional igual a la pensión de incapacidad permanente absoluta (100\%). En caso de fallecimiento del pensionista por incapacidad permanente total o por incapacidad permanente absoluta se calculará sobre la última pensión recibida, según corresponda. Y, además, se aplican parámetros financieros conservadores y realistas, y el aporte del Estado recibido en los últimos años \Sexpr{REP$apo_est_esc_3}\%.
 
 \end{enumerate}
 
@@ -62,7 +61,7 @@ en la tabla \ref{tab:par_escenarios}.
 &
 \multicolumn{1}{c}{Legal} &
 \multicolumn{1}{c}{Intermedio} &
-\multicolumn{1}{c}{Pesimista}
+\multicolumn{1}{c}{Reforma}
 \\
 & 
 \multicolumn{1}{c}{(\%)} &
@@ -110,9 +109,9 @@ afiliados activos igual a 0,38\% a partir del 2021, establecido en la \legalcite
 \subsection{Balance actuarial para el escenario legal}
 \label{chp_valuacionactu:esc_1:balactu}
 
-La tabla \ref{tab:iess_bal_act_vap_escenario_1} presenta el balance actuarial para el año 2060 del
+La tabla \ref{tab:iess_bal_act_vap_escenario_1} presenta el balance actuarial para el año 2062 del
 escenario legal. El escenario legal registra un superávit igual a USD \Sexpr{REP$bal_act_esc_1}, en
-términos actuariales, en el año 2060, el cual se obtiene de la diferencia entre su activo actuarial
+términos actuariales, en el año 2062, el cual se obtiene de la diferencia entre su activo actuarial
 (USD \Sexpr{REP$bal_sum_act_esc_1}) y su pasivo actuarial (USD \Sexpr{REP$bal_sum_pas_esc_1}), en valor
 presente. Por último, su prima suficiente alcanza el \Sexpr{REP$pri_med_niv_esc_1}\%.
 \begin{table}[H]
@@ -138,7 +137,7 @@ La tabla \ref{tab:bal_act_tot_esc_1} y la figura \ref{graf:bal_vap_esc_1} presen
 balance actuarial dinámico para horizontes $T \in \{0,\ldots,40\}$. En la tabla
 \ref{tab:bal_ben_esc_1}, se observa el detalle de los beneficios por pago de prestaciones; en
 cambio, en la tabla \ref{tab:iess_bal_act_vap_escenario_1}, se presenta la reserva, $V_t$, del
-\Sexpr{REP_seg} para cada año hasta el año 2060. El gráfico \ref{graf:apo_ben_bal_din_esc_1} presenta la
+\Sexpr{REP_seg} para cada año hasta el año 2062. El gráfico \ref{graf:apo_ben_bal_din_esc_1} presenta la
 comparación entre los aportes (línea azul) y los beneficios (línea verde).
 \begin{figure}[H]
 \caption{Escenario legal: evolución del balance actuarial $V_T$}
@@ -546,9 +545,9 @@ afiliados activos igual a 0,38\% a partir del 2021, establecido en la \legalcite
 \subsection{Balance actuarial para el escenario intermedio}
 \label{chp_valuacionactu:esc_2:balactu}
 
-La tabla \ref{tab:iess_bal_act_vap_escenario_2} presenta el balance actuarial para el año 2060 del
+La tabla \ref{tab:iess_bal_act_vap_escenario_2} presenta el balance actuarial para el año 2062 del
 escenario intermedio. El escenario intermedio registra un superávit igual a USD \Sexpr{REP$bal_act_esc_2}, en
-términos actuariales, en el año 2060, el cual se obtiene de la diferencia entre su activo actuarial
+términos actuariales, en el año 2062, el cual se obtiene de la diferencia entre su activo actuarial
 (USD \Sexpr{REP$bal_sum_act_esc_2}) y su pasivo actuarial (USD \Sexpr{REP$bal_sum_pas_esc_2}), en valor
 presente. Por último, su prima suficiente alcanza el \Sexpr{REP$pri_med_niv_esc_2}\%.
 \begin{table}[H]
@@ -574,7 +573,7 @@ La tabla \ref{tab:bal_act_tot_esc_2} y la figura \ref{graf:bal_vap_esc_2} presen
 balance actuarial dinámico para horizontes $T \in \{0,\ldots,40\}$. En la tabla
 \ref{tab:bal_ben_esc_2}, se observa el detalle de los beneficios por pago de prestaciones; en
 cambio, en la tabla \ref{tab:iess_bal_act_vap_escenario_2}, se presenta la reserva, $V_t$, del
-\Sexpr{REP_seg} para cada año hasta el año 2060. El gráfico \ref{graf:apo_ben_bal_din_esc_2} presenta la
+\Sexpr{REP_seg} para cada año hasta el año 2062. El gráfico \ref{graf:apo_ben_bal_din_esc_2} presenta la
 comparación entre los aportes (línea azul) y los beneficios (línea verde).
 \begin{figure}[H]
 \caption{Escenario intermedio: evolución del balance actuarial $V_T$}
@@ -973,9 +972,7 @@ Año
 \section{Valuación actuarial bajo el escenario reforma}
 \label{chp_valuacion:esc_reforma}
 
-El escenario reforma es el escenario que considera el cese total de las aportaciones del Estado al 40\% de las pensiones de este Seguro. En este escenario se utilizan las siguientes
-hipótesis: tasa actuarial, \Sexpr{REP$tasa_act_esc_3}\%; tasa de crecimiento de los salarios, \Sexpr{REP$tasa_sal_esc_3}\%; y tasa de crecimiento del salario básico unificado \Sexpr{REP$tasa_sbu_esc_3}\%. Además, se establece que los gastos
-administrativos son igual al \Sexpr{REP$tasa_por_gas_esc_3}\% de la masa salarial.
+Este escenario propone establecer la pensión de montepío en caso de fallecimiento del afiliado por accidente del trabajo o enfermedad profesional igual a la pensión de incapacidad permanente absoluta (100\%).Y, se utilizan las siguientes hipótesis: tasa actuarial, \Sexpr{REP$tasa_act_esc_3}\%; tasa de crecimiento de los salarios, \Sexpr{REP$tasa_sal_esc_3}\%; y tasa de crecimiento del salario básico unificado \Sexpr{REP$tasa_sbu_esc_3}\%. Además, se establece que los gastos administrativos son igual al \Sexpr{REP$tasa_por_gas_esc_3}\% de la masa salarial.
 
 Este escenario considera las siguientes fuentes de financiamiento: la tasa de aportación de los
 afiliados activos igual a 0,38\% a partir del 2021, establecido en la \legalcite{ResIESS_CD515}; y se consideró el fallo de la corte constitucional sobre el cese de los aportes del 2,76\% por parte de los pensionistas para financiar auxilio de funerales y décimas.
@@ -984,9 +981,9 @@ afiliados activos igual a 0,38\% a partir del 2021, establecido en la \legalcite
 \subsection{Balance actuarial para el escenario reforma}
 \label{chp_valuacionactu:esc_3:balactu}
 
-La tabla \ref{tab:iess_bal_act_vap_escenario_3} presenta el balance actuarial para el año 2060 del
+La tabla \ref{tab:iess_bal_act_vap_escenario_3} presenta el balance actuarial para el año 2062 del
 escenario reforma. El escenario reforma registra un superávit igual a USD \Sexpr{REP$bal_act_esc_3}, en
-términos actuariales, en el año 2060, el cual se obtiene de la diferencia entre su activo actuarial
+términos actuariales, en el año 2062, el cual se obtiene de la diferencia entre su activo actuarial
 (USD \Sexpr{REP$bal_sum_act_esc_3}) y su pasivo actuarial (USD \Sexpr{REP$bal_sum_pas_esc_3}), en valor
 presente. Por último, su prima suficiente alcanza el \Sexpr{REP$pri_med_niv_esc_3}\%.
 \begin{table}[H]
@@ -1011,7 +1008,7 @@ La tabla \ref{tab:bal_act_tot_esc_3} y la figura \ref{graf:bal_vap_esc_3} presen
 balance actuarial dinámico para horizontes $T \in \{0,\ldots,40\}$. En la tabla
 \ref{tab:bal_ben_esc_3}, se observa el detalle de los beneficios por pago de prestaciones; en
 cambio, en la tabla \ref{tab:iess_bal_act_vap_escenario_3}, se presenta la reserva, $V_t$, del
-\Sexpr{REP_seg} para cada año hasta el año 2060. El gráfico \ref{graf:apo_ben_bal_din_esc_3} presenta la
+\Sexpr{REP_seg} para cada año hasta el año 2062. El gráfico \ref{graf:apo_ben_bal_din_esc_3} presenta la
 comparación entre los aportes (línea azul) y los beneficios (línea verde).
 \begin{figure}[H]
 \caption{Escenario reforma: evolución del balance actuarial $V_T$}

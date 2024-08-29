@@ -292,8 +292,8 @@ El estimador estático independiente del tiempo que se ha utilizado para determi
 transición estática viene dado por la expresión siguiente:
 \begin{equation}\label{chp_modelo:est_esta}
 \hat{\mu}^{i,j}_{g,x} =
-\frac{\displaystyle\sum\limits_{t=2012}^{2020} N^{i,j}_{t,g,x}}{
-\displaystyle\sum\limits_{t=2012}^{2020} ER^i_{t,g,x}}
+\frac{\displaystyle\sum\limits_{t=2012}^{2022} N^{i,j}_{t,g,x}}{
+\displaystyle\sum\limits_{t=2012}^{2022} ER^i_{t,g,x}}
 \end{equation}
 
 El estimador de las fuerzas de transición que se introduce en la ecuación \ref{est_fuer_tran}, como
@@ -329,18 +329,18 @@ de la PEA y el porcentaje de afiliados activos. Consideramos que un buen estimad
 provisto por la ONU, siendo este un indicador robusto sustentado en reportes de estadísticas
 nacionales.
 
-Se dispone de información de ingresos a partir del año 2010 hasta el 2020, esta información no es
+Se dispone de información de ingresos a partir del año 2010 hasta el 2022, esta información no es
 suficiente para crear una fuerza de transición dinámica de ingreso que dependa del tiempo, pero si
 es suficiente como para estimar una fuerza de transición constante.
 
 La población de expuestos al riesgo que es susceptible de ser afiliada $ER^1_{t,g,x}$ con $t \in
-\{2010,\ldots,2020\}$ es estimada a partir de la PEA descontando el número de afiliados activos.
+\{2010,\ldots,2022\}$ es estimada a partir de la PEA descontando el número de afiliados activos.
 \begin{equation}
 ER^1_{t,g,x} = PEA_{t,g,x} - l^{2}_{t,g,x} - l^{3}_{t,g,x}
 \end{equation}
 
 Para el numerador se toma el número de nuevos ingresos $N^{1,2}_{t,g,x}$ en el tiempo $t \in
-\{2010,\ldots,2020\}$, por cada sexo $g$ y edad $x$.
+\{2010,\ldots,2022\}$, por cada sexo $g$ y edad $x$.
 
 A continuación, en las siguientes figuras se muestran los resultados de la estimación de la fuerza de
 transición de entradas $\hat{\mu}^{1,2}_{g,x}$ y su respectivo alisamiento
@@ -1228,7 +1228,7 @@ Por lo tanto, el sistema a considerarse está sujeto a las variaciones de la dem
 \label{chp_modelo:aport}
 
 Los aportes son tomados según los porcentajes de contribución previamente determinados para el
-primer segmento de la población establecidos en las tablas: \ref{tab:apo_2015_2020} y
+primer segmento de la población establecidos en las tablas: \ref{tab:apo_2015_2022} y
 \ref{tab:apo_2021_adelante}. Cabe señalar desde la expedición de la Sentencia de la Corte Constitucional No. 23-18-IN/19, de fecha 18 de diciembre de 2019, se declaró la inconstitucionalidad del inciso primero del artículo 3 de la \legalcite{ResIESS_CD501}, de 13 de noviembre de 2015 y ordenó la suspensión de la retención del 2,76\% de las pensiones de los jubilados
 para la financiación de décimos y fondo mortuorio. En la siguiente expresión se incluye los aportes de los afiliados
 activos.
