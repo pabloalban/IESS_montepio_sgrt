@@ -39,7 +39,7 @@ source( 'R/rtr/506_tab_escenarios_rtr.R', encoding = 'UTF-8', echo = FALSE )
 source( 'R/rtr/512_tab_bootstrap_rtr.R', encoding = 'UTF-8', echo = FALSE )
 
 #Compresión de archivos de gráficas-----------------------------------------------------------------
-#source( 'R/402_graf_compresion.R', encoding = 'UTF-8', echo = FALSE )
+source( 'R/402_graf_compresion.R', encoding = 'UTF-8', echo = FALSE )
 
 # Reporte LaTeX ------------------------------------------------------------------------------------
 source( parametros$reporte_script, encoding = 'UTF-8', echo = FALSE )

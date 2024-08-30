@@ -16,7 +16,7 @@ graf_grid_minor_size <- 0.20
 graf_width <- 13
 graf_height <- 9
 graf_units <- 'cm'
-graf_dpi <- 85
+graf_dpi <- 80
 
 ## color definitions
 main_color <- "white"
