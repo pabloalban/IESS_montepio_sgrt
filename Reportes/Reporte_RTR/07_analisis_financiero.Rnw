@@ -563,7 +563,7 @@ Elaborado: DAIE}
 \end{longtable}
 }
 
-Los pasivos del Fondo del \Sexpr{REP_seg} se compone mayoritariamente de la cuenta de Pasivos no Corrientes para el periodo 2015 al 2020, alcanzado su máxima participación en el 2016 alcanza (\Sexpr{REP$inf_cont_pasivo_vert_max_no_corrientes}\%), pero se redujo en los años posteriores llegando a \Sexpr{REP$inf_cont_pasivo_vert_pasivos_no_corrientes_2022}\% en el año 2022.
+Los pasivos del Fondo del \Sexpr{REP_seg} se compone mayoritariamente de la cuenta de Pasivos no Corrientes para el periodo 2015 al 2022, alcanzado su máxima participación en el 2016 alcanza (\Sexpr{REP$inf_cont_pasivo_vert_max_no_corrientes}\%), pero se redujo en los años posteriores llegando a \Sexpr{REP$inf_cont_pasivo_vert_pasivos_no_corrientes_2022}\% en el año 2022.
 %---------------------------------------------------------------------------------------------------
 \section{Patrimonio}
 
@@ -620,7 +620,7 @@ El patrimonio es la parte residual en los activos de los fondos administrados, u
 Para el año 2022, la cuenta patrimonio se compone de las cuentas hijas “Superávit Acumulado” por USD \Sexpr{REP$inf_cont_patrimonio_comp_patri_superavit_2022}, el que registra los resultados acumulados del superávit de los fondos de beneficio definido o reparto, obtenidos en ejercicios anteriores. Además, registra los resultados transferidos de la administradora. Luego, la cuenta patrimonio se compone de la subcuenta “Déficit Acumulado” por valores negativos de USD \Sexpr{REP$inf_cont_patrimonio_comp_patri_deficit_2022}, el cual registra los resultados acumulados del déficit de los fondos de beneficio definido o reparto, obtenidos en ejercicios anteriores. Además, registra los resultados transferidos de la administradora.
 
 
-Cabe mencionar que los balances del IESS en el período 2010 a 2022 ha sufrido cambios en los códigos de cuentas, creación de cuentas, signo negativo en la representación del pasivo, patrimonio e ingresos por las resoluciones emitidas por la Superintendencia de Bancos, en el año 2012 con la Resolución No. 0859 y en el año 2014 con la Resolución No. 0823, siendo este caso los años 2014, 2015, 2017, 2018, 2019 y 2020 que presentan números negativos en el patrimonio; sin embargo, por razones técnicas se estandarizó la presentación en tablas y gráficas con números positivos.
+Cabe mencionar que los balances del IESS en el período 2010 a 2022 ha sufrido cambios en los códigos de cuentas, creación de cuentas, signo negativo en la representación del pasivo, patrimonio e ingresos por las resoluciones emitidas por la Superintendencia de Bancos, en el año 2012 con la Resolución No. 0859 y en el año 2014 con la Resolución No. 0823, siendo este caso los años 2014 al 2022 que presentan números negativos en el patrimonio; sin embargo, por razones técnicas se estandarizó la presentación en tablas y gráficas con números positivos.
 
 \begin{landscape}
 
